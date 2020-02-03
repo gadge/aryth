@@ -1,5 +1,5 @@
 import { Ar, Ob, Mx } from 'veho'
-import { ArrX } from 'xbrief'
+import { ArrX, logger, Xr } from 'xbrief'
 import { Stat } from 'borel'
 import { splitCuts } from './utils/splitCuts'
 
@@ -22,6 +22,7 @@ export class Histo {
     for (let i = -1; i < cuts.length + 1; i++) buckets.set(i, 0)
     this.#buckets = buckets
     this.hi = cuts.length - 1
+    Xr('initiated hi value').value(this.hi + 1) |> logger
   }
 
   get cuts () {
@@ -29,18 +30,18 @@ export class Histo {
   }
 
   /**
-   * // Xr('').x(Math.round(x)).p('compared to id')[id](el) |> logger
-   * // Xr('pos', 'out').cuts(ar).num(Math.round(x)).id(lo).low(lo).high(hi) |> logger
+   * // Xr(step++).value(x).low(lo).mid(mid).p(ar[mid]).high(hi) |> logger
+   * // Xr(step++).value(x).low(lo).mid(null).hi(hi) |> logger
    * // if (lo - hi !== 1) throw `[locate error] (lo - hi !== 1) [x] (${x}) [lo] (${lo}) [hi] (${hi}) [ar] (${ar})`
    * @param {number} x
    * @returns {number}
    */
   locate (x) {
     const ar = this.#cuts
-    let i, lo = 0, hi = this.hi
-    while (lo <= hi) {
-      x < ar[i = ~~((lo + hi) >> 1)] ? hi = --i : lo = ++i
-    }
+    let lo = 0, hi = this.hi + 1, mid
+    do {
+      x >= ar[mid = ~~((lo + hi) >> 1)] ? lo = ++mid : hi = --mid
+    } while (lo <= hi)
     return hi
   }
 
@@ -53,7 +54,7 @@ export class Histo {
   get bound () {
     return {
       min: this.#cuts[0],
-      max: this.#cuts[this.hi] + this.stdev,
+      max: this.#cuts[this.hi],
     }
   }
 
@@ -63,12 +64,14 @@ export class Histo {
     switch (type) {
       case 'string':
         bins = this.cuts.map(x => [String(x), String(x + this.stdev)])
+        bins.pop()
         bins.unshift(['-∞', String(min)])
         bins.push([String(max), '+∞'])
         return bins
       case 'number':
       default:
         bins = this.cuts.map(x => [x, x + this.stdev])
+        bins.pop()
         bins.unshift([Number.NEGATIVE_INFINITY, min])
         bins.push([max, Number.POSITIVE_INFINITY])
         return bins
