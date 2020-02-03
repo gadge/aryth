@@ -1,6 +1,6 @@
 {
   "name": "@aryth/histo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A statistic distribution tool.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,11 +15,9 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
+    "borel": "^0.1.36",
     "veho": "^0.2.18",
-    "xbrief": "^0.3.9",
-    "borel": "^0.1.36"
-  },
-  "devDependencies": {
+    "xbrief": "^0.3.9"
   },
   "repository": {
     "type": "git",
