@@ -1,5 +1,5 @@
 ## @aryth/histo
-### A color converter.
+### A histogram statistic util tool.
 
 <p align="center">
   <a href="https://npmcharts.com/compare/@aryth/histo?minimal=true"><img src="https://img.shields.io/npm/dm/@aryth/histo.svg" alt="Downloads"></a>
