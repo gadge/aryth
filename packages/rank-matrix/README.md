@@ -1,4 +1,4 @@
-# @aryth/bound-column
+# @aryth/rank-matrix
 
 [![npm version][badge-npm-version]][url-npm]
 [![npm download monthly][badge-npm-download-monthly]][url-npm]
@@ -10,18 +10,18 @@
 [![github commit total][badge-github-commit-count]][url-github]
 
 [//]: <> (Shields)
-[badge-npm-version]: https://flat.badgen.net/npm/v/@aryth/bound-column
-[badge-npm-download-monthly]: https://flat.badgen.net/npm/dm/@aryth/bound-column
-[badge-npm-download-total]:https://flat.badgen.net/npm/dt/@aryth/bound-column
-[badge-npm-dependents]: https://flat.badgen.net/npm/dependents/@aryth/bound-column
-[badge-npm-license]: https://flat.badgen.net/npm/license/@aryth/bound-column
-[badge-pp-install-size]: https://flat.badgen.net/packagephobia/install/@aryth/bound-column
+[badge-npm-version]: https://flat.badgen.net/npm/v/@aryth/rank-matrix
+[badge-npm-download-monthly]: https://flat.badgen.net/npm/dm/@aryth/rank-matrix
+[badge-npm-download-total]:https://flat.badgen.net/npm/dt/@aryth/rank-matrix
+[badge-npm-dependents]: https://flat.badgen.net/npm/dependents/@aryth/rank-matrix
+[badge-npm-license]: https://flat.badgen.net/npm/license/@aryth/rank-matrix
+[badge-pp-install-size]: https://flat.badgen.net/packagephobia/install/@aryth/rank-matrix
 [badge-github-last-commit]: https://flat.badgen.net/github/last-commit/hoyeungw/aryth
 [badge-github-commit-count]: https://flat.badgen.net/github/commits/hoyeungw/aryth
 
 [//]: <> (Link)
-[url-npm]: https://npmjs.org/package/@aryth/bound-column
-[url-pp]: https://packagephobia.now.sh/result?p=@aryth/bound-column
+[url-npm]: https://npmjs.org/package/@aryth/rank-matrix
+[url-pp]: https://packagephobia.now.sh/result?p=@aryth/rank-matrix
 [url-github]: https://github.com/hoyeungw/aryth
 
 ##### Math util library
@@ -30,7 +30,7 @@
 
 #### Install
 ```console
-$ npm install @aryth/bound-column
+$ npm install @aryth/rank-matrix
 ```
 
 #### Usage

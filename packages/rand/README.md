@@ -16,13 +16,13 @@
 [badge-npm-dependents]: https://flat.badgen.net/npm/dependents/@aryth/rand
 [badge-npm-license]: https://flat.badgen.net/npm/license/@aryth/rand
 [badge-pp-install-size]: https://flat.badgen.net/packagephobia/install/@aryth/rand
-[badge-github-last-commit]: https://flat.badgen.net/github/last-commit/hoyeungw/vect
-[badge-github-commit-count]: https://flat.badgen.net/github/commits/hoyeungw/vect
+[badge-github-last-commit]: https://flat.badgen.net/github/last-commit/hoyeungw/aryth
+[badge-github-commit-count]: https://flat.badgen.net/github/commits/hoyeungw/aryth
 
 [//]: <> (Link)
 [url-npm]: https://npmjs.org/package/@aryth/rand
 [url-pp]: https://packagephobia.now.sh/result?p=@aryth/rand
-[url-github]: https://github.com/hoyeungw/vect
+[url-github]: https://github.com/hoyeungw/aryth
 
 ##### Math util library
 
