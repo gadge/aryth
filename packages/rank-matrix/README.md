@@ -24,9 +24,13 @@
 [url-pp]: https://packagephobia.now.sh/result?p=@aryth/rank-matrix
 [url-github]: https://github.com/hoyeungw/aryth
 
-##### Math util library
+##### Rank each element in a 2-d array
 
 #### Features
+- Rank each element of a 2-d array.
+- Return a new 2-d array of the same size as the input 2-d array.
+- Comparer configurable.
+- Filter optional. Those elements who do not meet filter gets rank value of -1.
 
 #### Install
 ```console
