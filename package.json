@@ -8,7 +8,7 @@
     "bootstrap": "lerna bootstrap",
     "prewatch": "npm run bootstrap",
     "build": "lerna exec --parallel -- rollup -c ../../rollup.config.js",
-    "build-specific": "lerna exec --scope=@repsi/util-translator -- rollup -c ../../rollup.config.js",
+    "build-specific": "lerna exec --scope=@aryth/util-bound -- rollup -c ../../rollup.config.js",
     "watch": "lerna exec --parallel -- rollup -c ../../rollup.config.js -w",
     "watch-specific": "lerna exec --scope=@repsi/bay-exchange-cn -- rollup -c ../../rollup.config.js -w"
   },
@@ -27,6 +27,9 @@
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-json": "^4.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "@spare/xr": "^0.0.5",
+    "@spare/logger": "^0.0.5",
+    "@spare/deco": "^0.0.5",
     "borel": "^0.1.36",
     "elprimero": "^0.1.40",
     "lerna": "^3.20.2",
