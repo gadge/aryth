@@ -1,7 +1,7 @@
 {
-  "name": "@aryth/rank",
-  "version": "0.0.6",
-  "description": "A math util library",
+  "name": "@aryth/comparer",
+  "version": "0.0.0",
+  "description": "Comparer collections for sort and rank",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "files": [
@@ -14,26 +14,19 @@
     "pub": "npm publish",
     "test": "node -r @babel/register test/rank.test.js"
   },
-  "dependencies": {
-    "@aryth/comparer": "^0.0.0",
-    "@aryth/rank-vector": "^0.0.0",
-    "@aryth/rank-matrix": "^0.0.6",
-    "@aryth/rank-column": "^0.0.6"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hoyeungw/aryth.git"
   },
   "keywords": [
-    "math",
-    "numeric",
-    "analysis"
+    "sort",
+    "rank",
+    "comparer"
   ],
   "author": "Hoyeung Wong",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hoyeungw/aryth"
   },
-  "homepage": "https://github.com/hoyeungw/aryth#readme",
-  "gitHead": "90b2b4dc186328c9463159625b811ec8c2ef3a37"
+  "homepage": "https://github.com/hoyeungw/aryth#readme"
 }

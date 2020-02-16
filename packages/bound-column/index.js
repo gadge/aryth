@@ -1,1 +1,2 @@
-export { bound, ColumnBound } from './src/bound'
+export { bound } from './src/bound'
+export { ColumnBound } from './src/ColumnBound'

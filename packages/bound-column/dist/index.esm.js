@@ -37,6 +37,7 @@ function columnBound(mx, {
 const ColumnBound = y => columnBound.bind({
   y
 });
+
 /**
  *
  * @param {*[]} mx
