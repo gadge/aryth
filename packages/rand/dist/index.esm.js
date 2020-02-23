@@ -23,6 +23,11 @@ const randIntBetw = (lo, hi) => rand(++hi - lo) + lo;
 
 const flopIndex = ar => rand(ar.length);
 const flop = ar => ar[flopIndex(ar)];
+const flopEntry = ob => {
+  var _Object$entries;
+
+  return _Object$entries = Object.entries(ob), flop(_Object$entries);
+};
 
 function indexShuffler(ar) {
   let length = this.length || ar.length;
@@ -54,4 +59,4 @@ const shuffle = (ar, size) => shuffler.call({
   size
 }, ar);
 
-export { Shuffler, flop, flopIndex, rand, randInt, randIntBetw, shuffle };
+export { Shuffler, flop, flopEntry, flopIndex, rand, randInt, randIntBetw, shuffle };
