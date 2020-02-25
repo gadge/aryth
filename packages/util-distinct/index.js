@@ -1,0 +1,5 @@
+export { distinctorAr } from './src/distinctorAr'
+export { distinctorOb } from './src/distinctorOb'
+export { counterEnt } from './src/counterEnt'
+export { counterOb } from './src/counterOb'
+export { sortByValues } from './src/sortByValues'
