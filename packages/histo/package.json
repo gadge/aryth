@@ -15,9 +15,9 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "borel": "^0.1.36",
-    "veho": "^0.2.18",
-    "xbrief": "^0.3.9"
+    "borel": "^0.1.40",
+    "veho": "^0.2.23",
+    "xbrief": "^1.0.4"
   },
   "repository": {
     "type": "git",
