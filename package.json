@@ -7,13 +7,13 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "prewatch": "npm run bootstrap",
+    "upint": "yarn upgrade-interactive --latest",
     "build": "lerna exec --parallel -- rollup -c ../../rollup.config.js",
     "build-specific": "lerna exec --scope=@aryth/util-bound -- rollup -c ../../rollup.config.js",
     "watch": "lerna exec --parallel -- rollup -c ../../rollup.config.js -w",
     "watch-specific": "lerna exec --scope=@repsi/bay-exchange-cn -- rollup -c ../../rollup.config.js -w"
   },
   "devDependencies": {
-    "@aryth/rand": "^0.0.9",
     "@babel/core": "^7.8.3",
     "@babel/node": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -33,8 +33,8 @@
     "@spare/deco": "^0.1.6",
     "@spare/logger": "^0.1.6",
     "@spare/xr": "^0.1.5",
-    "@vect/vector": "0.0.25",
-    "@vect/vector-init": "0.0.25",
+    "@vect/vector": "0.0.27",
+    "@vect/vector-init": "0.0.27",
     "borel": "^0.1.40",
     "crostab": "^0.3.9",
     "elprimero": "^0.1.45",
