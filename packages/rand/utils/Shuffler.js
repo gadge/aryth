@@ -1,8 +1,9 @@
+import { min } from '@aryth/comparer'
 import { rand } from '../src/rand'
 
 export function indexShuffler (ar) {
   let length = this.length || ar.length
-  let size = Math.min(length, this.size)
+  let size = min(length, this.size)
   const vec = Array(size)
   for (let i = 0, set = new Set(), rn; i < size; i++) {
     do { rn = length |> rand } while (set.has(rn))
@@ -12,9 +13,7 @@ export function indexShuffler (ar) {
   return vec
 }
 
-export const shuffler = function (ar) {
-  return indexShuffler.call(this, ar).map(i => ar[i])
-}
+export const shuffler = function (ar) { return indexShuffler.call(this, ar).map(i => ar[i]) }
 
 export const Shuffler = (size) => shuffler.bind({ size })
 

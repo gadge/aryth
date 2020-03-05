@@ -20,6 +20,11 @@ export const randInt = (lo, hi) => rand(hi - lo) + lo
  */
 export const randIntBetw = (lo, hi) => rand(++hi - lo) + lo
 
+export const randLongStr = (digit) => {
+  let t = ''
+  while (digit > 20) digit -= 20, t += random().toFixed(20).substring(2)
+  return t + random().toFixed(digit).substring(2)
+}
 
 
 
