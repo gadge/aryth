@@ -79,7 +79,7 @@ const enumFromTo = (m, n) =>
 
 // FOR TESTS
 
-// knuthShuffle :: [a] -> [a]
+// shuffle :: [a] -> [a]
 const knuthShuffle = xs => {
   const swapped = (iFrom, iTo, xs) =>
     xs.map(

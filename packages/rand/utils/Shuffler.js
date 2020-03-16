@@ -17,4 +17,6 @@ export const shuffler = function (ar) { return indexShuffler.call(this, ar).map(
 
 export const Shuffler = (size) => shuffler.bind({ size })
 
+export const shuffle = (ar, size) => shuffler.call({ length: ar.length, size: size || ar.length }, ar)
+
 export const IndexShuffler = (size) => indexShuffler.bind({ size })

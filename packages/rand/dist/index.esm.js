@@ -1,3 +1,5 @@
+import { min } from '@aryth/comparer';
+
 const {
   random
 } = Math;
@@ -20,9 +22,26 @@ const randInt = (lo, hi) => rand(hi - lo) + lo;
  */
 
 const randIntBetw = (lo, hi) => rand(++hi - lo) + lo;
+const randLongStr = digit => {
+  let t = '';
+
+  while (digit > 20) digit -= 20, t += random().toFixed(20).substring(2);
+
+  return t + random().toFixed(digit).substring(2);
+};
 
 const flopIndex = ar => rand(ar.length);
 const flop = ar => ar[flopIndex(ar)];
+const flopKey = ob => {
+  var _Object$keys;
+
+  return _Object$keys = Object.keys(ob), flop(_Object$keys);
+};
+const flopValue = ob => {
+  var _Object$values;
+
+  return _Object$values = Object.values(ob), flop(_Object$values);
+};
 const flopEntry = ob => {
   var _Object$entries;
 
@@ -31,7 +50,7 @@ const flopEntry = ob => {
 
 function indexShuffler(ar) {
   let length = this.length || ar.length;
-  let size = Math.min(length, this.size);
+  let size = min(length, this.size);
   const vec = Array(size);
 
   for (let i = 0, set = new Set(), rn; i < size; i++) {
@@ -54,9 +73,26 @@ const Shuffler = size => shuffler.bind({
   size
 });
 
-const shuffle = (ar, size) => shuffler.call({
-  length: ar.length,
-  size
-}, ar);
+const swap = function (i, j) {
+  const temp = this[i];
+  this[i] = this[j];
+  return this[j] = temp;
+};
 
-export { Shuffler, flop, flopEntry, flopIndex, rand, randInt, randIntBetw, shuffle };
+/**
+ * Fisher–Yates shuffle, a.k.a Knuth shuffle
+ * @param {Array} ar
+ * @param {number} [size]
+ */
+
+const knuthShuffle = function (ar, size) {
+  let l = ar.length;
+  const hi = size > l ? l : size || l,
+        tail = l - hi;
+
+  for (--l; l >= tail; l--) swap.call(ar, l, rand(l));
+
+  return tail ? (ar.splice(hi, tail), ar) : ar;
+};
+
+export { Shuffler, flop, flopEntry, flopIndex, flopKey, flopValue, rand, randInt, randIntBetw, randLongStr, knuthShuffle as shuffle };

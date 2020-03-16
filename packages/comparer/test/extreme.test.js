@@ -1,22 +1,24 @@
-import { CrosTabX } from 'xbrief'
-import { Chrono } from 'elprimero'
 import { max } from '../src/extreme'
+import { strategies } from '@valjoux/strategies'
+import { decoCrostab, logger, says } from '@spare/logger'
+import { abs } from '@aryth/math'
 
-const { lapse, result } = Chrono.strategies({
+const { lapse, result } = strategies({
   repeat: 1E+7,
-  paramsList: {
+  candidates: {
     simple: [32, 255],
     misc: [-Math.PI, Math.E],
     another: [0, 0]
   },
-  funcList: {
+  methods: {
     bench: (a, b) => (a + b),
     native: Math.max,
     stable: max,
+    realMax: (a, b) => ((a + b + abs(a - b)) >> 1),
+    realMin: (a, b) => ((a + b - abs(a - b)) >> 1)
   }
 })
-'lapse' |> console.log
-lapse |> CrosTabX.brief |> console.log
-'' |> console.log
-'result' |> console.log
-result |> CrosTabX.brief |> console.log
+
+lapse |> decoCrostab |> says['lapse']
+'' |> logger
+result |> decoCrostab |> says['result']

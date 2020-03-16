@@ -1,7 +1,8 @@
 import { strategies } from '@valjoux/strategies'
 import { decoCrostab, says } from '@spare/logger'
 import { Foba } from '@foba/vector-number'
-import { knuthShuffle, shuffle } from '../src/shuffle'
+import { shuffle as fisherYates } from '../../src/shuffle'
+import { shuffle } from '../../utils/Shuffler'
 
 const { lapse, result } = strategies({
   repeat: 1E+6,
@@ -12,7 +13,7 @@ const { lapse, result } = strategies({
   methods: {
     bench: arr => arr.map(x => x),
     classic: shuffle,
-    fisherYates: knuthShuffle,
+    fisherYates: fisherYates,
   }
 })
 lapse |> decoCrostab |> says['lapse']
