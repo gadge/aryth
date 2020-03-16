@@ -2,6 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var swap = require('@vect/swap');
+var comparer = require('@aryth/comparer');
+
 const {
   random
 } = Math;
@@ -50,8 +53,38 @@ const flopEntry = ob => {
   return _Object$entries = Object.entries(ob), flop(_Object$entries);
 };
 
+const flopGenerator = function* (ar, df) {
+  var _df, _ar;
+
+  let l = ar.length;
+
+  while (--l >= 0) yield swap.swap.call(ar, rand(l), l);
+
+  df = (_df = df) !== null && _df !== void 0 ? _df : (_ar = ar, flop(_ar));
+
+  while (true) yield df;
+};
+
+/**
+ * Fisher–Yates shuffle, a.k.a Knuth shuffle
+ * @param {Array} ve
+ * @param {number} [size] - if omitted, size will be keys.length
+ * @deprecated shuffle under @aryth/rand will be out-of-maintenance soon, please switch to @aryth/shuffle
+ * @returns {Array} mutated array
+ */
+
+const shuffle = function (ve, size) {
+  let l = ve.length;
+  const lo = comparer.max(0, l - (size !== null && size !== void 0 ? size : l));
+
+  while (--l >= lo) swap.swap.call(ve, l, rand(l));
+
+  return lo ? (ve.splice(0, lo), ve) : ve;
+};
+
 exports.flop = flop;
 exports.flopEntry = flopEntry;
+exports.flopGenerator = flopGenerator;
 exports.flopIndex = flopIndex;
 exports.flopKey = flopKey;
 exports.flopValue = flopValue;
@@ -59,3 +92,4 @@ exports.rand = rand;
 exports.randInt = randInt;
 exports.randIntBetw = randIntBetw;
 exports.randLongStr = randLongStr;
+exports.shuffle = shuffle;

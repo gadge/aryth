@@ -1,5 +1,5 @@
-import { max } from '@aryth/comparer';
 import { swap } from '@vect/swap';
+import { max } from '@aryth/comparer';
 import { rand } from '@aryth/rand';
 
 /**
@@ -9,14 +9,15 @@ import { rand } from '@aryth/rand';
  * @returns {Array} mutated array
  */
 
-const shuffle = function (ve, size) {
+const shuffleVector = function (ve, size) {
   let l = ve.length;
   const lo = max(0, l - (size !== null && size !== void 0 ? size : l));
 
-  for (--l; l >= lo; l--) swap.call(ve, l, rand(l));
+  while (--l >= lo) swap.call(ve, l, rand(l));
 
   return lo ? (ve.splice(0, lo), ve) : ve;
 };
+
 /**
  *
  * Object keys can be set via 'this.keys'
@@ -33,9 +34,9 @@ const shuffleObject = function (o, size) {
   const lo = max(0, l - (size !== null && size !== void 0 ? size : l)),
         rs = {};
 
-  for (--l; l >= lo; l--) rs[k = swap.call(keys, rand(l), l)] = o[k];
+  while (--l >= lo) rs[k = swap.call(keys, rand(l), l)] = o[k];
 
   return rs;
 };
 
-export { shuffle, shuffleObject };
+export { shuffleObject, shuffleVector };

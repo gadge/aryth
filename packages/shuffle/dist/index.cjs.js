@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var comparer = require('@aryth/comparer');
 var swap = require('@vect/swap');
+var comparer = require('@aryth/comparer');
 var rand = require('@aryth/rand');
 
 /**
@@ -13,14 +13,15 @@ var rand = require('@aryth/rand');
  * @returns {Array} mutated array
  */
 
-const shuffle = function (ve, size) {
+const shuffleVector = function (ve, size) {
   let l = ve.length;
   const lo = comparer.max(0, l - (size !== null && size !== void 0 ? size : l));
 
-  for (--l; l >= lo; l--) swap.swap.call(ve, l, rand.rand(l));
+  while (--l >= lo) swap.swap.call(ve, l, rand.rand(l));
 
   return lo ? (ve.splice(0, lo), ve) : ve;
 };
+
 /**
  *
  * Object keys can be set via 'this.keys'
@@ -37,10 +38,10 @@ const shuffleObject = function (o, size) {
   const lo = comparer.max(0, l - (size !== null && size !== void 0 ? size : l)),
         rs = {};
 
-  for (--l; l >= lo; l--) rs[k = swap.swap.call(keys, rand.rand(l), l)] = o[k];
+  while (--l >= lo) rs[k = swap.swap.call(keys, rand.rand(l), l)] = o[k];
 
   return rs;
 };
 
-exports.shuffle = shuffle;
 exports.shuffleObject = shuffleObject;
+exports.shuffleVector = shuffleVector;
