@@ -6,6 +6,7 @@ import { rand } from '../src/rand'
  * Fisher–Yates shuffle, a.k.a Knuth shuffle
  * @param {Array} ve
  * @param {number} [size] - if omitted, size will be keys.length
+ * @deprecated shuffle under @aryth/rand will be out-of-maintenance soon, please switch to @aryth/shuffle
  * @returns {Array} mutated array
  */
 export const shuffle = function (ve, size) {
