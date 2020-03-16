@@ -9,7 +9,7 @@
     "prewatch": "npm run bootstrap",
     "upint": "yarn upgrade-interactive --latest",
     "build": "lerna exec --parallel -- rollup -c ../../rollup.config.js",
-    "build-specific": "lerna exec --scope=@aryth/util-bound -- rollup -c ../../rollup.config.js",
+    "build-specific": "lerna exec --scope=@aryth/rand -- rollup -c ../../rollup.config.js",
     "watch": "lerna exec --parallel -- rollup -c ../../rollup.config.js -w",
     "watch-specific": "lerna exec --scope=@repsi/bay-exchange-cn -- rollup -c ../../rollup.config.js -w"
   },

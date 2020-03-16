@@ -1,5 +1,5 @@
 import { simpleObjects } from '@foba/foo'
-import { shuffleObject } from '../src/shuffle'
+import { shuffleObject } from '../src/shuffleVector'
 import { deco, delogger, says } from '@spare/logger'
 
 const candidates = simpleObjects({ h: 8 })

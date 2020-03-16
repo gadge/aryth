@@ -1,7 +1,7 @@
 import { strategies } from '@valjoux/strategies'
 import { decoCrostab, says } from '@spare/logger'
 import { Foba } from '@foba/vector-number'
-import { shuffle as fisherYates } from '../../src/shuffle'
+import { shuffle as fisherYates } from '../../src/shuffleVector'
 import { shuffle } from '../../utils/Shuffler'
 
 const { lapse, result } = strategies({

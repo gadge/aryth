@@ -1,5 +1,5 @@
 {
-  "name": "@aryth/rand",
+  "name": "@aryth/shuffle",
   "version": "0.0.12",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
@@ -15,6 +15,7 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
+    "@aryth/rand": "^0.0.12",
     "@aryth/comparer": "^0.0.12",
     "@vect/swap": "^0.1.12"
   },

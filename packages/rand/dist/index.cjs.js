@@ -2,8 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var comparer = require('@aryth/comparer');
-
 const {
   random
 } = Math;
@@ -52,74 +50,6 @@ const flopEntry = ob => {
   return _Object$entries = Object.entries(ob), flop(_Object$entries);
 };
 
-const swap = function (i, j) {
-  const temp = this[i];
-  this[i] = this[j];
-  return this[j] = temp;
-};
-
-/**
- * Fisher–Yates shuffle, a.k.a Knuth shuffle
- * @param {Array} ve
- * @param {number} [size] - if omitted, size will be keys.length
- * @returns {Array} mutated array
- */
-
-const shuffle = function (ve, size) {
-  let l = ve.length;
-  const lo = comparer.max(0, l - (size !== null && size !== void 0 ? size : l));
-
-  for (--l; l >= lo; l--) swap.call(ve, l, rand(l));
-
-  return lo ? (ve.splice(0, lo), ve) : ve;
-};
-/**
- *
- * Object keys can be set via 'this.keys'
- * Default keys are Object.keys(o), the enumerable list of o's keys.
- * @param {Object} o
- * @param {number} [size] - if omitted, size will be keys.length
- * @returns {Object} new object
- */
-
-const shuffleObject = function (o, size) {
-  const keys = (this === null || this === void 0 ? void 0 : this.keys) || Object.keys(o);
-  let l = keys.length,
-      k;
-  const lo = comparer.max(0, l - (size !== null && size !== void 0 ? size : l)),
-        rs = {};
-
-  for (--l; l >= lo; l--) rs[k = swap.call(keys, rand(l), l)] = o[k];
-
-  return rs;
-};
-
-function indexShuffler(ar) {
-  let length = this.length || ar.length;
-  let size = comparer.min(length, this.size);
-  const vec = Array(size);
-
-  for (let i = 0, set = new Set(), rn; i < size; i++) {
-    do {
-      var _length;
-
-      rn = (_length = length, rand(_length));
-    } while (set.has(rn));
-
-    set.add(rn);
-    vec[i] = rn;
-  }
-
-  return vec;
-}
-const shuffler = function (ar) {
-  return indexShuffler.call(this, ar).map(i => ar[i]);
-};
-const Shuffler = size => shuffler.bind({
-  size
-});
-
-exports.Shuffler = Shuffler;
 exports.flop = flop;
 exports.flopEntry = flopEntry;
 exports.flopIndex = flopIndex;
@@ -129,5 +59,3 @@ exports.rand = rand;
 exports.randInt = randInt;
 exports.randIntBetw = randIntBetw;
 exports.randLongStr = randLongStr;
-exports.shuffle = shuffle;
-exports.shuffleObject = shuffleObject;
