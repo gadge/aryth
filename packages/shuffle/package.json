@@ -1,6 +1,6 @@
 {
   "name": "@aryth/shuffle",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,8 +15,8 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/rand": "^0.0.12",
-    "@aryth/comparer": "^0.0.12",
+    "@aryth/comparer": "^0.0.13",
+    "@aryth/rand": "^0.0.13",
     "@vect/swap": "^0.1.12"
   },
   "repository": {
