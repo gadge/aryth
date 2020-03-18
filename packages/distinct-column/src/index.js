@@ -1,5 +1,5 @@
 import { iterate } from '@vect/column-mapper'
-import { counterEnt, counterOb, distinctorAr, distinctorOb, sortByValues } from '@aryth/util-distinct'
+import { entriesCounter, objectCounter, vectorDistinctor, objectDistinctor, sortByValues } from '@aryth/util-distinct'
 
 /**
  *
@@ -11,8 +11,8 @@ export const distinct = function (mx, h) {
   let { y } = this
   let o
   return (h = mx?.length) === (h & 0x7f)
-    ? (o = [], iterate(mx, y, distinctorAr.bind(o), h), o)
-    : (o = {}, iterate(mx, y, distinctorOb.bind(o), h), Object.keys(o))
+    ? (o = [], iterate(mx, y, vectorDistinctor.bind(o), h), o)
+    : (o = {}, iterate(mx, y, objectDistinctor.bind(o), h), Object.keys(o))
 }
 
 /**
@@ -26,8 +26,8 @@ export const distinctCount = function (mx, { h, sort }) {
   let { y } = this
   let o
   const ents = (h = mx?.length) === (h & 0x7f)
-    ? (o = [], iterate(mx, y, counterEnt.bind(o), h), o)
-    : (o = {}, iterate(mx, y, counterOb.bind(o), h), Object.entries(o))
+    ? (o = [], iterate(mx, y, entriesCounter.bind(o), h), o)
+    : (o = {}, iterate(mx, y, objectCounter.bind(o), h), Object.entries(o))
   if (sort) sortByValues(ents, sort)
   return ents
 }

@@ -1,5 +1,5 @@
 import { iterate } from '@vect/matrix-mapper';
-import { distinctorAr, distinctorOb, counterEnt, counterOb, sortByValues } from '@aryth/util-distinct';
+import { vectorDistinctor, objectDistinctor, entriesCounter, objectCounter, sortByValues } from '@aryth/util-distinct';
 
 /**
  *
@@ -11,7 +11,7 @@ import { distinctorAr, distinctorOb, counterEnt, counterOb, sortByValues } from 
 
 const distinct = function (mx, h, w) {
   let o;
-  return (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], iterate(mx, distinctorAr.bind(o), h, w), o) : (o = {}, iterate(mx, distinctorOb.bind(o), h, w), Object.keys(o));
+  return (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], iterate(mx, vectorDistinctor.bind(o), h, w), o) : (o = {}, iterate(mx, objectDistinctor.bind(o), h, w), Object.keys(o));
 };
 /**
  *
@@ -28,7 +28,7 @@ const distinctCount = function (mx, {
   w
 }) {
   let o;
-  const ents = (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], iterate(mx, counterEnt.bind(o), h, w), o) : (o = {}, iterate(mx, counterOb.bind(o), h, w), Object.entries(o));
+  const ents = (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], iterate(mx, entriesCounter.bind(o), h, w), o) : (o = {}, iterate(mx, objectCounter.bind(o), h, w), Object.entries(o));
   if (sort) sortByValues(ents, sort);
   return ents;
 };

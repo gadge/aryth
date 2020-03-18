@@ -17,7 +17,7 @@ const distinct = function (mx, h) {
     y
   } = this;
   let o;
-  return (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], columnMapper.iterate(mx, y, utilDistinct.distinctorAr.bind(o), h), o) : (o = {}, columnMapper.iterate(mx, y, utilDistinct.distinctorOb.bind(o), h), Object.keys(o));
+  return (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], columnMapper.iterate(mx, y, utilDistinct.vectorDistinctor.bind(o), h), o) : (o = {}, columnMapper.iterate(mx, y, utilDistinct.objectDistinctor.bind(o), h), Object.keys(o));
 };
 /**
  *
@@ -35,7 +35,7 @@ const distinctCount = function (mx, {
     y
   } = this;
   let o;
-  const ents = (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], columnMapper.iterate(mx, y, utilDistinct.counterEnt.bind(o), h), o) : (o = {}, columnMapper.iterate(mx, y, utilDistinct.counterOb.bind(o), h), Object.entries(o));
+  const ents = (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], columnMapper.iterate(mx, y, utilDistinct.entriesCounter.bind(o), h), o) : (o = {}, columnMapper.iterate(mx, y, utilDistinct.objectCounter.bind(o), h), Object.entries(o));
   if (sort) utilDistinct.sortByValues(ents, sort);
   return ents;
 };

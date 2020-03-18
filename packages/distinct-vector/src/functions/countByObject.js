@@ -1,4 +1,4 @@
-import { counterOb } from '@aryth/util-distinct'
+import { objectCounter } from '@aryth/util-distinct'
 import { iterate } from '@vect/vector-mapper'
 
 /**
@@ -9,6 +9,6 @@ import { iterate } from '@vect/vector-mapper'
  */
 export const countByObject = (vec, l) => {
   const o = {}
-  iterate(vec, counterOb.bind(o), l)
+  iterate(vec, objectCounter.bind(o), l)
   return Object.entries(o)
 }

@@ -1,4 +1,4 @@
-import { deca, decoLog, logger } from 'xbrief'
+import { deca, delogger, logger } from 'xbrief'
 
 class BinTree {
   static binarySearch (arr, val) {
@@ -53,7 +53,7 @@ class BinTreeTest {
       result.push(node)
     }
     tree |> deca({ vu: 5 }) |> logger
-    result |> decoLog // ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+    result |> delogger // ['a', 'b', 'c', 'd', 'e', 'f', 'g']
   }
 }
 

@@ -1,6 +1,12 @@
-import { Mx, Ar, Ob } from 'veho';
-import { Xr, logger, ArrX } from 'xbrief';
-import { Stat } from 'borel';
+import { STR, NUM } from '@typen/enum-data-types';
+import { lange } from '@spare/lange';
+import { LPad } from '@spare/pad-string';
+import { mutate } from '@vect/vector-mapper';
+import { wind } from '@vect/object-init';
+import { maxBy } from '@vect/entries-indicator';
+import { bound } from '@aryth/bound-vector';
+import { NiceScale } from '@aryth/nice-scale';
+import { round } from '@aryth/math';
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -51,91 +57,115 @@ function _classPrivateFieldSet(receiver, privateMap, value) {
   return value;
 }
 
-const splitCuts = (mean, stdev, sep) => {
-  sep = Math.round(sep);
-  const arr = [];
-  let mark = mean - stdev * ((sep >> 1) + 1) - (sep % 2 ? stdev / 2 : 0);
+const isEven = n => !(n % 2);
+const ticksByMean = (mean, stdev, gaps) => {
+  const ticks = (gaps = round(gaps)) + 1;
+  let lo = mean - stdev * (ticks >> 1);
+  if (isEven(ticks)) lo += stdev / 2;
+  return tickLabels(lo, stdev, gaps);
+};
+const tickLabels = (lo, step, gaps) => {
+  const ve = Array(gaps + 1);
+  let i = 0;
 
-  for (let i = 0; i <= sep; i++) arr.push(mark += stdev);
+  do {
+    ve[i++] = lo, lo += step;
+  } while (i <= gaps);
 
-  return arr;
+  return ve;
 };
 
+const lpad = LPad({
+  ansi: false
+});
 class Histo {
   /** @type{Array<number>} */
 
   /** @type{Map<number,number>} */
 
   /** @type{number} */
-
-  /** @type{number} */
-
-  /** @type{number} */
-  constructor(mean, stdev, sep) {
-    _cuts.set(this, {
+  constructor(tickLabels) {
+    _ticks.set(this, {
       writable: true,
       value: void 0
     });
 
-    _buckets.set(this, {
+    _tickmap.set(this, {
       writable: true,
       value: void 0
     });
 
-    _defineProperty(this, "mean", void 0);
+    _defineProperty(this, "gaps", void 0);
 
-    _defineProperty(this, "stdev", void 0);
-
-    _defineProperty(this, "hi", void 0);
-
-    this.cuts = splitCuts(mean, stdev, sep);
-    this.mean = mean;
-    this.stdev = stdev;
+    this.ticks = tickLabels;
   }
 
-  set cuts(cuts) {
-    var _Xr$value;
-
-    _classPrivateFieldSet(this, _cuts, cuts);
-
-    const buckets = new Map();
-
-    for (let i = -1; i < cuts.length + 1; i++) buckets.set(i, 0);
-
-    _classPrivateFieldSet(this, _buckets, buckets);
-
-    this.hi = cuts.length - 1;
-    _Xr$value = Xr('initiated hi value').value(this.hi + 1), logger(_Xr$value);
+  static buildByMean(mean, stdev, gaps) {
+    const ticks = ticksByMean(mean, stdev, gaps);
+    return new Histo(ticks);
   }
 
-  get cuts() {
-    return _classPrivateFieldGet(this, _cuts);
+  static build(min, step, gaps) {
+    const ticks = tickLabels(min, step, gaps);
+    return new Histo(ticks);
+  }
+
+  static fromSamples(samples, maxTicks = 10) {
+    const niceScale = NiceScale({
+      ticks: maxTicks
+    });
+    const tickLabels = niceScale(bound(samples));
+    const histo = new Histo(tickLabels);
+
+    for (let sample of samples) histo.collect(sample);
+
+    return histo;
+  }
+
+  set ticks(tickLabels) {
+    let map,
+        i = -1;
+
+    _classPrivateFieldSet(this, _ticks, tickLabels);
+
+    _classPrivateFieldSet(this, _tickmap, map = new Map());
+
+    const l = tickLabels.length;
+
+    while (i <= l) map.set(i++, 0); // min-1 and max+1 are both added
+
+
+    this.gaps = l - 1;
+  }
+
+  get ticks() {
+    return _classPrivateFieldGet(this, _ticks);
   }
   /**
-   * // Xr(step++).value(x).low(lo).mid(mid).p(ar[mid]).high(hi) |> logger
-   * // Xr(step++).value(x).low(lo).mid(null).hi(hi) |> logger
-   * // if (lo - hi !== 1) throw `[locate error] (lo - hi !== 1) [x] (${x}) [lo] (${lo}) [hi] (${hi}) [ar] (${ar})`
+   * // Xr(step++).value(x).low(lo).mid(mid).p(ar[mid]).high(gaps) |> logger
+   * // Xr(step++).value(x).low(lo).mid(null).gaps(gaps) |> logger
+   * // if (lo - gaps !== 1) throw `[locate error] (lo - gaps !== 1) [x] (${x}) [lo] (${lo}) [gaps] (${gaps}) [ar] (${ar})`
    * @param {number} x
    * @returns {number}
    */
 
 
   locate(x) {
-    const ar = _classPrivateFieldGet(this, _cuts);
+    const ve = _classPrivateFieldGet(this, _ticks);
 
     let lo = 0,
-        hi = this.hi + 1,
-        mid;
+        hi = this.gaps + 1,
+        md;
 
     do {
-      x >= ar[mid = ~~(lo + hi >> 1)] ? lo = ++mid : hi = --mid;
+      x >= ve[md = ~~(lo + hi >> 1)] ? lo = ++md : hi = --md;
     } while (lo <= hi);
 
     return hi;
   }
 
   collect(x) {
-    const mp = _classPrivateFieldGet(this, _buckets),
+    const mp = _classPrivateFieldGet(this, _tickmap),
           i = this.locate(x);
 
     mp.set(i, mp.get(i) + 1);
@@ -144,51 +174,52 @@ class Histo {
 
   get bound() {
     return {
-      min: _classPrivateFieldGet(this, _cuts)[0],
-      max: _classPrivateFieldGet(this, _cuts)[this.hi]
+      min: _classPrivateFieldGet(this, _ticks)[0],
+      max: _classPrivateFieldGet(this, _ticks)[this.gaps]
     };
   }
 
-  intervals(type = 'string') {
-    const {
-      min,
-      max
-    } = this.bound;
-    let bins;
+  intervals(type = STR) {
+    if (type === STR) {
+      const chips = Array(this.gaps + 1);
 
-    switch (type) {
-      case 'string':
-        bins = this.cuts.map(x => [String(x), String(x + this.stdev)]);
-        bins.pop();
-        bins.unshift(['-∞', String(min)]);
-        bins.push([String(max), '+∞']);
-        return bins;
+      const max = _classPrivateFieldGet(this, _ticks).reduce((a, b, i) => (chips[i] = [String(a), b = String(b)], b), '-∞');
 
-      case 'number':
-      default:
-        bins = this.cuts.map(x => [x, x + this.stdev]);
-        bins.pop();
-        bins.unshift([Number.NEGATIVE_INFINITY, min]);
-        bins.push([max, Number.POSITIVE_INFINITY]);
-        return bins;
+      chips.push([max, '+∞']);
+      return chips;
     }
+
+    if (type === NUM) {
+      const chips = Array(this.gaps + 1);
+
+      const max = _classPrivateFieldGet(this, _ticks).reduce((a, b, i) => (chips[i] = [a, b], b), Number.NEGATIVE_INFINITY);
+
+      chips.push([max, Number.POSITIVE_INFINITY]);
+      return chips;
+    }
+
+    return _classPrivateFieldGet(this, _ticks);
   }
 
   get count() {
-    return Stat.sum([..._classPrivateFieldGet(this, _buckets).values()]);
+    let sum = 0;
+
+    for (let v of _classPrivateFieldGet(this, _tickmap).values()) sum += v;
+
+    return sum;
   }
 
-  statistics(type = 'string') {
+  statistics(type = STR) {
     const intervals = this.intervals(type),
-          [l, r] = Mx.columns(intervals, ArrX.maxLen);
-    Ar.mutateMap(intervals, ([k, v]) => `[${k.padStart(l)}, ${v.padStart(r)})`);
-    return Ob.ini(intervals, Array.from(_classPrivateFieldGet(this, _buckets).values()));
+          [l, r] = maxBy(intervals, lange, lange);
+    mutate(intervals, ([k, v]) => `[${lpad(k, l)}, ${lpad(v, r)})`);
+    return wind(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]);
   }
 
 }
 
-var _cuts = new WeakMap();
+var _ticks = new WeakMap();
 
-var _buckets = new WeakMap();
+var _tickmap = new WeakMap();
 
-export { Histo, splitCuts };
+export { Histo, ticksByMean };

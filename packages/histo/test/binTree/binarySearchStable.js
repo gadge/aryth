@@ -1,5 +1,5 @@
 import { Chrono } from 'elprimero/src/Chrono'
-import { CrosTabX, deco, decoLog } from 'xbrief'
+import { CrosTabX, deco, delogger } from 'xbrief'
 
 function recur (ar, x, lo, hi) {
   if (lo > hi) return -1
@@ -45,11 +45,11 @@ function ite_bs_range (ar, x) {
 // const ar = [0, 12, 24, 36, 48, 60, 72, 84, 96]
 const ar = [-6, 6, 18, 30, 42, 54, 66, 78]
 // const ar = [0, 96]
-ite_bs_range(ar, 15) |> decoLog
-ite_bs_range(ar, 30) |> decoLog
-ite_bs_range(ar, 84) |> decoLog
-ite_bs_range(ar, -12) |> decoLog
-ite_bs_range(ar, 100)  |> decoLog
+ite_bs_range(ar, 15) |> delogger
+ite_bs_range(ar, 30) |> delogger
+ite_bs_range(ar, 84) |> delogger
+ite_bs_range(ar, -12) |> delogger
+ite_bs_range(ar, 100)  |> delogger
 
 const { lapse, result } = Chrono.strategies({
   repeat: 1E+6,

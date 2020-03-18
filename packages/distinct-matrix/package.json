@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@aryth/util-distinct": "^0.0.13",
-    "@vect/matrix-mapper": "^0.1.12"
+    "@vect/matrix-mapper": "^0.1.15"
   },
   "repository": {
     "type": "git",

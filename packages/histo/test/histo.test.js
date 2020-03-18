@@ -1,17 +1,16 @@
 import { Ziggurat } from 'roulett'
-import { decoLog } from 'xbrief'
-import { Histo } from '../src/histo'
+import { delogger, says } from '@spare/logger'
+import { Histo } from '../src/Histo'
+import { deco } from '@spare/deco'
 
-class HistoTest {
-  static test () {
-    const fallout = new Histo(36000, 12000, 7)
-    fallout.cuts |> decoLog
-    const zigg = new Ziggurat(36000, 12000)
-    for (let i = 0; i < 4096; i++) {
-      fallout.collect(zigg.next())
-    }
-    fallout.statistics() |> decoLog
-  }
+const zigg = new Ziggurat(36000, 12000)
+const histo = Histo.buildByMean(36000, 12000, 7)
+histo.ticks |> delogger
+
+for (let i = 0; i < 4096; i++) {
+  histo.collect(zigg.next())
 }
 
-HistoTest.test()
+histo.statistics() |> deco |> says['statistics'].p(histo.count)
+
+

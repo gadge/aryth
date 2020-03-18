@@ -1,17 +1,17 @@
-const distinctorAr = function (x) {
+const vectorDistinctor = function (x) {
   if (this.indexOf(x) < 0) this.push(x);
 };
 
-const distinctorOb = function (x) {
+const objectDistinctor = function (x) {
   if (!(x in this)) this[x] = void 0;
 };
 
-const counterEnt = function (x) {
+const entriesCounter = function (x) {
   let j = this.findIndex(ent => x === ent[0]);
   j >= 0 ? this[j][1]++ : this.push([x, 1]);
 };
 
-const counterOb = function (x) {
+const objectCounter = function (x) {
   x in this ? this[x]++ : this[x] = 1;
 };
 
@@ -30,4 +30,4 @@ function sortByValues(entries, sort) {
   }
 }
 
-export { counterEnt, counterOb, distinctorAr, distinctorOb, sortByValues };
+export { entriesCounter, objectCounter, objectDistinctor, sortByValues, vectorDistinctor };

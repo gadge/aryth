@@ -1,4 +1,4 @@
-import { counterEnt } from '@aryth/util-distinct'
+import { entriesCounter } from '@aryth/util-distinct'
 import { iterate } from '@vect/vector-mapper'
 
 /**
@@ -9,6 +9,6 @@ import { iterate } from '@vect/vector-mapper'
  */
 export const countByEntries = function (vec, l) {
   const ents = []
-  iterate(vec, counterEnt.bind(ents), l)
+  iterate(vec, entriesCounter.bind(ents), l)
   return ents
 }

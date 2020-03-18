@@ -1,5 +1,5 @@
 // findRecursive :: a -> [a] -> Either String Int
-import { decoLog } from 'xbrief'
+import { delogger } from 'xbrief'
 
 const findRecursive = (x, ar) => {
   const go = (lo, hi) => {
@@ -161,4 +161,4 @@ JSON.stringify([
     ),
     knuthShuffle(['cape'].concat(xs).concat('cairo'))
   )
-] |> decoLog
+] |> delogger

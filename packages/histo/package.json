@@ -15,9 +15,15 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "borel": "^0.1.40",
-    "veho": "^0.2.23",
-    "xbrief": "^1.0.4"
+    "@typen/enum-data-types": "^0.0.3",
+    "@spare/lange": "^0.2.0",
+    "@spare/pad-string": "^0.2.0",
+    "@vect/vector-mapper": "^0.1.16",
+    "@vect/object-init": "^0.1.15",
+    "@vect/entries-indicator": "^0.1.17",
+    "@aryth/bound-vector": "^0.0.13",
+    "@aryth/math": "^0.0.13",
+    "@aryth/nice-scale": "^0.0.13"
   },
   "repository": {
     "type": "git",

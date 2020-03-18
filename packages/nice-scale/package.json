@@ -1,0 +1,40 @@
+{
+  "name": "@aryth/nice-scale",
+  "version": "0.0.13",
+  "description": "Nice scale algorithm",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node -r @babel/register test/test.index.js"
+  },
+  "dependencies": {
+    "@typen/enum-object-types": "^0.0.3",
+    "@aryth/math": "^0.0.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyeungw/aryth.git"
+  },
+  "keywords": [
+    "nice scale",
+    "nice label"
+  ],
+  "author": {
+    "name": "Hoyeung Wong",
+    "email": "hoyeungw@outlook.com",
+    "url": "https://github.com/hoyeungw"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/aryth"
+  },
+  "homepage": "https://github.com/hoyeungw/aryth#readme",
+  "gitHead": "90b2b4dc186328c9463159625b811ec8c2ef3a37"
+}
