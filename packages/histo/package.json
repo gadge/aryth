@@ -22,6 +22,8 @@
     "@spare/pad-string": "^0.2.0",
     "@typen/enum-data-types": "^0.0.3",
     "@vect/entries-indicator": "^0.1.17",
+    "@vect/entries-init": "^0.1.16",
+    "@vect/entries-mapper": "^0.1.15",
     "@vect/object-init": "^0.1.15",
     "@vect/vector-mapper": "^0.1.16"
   },

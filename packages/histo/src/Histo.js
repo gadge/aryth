@@ -2,7 +2,8 @@ import { NUM, STR } from '@typen/enum-data-types'
 import { lange } from '@spare/lange'
 import { LPad } from '@spare/pad-string'
 import { mutate } from '@vect/vector-mapper'
-import { wind } from '@vect/object-init'
+import { wind as windObject } from '@vect/object-init'
+import { wind as windEntries } from '@vect/entries-init'
 import { maxBy as entriesMaxBy } from '@vect/entries-indicator'
 import { bound } from '@aryth/bound-vector'
 import { NiceScale } from '@aryth/nice-scale'
@@ -101,10 +102,14 @@ export class Histo {
     return sum
   }
 
-  statistics (type = STR) {
-    const intervals = this.intervals(type),
-      [l, r] = entriesMaxBy(intervals, lange, lange)
-    mutate(intervals, ([k, v]) => `[${lpad(k, l)}, ${lpad(v, r)})`)
-    return wind(intervals, [...this.#tickmap.values()])
+  statistics ({ keyType = STR, objectify = true } = {}) {
+    const intervals = this.intervals(keyType)
+    if (keyType === STR) {
+      const [l, r] = entriesMaxBy(intervals, lange, lange)
+      mutate(intervals, ([k, v]) => `[${lpad(k, l)}, ${lpad(v, r)})`)
+    }
+    return objectify
+      ? windObject(intervals, [...this.#tickmap.values()])
+      : windEntries(intervals, [...this.#tickmap.values()])
   }
 }
