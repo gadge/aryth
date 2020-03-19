@@ -3,6 +3,7 @@ import { lange } from '@spare/lange';
 import { LPad } from '@spare/pad-string';
 import { mutate } from '@vect/vector-mapper';
 import { wind } from '@vect/object-init';
+import { wind as wind$1 } from '@vect/entries-init';
 import { maxBy } from '@vect/entries-indicator';
 import { bound } from '@aryth/bound-vector';
 import { NiceScale } from '@aryth/nice-scale';
@@ -209,11 +210,18 @@ class Histo {
     return sum;
   }
 
-  statistics(type = STR) {
-    const intervals = this.intervals(type),
-          [l, r] = maxBy(intervals, lange, lange);
-    mutate(intervals, ([k, v]) => `[${lpad(k, l)}, ${lpad(v, r)})`);
-    return wind(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]);
+  statistics({
+    keyType = STR,
+    objectify = true
+  } = {}) {
+    const intervals = this.intervals(keyType);
+
+    if (keyType === STR) {
+      const [l, r] = maxBy(intervals, lange, lange);
+      mutate(intervals, ([k, v]) => `[${lpad(k, l)}, ${lpad(v, r)})`);
+    }
+
+    return objectify ? wind(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]) : wind$1(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]);
   }
 
 }

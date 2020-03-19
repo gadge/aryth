@@ -7,6 +7,7 @@ var lange = require('@spare/lange');
 var padString = require('@spare/pad-string');
 var vectorMapper = require('@vect/vector-mapper');
 var objectInit = require('@vect/object-init');
+var entriesInit = require('@vect/entries-init');
 var entriesIndicator = require('@vect/entries-indicator');
 var boundVector = require('@aryth/bound-vector');
 var niceScale = require('@aryth/nice-scale');
@@ -213,11 +214,18 @@ class Histo {
     return sum;
   }
 
-  statistics(type = enumDataTypes.STR) {
-    const intervals = this.intervals(type),
-          [l, r] = entriesIndicator.maxBy(intervals, lange.lange, lange.lange);
-    vectorMapper.mutate(intervals, ([k, v]) => `[${lpad(k, l)}, ${lpad(v, r)})`);
-    return objectInit.wind(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]);
+  statistics({
+    keyType = enumDataTypes.STR,
+    objectify = true
+  } = {}) {
+    const intervals = this.intervals(keyType);
+
+    if (keyType === enumDataTypes.STR) {
+      const [l, r] = entriesIndicator.maxBy(intervals, lange.lange, lange.lange);
+      vectorMapper.mutate(intervals, ([k, v]) => `[${lpad(k, l)}, ${lpad(v, r)})`);
+    }
+
+    return objectify ? objectInit.wind(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]) : entriesInit.wind(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]);
   }
 
 }
