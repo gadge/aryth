@@ -1,0 +1,38 @@
+{
+  "name": "@aryth/calculator",
+  "version": "0.1.0",
+  "description": "A simple math calculator",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node -r @babel/register test/rank.test.js"
+  },
+  "dependencies": {
+    "@spare/enum-chars": "^0.4.13",
+    "@typen/enum-data-types": "^0.1.0",
+    "@typen/num-strict": "^0.1.0",
+    "@vect/merge-acquire": "^0.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyeungw/aryth.git"
+  },
+  "keywords": [
+    "math",
+    "numeric",
+    "analysis"
+  ],
+  "author": "Hoyeung Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/aryth"
+  },
+  "homepage": "https://github.com/hoyeungw/aryth#readme"
+}
