@@ -2,33 +2,58 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var RankVector = require('@aryth/rank-vector');
-var RankMatrix = require('@aryth/rank-matrix');
-var RankColumn = require('@aryth/rank-column');
-var ComparerCollection = require('@aryth/comparer');
+var comparer = require('@aryth/comparer');
+var rankColumn = require('@aryth/rank-column');
+var rankMatrix = require('@aryth/rank-matrix');
+var rankVector = require('@aryth/rank-vector');
 
-const {
-  NUM_ASC,
-  NUM_DESC,
-  STR_ASC,
-  STR_DESC
-} = ComparerCollection;
-const {
-  rank: rankVector
-} = RankVector;
-const {
-  rank: rankMatrix
-} = RankMatrix;
-const {
-  ColumnRank,
-  MutateRank
-} = RankColumn;
 
-exports.ColumnRank = ColumnRank;
-exports.MutateRank = MutateRank;
-exports.NUM_ASC = NUM_ASC;
-exports.NUM_DESC = NUM_DESC;
-exports.STR_ASC = STR_ASC;
-exports.STR_DESC = STR_DESC;
-exports.rankMatrix = rankMatrix;
-exports.rankVector = rankVector;
+
+Object.defineProperty(exports, 'NUM_ASC', {
+	enumerable: true,
+	get: function () {
+		return comparer.NUM_ASC;
+	}
+});
+Object.defineProperty(exports, 'NUM_DESC', {
+	enumerable: true,
+	get: function () {
+		return comparer.NUM_DESC;
+	}
+});
+Object.defineProperty(exports, 'STR_ASC', {
+	enumerable: true,
+	get: function () {
+		return comparer.STR_ASC;
+	}
+});
+Object.defineProperty(exports, 'STR_DESC', {
+	enumerable: true,
+	get: function () {
+		return comparer.STR_DESC;
+	}
+});
+Object.defineProperty(exports, 'ColumnRank', {
+	enumerable: true,
+	get: function () {
+		return rankColumn.ColumnRank;
+	}
+});
+Object.defineProperty(exports, 'MutateRank', {
+	enumerable: true,
+	get: function () {
+		return rankColumn.MutateRank;
+	}
+});
+Object.defineProperty(exports, 'rankMatrix', {
+	enumerable: true,
+	get: function () {
+		return rankMatrix.rank;
+	}
+});
+Object.defineProperty(exports, 'rankVector', {
+	enumerable: true,
+	get: function () {
+		return rankVector.rank;
+	}
+});

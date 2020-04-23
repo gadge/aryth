@@ -15,10 +15,10 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@spare/enum-chars": "^0.4.15",
+    "@spare/enum-chars": "^0.4.16",
     "@typen/enum-data-types": "^0.1.0",
     "@typen/num-strict": "^0.1.0",
-    "@vect/merge-acquire": "^0.2.0"
+    "@vect/merge-acquire": "^0.2.3"
   },
   "repository": {
     "type": "git",
