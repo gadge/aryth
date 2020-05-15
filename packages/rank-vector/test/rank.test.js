@@ -1,15 +1,22 @@
-import { SimpleVectors } from '@foba/foo'
-import { delogger, logger } from 'xbrief'
-import { rank } from '../src/rank'
-import { NUM_ASC, STR_ASC } from '../../../temp/temp/src'
+import { NUM_DESC, STR_ASC } from '@aryth/comparer'
+import { SimpleVectors }     from '@foba/foo'
+import { says }              from '@palett/says'
+import { DecoMatrix }        from '@spare/logger'
+import { STR }               from '@typen/enum-data-types'
+import { isNumeric }         from '@typen/num-loose'
+import { rank }              from '../src/rank'
 
 export class RankTest {
   static test () {
-    for (const [key, arr] of Object.entries(SimpleVectors)) {
-      key |> logger
-      const comparer = (arr.every(x => typeof x === 'string')) ? STR_ASC : NUM_ASC
-      const ranks = rank(arr, comparer, x => typeof x === 'string')
-      arr.map((x, i) => [x, ranks[i]])|> delogger
+    for (const [key, vec] of Object.entries(SimpleVectors)) {
+      const strRanks = rank(vec, STR_ASC, x => typeof x === STR)
+      const numRanks = rank(vec, NUM_DESC, isNumeric)
+      const matrix = [
+        vec,
+        strRanks,
+        numRanks,
+      ]
+      matrix |> DecoMatrix({ delim: ' | ' }) |> says[key]
     }
   }
 }

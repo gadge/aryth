@@ -9,13 +9,13 @@ export function sort (mx, y, comparer, filter) {
 export function columnRank (mx, comparer, filter) {
   const { y } = this
   const sorted = sort(mx, y, comparer, filter)
-  return ColumnMapper(y)(mx, x => sorted.indexOf(x))
+  return ColumnMapper(y,false)(mx, x => (x = sorted.indexOf(x)) >= 0 ? x : NaN)
 }
 
 export function mutateRank (mx, comparer, filter) {
   const { y } = this
   const sorted = sort(mx, y, comparer, filter)
-  return ColumnMutate(y)(mx, x => sorted.indexOf(x))
+  return ColumnMutate(y)(mx, x => (x = sorted.indexOf(x)) >= 0 ? x : NaN)
 }
 
 export const ColumnRank = (y) => columnRank.bind({ y })
