@@ -7,7 +7,7 @@
  */
 const rank = (ar, comparer, filter) => {
   const sorted = (!filter ? ar.slice() : ar.filter(filter)).sort(comparer);
-  return ar.map(x => sorted.indexOf(x));
+  return ar.map(x => (x = sorted.indexOf(x)) >= 0 ? x : NaN);
 };
 /**
  *

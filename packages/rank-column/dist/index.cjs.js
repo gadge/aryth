@@ -14,14 +14,14 @@ function columnRank(mx, comparer, filter) {
     y
   } = this;
   const sorted = sort(mx, y, comparer, filter);
-  return column.ColumnMapper(y)(mx, x => sorted.indexOf(x));
+  return column.ColumnMapper(y, false)(mx, x => (x = sorted.indexOf(x)) >= 0 ? x : NaN);
 }
 function mutateRank(mx, comparer, filter) {
   const {
     y
   } = this;
   const sorted = sort(mx, y, comparer, filter);
-  return column.ColumnMutate(y)(mx, x => sorted.indexOf(x));
+  return column.ColumnMutate(y)(mx, x => (x = sorted.indexOf(x)) >= 0 ? x : NaN);
 }
 const ColumnRank = y => columnRank.bind({
   y
