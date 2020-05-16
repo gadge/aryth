@@ -1,6 +1,6 @@
 {
   "name": "@aryth/distinct-vector",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/util-distinct": "^0.1.7",
+    "@aryth/util-distinct": "^0.1.8",
     "@vect/vector-mapper": "^0.2.3"
   },
   "repository": {

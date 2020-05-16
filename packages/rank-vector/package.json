@@ -1,6 +1,6 @@
 {
   "name": "@aryth/rank-vector",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,15 +15,15 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/comparer": "^0.1.7",
+    "@aryth/comparer": "^0.1.8",
     "@typen/num-loose": "^0.1.0",
     "@vect/vector-algebra": "^0.2.4",
     "@vect/vector-mapper": "^0.2.4"
   },
   "devDependencies": {
-    "@spare/splitter": "^0.6.7",
     "@spare/regex-phrasing": "^0.6.7",
-    "@spare/ripper": "^0.6.7"
+    "@spare/ripper": "^0.6.7",
+    "@spare/splitter": "^0.6.7"
   },
   "repository": {
     "type": "git",
