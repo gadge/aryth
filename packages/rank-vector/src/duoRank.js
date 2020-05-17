@@ -4,6 +4,15 @@ import { iterate, mapper }    from '@vect/vector-mapper'
 
 const isAlphabetic = x => /[A-Za-z0-9]+/.test(x)
 
+/**
+ *
+ * @param words
+ * @param filter
+ * @param comparer
+ * @param restFilter
+ * @param restComparer
+ * @return {number[]}
+ */
 export const duoRank = (
   words,
   {
@@ -26,7 +35,7 @@ export const duoRank = (
   return mapper(words, x => {
     let i
     if ((i = primSorted.indexOf(x)) >= 0) { return -(i + 1) }
-    if ((i = restSorted.indexOf(x)) >= 0) { return i }
+    if ((i = restSorted.indexOf(x)) >= 0) { return i + 1 }
     return NaN
   })
 }
