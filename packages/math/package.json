@@ -1,6 +1,6 @@
 {
   "name": "@aryth/math",
-  "version": "0.1.4",
+  "version": "0.1.9",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

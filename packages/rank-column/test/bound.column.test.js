@@ -1,8 +1,9 @@
-import { logger } from '@spare/logger'
-import { delogger } from '@spare/deco'
-import { NUM_DESC } from '@aryth/comparer'
-import { ColumnRank } from '../src/ColumnRank'
-import { mapper } from '@vect/matrix-mapper'
+import { says }        from '@palett/says'
+import { decoMatrix, } from '@spare/logger'
+import { deco, }       from '@spare/deco'
+import { NUM_DESC }    from '@aryth/comparer'
+import { ColumnRank }  from '../src/ColumnRank'
+import { mapper }      from '@vect/matrix-mapper'
 
 const paramsList = {
   row: [[5, 7, 9, 10, 6]],
@@ -14,11 +15,10 @@ const paramsList = {
   empty2: [[]],
 }
 
-for
-  (let [key, mx] of Object.entries(paramsList)) {
+for (let [key, mx] of Object.entries(paramsList)) {
   mx = mapper(mx, x => x)
-  key |> logger
-  ColumnRank(0, { isomorph: true, mutate: true })(mx, NUM_DESC) |> delogger
-  ColumnRank(1, { isomorph: true, mutate: true })(mx, NUM_DESC) |> delogger
-  ColumnRank(2, { isomorph: true, mutate: true })(mx, NUM_DESC) |> delogger
+  mx |> decoMatrix |> says[key]
+  ColumnRank(0, { isomorph: true, mutate: true })(mx, NUM_DESC) |> deco |> says[key].br('col 0')
+  ColumnRank(1, { isomorph: true, mutate: true })(mx, NUM_DESC) |> deco |> says[key].br('col 1')
+  ColumnRank(2, { isomorph: true, mutate: true })(mx, NUM_DESC) |> deco |> says[key].br('col 2')
 }

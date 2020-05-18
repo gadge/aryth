@@ -16,7 +16,7 @@ const rank = (mx, comparer, filter) => {
   let flat = mx.flat(1);
   if (filter) flat = flat.filter(filter);
   flat = flat.sort(comparer);
-  return matrixMapper.mapper(mx, x => flat.indexOf(x));
+  return matrixMapper.mapper(mx, x => (x = flat.indexOf(x)) >= 0 ? x : NaN);
 };
 
 exports.rank = rank;
