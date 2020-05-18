@@ -37,6 +37,7 @@
     "@spare/deco-string": "^0.4.17",
     "@spare/logger": "^0.4.17",
     "@spare/xr": "^0.4.16",
+    "@typen/enum-data-types": "^0.1.0",
     "@valjoux/strategies": "^0.1.0",
     "@vect/merge-acquire": "^0.2.3",
     "@vect/object-mapper": "^0.2.3",
