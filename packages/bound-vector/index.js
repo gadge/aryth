@@ -1,1 +1,1 @@
-export { bound } from './src/bound'
+export { bound, leap } from './src/bound'

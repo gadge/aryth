@@ -10,7 +10,8 @@ import { iterate, mapper } from '@vect/vector-mapper';
  * @return {number[]} Rank order array, where 0 denote the first.
  */
 const rank = (ar, comparer, filter) => {
-  const sorted = (!filter ? ar.slice() : ar.filter(filter)).sort(comparer);
+  const sorted = (!filter ? ar.slice() : ar.filter(filter)).sort(comparer); // return ar.map(x => (x=sorted.indexOf(x)>=0)?x:NaN)
+
   return ar.map(x => (x = sorted.indexOf(x)) >= 0 ? x : NaN);
 };
 /**

@@ -1,22 +1,30 @@
-import { BoundOutput, ToNum, NUM_LEVEL_NONE } from '@aryth/util-bound'
-import { iniNumEntry } from '../utils/iniNumEntry'
-import { size } from '@vect/matrix-size'
-import { bound as boundVec } from '@aryth/bound-vector'
+import { bound as boundVector } from '@aryth/bound-vector'
+import { boundOutput, ToNum }   from '@aryth/util-bound'
+import { LOOSE }                from '@typen/enum-check-levels'
+import { size }                 from '@vect/matrix-size'
+import { iniNumEntry }          from '../utils/iniNumEntry'
 
 /**
  *
  * @param {*[]} mx
- * @param {boolean} [dif=false]
- * @param {number} [level=0]
  * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
-export function bound (mx, { dif = false, level = NUM_LEVEL_NONE } = {}) {
-  const bo = BoundOutput(dif), toNum = ToNum(level)
+export function bound (mx) {
+  /** @type {{dif: boolean, level: number}} */ const config = this || { dif: false, level: LOOSE }
+  const embedLevel = { level: config.level }
+  const toOutput = boundOutput.bind(config), toNum = ToNum(config.level)
   let [h, w] = size(mx)
-  if (!h || !w) return bo(NaN, NaN)
-  let [i, , el] = iniNumEntry(mx, 0, h, 0, w, { level })
-  let max, min = max = toNum(el), maxR, minR
-  for (--h; h >= i && ({ max: maxR, min: minR } = boundVec(mx[h], { level })); h--)
-    if (minR < min) { min = minR } else if (maxR > max) { max = maxR }
-  return bo(max, min)
+  if (!h || !w) return toOutput(NaN, NaN)
+  let [i, , el] = iniNumEntry(mx, 0, h, 0, w, config)
+  let max, min = max = toNum(el), rowMax, rowMin
+  for (--h; h >= i && ({ max: rowMax, min: rowMin } = boundVector.call(embedLevel, mx[h])); h--)
+    if (rowMin < min) { min = rowMin }
+    else if (rowMax > max) { max = rowMax }
+  return toOutput(max, min)
+}
+
+export function leap (mx) {
+  /** @type {{dif: boolean, level: number}} */ const config = this || { level: LOOSE }
+  config.dif = true
+  return bound.call(config, mx)
 }

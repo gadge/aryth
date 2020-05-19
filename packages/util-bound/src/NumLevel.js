@@ -1,6 +1,8 @@
-export const NUM_LEVEL_NONE = 0
-export const NUM_LEVEL_LOOSE = 1
-export const NUM_LEVEL_STRICT = 2
+import { LOOSE, NONE, STRICT } from '@typen/enum-check-levels'
+
+export const NUM_LEVEL_NONE = NONE
+export const NUM_LEVEL_LOOSE = LOOSE
+export const NUM_LEVEL_STRICT = STRICT
 
 export const NumLevel = {
   none: NUM_LEVEL_NONE,

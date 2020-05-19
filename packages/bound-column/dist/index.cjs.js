@@ -2,6 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var enumCheckLevels = require('@typen/enum-check-levels');
 var utilBound = require('@aryth/util-bound');
 var matrixSize = require('@vect/matrix-size');
 
@@ -13,20 +14,20 @@ const iniNumEntry = (mx, t, b, c, {
   return [b, NaN];
 };
 
-function columnBound(mx, {
-  dif = false,
-  level = utilBound.NUM_LEVEL_NONE
-} = {}) {
+function columnBound(mx) {
+  /** @type {{dif: boolean, level: number}} */
+  const config = this || {
+    dif: false,
+    level: enumCheckLevels.LOOSE
+  };
   const {
     y
   } = this;
-  const bo = utilBound.BoundOutput(dif),
-        toNum = utilBound.ToNum(level);
+  const toOutput = utilBound.boundOutput.bind(config),
+        toNum = utilBound.ToNum(config.level);
   let [h, w] = matrixSize.size(mx);
-  if (!h || !w || y >= w) return bo(NaN, NaN);
-  let [i, x] = iniNumEntry(mx, 0, h, y, {
-    level
-  }),
+  if (!h || !w || y >= w) return toOutput(NaN, NaN);
+  let [i, x] = iniNumEntry(mx, 0, h, y, config),
       max,
       min = max = toNum(x);
 
@@ -36,30 +37,28 @@ function columnBound(mx, {
     max = x;
   }
 
-  return bo(max, min);
+  return toOutput(max, min);
 }
-const ColumnBound = y => columnBound.bind({
-  y
+const ColumnBound = (y, level = enumCheckLevels.LOOSE) => columnBound.bind({
+  y,
+  level
 });
 
 /**
  *
  * @param {*[]} mx
  * @param {number} y
- * @param {boolean} [dif=false]
- * @param {number} [level=0] - level: 0, none; 1, loose; 2, strict
  * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
 
-const bound = (mx, y, {
-  dif = false,
-  level = utilBound.NUM_LEVEL_NONE
-} = {}) => columnBound.call({
-  y
-}, mx, {
-  dif,
-  level
-});
+const bound = function (mx, y) {
+  /** @type {{dif: boolean, level: number, y:number}} */
+  const config = this || {
+    level: enumCheckLevels.LOOSE
+  };
+  config.y = y;
+  return columnBound.call(config, mx);
+};
 
 exports.ColumnBound = ColumnBound;
 exports.bound = bound;

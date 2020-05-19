@@ -1,40 +1,28 @@
-import { Num, NumLoose } from 'typen';
+import { NONE, LOOSE, STRICT } from '@typen/enum-check-levels';
+import { isNumeric, parseNum } from '@typen/num-loose';
+import { isNumeric as isNumeric$1, parseNum as parseNum$1 } from '@typen/num-strict';
 
-const NUM_LEVEL_NONE = 0;
-const NUM_LEVEL_LOOSE = 1;
-const NUM_LEVEL_STRICT = 2;
+const NUM_LEVEL_NONE = NONE;
+const NUM_LEVEL_LOOSE = LOOSE;
+const NUM_LEVEL_STRICT = STRICT;
 const NumLevel = {
   none: NUM_LEVEL_NONE,
   loose: NUM_LEVEL_LOOSE,
   strict: NUM_LEVEL_STRICT
 };
 
-const IsNum = (level = 0) => {
-  switch (level) {
-    case 0:
-      return x => !isNaN(x);
-
-    case 1:
-      return NumLoose.isNumeric;
-
-    case 2:
-    default:
-      return Num.isNumeric;
-  }
+const IsNum = (level = NONE) => {
+  if (level === NONE) return x => !isNaN(x);
+  if (level === LOOSE) return isNumeric;
+  if (level === STRICT) return isNumeric$1;
+  return isNumeric$1;
 };
 
 const ToNum = (level = 0) => {
-  switch (level) {
-    case 0:
-      return x => x;
-
-    case 1:
-      return NumLoose.numeric;
-
-    case 2:
-    default:
-      return Num.numeric;
-  }
+  if (level === NONE) return x => x;
+  if (level === LOOSE) return parseNum;
+  if (level === STRICT) return parseNum$1;
+  return parseNum$1;
 };
 
 function boundOutput(max, min) {
@@ -53,4 +41,4 @@ const BoundOutput = dif => boundOutput.bind({
   dif
 });
 
-export { BoundOutput, IsNum, NUM_LEVEL_LOOSE, NUM_LEVEL_NONE, NUM_LEVEL_STRICT, NumLevel, ToNum };
+export { BoundOutput, IsNum, NUM_LEVEL_LOOSE, NUM_LEVEL_NONE, NUM_LEVEL_STRICT, NumLevel, ToNum, boundOutput };

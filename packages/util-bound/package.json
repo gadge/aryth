@@ -15,7 +15,10 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "typen": "^0.2.0"
+    "typen": "^0.2.0",
+    "@typen/enum-check-levels": "^0.1.1",
+    "@typen/num-strict": "^0.1.1",
+    "@typen/num-loose": "^0.1.1"
   },
   "repository": {
     "type": "git",

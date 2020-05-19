@@ -1,13 +1,10 @@
-import { Num, NumLoose } from 'typen'
+import { LOOSE, NONE, STRICT }        from '@typen/enum-check-levels'
+import { parseNum as parseNumLoose }  from '@typen/num-loose'
+import { parseNum as parseNumStrict } from '@typen/num-strict'
 
 export const ToNum = (level = 0) => {
-  switch (level) {
-    case 0:
-      return x => x
-    case 1:
-      return NumLoose.numeric
-    case 2:
-    default:
-      return Num.numeric
-  }
+  if (level === NONE) return x => x
+  if (level === LOOSE) return parseNumLoose
+  if (level === STRICT) return parseNumStrict
+  return parseNumStrict
 }

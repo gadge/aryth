@@ -1,4 +1,5 @@
-import { IsNum, NUM_LEVEL_NONE, BoundOutput, ToNum } from '@aryth/util-bound';
+import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
+import { LOOSE } from '@typen/enum-check-levels';
 
 const iniNumEntry = (ar, lo, hi, {
   level = 0
@@ -10,37 +11,43 @@ const iniNumEntry = (ar, lo, hi, {
 
 /**
  *
- * @param {*[]} arr
- * @param {boolean} [dif=false]
- * @param {number} [level=0] 0:no check, 1:loose, 2:strict
+ * @param {*[]} vec
  * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
 
-function bound(arr, {
-  dif = false,
-  level = NUM_LEVEL_NONE
-} = {}) {
-  const bo = BoundOutput(dif),
-        toNum = ToNum(level);
-  let l = arr && arr.length;
-  if (!l) return bo(NaN, NaN);
-  let [i, x] = iniNumEntry(arr, 0, l, {
-    level
-  });
+function bound(vec) {
+  /** @type {{dif: boolean, level: number}} */
+  const config = this || {
+    dif: false,
+    level: LOOSE
+  };
+  const toOutput = boundOutput.bind(config),
+        toNum = ToNum(config.level);
+  let l = vec === null || vec === void 0 ? void 0 : vec.length;
+  if (!l) return toOutput(NaN, NaN);
+  let [i, x] = iniNumEntry(vec, 0, l, config);
   let min,
       max = min = toNum(x);
 
   for (++i; i < l; i++) {
-    var _arr$i;
+    var _vec$i;
 
-    if ((x = (_arr$i = arr[i], toNum(_arr$i))) < min) {
+    if ((x = (_vec$i = vec[i], toNum(_vec$i))) < min) {
       min = x;
     } else if (x > max) {
       max = x;
     }
   }
 
-  return bo(max, min);
+  return toOutput(max, min);
+}
+function leap(vec) {
+  /** @type {{dif: boolean, level: number}} */
+  const config = this || {
+    level: LOOSE
+  };
+  config.dif = true;
+  return bound.call(config, vec);
 }
 
-export { bound };
+export { bound, leap };

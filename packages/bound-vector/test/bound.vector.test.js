@@ -1,6 +1,6 @@
-import { logger } from '@spare/logger'
-import { delogger } from '@spare/deco'
-import { NUM_LEVEL_LOOSE, NUM_LEVEL_STRICT } from '@aryth/util-bound'
+import { says }  from '@palett/says'
+import { deco }  from '@spare/deco'
+import { LOOSE } from '@typen/enum-check-levels'
 import { bound } from '../src/bound'
 
 const paramsList = {
@@ -14,6 +14,5 @@ const paramsList = {
 }
 
 for (const [key, arr] of Object.entries(paramsList)) {
-  key |> logger
-  bound(arr, { dif: true, level: NUM_LEVEL_LOOSE }) |> delogger
+  bound.call({ dif: true, level: LOOSE }, arr) |> deco |> says[key]
 }

@@ -1,4 +1,5 @@
-import { IsNum, NUM_LEVEL_NONE, BoundOutput, ToNum } from '@aryth/util-bound';
+import { LOOSE } from '@typen/enum-check-levels';
+import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { size } from '@vect/matrix-size';
 
 const iniNumEntry = (mx, t, b, c, {
@@ -9,20 +10,20 @@ const iniNumEntry = (mx, t, b, c, {
   return [b, NaN];
 };
 
-function columnBound(mx, {
-  dif = false,
-  level = NUM_LEVEL_NONE
-} = {}) {
+function columnBound(mx) {
+  /** @type {{dif: boolean, level: number}} */
+  const config = this || {
+    dif: false,
+    level: LOOSE
+  };
   const {
     y
   } = this;
-  const bo = BoundOutput(dif),
-        toNum = ToNum(level);
+  const toOutput = boundOutput.bind(config),
+        toNum = ToNum(config.level);
   let [h, w] = size(mx);
-  if (!h || !w || y >= w) return bo(NaN, NaN);
-  let [i, x] = iniNumEntry(mx, 0, h, y, {
-    level
-  }),
+  if (!h || !w || y >= w) return toOutput(NaN, NaN);
+  let [i, x] = iniNumEntry(mx, 0, h, y, config),
       max,
       min = max = toNum(x);
 
@@ -32,29 +33,27 @@ function columnBound(mx, {
     max = x;
   }
 
-  return bo(max, min);
+  return toOutput(max, min);
 }
-const ColumnBound = y => columnBound.bind({
-  y
+const ColumnBound = (y, level = LOOSE) => columnBound.bind({
+  y,
+  level
 });
 
 /**
  *
  * @param {*[]} mx
  * @param {number} y
- * @param {boolean} [dif=false]
- * @param {number} [level=0] - level: 0, none; 1, loose; 2, strict
  * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
 
-const bound = (mx, y, {
-  dif = false,
-  level = NUM_LEVEL_NONE
-} = {}) => columnBound.call({
-  y
-}, mx, {
-  dif,
-  level
-});
+const bound = function (mx, y) {
+  /** @type {{dif: boolean, level: number, y:number}} */
+  const config = this || {
+    level: LOOSE
+  };
+  config.y = y;
+  return columnBound.call(config, mx);
+};
 
 export { ColumnBound, bound };

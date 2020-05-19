@@ -1,7 +1,7 @@
-import { logger } from '@spare/logger'
 import { delogger } from '@spare/deco'
-import { NUM_LEVEL_LOOSE, NUM_LEVEL_STRICT } from '@aryth/util-bound'
-import { bound } from '../src/bound'
+import { logger }   from '@spare/logger'
+import { LOOSE }    from '@typen/enum-check-levels'
+import { leap }     from '../src/bound'
 
 const paramsList = {
   row: [[5, 7, 9, 10, 6]],
@@ -16,5 +16,5 @@ const paramsList = {
 for
   (const [key, mx] of Object.entries(paramsList)) {
   key |> logger
-  bound(mx, 0, { dif: false, level: NUM_LEVEL_LOOSE }) |> delogger
+  leap.call({ level: LOOSE }, mx, 0) |> delogger
 }

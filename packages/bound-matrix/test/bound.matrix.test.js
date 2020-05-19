@@ -1,7 +1,7 @@
-import { logger } from '@spare/logger'
-import { delogger } from '@spare/deco'
-import { NUM_LEVEL_LOOSE, NUM_LEVEL_STRICT } from '@aryth/util-bound'
-import { bound } from '../src/bound'
+import { says }   from '@palett/says'
+import { deco }   from '@spare/deco'
+import { STRICT } from '@typen/enum-check-levels'
+import { bound }  from '../src/bound'
 
 const paramsList = {
   row: [[5, 7, 9, 10, 6]],
@@ -13,8 +13,6 @@ const paramsList = {
   empty2: [[]],
 }
 
-for
-  (const [key, mx] of Object.entries(paramsList)) {
-  key |> logger
-  bound(mx, { dif: true, level: NUM_LEVEL_LOOSE }) |> delogger
+for (const [key, mx] of Object.entries(paramsList)) {
+  bound.call({ level: STRICT }, mx) |> deco|> says[key]
 }

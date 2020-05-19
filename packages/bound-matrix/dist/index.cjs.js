@@ -2,9 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var utilBound = require('@aryth/util-bound');
-var matrixSize = require('@vect/matrix-size');
 var boundVector = require('@aryth/bound-vector');
+var utilBound = require('@aryth/util-bound');
+var enumCheckLevels = require('@typen/enum-check-levels');
+var matrixSize = require('@vect/matrix-size');
 
 const iniNumEntry = (mx, t, b, l, r, {
   level = 0
@@ -17,39 +18,47 @@ const iniNumEntry = (mx, t, b, l, r, {
 /**
  *
  * @param {*[]} mx
- * @param {boolean} [dif=false]
- * @param {number} [level=0]
  * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
 
-function bound(mx, {
-  dif = false,
-  level = utilBound.NUM_LEVEL_NONE
-} = {}) {
-  const bo = utilBound.BoundOutput(dif),
-        toNum = utilBound.ToNum(level);
+function bound(mx) {
+  /** @type {{dif: boolean, level: number}} */
+  const config = this || {
+    dif: false,
+    level: enumCheckLevels.LOOSE
+  };
+  const embedLevel = {
+    level: config.level
+  };
+  const toOutput = utilBound.boundOutput.bind(config),
+        toNum = utilBound.ToNum(config.level);
   let [h, w] = matrixSize.size(mx);
-  if (!h || !w) return bo(NaN, NaN);
-  let [i,, el] = iniNumEntry(mx, 0, h, 0, w, {
-    level
-  });
+  if (!h || !w) return toOutput(NaN, NaN);
+  let [i,, el] = iniNumEntry(mx, 0, h, 0, w, config);
   let max,
       min = max = toNum(el),
-      maxR,
-      minR;
+      rowMax,
+      rowMin;
 
   for (--h; h >= i && ({
-    max: maxR,
-    min: minR
-  } = boundVector.bound(mx[h], {
-    level
-  })); h--) if (minR < min) {
-    min = minR;
-  } else if (maxR > max) {
-    max = maxR;
+    max: rowMax,
+    min: rowMin
+  } = boundVector.bound.call(embedLevel, mx[h])); h--) if (rowMin < min) {
+    min = rowMin;
+  } else if (rowMax > max) {
+    max = rowMax;
   }
 
-  return bo(max, min);
+  return toOutput(max, min);
+}
+function leap(mx) {
+  /** @type {{dif: boolean, level: number}} */
+  const config = this || {
+    level: enumCheckLevels.LOOSE
+  };
+  config.dif = true;
+  return bound.call(config, mx);
 }
 
 exports.bound = bound;
+exports.leap = leap;

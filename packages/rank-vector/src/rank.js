@@ -7,12 +7,8 @@
  */
 export const rank = (ar, comparer, filter) => {
   const sorted = (!filter ? ar.slice() : ar.filter(filter)).sort(comparer)
-<<<<<<< HEAD
-  return ar.map(x => sorted.indexOf(x))
   // return ar.map(x => (x=sorted.indexOf(x)>=0)?x:NaN)
-=======
   return ar.map(x => (x = sorted.indexOf(x)) >= 0 ? x : NaN)
->>>>>>> refs/remotes/origin/master
 }
 
 /**

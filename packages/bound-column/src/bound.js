@@ -1,14 +1,21 @@
-import { NUM_LEVEL_NONE } from '@aryth/util-bound'
+import { LOOSE }       from '@typen/enum-check-levels'
 import { columnBound } from './ColumnBound'
 
 /**
  *
  * @param {*[]} mx
  * @param {number} y
- * @param {boolean} [dif=false]
- * @param {number} [level=0] - level: 0, none; 1, loose; 2, strict
  * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
-export const bound =
-  (mx, y, { dif = false, level = NUM_LEVEL_NONE } = {}) =>
-    columnBound.call({ y }, mx, { dif, level })
+export const bound = function (mx, y) {
+  /** @type {{dif: boolean, level: number, y:number}} */ const config = this || { level: LOOSE }
+  config.y = y
+  return columnBound.call(config, mx)
+}
+
+export const leap = function (mx, y) {
+  /** @type {{dif: boolean, level: number, y:number}} */ const config = this || { level: LOOSE }
+  config.dif = true
+  config.y = y
+  return columnBound.call(config, mx, y)
+}
