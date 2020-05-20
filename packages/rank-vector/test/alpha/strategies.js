@@ -5,9 +5,9 @@ import { decoCrostab }        from '@spare/logger'
 import { ripper }             from '@spare/ripper'
 import { isNumeric }          from '@typen/num-loose'
 import { strategies }         from '@valjoux/strategies'
-import { difference }         from '@vect/vector-algebra'
-import { duoRank }            from '../../src/duoRank'
-import { LITERAL }            from '@spare/regex-phrasing'
+import { difference } from '@vect/vector-algebra'
+import { duorank }    from '../../src/duoRank'
+import { LITERAL }    from '@spare/regex-phrasing'
 import { rank }               from '../../src/rank'
 import { candidates }         from './candidates'
 
@@ -42,7 +42,7 @@ const { lapse, result } = strategies({
   methods: {
     bench: phrase => rip(phrase,),
     classic: phrase => duoRankClassic(rip(phrase,), config),
-    duoRank: phrase => duoRank(rip(phrase)),
+    duoRank: phrase => duorank(rip(phrase)),
     numRank: phrase => rank(rip(phrase,), NUM_DESC, isNumeric),
     strRank: phrase => rank(rip(phrase,), STR_DESC, isAlphabetic)
   }

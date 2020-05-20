@@ -3,6 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var comparer = require('@aryth/comparer');
+var literal = require('@typen/literal');
 var numLoose = require('@typen/num-loose');
 var vectorMapper = require('@vect/vector-mapper');
 
@@ -33,22 +34,20 @@ const reorderBy = (ar, ranks) => {
   return ve;
 };
 
-const isAlphabetic = x => /[A-Za-z0-9]+/.test(x);
 /**
  *
  * @param words
- * @param {Object} x
- * @param {Object} y
+ * @param {Object|Function} x
+ * @param {Object|Function} y
  * @return {number[]}
  */
 
-
-const duoRank = (words, x = {
+const duorank = (words, x = {
   filter: numLoose.isNumeric,
-  comparer: comparer.NUM_DESC
+  comparer: comparer.NUM_ASC
 }, y = {
-  filter: isAlphabetic,
-  comparer: comparer.STR_DESC
+  filter: literal.isLiteral,
+  comparer: comparer.STR_ASC
 }) => {
   const primVec = [],
         restVec = [];
@@ -73,6 +72,7 @@ const duoRank = (words, x = {
   });
 };
 
-exports.duoRank = duoRank;
+exports.duoRank = duorank;
+exports.duorank = duorank;
 exports.rank = rank;
 exports.reorderBy = reorderBy;

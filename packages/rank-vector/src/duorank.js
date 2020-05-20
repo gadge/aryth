@@ -1,20 +1,19 @@
-import { NUM_DESC, STR_DESC } from '@aryth/comparer'
-import { isNumeric }          from '@typen/num-loose'
-import { iterate, mapper }    from '@vect/vector-mapper'
-
-const isAlphabetic = x => /[A-Za-z0-9]+/.test(x)
+import { NUM_ASC, STR_ASC } from '@aryth/comparer'
+import { isLiteral }        from '@typen/literal'
+import { isNumeric }        from '@typen/num-loose'
+import { iterate, mapper }  from '@vect/vector-mapper'
 
 /**
  *
  * @param words
- * @param {Object} x
- * @param {Object} y
+ * @param {Object|Function} x
+ * @param {Object|Function} y
  * @return {number[]}
  */
-export const duoRank = (
+export const duorank = (
   words,
-  x = { filter: isNumeric, comparer: NUM_DESC, },
-  y = { filter: isAlphabetic, comparer: STR_DESC }
+  x = { filter: isNumeric, comparer: NUM_ASC },
+  y = { filter: isLiteral, comparer: STR_ASC }
 ) => {
   const primVec = [], restVec = []
   iterate(words, v => {

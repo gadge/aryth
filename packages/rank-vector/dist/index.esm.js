@@ -1,4 +1,5 @@
-import { NUM_DESC, STR_DESC } from '@aryth/comparer';
+import { NUM_ASC, STR_ASC } from '@aryth/comparer';
+import { isLiteral } from '@typen/literal';
 import { isNumeric } from '@typen/num-loose';
 import { iterate, mapper } from '@vect/vector-mapper';
 
@@ -29,22 +30,20 @@ const reorderBy = (ar, ranks) => {
   return ve;
 };
 
-const isAlphabetic = x => /[A-Za-z0-9]+/.test(x);
 /**
  *
  * @param words
- * @param {Object} x
- * @param {Object} y
+ * @param {Object|Function} x
+ * @param {Object|Function} y
  * @return {number[]}
  */
 
-
-const duoRank = (words, x = {
+const duorank = (words, x = {
   filter: isNumeric,
-  comparer: NUM_DESC
+  comparer: NUM_ASC
 }, y = {
-  filter: isAlphabetic,
-  comparer: STR_DESC
+  filter: isLiteral,
+  comparer: STR_ASC
 }) => {
   const primVec = [],
         restVec = [];
@@ -69,4 +68,4 @@ const duoRank = (words, x = {
   });
 };
 
-export { duoRank, rank, reorderBy };
+export { duorank as duoRank, duorank, rank, reorderBy };
