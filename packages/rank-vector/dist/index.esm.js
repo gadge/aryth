@@ -33,38 +33,36 @@ const isAlphabetic = x => /[A-Za-z0-9]+/.test(x);
 /**
  *
  * @param words
- * @param filter
- * @param comparer
- * @param restFilter
- * @param restComparer
+ * @param {Object} x
+ * @param {Object} y
  * @return {number[]}
  */
 
 
-const duoRank = (words, {
-  filter = isNumeric,
-  comparer = NUM_DESC
-} = {}, {
-  filter: restFilter = isAlphabetic,
-  comparer: restComparer = STR_DESC
-} = {}) => {
+const duoRank = (words, x = {
+  filter: isNumeric,
+  comparer: NUM_DESC
+}, y = {
+  filter: isAlphabetic,
+  comparer: STR_DESC
+}) => {
   const primVec = [],
         restVec = [];
-  iterate(words, x => {
-    if (filter(x)) return void primVec.push(x);
-    if (restFilter(x)) return void restVec.push(x);
+  iterate(words, v => {
+    if (x.filter(v)) return void primVec.push(v);
+    if (y.filter(v)) return void restVec.push(v);
   });
-  const primSorted = primVec.sort(comparer),
-        restSorted = restVec.sort(restComparer);
+  const primSorted = primVec.sort(x.comparer),
+        restSorted = restVec.sort(y.comparer);
   return mapper(words, x => {
     let i;
 
     if ((i = primSorted.indexOf(x)) >= 0) {
-      return -(i + 1);
+      return i + 1;
     }
 
     if ((i = restSorted.indexOf(x)) >= 0) {
-      return i + 1;
+      return -(i + 1);
     }
 
     return NaN;
