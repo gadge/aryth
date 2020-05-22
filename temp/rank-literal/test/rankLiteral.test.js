@@ -4,8 +4,8 @@ import { says }             from '@palett/says'
 import { DecoMatrix }       from '@spare/logger'
 import { isLiteral }        from '@typen/literal'
 import { isNumeric }        from '@typen/num-loose'
-import { rankLiteral }      from '../src/rankLiteral'
-import { VectorCollection } from './alpha/candidates'
+import { boundLiteral }     from '@aryth/bound-vector/boundLiteral/src/boundLiteral'
+import { VectorCollection } from '@aryth/bound-vector/boundLiteral/candidates'
 
 const test = () => {
   for (const [key, vec] of Object.entries(VectorCollection)) {

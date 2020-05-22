@@ -4,6 +4,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
+var literal = require('@typen/literal');
+var numLoose = require('@typen/num-loose');
+var vectorMapper = require('@vect/vector-mapper');
 
 const iniNumEntry = (ar, lo, hi, {
   level = 0
@@ -53,5 +56,85 @@ function leap(vec) {
   return bound.call(config, vec);
 }
 
+const stringValue = word => {
+  let l = word === null || word === void 0 ? void 0 : word.length;
+
+  if (!l) {
+    return NaN;
+  }
+
+  if (l >= 4) {
+    return ((word.charCodeAt(0) & 0x7f) << 21) + ((word.charCodeAt(1) & 0x7f) << 14) + ((word.charCodeAt(2) & 0x7f) << 7) + (word.charCodeAt(3) & 0x7f);
+  }
+
+  if (l === 3) {
+    return ((word.charCodeAt(0) & 0x7f) << 21) + (word.charCodeAt(1) & 0x7f) << 14 + ((word.charCodeAt(2) & 0x7f) << 7);
+  }
+
+  if (l === 2) {
+    return ((word.charCodeAt(0) & 0x7f) << 21) + (word.charCodeAt(1) & 0x7f) << 14;
+  }
+
+  if (l === 1) {
+    return (word.charCodeAt(0) & 0x7f) << 21;
+  }
+};
+
+const oneself = x => x;
+const duobound = (words, x = {
+  filter: numLoose.isNumeric,
+  mapper: oneself
+}, y = {
+  filter: literal.isLiteral,
+  mapper: stringValue
+}) => {
+  const l = words === null || words === void 0 ? void 0 : words.length;
+  let vecX = undefined,
+      vecY = undefined;
+  const {
+    filter: filterX,
+    mapper: mapperX
+  } = x;
+  const {
+    filter: filterY,
+    mapper: mapperY
+  } = y;
+  vectorMapper.iterate(words, (v, i) => {
+    var _vecX, _vecY;
+
+    if (filterX(v) && ((_vecX = vecX) !== null && _vecX !== void 0 ? _vecX : vecX = Array(l))) {
+      var _vecX$max;
+
+      v = mapperX(v);
+
+      if (v > ((_vecX$max = vecX.max) !== null && _vecX$max !== void 0 ? _vecX$max : vecX.max = vecX.min = v)) {
+        vecX.max = v;
+      } else if (v < vecX.min) {
+        vecX.min = v;
+      }
+
+      return vecX[i] = v;
+    }
+
+    if (filterY(v) && ((_vecY = vecY) !== null && _vecY !== void 0 ? _vecY : vecY = Array(l))) {
+      var _vecY$max;
+
+      v = mapperY(v);
+
+      if (v > ((_vecY$max = vecY.max) !== null && _vecY$max !== void 0 ? _vecY$max : vecY.max = vecY.min = v)) {
+        vecY.max = v;
+      } else if (v < vecY.min) {
+        vecY.min = v;
+      }
+
+      return vecY[i] = v;
+    }
+
+    return NaN;
+  }, l);
+  return [vecX, vecY];
+};
+
 exports.bound = bound;
+exports.duobound = duobound;
 exports.leap = leap;

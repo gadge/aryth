@@ -1,13 +1,13 @@
 import { isLiteral }   from '@typen/literal'
 import { isNumeric }   from '@typen/num-loose'
 import { iterate }     from '@vect/vector-mapper'
-import { stringValue } from './stringValue'
+import { stringValue } from '../stringValue'
 
 export class BoundFactory {
   static build () { return { max: undefined, min: undefined, list: undefined } }
 }
 
-export const boundLiteral = (
+export const boundLiteralRea = (
   words,
   x = { filter: isNumeric },
   y = { filter: isLiteral }

@@ -2,7 +2,7 @@ import { STR_ASC }     from '@aryth/comparer'
 import { isLiteral }   from '@typen/literal'
 import { isNumeric }   from '@typen/num-loose'
 import { mapper }      from '@vect/vector-mapper'
-import { stringValue } from '../../../src/stringValue'
+import { stringValue } from '../stringValue'
 
 export const rankLiteralFut = (
   words,
@@ -13,14 +13,12 @@ export const rankLiteralFut = (
   let ya, yb
   words = mapper(words, v => {
     if (confNum.filter(v)) {
-      if (v >= (xa ?? v)) { xa = v }
-      else if (v <= (xb ?? v)) { xb = v }
+      if (v >= (xa ?? v)) { xa = v } else if (v <= (xb ?? v)) { xb = v }
       return v
     }
     if (confStr.filter(v)) {
-      if ((v = stringValue(v)) >= (ya ?? v)) { ya = v }
-      else if (v <= (yb ?? v)) { yb = v }
-      return v//String(v)
+      if ((v = stringValue(v)) >= (ya ?? v)) { ya = v } else if (v <= (yb ?? v)) { yb = v }
+      return v //String(v)
     }
     return NaN
   })

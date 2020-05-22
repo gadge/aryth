@@ -3,8 +3,10 @@ import { makeEmbedded }     from '@foba/util'
 import { says }             from '@palett/says'
 import { decoCrostab }      from '@spare/logger'
 import { strategies }       from '@valjoux/strategies'
-import { boundLiteral }     from '../../src/rankLiteral'
 import { VectorCollection } from './candidates'
+import { boundLiteralArc }  from './src/boundLiteralArc'
+import { boundLiteralRea }  from './src/boundLiteralRea'
+import { boundLiteralSep }  from './src/boundLiteralSep'
 import { rankLiteralBig }   from './src/rankLiteralBig'
 import { rankLiteralBuf }   from './src/rankLiteralBuf'
 import { rankLiteralCla }   from './src/rankLiteralCla'
@@ -16,7 +18,9 @@ const { lapse, result } = strategies({
   candidates: VectorCollection |> makeEmbedded,
   methods: {
     bench: x => x,
-    arc: boundLiteral,
+    rea: boundLiteralRea,
+    arc: boundLiteralArc,
+    sep: boundLiteralSep,
     big: rankLiteralBig,
     buf: rankLiteralBuf,
     cla: rankLiteralCla,
