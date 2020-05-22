@@ -5,7 +5,6 @@ import { iniNumEntry }        from '../utils/iniNumEntry'
 /**
  *
  * @param {*[]} vec
- * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
 export function bound (vec) {
   /** @type {{dif: boolean, level: number}} */ const config = this || { dif: false, level: LOOSE }
@@ -18,6 +17,7 @@ export function bound (vec) {
     if ((x = vec[i] |> toNum) < min) { min = x }
     else if (x > max) { max = x }
   return toOutput(max, min)
+  // @returns {{min:number, max:number}|{min:number, dif:number}}
 }
 
 export function leap (vec) {

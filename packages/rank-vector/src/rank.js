@@ -1,15 +1,18 @@
 /**
  *
- * @param {*[]} ar
- * @param {function(*,*):number} comparer Compare 'prev' & 'next' element in an array. If return < 0, 'prev' comes first. If return > 0, 'next' comes first.
+ * @param {*[]} vec
+ * @param {function(*,*):number} [comparer] Compare 'prev' & 'next' element in an array. If return < 0, 'prev' comes first. If return > 0, 'next' comes first.
  * @param {function(*):boolean} [filter]
  * @return {number[]} Rank order array, where 0 denote the first.
  */
-export const rank = (ar, comparer, filter) => {
-  const sorted = (!filter ? ar.slice() : ar.filter(filter)).sort(comparer)
-  // return ar.map(x => (x=sorted.indexOf(x)>=0)?x:NaN)
-  return ar.map(x => (x = sorted.indexOf(x)) >= 0 ? x : NaN)
+export const rank = function (vec, comparer, filter) {
+  comparer = this?.comparer ?? comparer
+  filter = this?.filter ?? filter
+  const sorted = (!filter ? vec.slice() : vec.filter(filter)).sort(comparer)
+  return vec.map(x => (x = sorted.indexOf(x)) >= 0 ? x : NaN)
 }
+
+export const Rank = (comparer, filter) => rank.bind({ comparer, filter })
 
 /**
  *

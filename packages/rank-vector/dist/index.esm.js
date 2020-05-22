@@ -5,16 +5,23 @@ import { iterate, mapper } from '@vect/vector-mapper';
 
 /**
  *
- * @param {*[]} ar
- * @param {function(*,*):number} comparer Compare 'prev' & 'next' element in an array. If return < 0, 'prev' comes first. If return > 0, 'next' comes first.
+ * @param {*[]} vec
+ * @param {function(*,*):number} [comparer] Compare 'prev' & 'next' element in an array. If return < 0, 'prev' comes first. If return > 0, 'next' comes first.
  * @param {function(*):boolean} [filter]
  * @return {number[]} Rank order array, where 0 denote the first.
  */
-const rank = (ar, comparer, filter) => {
-  const sorted = (!filter ? ar.slice() : ar.filter(filter)).sort(comparer); // return ar.map(x => (x=sorted.indexOf(x)>=0)?x:NaN)
+const rank = function (vec, comparer, filter) {
+  var _this$comparer, _this$filter;
 
-  return ar.map(x => (x = sorted.indexOf(x)) >= 0 ? x : NaN);
+  comparer = (_this$comparer = this === null || this === void 0 ? void 0 : this.comparer) !== null && _this$comparer !== void 0 ? _this$comparer : comparer;
+  filter = (_this$filter = this === null || this === void 0 ? void 0 : this.filter) !== null && _this$filter !== void 0 ? _this$filter : filter;
+  const sorted = (!filter ? vec.slice() : vec.filter(filter)).sort(comparer);
+  return vec.map(x => (x = sorted.indexOf(x)) >= 0 ? x : NaN);
 };
+const Rank = (comparer, filter) => rank.bind({
+  comparer,
+  filter
+});
 /**
  *
  * @param {*[]} ar
@@ -68,4 +75,4 @@ const duorank = (words, x = {
   });
 };
 
-export { duorank as duoRank, duorank, rank, reorderBy };
+export { Rank, duorank as duoRank, duorank, rank, reorderBy };

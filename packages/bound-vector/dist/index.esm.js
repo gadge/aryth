@@ -12,7 +12,6 @@ const iniNumEntry = (ar, lo, hi, {
 /**
  *
  * @param {*[]} vec
- * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
 
 function bound(vec) {
@@ -39,7 +38,7 @@ function bound(vec) {
     }
   }
 
-  return toOutput(max, min);
+  return toOutput(max, min); // @returns {{min:number, max:number}|{min:number, dif:number}}
 }
 function leap(vec) {
   /** @type {{dif: boolean, level: number}} */
