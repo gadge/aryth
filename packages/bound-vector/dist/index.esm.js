@@ -77,23 +77,17 @@ const stringValue = word => {
 };
 
 const oneself = x => x;
-const duobound = (words, x = {
-  filter: isNumeric,
-  mapper: oneself
-}, y = {
-  filter: isLiteral,
-  mapper: stringValue
-}) => {
+const duobound = (words, x = {}, y = {}) => {
   const l = words === null || words === void 0 ? void 0 : words.length;
   let vecX = undefined,
       vecY = undefined;
   const {
-    filter: filterX,
-    mapper: mapperX
+    filter: filterX = isNumeric,
+    mapper: mapperX = oneself
   } = x;
   const {
-    filter: filterY,
-    mapper: mapperY
+    filter: filterY = isLiteral,
+    mapper: mapperY = stringValue
   } = y;
   iterate(words, (v, i) => {
     var _vecX, _vecY;

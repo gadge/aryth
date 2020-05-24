@@ -3,6 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var numLoose = require('@typen/num-loose');
+require('@typen/literal');
+require('@vect/vector-mapper');
 
 const NONE = 0;
 const LOOSE = 1;

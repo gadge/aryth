@@ -7,13 +7,13 @@ export const oneself = x => x
 
 export const duobound = (
   words,
-  x = { filter: isNumeric, mapper: oneself },
-  y = { filter: isLiteral, mapper: stringValue }
+  x = {},
+  y = {}
 ) => {
   const l = words?.length
   let vecX = undefined, vecY = undefined
-  const { filter: filterX, mapper: mapperX } = x
-  const { filter: filterY, mapper: mapperY } = y
+  const { filter: filterX = isNumeric, mapper: mapperX = oneself } = x
+  const { filter: filterY = isLiteral, mapper: mapperY = stringValue } = y
   iterate(
     words,
     (v, i) => {
