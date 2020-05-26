@@ -4,9 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
+var oneself = require('@ject/oneself');
+var string = require('@spare/string');
 var literal = require('@typen/literal');
 var numLoose = require('@typen/num-loose');
-var vectorMapper = require('@vect/vector-mapper');
 
 const iniNumEntry = (ar, lo, hi, {
   level = 0
@@ -56,44 +57,25 @@ function leap(vec) {
   return bound.call(config, vec);
 }
 
-const stringValue = word => {
-  let l = word === null || word === void 0 ? void 0 : word.length;
+const iterate = function (vec, fn, l) {
+  l = l || vec && vec.length;
 
-  if (!l) {
-    return NaN;
-  }
-
-  if (l >= 4) {
-    return ((word.charCodeAt(0) & 0x7f) << 21) + ((word.charCodeAt(1) & 0x7f) << 14) + ((word.charCodeAt(2) & 0x7f) << 7) + (word.charCodeAt(3) & 0x7f);
-  }
-
-  if (l === 3) {
-    return ((word.charCodeAt(0) & 0x7f) << 21) + (word.charCodeAt(1) & 0x7f) << 14 + ((word.charCodeAt(2) & 0x7f) << 7);
-  }
-
-  if (l === 2) {
-    return ((word.charCodeAt(0) & 0x7f) << 21) + (word.charCodeAt(1) & 0x7f) << 14;
-  }
-
-  if (l === 1) {
-    return (word.charCodeAt(0) & 0x7f) << 21;
-  }
+  for (let i = 0; i < l; i++) fn.call(this, vec[i], i);
 };
 
-const oneself = x => x;
-const duobound = (words, x = {}, y = {}) => {
+const duobound = function (words, x = {}, y = {}) {
   const l = words === null || words === void 0 ? void 0 : words.length;
   let vecX = undefined,
       vecY = undefined;
   const {
     filter: filterX = numLoose.isNumeric,
-    mapper: mapperX = oneself
+    mapper: mapperX = oneself.oneself
   } = x;
   const {
     filter: filterY = literal.isLiteral,
-    mapper: mapperY = stringValue
+    mapper: mapperY = string.stringValue
   } = y;
-  vectorMapper.iterate(words, (v, i) => {
+  iterate(words, (v, i) => {
     var _vecX, _vecY;
 
     if (filterX(v) && ((_vecX = vecX) !== null && _vecX !== void 0 ? _vecX : vecX = Array(l))) {

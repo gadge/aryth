@@ -1,6 +1,5 @@
 import { parseNum as parseNum$1, isNumeric as isNumeric$1 } from '@typen/num-loose';
 import '@typen/literal';
-import '@vect/vector-mapper';
 
 const NONE = 0;
 const LOOSE = 1;

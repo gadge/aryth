@@ -1,8 +1,9 @@
 import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
+import { oneself } from '@ject/oneself';
+import { stringValue } from '@spare/string';
 import { isLiteral } from '@typen/literal';
 import { isNumeric } from '@typen/num-loose';
-import { iterate } from '@vect/vector-mapper';
 
 const iniNumEntry = (ar, lo, hi, {
   level = 0
@@ -52,32 +53,13 @@ function leap(vec) {
   return bound.call(config, vec);
 }
 
-const stringValue = word => {
-  let l = word === null || word === void 0 ? void 0 : word.length;
+const iterate = function (vec, fn, l) {
+  l = l || vec && vec.length;
 
-  if (!l) {
-    return NaN;
-  }
-
-  if (l >= 4) {
-    return ((word.charCodeAt(0) & 0x7f) << 21) + ((word.charCodeAt(1) & 0x7f) << 14) + ((word.charCodeAt(2) & 0x7f) << 7) + (word.charCodeAt(3) & 0x7f);
-  }
-
-  if (l === 3) {
-    return ((word.charCodeAt(0) & 0x7f) << 21) + (word.charCodeAt(1) & 0x7f) << 14 + ((word.charCodeAt(2) & 0x7f) << 7);
-  }
-
-  if (l === 2) {
-    return ((word.charCodeAt(0) & 0x7f) << 21) + (word.charCodeAt(1) & 0x7f) << 14;
-  }
-
-  if (l === 1) {
-    return (word.charCodeAt(0) & 0x7f) << 21;
-  }
+  for (let i = 0; i < l; i++) fn.call(this, vec[i], i);
 };
 
-const oneself = x => x;
-const duobound = (words, x = {}, y = {}) => {
+const duobound = function (words, x = {}, y = {}) {
   const l = words === null || words === void 0 ? void 0 : words.length;
   let vecX = undefined,
       vecY = undefined;

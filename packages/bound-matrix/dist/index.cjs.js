@@ -6,6 +6,12 @@ var boundVector = require('@aryth/bound-vector');
 var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
 var matrixSize = require('@vect/matrix-size');
+var oneself = require('@ject/oneself');
+var string = require('@spare/string');
+var literal = require('@typen/literal');
+var numLoose = require('@typen/num-loose');
+var matrixInit = require('@vect/matrix-init');
+var matrixMapper = require('@vect/matrix-mapper');
 
 const iniNumEntry = (mx, t, b, l, r, {
   level = 0
@@ -60,5 +66,55 @@ function leap(mx) {
   return bound.call(config, mx);
 }
 
+const duobound = (wordx, x = {}, y = {}) => {
+  const [h, w] = matrixSize.size(wordx);
+  let vecX = undefined,
+      vecY = undefined;
+  if (!h || !w) return [vecX, vecY];
+  const {
+    filter: filterX = numLoose.isNumeric,
+    mapper: mapperX = oneself.oneself
+  } = x;
+  const {
+    filter: filterY = literal.isLiteral,
+    mapper: mapperY = string.stringValue
+  } = y;
+  matrixMapper.iterate(wordx, (v, i, j) => {
+    var _vecX, _vecY;
+
+    if (filterX(v) && ((_vecX = vecX) !== null && _vecX !== void 0 ? _vecX : vecX = matrixInit.iso(h, w, undefined))) {
+      var _vecX$max;
+
+      v = mapperX(v);
+
+      if (v > ((_vecX$max = vecX.max) !== null && _vecX$max !== void 0 ? _vecX$max : vecX.max = vecX.min = v)) {
+        vecX.max = v;
+      } else if (v < vecX.min) {
+        vecX.min = v;
+      }
+
+      return vecX[i][j] = v;
+    }
+
+    if (filterY(v) && ((_vecY = vecY) !== null && _vecY !== void 0 ? _vecY : vecY = matrixInit.iso(h, w, undefined))) {
+      var _vecY$max;
+
+      v = mapperY(v);
+
+      if (v > ((_vecY$max = vecY.max) !== null && _vecY$max !== void 0 ? _vecY$max : vecY.max = vecY.min = v)) {
+        vecY.max = v;
+      } else if (v < vecY.min) {
+        vecY.min = v;
+      }
+
+      return vecY[i][j] = v;
+    }
+
+    return NaN;
+  }, h, w);
+  return [vecX, vecY];
+};
+
 exports.bound = bound;
+exports.duobound = duobound;
 exports.leap = leap;
