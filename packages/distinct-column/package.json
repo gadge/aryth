@@ -1,6 +1,6 @@
 {
   "name": "@aryth/distinct-column",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/util-distinct": "^0.2.1",
+    "@aryth/util-distinct": "^0.2.2",
     "@vect/column-mapper": "^0.2.4"
   },
   "repository": {
