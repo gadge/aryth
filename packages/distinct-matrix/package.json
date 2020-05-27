@@ -1,6 +1,6 @@
 {
   "name": "@aryth/distinct-matrix",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Return ranks of each element in a 2-d array",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node -r @babel/register test/distinct-matrix.test.js"
   },
   "dependencies": {
-    "@aryth/util-distinct": "^0.2.2",
+    "@aryth/util-distinct": "^0.2.3",
     "@vect/matrix-mapper": "^0.2.4"
   },
   "repository": {
