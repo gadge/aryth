@@ -1,10 +1,12 @@
 import { oneself }     from '@ject/oneself'
 import { stringValue } from '@spare/string'
 import { isLiteral }   from '@typen/literal'
-import { isNumeric }   from '@typen/num-loose'
+import { isNumeric }   from '@typen/num-strict'
 import { iso }         from '@vect/matrix-init'
 import { iterate }     from '@vect/matrix-mapper'
 import { size }        from '@vect/matrix-size'
+
+const parseNumeric = x => +x
 
 export const duobound = (
   wordx,
@@ -14,7 +16,7 @@ export const duobound = (
   const [h, w] = size(wordx)
   let vecX = undefined, vecY = undefined
   if (!h || !w) return [vecX, vecY]
-  const { filter: filterX = isNumeric, mapper: mapperX = oneself } = x
+  const { filter: filterX = isNumeric, mapper: mapperX = parseNumeric } = x
   const { filter: filterY = isLiteral, mapper: mapperY = stringValue } = y
   iterate(
     wordx,

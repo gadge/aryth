@@ -4,10 +4,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
-var oneself = require('@ject/oneself');
 var string = require('@spare/string');
 var literal = require('@typen/literal');
-var numLoose = require('@typen/num-loose');
+var numStrict = require('@typen/num-strict');
 
 const iniNumEntry = (ar, lo, hi, {
   level = 0
@@ -63,13 +62,15 @@ const iterate = function (vec, fn, l) {
   for (let i = 0; i < l; i++) fn.call(this, vec[i], i);
 };
 
+const parseNumeric = x => +x;
+
 const duobound = function (words, x = {}, y = {}) {
   const l = words === null || words === void 0 ? void 0 : words.length;
   let vecX = undefined,
       vecY = undefined;
   const {
-    filter: filterX = numLoose.isNumeric,
-    mapper: mapperX = oneself.oneself
+    filter: filterX = numStrict.isNumeric,
+    mapper: mapperX = parseNumeric
   } = x;
   const {
     filter: filterY = literal.isLiteral,

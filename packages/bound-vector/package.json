@@ -20,7 +20,7 @@
     "@spare/string": "^0.6.10",
     "@typen/enum-check-levels": "^0.1.4",
     "@typen/literal": "^0.1.4",
-    "@typen/num-loose": "^0.1.4"
+    "@typen/num-strict": "^0.1.4"
   },
   "repository": {
     "type": "git",

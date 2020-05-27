@@ -1,8 +1,9 @@
-import { oneself }     from '@ject/oneself'
 import { stringValue } from '@spare/string'
 import { isLiteral }   from '@typen/literal'
-import { isNumeric }   from '@typen/num-loose'
+import { isNumeric }   from '@typen/num-strict'
 import { iterate }     from '@vect/vector-mapper'
+
+const parseNumeric = x => +x
 
 export const duobound = function (
   words,
@@ -11,7 +12,7 @@ export const duobound = function (
 ) {
   const l = words?.length
   let vecX = undefined, vecY = undefined
-  const { filter: filterX = isNumeric, mapper: mapperX = oneself } = x
+  const { filter: filterX = isNumeric, mapper: mapperX = parseNumeric } = x
   const { filter: filterY = isLiteral, mapper: mapperY = stringValue } = y
   iterate(
     words,

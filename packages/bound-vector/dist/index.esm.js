@@ -1,9 +1,8 @@
 import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
-import { oneself } from '@ject/oneself';
 import { stringValue } from '@spare/string';
 import { isLiteral } from '@typen/literal';
-import { isNumeric } from '@typen/num-loose';
+import { isNumeric } from '@typen/num-strict';
 
 const iniNumEntry = (ar, lo, hi, {
   level = 0
@@ -59,13 +58,15 @@ const iterate = function (vec, fn, l) {
   for (let i = 0; i < l; i++) fn.call(this, vec[i], i);
 };
 
+const parseNumeric = x => +x;
+
 const duobound = function (words, x = {}, y = {}) {
   const l = words === null || words === void 0 ? void 0 : words.length;
   let vecX = undefined,
       vecY = undefined;
   const {
     filter: filterX = isNumeric,
-    mapper: mapperX = oneself
+    mapper: mapperX = parseNumeric
   } = x;
   const {
     filter: filterY = isLiteral,

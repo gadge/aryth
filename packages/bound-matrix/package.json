@@ -21,7 +21,7 @@
     "@spare/string": "^0.6.10",
     "@typen/enum-check-levels": "^0.1.4",
     "@typen/literal": "^0.1.4",
-    "@typen/num-loose": "^0.1.4",
+    "@typen/num-strict": "^0.1.4",
     "@vect/matrix-init": "^0.2.4",
     "@vect/matrix-mapper": "^0.2.4",
     "@vect/matrix-size": "^0.2.4"

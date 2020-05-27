@@ -2,10 +2,10 @@ import { bound as bound$1 } from '@aryth/bound-vector';
 import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
 import { size } from '@vect/matrix-size';
-import { oneself } from '@ject/oneself';
+import '@ject/oneself';
 import { stringValue } from '@spare/string';
 import { isLiteral } from '@typen/literal';
-import { isNumeric } from '@typen/num-loose';
+import { isNumeric } from '@typen/num-strict';
 import { iso } from '@vect/matrix-init';
 import { iterate } from '@vect/matrix-mapper';
 
@@ -62,6 +62,8 @@ function leap(mx) {
   return bound.call(config, mx);
 }
 
+const parseNumeric = x => +x;
+
 const duobound = (wordx, x = {}, y = {}) => {
   const [h, w] = size(wordx);
   let vecX = undefined,
@@ -69,7 +71,7 @@ const duobound = (wordx, x = {}, y = {}) => {
   if (!h || !w) return [vecX, vecY];
   const {
     filter: filterX = isNumeric,
-    mapper: mapperX = oneself
+    mapper: mapperX = parseNumeric
   } = x;
   const {
     filter: filterY = isLiteral,

@@ -6,10 +6,10 @@ var boundVector = require('@aryth/bound-vector');
 var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
 var matrixSize = require('@vect/matrix-size');
-var oneself = require('@ject/oneself');
+require('@ject/oneself');
 var string = require('@spare/string');
 var literal = require('@typen/literal');
-var numLoose = require('@typen/num-loose');
+var numStrict = require('@typen/num-strict');
 var matrixInit = require('@vect/matrix-init');
 var matrixMapper = require('@vect/matrix-mapper');
 
@@ -66,14 +66,16 @@ function leap(mx) {
   return bound.call(config, mx);
 }
 
+const parseNumeric = x => +x;
+
 const duobound = (wordx, x = {}, y = {}) => {
   const [h, w] = matrixSize.size(wordx);
   let vecX = undefined,
       vecY = undefined;
   if (!h || !w) return [vecX, vecY];
   const {
-    filter: filterX = numLoose.isNumeric,
-    mapper: mapperX = oneself.oneself
+    filter: filterX = numStrict.isNumeric,
+    mapper: mapperX = parseNumeric
   } = x;
   const {
     filter: filterY = literal.isLiteral,

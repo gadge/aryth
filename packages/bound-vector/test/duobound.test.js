@@ -3,6 +3,7 @@ import { deco }     from '@spare/deco'
 import { duobound } from '..'
 
 const paramsList = {
+  empty: [],
   one_zero: [0],
   one_nan: [NaN],
   asc_6: [0, 1, 2, 3, 4, 5],
@@ -13,7 +14,7 @@ const paramsList = {
 }
 
 for (const [key, arr] of Object.entries(paramsList)) {
-  const vec = duobound(arr)
+  const vec = duobound(arr, { preset: 1 }, { preset: 2 })
   vec |> deco |> says[key]
   let max, min;
   ({ max, min } = vec[0] ?? {});
