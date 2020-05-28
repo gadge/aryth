@@ -1,16 +1,15 @@
-import { stringValue }  from '@spare/string'
 import { isLiteral }    from '@typen/literal'
 import { isNumeric }    from '@typen/num-strict'
 import { iterate }      from '@vect/vector-mapper'
-import { parseNumeric } from '../utils/parseNumeric'
+import { parseNumeric } from '../../../../utils/parseNumeric'
+import { stringValue }  from '../../stringValue'
 
-export const duobound = function (
+export const boundLiteralArc = (
   words,
   [x = {}, y = {}] = []
-) {
+) => {
   const l = words?.length
   let vecX = undefined, vecY = undefined
-  if (!l) return [vecX, vecY]
   const { filter: filterX = isNumeric, mapper: mapperX = parseNumeric } = x
   const { filter: filterY = isLiteral, mapper: mapperY = stringValue } = y
   iterate(words, (v, i) => {

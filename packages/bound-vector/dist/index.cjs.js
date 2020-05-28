@@ -64,10 +64,11 @@ const iterate = function (vec, fn, l) {
 
 const parseNumeric = x => +x;
 
-const duobound = function (words, x = {}, y = {}) {
+const duobound = function (words, [x = {}, y = {}] = []) {
   const l = words === null || words === void 0 ? void 0 : words.length;
   let vecX = undefined,
       vecY = undefined;
+  if (!l) return [vecX, vecY];
   const {
     filter: filterX = numStrict.isNumeric,
     mapper: mapperX = parseNumeric

@@ -2,7 +2,7 @@ import { STR_ASC }          from '@aryth/comparer'
 import { isLiteral }        from '@typen/literal'
 import { isNumeric }        from '@typen/num-loose'
 import { mapper }           from '@vect/vector-mapper'
-import { stringValueGamma } from '../stringValue/stringValueGamma'
+import { stringValueGamma } from '../../stringValue/stringValueGamma'
 
 export const rankLiteralBuf = (
   words,

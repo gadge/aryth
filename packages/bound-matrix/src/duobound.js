@@ -1,4 +1,3 @@
-import { oneself }     from '@ject/oneself'
 import { stringValue } from '@spare/string'
 import { isLiteral }   from '@typen/literal'
 import { isNumeric }   from '@typen/num-strict'
@@ -10,30 +9,29 @@ const parseNumeric = x => +x
 
 export const duobound = (
   wordx,
-  x = {},
-  y = {}
+  [x = {}, y = {}] = [],
 ) => {
-  const [h, w] = size(wordx)
+  const [height, width] = size(wordx)
   let vecX = undefined, vecY = undefined
-  if (!h || !w) return [vecX, vecY]
+  if (!height || !width) return [vecX, vecY]
   const { filter: filterX = isNumeric, mapper: mapperX = parseNumeric } = x
   const { filter: filterY = isLiteral, mapper: mapperY = stringValue } = y
   iterate(
     wordx,
     (v, i, j) => {
-      if (filterX(v) && (vecX ?? (vecX = iso(h, w, undefined)))) {
+      if (filterX(v) && (vecX ?? (vecX = iso(height, width, undefined)))) {
         v = mapperX(v)
         if (v > (vecX.max ?? (vecX.max = vecX.min = v))) { vecX.max = v } else if (v < vecX.min) { vecX.min = v }
         return vecX[i][j] = v
       }
-      if (filterY(v) && (vecY ?? (vecY = iso(h, w, undefined)))) {
+      if (filterY(v) && (vecY ?? (vecY = iso(height, width, undefined)))) {
         v = mapperY(v)
         if (v > (vecY.max ?? (vecY.max = vecY.min = v))) { vecY.max = v } else if (v < vecY.min) { vecY.min = v }
         return vecY[i][j] = v
       }
       return NaN
     },
-    h, w
+    height, width
   )
   return [vecX, vecY]
 }

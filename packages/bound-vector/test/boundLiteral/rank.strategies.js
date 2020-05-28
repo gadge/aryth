@@ -4,23 +4,17 @@ import { says }             from '@palett/says'
 import { decoCrostab }      from '@spare/logger'
 import { strategies }       from '@valjoux/strategies'
 import { VectorCollection } from './candidates'
-import { boundLiteralArc }  from './src/boundLiteralArc'
-import { boundLiteralRea }  from './src/boundLiteralRea'
-import { boundLiteralSep }  from './src/boundLiteralSep'
-import { rankLiteralBig }   from './src/rankLiteralBig'
-import { rankLiteralBuf }   from './src/rankLiteralBuf'
-import { rankLiteralCla }   from './src/rankLiteralCla'
-import { rankLiteralDev }   from './src/rankLiteralDev'
-import { rankLiteralFut }   from './src/rankLiteralFut'
+import { rankLiteralBig }   from './src/ranks/rankLiteralBig'
+import { rankLiteralBuf }   from './src/ranks/rankLiteralBuf'
+import { rankLiteralCla }   from './src/ranks/rankLiteralCla'
+import { rankLiteralDev }   from './src/ranks/rankLiteralDev'
+import { rankLiteralFut }   from './src/ranks/rankLiteralFut'
 
 const { lapse, result } = strategies({
   repeat: 1E+5,
   candidates: VectorCollection |> makeEmbedded,
   methods: {
     bench: x => x,
-    rea: boundLiteralRea,
-    arc: boundLiteralArc,
-    sep: boundLiteralSep,
     big: rankLiteralBig,
     buf: rankLiteralBuf,
     cla: rankLiteralCla,

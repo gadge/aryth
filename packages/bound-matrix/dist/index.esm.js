@@ -2,7 +2,6 @@ import { bound as bound$1 } from '@aryth/bound-vector';
 import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
 import { size } from '@vect/matrix-size';
-import '@ject/oneself';
 import { stringValue } from '@spare/string';
 import { isLiteral } from '@typen/literal';
 import { isNumeric } from '@typen/num-strict';
@@ -64,11 +63,11 @@ function leap(mx) {
 
 const parseNumeric = x => +x;
 
-const duobound = (wordx, x = {}, y = {}) => {
-  const [h, w] = size(wordx);
+const duobound = (wordx, [x = {}, y = {}] = []) => {
+  const [height, width] = size(wordx);
   let vecX = undefined,
       vecY = undefined;
-  if (!h || !w) return [vecX, vecY];
+  if (!height || !width) return [vecX, vecY];
   const {
     filter: filterX = isNumeric,
     mapper: mapperX = parseNumeric
@@ -80,7 +79,7 @@ const duobound = (wordx, x = {}, y = {}) => {
   iterate(wordx, (v, i, j) => {
     var _vecX, _vecY;
 
-    if (filterX(v) && ((_vecX = vecX) !== null && _vecX !== void 0 ? _vecX : vecX = iso(h, w, undefined))) {
+    if (filterX(v) && ((_vecX = vecX) !== null && _vecX !== void 0 ? _vecX : vecX = iso(height, width, undefined))) {
       var _vecX$max;
 
       v = mapperX(v);
@@ -94,7 +93,7 @@ const duobound = (wordx, x = {}, y = {}) => {
       return vecX[i][j] = v;
     }
 
-    if (filterY(v) && ((_vecY = vecY) !== null && _vecY !== void 0 ? _vecY : vecY = iso(h, w, undefined))) {
+    if (filterY(v) && ((_vecY = vecY) !== null && _vecY !== void 0 ? _vecY : vecY = iso(height, width, undefined))) {
       var _vecY$max;
 
       v = mapperY(v);
@@ -109,7 +108,7 @@ const duobound = (wordx, x = {}, y = {}) => {
     }
 
     return NaN;
-  }, h, w);
+  }, height, width);
   return [vecX, vecY];
 };
 
