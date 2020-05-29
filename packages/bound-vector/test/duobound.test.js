@@ -14,7 +14,7 @@ const paramsList = {
 }
 
 for (const [key, arr] of Object.entries(paramsList)) {
-  const vec = duobound(arr, { preset: 1 }, { preset: 2 })
+  const vec = duobound(arr, [{ preset: 1 }, { preset: 2 }])
   vec |> deco |> says[key]
   let max, min;
   ({ max, min } = vec[0] ?? {});
