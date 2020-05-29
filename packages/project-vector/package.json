@@ -22,9 +22,9 @@
     "@vect/vector-mapper": "^0.2.4"
   },
   "devDependencies": {
-    "@spare/regex-phrasing": "^0.6.7",
-    "@spare/ripper": "^0.6.7",
-    "@spare/splitter": "^0.6.7"
+    "@spare/regex-phrasing": "^0.7.0",
+    "@spare/ripper": "^0.7.0",
+    "@spare/splitter": "^0.7.0"
   },
   "repository": {
     "type": "git",

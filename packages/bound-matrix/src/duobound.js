@@ -9,13 +9,13 @@ const parseNumeric = x => +x
 
 export const duobound = (
   wordx,
-  [x = {}, y = {}] = [],
+  [x, y] = [],
 ) => {
   const [height, width] = size(wordx)
   let vecX = undefined, vecY = undefined
   if (!height || !width) return [vecX, vecY]
-  const { filter: filterX = isNumeric, mapper: mapperX = parseNumeric } = x
-  const { filter: filterY = isLiteral, mapper: mapperY = stringValue } = y
+  const filterX = x?.filter ?? isNumeric, mapperX = x?.mapper ?? parseNumeric
+  const filterY = y?.filter ?? isLiteral, mapperY = y?.mapper ?? stringValue
   iterate(
     wordx,
     (v, i, j) => {

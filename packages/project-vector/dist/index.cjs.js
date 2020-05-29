@@ -55,12 +55,6 @@ function boundOutput(max, min) {
   };
 }
 
-/**
- *
- * @type {Function|function(*):string}
- */
-const protoType$1 = Function.prototype.call.bind(Object.prototype.toString);
-
 const iniNumEntry = (ar, lo, hi, {
   level = 0
 } = {}) => {

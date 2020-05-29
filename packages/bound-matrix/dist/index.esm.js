@@ -63,19 +63,17 @@ function leap(mx) {
 
 const parseNumeric = x => +x;
 
-const duobound = (wordx, [x = {}, y = {}] = []) => {
+const duobound = (wordx, [x, y] = []) => {
+  var _x$filter, _x$mapper, _y$filter, _y$mapper;
+
   const [height, width] = size(wordx);
   let vecX = undefined,
       vecY = undefined;
   if (!height || !width) return [vecX, vecY];
-  const {
-    filter: filterX = isNumeric,
-    mapper: mapperX = parseNumeric
-  } = x;
-  const {
-    filter: filterY = isLiteral,
-    mapper: mapperY = stringValue
-  } = y;
+  const filterX = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : isNumeric,
+        mapperX = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNumeric;
+  const filterY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : isLiteral,
+        mapperY = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue;
   iterate(wordx, (v, i, j) => {
     var _vecX, _vecY;
 

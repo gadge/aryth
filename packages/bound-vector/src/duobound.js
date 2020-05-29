@@ -6,25 +6,25 @@ import { parseNumeric } from '../utils/parseNumeric'
 
 export const duobound = function (
   words,
-  [x = {}, y = {}] = []
+  [x, y] = []
 ) {
   const l = words?.length
-  let vecX = undefined, vecY = undefined
-  if (!l) return [vecX, vecY]
-  const { filter: filterX = isNumeric, mapper: mapperX = parseNumeric } = x
-  const { filter: filterY = isLiteral, mapper: mapperY = stringValue } = y
+  let vX = undefined, vY = undefined
+  if (!l) return [vX, vY]
+  const filterX = x?.filter ?? isNumeric, mapperX = x?.mapper ?? parseNumeric
+  const filterY = y?.filter ?? isLiteral, mapperY = y?.mapper ?? stringValue
   iterate(words, (v, i) => {
-    if (filterX(v) && (vecX ?? (vecX = Array(l)))) {
+    if (filterX(v) && (vX ?? (vX = Array(l)))) {
       v = mapperX(v)
-      if (v > (vecX.max ?? (vecX.max = vecX.min = v))) { vecX.max = v } else if (v < vecX.min) { vecX.min = v }
-      return vecX[i] = v
+      if (v > (vX.max ?? (vX.max = vX.min = v))) { vX.max = v } else if (v < vX.min) { vX.min = v }
+      return vX[i] = v
     }
-    if (filterY(v) && (vecY ?? (vecY = Array(l)))) {
+    if (filterY(v) && (vY ?? (vY = Array(l)))) {
       v = mapperY(v)
-      if (v > (vecY.max ?? (vecY.max = vecY.min = v))) { vecY.max = v } else if (v < vecY.min) { vecY.min = v }
-      return vecY[i] = v
+      if (v > (vY.max ?? (vY.max = vY.min = v))) { vY.max = v } else if (v < vY.min) { vY.min = v }
+      return vY[i] = v
     }
     return NaN
   }, l)
-  return [vecX, vecY]
+  return [vX, vY]
 }

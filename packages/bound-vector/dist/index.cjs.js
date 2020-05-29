@@ -64,53 +64,51 @@ const iterate = function (vec, fn, l) {
 
 const parseNumeric = x => +x;
 
-const duobound = function (words, [x = {}, y = {}] = []) {
-  const l = words === null || words === void 0 ? void 0 : words.length;
-  let vecX = undefined,
-      vecY = undefined;
-  if (!l) return [vecX, vecY];
-  const {
-    filter: filterX = numStrict.isNumeric,
-    mapper: mapperX = parseNumeric
-  } = x;
-  const {
-    filter: filterY = literal.isLiteral,
-    mapper: mapperY = string.stringValue
-  } = y;
-  iterate(words, (v, i) => {
-    var _vecX, _vecY;
+const duobound = function (words, [x, y] = []) {
+  var _x$filter, _x$mapper, _y$filter, _y$mapper;
 
-    if (filterX(v) && ((_vecX = vecX) !== null && _vecX !== void 0 ? _vecX : vecX = Array(l))) {
-      var _vecX$max;
+  const l = words === null || words === void 0 ? void 0 : words.length;
+  let vX = undefined,
+      vY = undefined;
+  if (!l) return [vX, vY];
+  const filterX = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : numStrict.isNumeric,
+        mapperX = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNumeric;
+  const filterY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : literal.isLiteral,
+        mapperY = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : string.stringValue;
+  iterate(words, (v, i) => {
+    var _vX, _vY;
+
+    if (filterX(v) && ((_vX = vX) !== null && _vX !== void 0 ? _vX : vX = Array(l))) {
+      var _vX$max;
 
       v = mapperX(v);
 
-      if (v > ((_vecX$max = vecX.max) !== null && _vecX$max !== void 0 ? _vecX$max : vecX.max = vecX.min = v)) {
-        vecX.max = v;
-      } else if (v < vecX.min) {
-        vecX.min = v;
+      if (v > ((_vX$max = vX.max) !== null && _vX$max !== void 0 ? _vX$max : vX.max = vX.min = v)) {
+        vX.max = v;
+      } else if (v < vX.min) {
+        vX.min = v;
       }
 
-      return vecX[i] = v;
+      return vX[i] = v;
     }
 
-    if (filterY(v) && ((_vecY = vecY) !== null && _vecY !== void 0 ? _vecY : vecY = Array(l))) {
-      var _vecY$max;
+    if (filterY(v) && ((_vY = vY) !== null && _vY !== void 0 ? _vY : vY = Array(l))) {
+      var _vY$max;
 
       v = mapperY(v);
 
-      if (v > ((_vecY$max = vecY.max) !== null && _vecY$max !== void 0 ? _vecY$max : vecY.max = vecY.min = v)) {
-        vecY.max = v;
-      } else if (v < vecY.min) {
-        vecY.min = v;
+      if (v > ((_vY$max = vY.max) !== null && _vY$max !== void 0 ? _vY$max : vY.max = vY.min = v)) {
+        vY.max = v;
+      } else if (v < vY.min) {
+        vY.min = v;
       }
 
-      return vecY[i] = v;
+      return vY[i] = v;
     }
 
     return NaN;
   }, l);
-  return [vecX, vecY];
+  return [vX, vY];
 };
 
 exports.bound = bound;
