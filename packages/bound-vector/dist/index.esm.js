@@ -1,7 +1,7 @@
 import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
 import { stringValue } from '@spare/string';
-import { isLiteral } from '@typen/literal';
+import { hasLiteral } from '@typen/literal';
 import { isNumeric } from '@typen/num-strict';
 
 const iniNumEntry = (ar, lo, hi, {
@@ -69,7 +69,7 @@ const duobound = function (words, [x, y] = []) {
   if (!l) return [vX, vY];
   const filterX = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : isNumeric,
         mapperX = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNumeric;
-  const filterY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : isLiteral,
+  const filterY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : hasLiteral,
         mapperY = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue;
   iterate(words, (v, i) => {
     var _vX, _vY;

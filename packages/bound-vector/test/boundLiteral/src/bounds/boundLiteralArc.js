@@ -1,4 +1,4 @@
-import { isLiteral }    from '@typen/literal'
+import { hasLiteral }    from '@typen/literal'
 import { isNumeric }    from '@typen/num-strict'
 import { iterate }      from '@vect/vector-mapper'
 import { parseNumeric } from '../../../../utils/parseNumeric'
@@ -11,7 +11,7 @@ export const boundLiteralArc = (
   const l = words?.length
   let vecX = undefined, vecY = undefined
   const { filter: filterX = isNumeric, mapper: mapperX = parseNumeric } = x
-  const { filter: filterY = isLiteral, mapper: mapperY = stringValue } = y
+  const { filter: filterY = hasLiteral, mapper: mapperY = stringValue } = y
   iterate(words, (v, i) => {
     if (filterX(v) && (vecX ?? (vecX = Array(l)))) {
       v = mapperX(v)

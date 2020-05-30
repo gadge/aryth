@@ -1,13 +1,13 @@
 import { STR_ASC }   from '@aryth/comparer'
 import { Projector } from '@aryth/projector'
-import { isLiteral } from '@typen/literal'
+import { hasLiteral } from '@typen/literal'
 import { isNumeric } from '@typen/num-loose'
 import { mapper }    from '@vect/vector-mapper'
 
 export const rankLiteralCla = (
   words,
   confNum = { filter: isNumeric, max: 255, min: 0 },
-  confStr = { filter: isLiteral, comparer: STR_ASC }
+  confStr = { filter: hasLiteral, comparer: STR_ASC }
 ) => {
   let a, b
   const strings = []

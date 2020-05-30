@@ -1,4 +1,4 @@
-import { isLiteral }    from '@typen/literal'
+import { hasLiteral }    from '@typen/literal'
 import { isNumeric }    from '@typen/num-strict'
 import { iterate }      from '@vect/vector-mapper'
 import { parseNumeric } from '../../../../utils/parseNumeric'
@@ -11,7 +11,7 @@ export class BoundFactory {
 export const boundLiteralRea = (
   words,
   x = { filter: isNumeric, mapper: parseNumeric },
-  y = { filter: isLiteral, mapper: stringValue }
+  y = { filter: hasLiteral, mapper: stringValue }
 ) => {
   const
     vecX = BoundFactory.build(),

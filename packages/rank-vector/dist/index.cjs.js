@@ -53,7 +53,7 @@ const duorank = (words, x = {
   filter: numLoose.isNumeric,
   comparer: comparer.NUM_ASC
 }, y = {
-  filter: literal.isLiteral,
+  filter: literal.hasLiteral,
   comparer: comparer.STR_ASC
 }) => {
   const primVec = [],

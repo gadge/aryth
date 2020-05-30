@@ -1,5 +1,5 @@
 import { stringValue }  from '@spare/string'
-import { isLiteral }    from '@typen/literal'
+import { hasLiteral }    from '@typen/literal'
 import { isNumeric }    from '@typen/num-strict'
 import { iterate }      from '@vect/vector-mapper'
 import { parseNumeric } from '../utils/parseNumeric'
@@ -12,7 +12,7 @@ export const duobound = function (
   let vX = undefined, vY = undefined
   if (!l) return [vX, vY]
   const filterX = x?.filter ?? isNumeric, mapperX = x?.mapper ?? parseNumeric
-  const filterY = y?.filter ?? isLiteral, mapperY = y?.mapper ?? stringValue
+  const filterY = y?.filter ?? hasLiteral, mapperY = y?.mapper ?? stringValue
   iterate(words, (v, i) => {
     if (filterX(v) && (vX ?? (vX = Array(l)))) {
       v = mapperX(v)

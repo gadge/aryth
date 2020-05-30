@@ -3,7 +3,7 @@ import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
 import { size } from '@vect/matrix-size';
 import { stringValue } from '@spare/string';
-import { isLiteral } from '@typen/literal';
+import { hasLiteral } from '@typen/literal';
 import { isNumeric } from '@typen/num-strict';
 import { iso } from '@vect/matrix-init';
 import { iterate } from '@vect/matrix-mapper';
@@ -72,7 +72,7 @@ const duobound = (wordx, [x, y] = []) => {
   if (!height || !width) return [vecX, vecY];
   const filterX = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : isNumeric,
         mapperX = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNumeric;
-  const filterY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : isLiteral,
+  const filterY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : hasLiteral,
         mapperY = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue;
   iterate(wordx, (v, i, j) => {
     var _vecX, _vecY;

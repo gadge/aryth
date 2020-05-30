@@ -15,9 +15,9 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@spare/enum-chars": "^0.7.0",
-    "@typen/enum-data-types": "^0.1.4",
-    "@typen/num-strict": "^0.1.4",
+    "@spare/enum-chars": "^0.7.7",
+    "@typen/enum-data-types": "^0.1.5",
+    "@typen/num-strict": "^0.1.5",
     "@vect/merge-acquire": "^0.2.4"
   },
   "repository": {

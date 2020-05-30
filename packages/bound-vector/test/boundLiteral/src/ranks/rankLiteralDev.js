@@ -1,13 +1,13 @@
 import { STR_ASC }             from '@aryth/comparer'
 import { rank }                from '@aryth/rank-vector'
-import { isLiteral, isString } from '@typen/literal'
+import { hasLiteral, isString } from '@typen/literal'
 import { isNumeric }           from '@typen/num-loose'
 import { mapper }              from '@vect/vector-mapper'
 
 export const rankLiteralDev = (
   words,
   confNum = { filter: isNumeric, max: 255, min: 0 },
-  confStr = { filter: isLiteral, comparer: STR_ASC }
+  confStr = { filter: hasLiteral, comparer: STR_ASC }
 ) => {
   let a, b
   const l = words.length

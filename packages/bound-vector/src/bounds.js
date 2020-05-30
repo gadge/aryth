@@ -1,12 +1,12 @@
 import { stringValue }  from '@spare/string'
-import { isLiteral }    from '@typen/literal'
+import { hasLiteral }    from '@typen/literal'
 import { isNumeric }    from '@typen/num-strict'
 import { iterate }      from '@vect/vector-mapper'
 import { parseNumeric } from '../utils/parseNumeric'
 
 export const PRESETS = [
   { filter: isNumeric, mapper: parseNumeric },
-  { filter: isLiteral, mapper: stringValue }
+  { filter: hasLiteral, mapper: stringValue }
 ]
 
 /**

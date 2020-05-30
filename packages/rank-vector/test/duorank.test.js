@@ -2,7 +2,7 @@ import { NUM_ASC, STR_ASC }    from '@aryth/comparer'
 import { SimpleVectors }       from '@foba/foo'
 import { says }                from '@palett/says'
 import { DecoMatrix }          from '@spare/logger'
-import { isLiteral, isString } from '@typen/literal'
+import { hasLiteral, isString } from '@typen/literal'
 import { isNumeric }           from '@typen/num-loose'
 import { duorank }             from '../src/duorank'
 import { rank }                from '../src/rank'
@@ -19,7 +19,7 @@ const test = () => {
     const duoRanks = duorank(
       vec,
       { filter: isNumeric, comparer: NUM_ASC },
-      { filter: isLiteral, comparer: STR_ASC }
+      { filter: hasLiteral, comparer: STR_ASC }
     )
     const matrix = [
       vec,

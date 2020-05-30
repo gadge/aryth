@@ -1,5 +1,5 @@
 import { NUM_ASC, STR_ASC } from '@aryth/comparer'
-import { isLiteral }        from '@typen/literal'
+import { hasLiteral }        from '@typen/literal'
 import { isNumeric }        from '@typen/num-loose'
 import { iterate, mapper }  from '@vect/vector-mapper'
 
@@ -13,7 +13,7 @@ import { iterate, mapper }  from '@vect/vector-mapper'
 export const duorank = (
   words,
   x = { filter: isNumeric, comparer: NUM_ASC },
-  y = { filter: isLiteral, comparer: STR_ASC }
+  y = { filter: hasLiteral, comparer: STR_ASC }
 ) => {
   const primVec = [], restVec = []
   iterate(words, v => {
