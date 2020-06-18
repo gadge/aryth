@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@aryth/util-bound": "^0.2.6",
-    "@ject/oneself": "^0.0.1",
+    "@ject/oneself": "^0.0.3",
     "@spare/string": "^0.7.7",
     "@typen/enum-check-levels": "^0.1.5",
     "@typen/literal": "^0.1.5",

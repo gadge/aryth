@@ -32,7 +32,7 @@ function niceScale({
 }
 /**
  *
- * @param options
+ * @param {Object} options
  * @param {number} [options.ticks = 10]
  * @param {string} [options.mode = ARRAY] - optional, if ARRAY, return tick labels; if OBJECT, return {min,max,step}
  * @return {Function|function(number,number):*}

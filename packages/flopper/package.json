@@ -1,5 +1,5 @@
 {
-  "name": "@aryth/bound-matrix",
+  "name": "@aryth/flopper",
   "version": "0.2.6",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
@@ -15,16 +15,9 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/bound-vector": "^0.2.6",
-    "@aryth/util-bound": "^0.2.6",
-    "@ject/oneself": "^0.0.3",
-    "@spare/string": "^0.7.7",
-    "@typen/enum-check-levels": "^0.1.5",
-    "@typen/literal": "^0.1.5",
-    "@typen/num-strict": "^0.1.5",
-    "@vect/matrix-init": "^0.2.4",
-    "@vect/matrix-mapper": "^0.2.4",
-    "@vect/matrix-size": "^0.2.4"
+    "@aryth/comparer": "^0.2.6",
+    "@aryth/rand": "^0.2.6",
+    "@vect/swap": "^0.2.4"
   },
   "repository": {
     "type": "git",
