@@ -6,9 +6,9 @@ import { parseNumeric } from '../utils/parseNumeric'
 
 /**
  *
- * @typedef {?Array} MatrixWithBound
- * @typedef {number} MatrixWithBound.max
- * @typedef {number} MatrixWithBound.min
+ * @typedef {*[]} VectorWithBound
+ * @typedef {number} VectorWithBound.max
+ * @typedef {number} VectorWithBound.min
  *
  * @typedef {Object} FilterAndMapper
  * @typedef {Function} FilterAndMapper.filter
@@ -17,12 +17,12 @@ import { parseNumeric } from '../utils/parseNumeric'
  * @param {*[]} words
  * @param {FilterAndMapper} optX
  * @param {FilterAndMapper} optY
- * @return {[MatrixWithBound, MatrixWithBound]}
+ * @return {[?VectorWithBound, ?VectorWithBound]}
  */
 export const duobound = function (words, [optX, optY] = []) {
   const l = words?.length
-  /** @type {MatrixWithBound} */ let veX = undefined
-  /** @type {MatrixWithBound} */ let veY = undefined
+  /** @type {?VectorWithBound} */ let veX = undefined
+  /** @type {?VectorWithBound} */ let veY = undefined
   if (!l) return [veX, veY]
   const filterX = optX?.filter ?? isNumeric, mapX = optX?.mapper ?? parseNumeric
   const filterY = optY?.filter ?? hasLiteral, mapY = optY?.mapper ?? stringValue
