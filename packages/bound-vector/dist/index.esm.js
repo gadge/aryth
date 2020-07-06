@@ -62,28 +62,28 @@ const parseNumeric = x => +x;
 
 /**
  *
- * @typedef {?Array} MatrixWithBound
- * @typedef {number} MatrixWithBound.max
- * @typedef {number} MatrixWithBound.min
+ * @typedef {*[]} VectorWithBound
+ * @typedef {number} VectorWithBound.max
+ * @typedef {number} VectorWithBound.min
  *
  * @typedef {Object} FilterAndMapper
  * @typedef {Function} FilterAndMapper.filter
  * @typedef {Function} FilterAndMapper.mapper
  *
  * @param {*[]} words
- * @param {FilterAndMapper} optX
- * @param {FilterAndMapper} optY
- * @return {[MatrixWithBound, MatrixWithBound]}
+ * @param {FilterAndMapper} [optX]
+ * @param {FilterAndMapper} [optY]
+ * @return {[?VectorWithBound, ?VectorWithBound]}
  */
 
 const duobound = function (words, [optX, optY] = []) {
   var _optX$filter, _optX$mapper, _optY$filter, _optY$mapper;
 
   const l = words === null || words === void 0 ? void 0 : words.length;
-  /** @type {MatrixWithBound} */
+  /** @type {?VectorWithBound} */
 
   let veX = undefined;
-  /** @type {MatrixWithBound} */
+  /** @type {?VectorWithBound} */
 
   let veY = undefined;
   if (!l) return [veX, veY];
@@ -127,4 +127,51 @@ const duobound = function (words, [optX, optY] = []) {
   return [veX, veY];
 };
 
-export { bound, duobound, leap };
+/**
+ *
+ * @typedef {*[]} VectorWithBound
+ * @typedef {number} VectorWithBound.max
+ * @typedef {number} VectorWithBound.min
+ *
+ * @typedef {Object} FilterAndMapper
+ * @typedef {Function} FilterAndMapper.filter
+ * @typedef {Function} FilterAndMapper.mapper
+ *
+ * @param {*[]} words
+ * @param {FilterAndMapper} [opt]
+ * @return {?VectorWithBound}
+ */
+
+const solebound = function (words, opt) {
+  var _opt$filter, _opt$mapper;
+
+  const l = words === null || words === void 0 ? void 0 : words.length;
+  /** @type {?VectorWithBound} */
+
+  let vec = undefined;
+  if (!l) return vec;
+  const filter = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : hasLiteral,
+        mapper = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : stringValue;
+  iterate(words, (v, i) => {
+    var _vec;
+
+    if (filter(v) && ((_vec = vec) !== null && _vec !== void 0 ? _vec : vec = Array(l))) {
+      var _vec$max;
+
+      v = mapper(v);
+
+      if (v > ((_vec$max = vec.max) !== null && _vec$max !== void 0 ? _vec$max : vec.max = vec.min = v)) {
+        vec.max = v;
+      } else if (v < vec.min) {
+        vec.min = v;
+      }
+
+      return vec[i] = v;
+    }
+
+    return NaN;
+  }, l);
+  return vec;
+};
+
+export { bound, duobound, leap, solebound };

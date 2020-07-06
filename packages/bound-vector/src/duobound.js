@@ -15,8 +15,8 @@ import { parseNumeric } from '../utils/parseNumeric'
  * @typedef {Function} FilterAndMapper.mapper
  *
  * @param {*[]} words
- * @param {FilterAndMapper} optX
- * @param {FilterAndMapper} optY
+ * @param {FilterAndMapper} [optX]
+ * @param {FilterAndMapper} [optY]
  * @return {[?VectorWithBound, ?VectorWithBound]}
  */
 export const duobound = function (words, [optX, optY] = []) {

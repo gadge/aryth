@@ -134,6 +134,55 @@ const duobound = (wordx, [optX, optY] = []) => {
   return [maX, maY];
 };
 
+/**
+ *
+ * @typedef {*[][]} MatrixWithBound
+ * @typedef {number} MatrixWithBound.max
+ * @typedef {number} MatrixWithBound.min
+ *
+ * @typedef {Object} FilterAndMapper
+ * @typedef {Function} FilterAndMapper.filter
+ * @typedef {Function} FilterAndMapper.mapper
+ *
+ * @param {*[][]} wordx
+ * @param {FilterAndMapper} [opt]
+ * @return {?MatrixWithBound}
+ */
+
+
+const solebound = (wordx, opt) => {
+  var _opt$filter, _opt$mapper;
+
+  const [height, width] = matrixSize.size(wordx);
+  /** @type {?MatrixWithBound} */
+
+  let mat = undefined;
+  if (!height || !width) return mat;
+  const filterX = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : literal.hasLiteral,
+        mapX = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : string.stringValue;
+  matrixMapper.iterate(wordx, (v, i, j) => {
+    var _mat;
+
+    if (filterX(v) && ((_mat = mat) !== null && _mat !== void 0 ? _mat : mat = matrixInit.iso(height, width, undefined))) {
+      var _mat$max;
+
+      v = mapX(v);
+
+      if (v > ((_mat$max = mat.max) !== null && _mat$max !== void 0 ? _mat$max : mat.max = mat.min = v)) {
+        mat.max = v;
+      } else if (v < mat.min) {
+        mat.min = v;
+      }
+
+      return mat[i][j] = v;
+    }
+
+    return NaN;
+  }, height, width);
+  return mat;
+};
+
 exports.bound = bound;
 exports.duobound = duobound;
 exports.leap = leap;
+exports.solebound = solebound;
