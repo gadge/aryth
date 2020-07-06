@@ -64,51 +64,71 @@ const iterate = function (vec, fn, l) {
 
 const parseNumeric = x => +x;
 
-const duobound = function (words, [x, y] = []) {
-  var _x$filter, _x$mapper, _y$filter, _y$mapper;
+/**
+ *
+ * @typedef {?Array} MatrixWithBound
+ * @typedef {number} MatrixWithBound.max
+ * @typedef {number} MatrixWithBound.min
+ *
+ * @typedef {Object} FilterAndMapper
+ * @typedef {Function} FilterAndMapper.filter
+ * @typedef {Function} FilterAndMapper.mapper
+ *
+ * @param {*[]} words
+ * @param {FilterAndMapper} optX
+ * @param {FilterAndMapper} optY
+ * @return {[MatrixWithBound, MatrixWithBound]}
+ */
+
+const duobound = function (words, [optX, optY] = []) {
+  var _optX$filter, _optX$mapper, _optY$filter, _optY$mapper;
 
   const l = words === null || words === void 0 ? void 0 : words.length;
-  let vX = undefined,
-      vY = undefined;
-  if (!l) return [vX, vY];
-  const filterX = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : numStrict.isNumeric,
-        mapperX = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNumeric;
-  const filterY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : literal.hasLiteral,
-        mapperY = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : string.stringValue;
+  /** @type {MatrixWithBound} */
+
+  let veX = undefined;
+  /** @type {MatrixWithBound} */
+
+  let veY = undefined;
+  if (!l) return [veX, veY];
+  const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numStrict.isNumeric,
+        mapX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : parseNumeric;
+  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasLiteral,
+        mapY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : string.stringValue;
   iterate(words, (v, i) => {
-    var _vX, _vY;
+    var _veX, _veY;
 
-    if (filterX(v) && ((_vX = vX) !== null && _vX !== void 0 ? _vX : vX = Array(l))) {
-      var _vX$max;
+    if (filterX(v) && ((_veX = veX) !== null && _veX !== void 0 ? _veX : veX = Array(l))) {
+      var _veX$max;
 
-      v = mapperX(v);
+      v = mapX(v);
 
-      if (v > ((_vX$max = vX.max) !== null && _vX$max !== void 0 ? _vX$max : vX.max = vX.min = v)) {
-        vX.max = v;
-      } else if (v < vX.min) {
-        vX.min = v;
+      if (v > ((_veX$max = veX.max) !== null && _veX$max !== void 0 ? _veX$max : veX.max = veX.min = v)) {
+        veX.max = v;
+      } else if (v < veX.min) {
+        veX.min = v;
       }
 
-      return vX[i] = v;
+      return veX[i] = v;
     }
 
-    if (filterY(v) && ((_vY = vY) !== null && _vY !== void 0 ? _vY : vY = Array(l))) {
-      var _vY$max;
+    if (filterY(v) && ((_veY = veY) !== null && _veY !== void 0 ? _veY : veY = Array(l))) {
+      var _veY$max;
 
-      v = mapperY(v);
+      v = mapY(v);
 
-      if (v > ((_vY$max = vY.max) !== null && _vY$max !== void 0 ? _vY$max : vY.max = vY.min = v)) {
-        vY.max = v;
-      } else if (v < vY.min) {
-        vY.min = v;
+      if (v > ((_veY$max = veY.max) !== null && _veY$max !== void 0 ? _veY$max : veY.max = veY.min = v)) {
+        veY.max = v;
+      } else if (v < veY.min) {
+        veY.min = v;
       }
 
-      return vY[i] = v;
+      return veY[i] = v;
     }
 
     return NaN;
   }, l);
-  return [vX, vY];
+  return [veX, veY];
 };
 
 exports.bound = bound;

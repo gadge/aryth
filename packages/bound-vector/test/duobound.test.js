@@ -1,6 +1,6 @@
 import { says }     from '@palett/says'
 import { deco }     from '@spare/deco'
-import { duobound } from '..'
+import { duobound } from '../src/duobound'
 
 const paramsList = {
   empty: [],
@@ -14,11 +14,11 @@ const paramsList = {
 }
 
 for (const [key, arr] of Object.entries(paramsList)) {
-  const vec = duobound(arr, [{ preset: 1 }, { preset: 2 }])
-  vec |> deco |> says[key]
+  const vec = duobound(arr)
+  vec |> deco |> says[key].br('vec')
   let max, min;
   ({ max, min } = vec[0] ?? {});
-  ({ max, min }) |> deco |> says[key];
+  ({ max, min }) |> deco |> says[key].br('x');
   ({ max, min } = vec[1] ?? {});
-  ({ max, min }) |> deco |> says[key]
+  ({ max, min }) |> deco |> says[key].br('y')
 }

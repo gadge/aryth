@@ -79,6 +79,11 @@ const tickLabels = (lo, step, gaps) => {
 const lpad = LPad({
   ansi: false
 });
+
+var _ticks = new WeakMap();
+
+var _tickmap = new WeakMap();
+
 class Histo {
   /** @type{Array<number>} */
 
@@ -225,9 +230,5 @@ class Histo {
   }
 
 }
-
-var _ticks = new WeakMap();
-
-var _tickmap = new WeakMap();
 
 export { Histo, ticksByMean };

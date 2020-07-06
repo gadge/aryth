@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var swap = require('@vect/swap');
 var rand = require('@aryth/rand');
+var swap = require('@vect/swap');
 
 const infiniteFlopper = function* (ar, df) {
   var _df, _ar;

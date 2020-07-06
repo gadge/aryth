@@ -13,11 +13,11 @@ const paramsList = {
 }
 
 for (const [key, mx] of Object.entries(paramsList)) {
-  const db = duobound(mx);
-  db|> deco |> says[key];
+  const db = duobound(mx)
+  db|> deco |> says[key].br('vec')
   let max, min;
   ({ max, min } = db[0] ?? {});
-  ({ max, min }) |> deco |> says[key];
+  ({ max, min }) |> deco |> says[key].br('x');
   ({ max, min } = db[1] ?? {});
-  ({ max, min }) |> deco |> says[key]
+  ({ max, min }) |> deco |> says[key].br('y')
 }

@@ -1,5 +1,5 @@
-import {swap}       from '@vect/swap'
-import {flop, rand} from '@aryth/rand'
+import { flop, rand } from '@aryth/rand'
+import { swap }       from '@vect/swap'
 
 export const infiniteFlopper = function* (ar, df) {
   let l = ar.length
@@ -7,7 +7,6 @@ export const infiniteFlopper = function* (ar, df) {
   df = df ?? (ar|> flop)
   while (true) yield df
 }
-
 
 export const finiteFlopper = function* (ar) {
   let l = ar.length

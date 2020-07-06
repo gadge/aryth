@@ -1,30 +1,44 @@
 import { stringValue }  from '@spare/string'
-import { hasLiteral }    from '@typen/literal'
+import { hasLiteral }   from '@typen/literal'
 import { isNumeric }    from '@typen/num-strict'
 import { iterate }      from '@vect/vector-mapper'
 import { parseNumeric } from '../utils/parseNumeric'
 
-export const duobound = function (
-  words,
-  [x, y] = []
-) {
+/**
+ *
+ * @typedef {?Array} MatrixWithBound
+ * @typedef {number} MatrixWithBound.max
+ * @typedef {number} MatrixWithBound.min
+ *
+ * @typedef {Object} FilterAndMapper
+ * @typedef {Function} FilterAndMapper.filter
+ * @typedef {Function} FilterAndMapper.mapper
+ *
+ * @param {*[]} words
+ * @param {FilterAndMapper} optX
+ * @param {FilterAndMapper} optY
+ * @return {[MatrixWithBound, MatrixWithBound]}
+ */
+export const duobound = function (words, [optX, optY] = []) {
   const l = words?.length
-  let vX = undefined, vY = undefined
-  if (!l) return [vX, vY]
-  const filterX = x?.filter ?? isNumeric, mapperX = x?.mapper ?? parseNumeric
-  const filterY = y?.filter ?? hasLiteral, mapperY = y?.mapper ?? stringValue
+  /** @type {MatrixWithBound} */ let veX = undefined
+  /** @type {MatrixWithBound} */ let veY = undefined
+  if (!l) return [veX, veY]
+  const filterX = optX?.filter ?? isNumeric, mapX = optX?.mapper ?? parseNumeric
+  const filterY = optY?.filter ?? hasLiteral, mapY = optY?.mapper ?? stringValue
   iterate(words, (v, i) => {
-    if (filterX(v) && (vX ?? (vX = Array(l)))) {
-      v = mapperX(v)
-      if (v > (vX.max ?? (vX.max = vX.min = v))) { vX.max = v } else if (v < vX.min) { vX.min = v }
-      return vX[i] = v
-    }
-    if (filterY(v) && (vY ?? (vY = Array(l)))) {
-      v = mapperY(v)
-      if (v > (vY.max ?? (vY.max = vY.min = v))) { vY.max = v } else if (v < vY.min) { vY.min = v }
-      return vY[i] = v
-    }
-    return NaN
-  }, l)
-  return [vX, vY]
+      if (filterX(v) && (veX ?? (veX = Array(l)))) {
+        v = mapX(v)
+        if (v > (veX.max ?? (veX.max = veX.min = v))) { veX.max = v } else if (v < veX.min) { veX.min = v }
+        return veX[i] = v
+      }
+      if (filterY(v) && (veY ?? (veY = Array(l)))) {
+        v = mapY(v)
+        if (v > (veY.max ?? (veY.max = veY.min = v))) { veY.max = v } else if (v < veY.min) { veY.min = v }
+        return veY[i] = v
+      }
+      return NaN
+    },
+    l)
+  return [veX, veY]
 }

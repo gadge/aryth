@@ -1,5 +1,5 @@
-import { swap } from '@vect/swap';
 import { rand, flop } from '@aryth/rand';
+import { swap } from '@vect/swap';
 
 const infiniteFlopper = function* (ar, df) {
   var _df, _ar;
