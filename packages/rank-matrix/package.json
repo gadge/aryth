@@ -1,6 +1,6 @@
 {
   "name": "@aryth/rank-matrix",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Return ranks of each element in a 2-d array",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
