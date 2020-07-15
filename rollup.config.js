@@ -34,12 +34,8 @@ export default [
       { file: module, format: 'esm' }  // ES module (for bundlers) build.
     ],
     plugins: [
-      nodeResolve({
-        preferBuiltins: true
-      }),
-      commonjs({
-        include: /node_modules/,
-      }),
+      nodeResolve({ preferBuiltins: true }),
+      commonjs({ include: /node_modules/, }),
       babel(babelPluginOptions),
       json(),
       fileInfo()
