@@ -1,5 +1,5 @@
 import { decoCrostab, logger, says, xr } from '@spare/logger'
-import { ClicheMag } from '@cliche/mag'
+import { Mag } from '@cliche/mag'
 import { strategies } from '@valjoux/strategies'
 import { rand, random } from '../src/rand'
 
@@ -47,7 +47,7 @@ const chronog = () => {
   result |> decoCrostab |> says['result']
 
 }
-const fm = new ClicheMag(0, 3)
+const fm = new Mag(0, 3)
 const testPrototype = () => {
 // const x = 5
 // return x * 4 // 0
@@ -62,14 +62,14 @@ const testPrototype = () => {
     let md = (i - 1) % 3 + 1
     let sf = i * 3 + dv
     let mag = 2 ** sf
-    let formatted = fm.form(mag)
+    let formatted = fm.format(mag)
     xr(i)['divBy3'](dv)['mod3'](md)['bitshift'](sf)['shifted'](formatted) |> logger
   }
 }
 
 const testInt = () => {
   for (let i = 1; i < 16; i++) {
-    xr(i).rand(randIntStr(i) |> fm.form) |> logger
+    xr(i).rand(randIntStr(i) |> fm.format) |> logger
   }
 }
 

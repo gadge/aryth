@@ -1,0 +1,1 @@
+export { romanToDecimal } from './src/romanToDecimal'

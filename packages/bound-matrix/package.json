@@ -18,13 +18,13 @@
     "@aryth/bound-vector": "^0.2.10",
     "@aryth/util-bound": "^0.2.10",
     "@ject/oneself": "^0.0.5",
-    "@spare/string": "^0.7.18",
+    "@spare/string": "^0.8.1",
     "@typen/enum-check-levels": "^0.1.5",
     "@typen/literal": "^0.1.5",
     "@typen/num-strict": "^0.1.5",
-    "@vect/matrix-init": "^0.2.4",
-    "@vect/matrix-mapper": "^0.2.4",
-    "@vect/matrix-size": "^0.2.4"
+    "@vect/matrix-init": "^0.2.6",
+    "@vect/matrix-mapper": "^0.2.6",
+    "@vect/matrix-size": "^0.2.6"
   },
   "repository": {
     "type": "git",

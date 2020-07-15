@@ -1,7 +1,7 @@
 {
-  "name": "@aryth/calculator",
+  "name": "@aryth/roman",
   "version": "0.2.10",
-  "description": "A simple math calculator",
+  "description": "Parse roman numerals to decimal numbers",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "files": [
@@ -15,10 +15,8 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@spare/enum-chars": "^0.8.1",
-    "@typen/enum-data-types": "^0.1.5",
-    "@typen/num-strict": "^0.1.5",
-    "@vect/merge-acquire": "^0.2.6"
+    "@aryth/comparer": "^0.2.10",
+    "@vect/swap": "^0.2.6"
   },
   "repository": {
     "type": "git",
@@ -26,13 +24,14 @@
   },
   "keywords": [
     "math",
-    "numeric",
-    "analysis"
+    "roman numerals",
+    "roman numbers"
   ],
   "author": "Hoyeung Wong",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hoyeungw/aryth"
   },
-  "homepage": "https://github.com/hoyeungw/aryth#readme"
+  "homepage": "https://github.com/hoyeungw/aryth#readme",
+  "gitHead": "90b2b4dc186328c9463159625b811ec8c2ef3a37"
 }
