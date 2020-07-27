@@ -17,7 +17,7 @@
   "dependencies": {
     "@aryth/comparer": "^0.2.11",
     "@aryth/rand": "^0.2.11",
-    "@vect/swap": "^0.2.6"
+    "@vect/swap": "^0.2.8"
   },
   "repository": {
     "type": "git",
