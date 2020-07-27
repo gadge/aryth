@@ -1,6 +1,6 @@
 {
   "name": "@aryth/bound-column",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,8 +15,8 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/bound-vector": "^0.2.13",
-    "@aryth/util-bound": "^0.2.13",
+    "@aryth/bound-vector": "^0.2.14",
+    "@aryth/util-bound": "^0.2.14",
     "@typen/enum-check-levels": "^0.1.5",
     "@vect/matrix-size": "^0.2.8"
   },
