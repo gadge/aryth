@@ -11,6 +11,7 @@ const paramsList = {
   misc: [false, 101, 102, 103, 104],
   misc2: [1, 2, NaN, 4, 5],
   tx_nums: ['244', '200', '306', '400', '150', '220', '190', '495'],
+  tx_strs: 'comprehend how it\'s driven by animal spirits'.split(' '),
 }
 
 for (const [key, arr] of Object.entries(paramsList)) {
