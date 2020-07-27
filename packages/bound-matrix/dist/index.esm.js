@@ -2,7 +2,7 @@ import { bound as bound$1 } from '@aryth/bound-vector';
 import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
 import { size } from '@vect/matrix-size';
-import { stringValue } from '@spare/string';
+import { stringValue } from '@spare/string-value';
 import { hasLiteral } from '@typen/literal';
 import { isNumeric } from '@typen/num-strict';
 import { iso } from '@vect/matrix-init';

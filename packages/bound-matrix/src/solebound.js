@@ -1,4 +1,4 @@
-import { stringValue } from '@spare/string'
+import { stringValue } from '@spare/string-value'
 import { hasLiteral }  from '@typen/literal'
 import { isNumeric }   from '@typen/num-strict'
 import { iso }         from '@vect/matrix-init'

@@ -6,7 +6,7 @@ var boundVector = require('@aryth/bound-vector');
 var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
 var matrixSize = require('@vect/matrix-size');
-var string = require('@spare/string');
+var stringValue = require('@spare/string-value');
 var literal = require('@typen/literal');
 var numStrict = require('@typen/num-strict');
 var matrixInit = require('@vect/matrix-init');
@@ -97,7 +97,7 @@ const duobound = (wordx, [optX, optY] = []) => {
   const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numStrict.isNumeric,
         mapX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : parseNumeric;
   const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasLiteral,
-        mapY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : string.stringValue;
+        mapY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : stringValue.stringValue;
   matrixMapper.iterate(wordx, (v, i, j) => {
     var _maX, _maY;
 
@@ -159,7 +159,7 @@ const solebound = (wordx, opt) => {
   let mat = undefined;
   if (!height || !width) return mat;
   const filterX = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : literal.hasLiteral,
-        mapX = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : string.stringValue;
+        mapX = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : stringValue.stringValue;
   matrixMapper.iterate(wordx, (v, i, j) => {
     var _mat;
 
