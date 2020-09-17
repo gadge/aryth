@@ -23,8 +23,8 @@ const iniNumEntry = (ar, lo, hi, {
 
 function bound(vec) {
   /** @type {{dif: boolean, level: number}} */
-  const config = this || {
-    dif: false,
+  const config = this !== null && this !== void 0 ? this : {
+    dif: true,
     level: enumCheckLevels.LOOSE
   };
   const toOutput = utilBound.boundOutput.bind(config),
@@ -47,17 +47,9 @@ function bound(vec) {
 
   return toOutput(max, min); // @returns {{min:number, max:number}|{min:number, dif:number}}
 }
-function leap(vec) {
-  /** @type {{dif: boolean, level: number}} */
-  const config = this || {
-    level: enumCheckLevels.LOOSE
-  };
-  config.dif = true;
-  return bound.call(config, vec);
-}
 
 const iterate = function (vec, fn, l) {
-  l = l || vec && vec.length;
+  l = l || (vec === null || vec === void 0 ? void 0 : vec.length);
 
   for (let i = 0; i < l; i++) fn.call(this, vec[i], i);
 };
@@ -180,5 +172,4 @@ const solebound = function (words, opt) {
 
 exports.bound = bound;
 exports.duobound = duobound;
-exports.leap = leap;
 exports.solebound = solebound;

@@ -5,7 +5,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var enumDataTypes = require('@typen/enum-data-types');
 var enumChars = require('@spare/enum-chars');
 var numStrict = require('@typen/num-strict');
-var mergeAcquire = require('@vect/merge-acquire');
+var vectorMerge = require('@vect/vector-merge');
+var ripper$1 = require('@spare/ripper');
+var string = require('@spare/string');
 
 const calcPostfix = postfix => {
   const stack = [];
@@ -73,28 +75,8 @@ const Constants = {
 };
 
 const REG = /[+\-*\/^(),]/g;
-const fracture = (body, reg) => {
-  let ms,
-      bl,
-      ph,
-      pr = 0,
-      cu = 0;
-  const vec = [];
-
-  while ((ms = reg.exec(body)) && ([ph] = ms)) {
-    cu = ms.index;
-    bl = body.slice(pr, cu);
-    if ((bl = bl.trim()).length) vec.push(bl);
-    if ((ph = ph.trim()).length) vec.push(ph);
-    pr = reg.lastIndex;
-  }
-
-  if ((ph = body.slice(pr).trim()).length) vec.push(ph);
-  return vec;
-};
-const expressionToVector = expression => fracture(expression, REG); // const expression = 'PI + abs(foo + 127)+ max(left, right)'
-//
-// fracture(expression, REG) |> delogger
+const ripper = ripper$1.Ripper(REG);
+const expressionToVector = expression => ripper(expression).map(string.trim);
 
 Array.prototype.peek = function () {
   return this[this.length - 1];
@@ -103,43 +85,41 @@ Array.prototype.peek = function () {
 const infixToPostfix = function (infix) {
   var _this$functions, _this$constants;
 
-  infix = expressionToVector(infix);
+  const elements = expressionToVector(infix);
   const functions = (_this$functions = this === null || this === void 0 ? void 0 : this.functions) !== null && _this$functions !== void 0 ? _this$functions : Math,
         constants = (_this$constants = this === null || this === void 0 ? void 0 : this.constants) !== null && _this$constants !== void 0 ? _this$constants : Constants,
         stack = [],
         postfix = [];
   let a, b;
 
-  for (let x of infix) {
-    if (numStrict.isNumeric(x)) {
-      postfix.push(+x);
-    } else if (x in constants) {
-      postfix.push(constants[x]);
-    } else if (x in functions) {
-      stack.push(functions[x]);
-    } else if (x === enumChars.CO) {
-      while (stack.peek() !== '(') postfix.push(stack.pop());
-    } else if (x in Operators) {
-      a = x;
-      b = stack.peek();
+  for (let x of elements) if (numStrict.isNumeric(x)) {
+    postfix.push(+x);
+  } else if (x in constants) {
+    postfix.push(constants[x]);
+  } else if (x in functions) {
+    stack.push(functions[x]);
+  } else if (x === enumChars.CO) {
+    while (stack.peek() !== '(') postfix.push(stack.pop());
+  } else if (x in Operators) {
+    a = x;
+    b = stack.peek();
 
-      while (b in Operators && (Associativity[a] === LEFT && Precedence[a] <= Precedence[b] || Associativity[a] === RIGHT && Precedence[a] < Precedence[b])) {
-        postfix.push(b);
-        stack.pop();
-        b = stack.peek();
-      }
-
-      stack.push(a);
-    } else if (x === '(') {
-      stack.push(x);
-    } else if (x === ')') {
-      while (stack.peek() !== '(') postfix.push(stack.pop());
-
+    while (b in Operators && (Associativity[a] === LEFT && Precedence[a] <= Precedence[b] || Associativity[a] === RIGHT && Precedence[a] < Precedence[b])) {
+      postfix.push(b);
       stack.pop();
+      b = stack.peek();
     }
+
+    stack.push(a);
+  } else if (x === '(') {
+    stack.push(x);
+  } else if (x === ')') {
+    while (stack.peek() !== '(') postfix.push(stack.pop());
+
+    stack.pop();
   }
 
-  if (stack.length) mergeAcquire.acquire(postfix, stack.reverse());
+  if (stack.length) vectorMerge.acquire(postfix, stack.reverse());
   return postfix;
 };
 

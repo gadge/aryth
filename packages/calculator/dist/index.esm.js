@@ -1,7 +1,9 @@
 import { NUM, FUN } from '@typen/enum-data-types';
 import { CO } from '@spare/enum-chars';
 import { isNumeric } from '@typen/num-strict';
-import { acquire } from '@vect/merge-acquire';
+import { acquire } from '@vect/vector-merge';
+import { Ripper } from '@spare/ripper';
+import { trim } from '@spare/string';
 
 const calcPostfix = postfix => {
   const stack = [];
@@ -69,28 +71,8 @@ const Constants = {
 };
 
 const REG = /[+\-*\/^(),]/g;
-const fracture = (body, reg) => {
-  let ms,
-      bl,
-      ph,
-      pr = 0,
-      cu = 0;
-  const vec = [];
-
-  while ((ms = reg.exec(body)) && ([ph] = ms)) {
-    cu = ms.index;
-    bl = body.slice(pr, cu);
-    if ((bl = bl.trim()).length) vec.push(bl);
-    if ((ph = ph.trim()).length) vec.push(ph);
-    pr = reg.lastIndex;
-  }
-
-  if ((ph = body.slice(pr).trim()).length) vec.push(ph);
-  return vec;
-};
-const expressionToVector = expression => fracture(expression, REG); // const expression = 'PI + abs(foo + 127)+ max(left, right)'
-//
-// fracture(expression, REG) |> delogger
+const ripper = Ripper(REG);
+const expressionToVector = expression => ripper(expression).map(trim);
 
 Array.prototype.peek = function () {
   return this[this.length - 1];
@@ -99,40 +81,38 @@ Array.prototype.peek = function () {
 const infixToPostfix = function (infix) {
   var _this$functions, _this$constants;
 
-  infix = expressionToVector(infix);
+  const elements = expressionToVector(infix);
   const functions = (_this$functions = this === null || this === void 0 ? void 0 : this.functions) !== null && _this$functions !== void 0 ? _this$functions : Math,
         constants = (_this$constants = this === null || this === void 0 ? void 0 : this.constants) !== null && _this$constants !== void 0 ? _this$constants : Constants,
         stack = [],
         postfix = [];
   let a, b;
 
-  for (let x of infix) {
-    if (isNumeric(x)) {
-      postfix.push(+x);
-    } else if (x in constants) {
-      postfix.push(constants[x]);
-    } else if (x in functions) {
-      stack.push(functions[x]);
-    } else if (x === CO) {
-      while (stack.peek() !== '(') postfix.push(stack.pop());
-    } else if (x in Operators) {
-      a = x;
-      b = stack.peek();
+  for (let x of elements) if (isNumeric(x)) {
+    postfix.push(+x);
+  } else if (x in constants) {
+    postfix.push(constants[x]);
+  } else if (x in functions) {
+    stack.push(functions[x]);
+  } else if (x === CO) {
+    while (stack.peek() !== '(') postfix.push(stack.pop());
+  } else if (x in Operators) {
+    a = x;
+    b = stack.peek();
 
-      while (b in Operators && (Associativity[a] === LEFT && Precedence[a] <= Precedence[b] || Associativity[a] === RIGHT && Precedence[a] < Precedence[b])) {
-        postfix.push(b);
-        stack.pop();
-        b = stack.peek();
-      }
-
-      stack.push(a);
-    } else if (x === '(') {
-      stack.push(x);
-    } else if (x === ')') {
-      while (stack.peek() !== '(') postfix.push(stack.pop());
-
+    while (b in Operators && (Associativity[a] === LEFT && Precedence[a] <= Precedence[b] || Associativity[a] === RIGHT && Precedence[a] < Precedence[b])) {
+      postfix.push(b);
       stack.pop();
+      b = stack.peek();
     }
+
+    stack.push(a);
+  } else if (x === '(') {
+    stack.push(x);
+  } else if (x === ')') {
+    while (stack.peek() !== '(') postfix.push(stack.pop());
+
+    stack.pop();
   }
 
   if (stack.length) acquire(postfix, stack.reverse());

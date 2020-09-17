@@ -1,4 +1,13 @@
-import { PRESETS } from '../../../../src/bounds'
+import { stringValue }  from '@spare/string-value'
+import { hasLiteral }   from '@typen/literal'
+import { isNumeric }    from '@typen/num-strict'
+import { parseNumeric } from '../../../../utils/parseNumeric'
+
+export const PRESETS = [
+  { filter: isNumeric, mapper: parseNumeric },
+  { filter: hasLiteral, mapper: stringValue }
+]
+
 
 export const boundLiteralSep = (
   words,

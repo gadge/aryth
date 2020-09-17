@@ -1,5 +1,5 @@
-import { OBJECT, ARRAY } from '@typen/enum-object-types';
 import { round } from '@aryth/math';
+import { OBJECT, ARRAY } from '@typen/enum-object-types';
 
 /**
  * Calculate and update values for tick spacing and nice
@@ -13,11 +13,11 @@ function niceScale({
   const {
     ticks = 10,
     mode = ARRAY
-  } = this || {};
-  const delta = niceNum(hi - lo, false);
-  const step = niceNum(delta / (ticks - 1), true);
-  const min = Math.floor(lo / step) * step;
-  const max = Math.ceil(hi / step) * step;
+  } = this !== null && this !== void 0 ? this : {};
+  const delta = niceNum(hi - lo, false),
+        step = niceNum(delta / (ticks - 1), true),
+        min = Math.floor(lo / step) * step,
+        max = Math.ceil(hi / step) * step;
   if (mode === OBJECT) return {
     min,
     max,

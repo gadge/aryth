@@ -10,7 +10,7 @@ import { iniNumEntry }          from '../utils/iniNumEntry'
  * @returns {{min: *, max: *}|{min: *, dif: *}}}
  */
 export function bound (mx) {
-  /** @type {{dif: boolean, level: number}} */ const config = this || { dif: false, level: LOOSE }
+  /** @type {{dif: boolean, level: number}} */ const config = this ?? { dif: true, level: LOOSE }
   const embedLevel = { level: config.level }
   const toOutput = boundOutput.bind(config), toNum = ToNum(config.level)
   let [h, w] = size(mx)
@@ -21,10 +21,4 @@ export function bound (mx) {
     if (rowMin < min) { min = rowMin }
     else if (rowMax > max) { max = rowMax }
   return toOutput(max, min)
-}
-
-export function leap (mx) {
-  /** @type {{dif: boolean, level: number}} */ const config = this || { level: LOOSE }
-  config.dif = true
-  return bound.call(config, mx)
 }

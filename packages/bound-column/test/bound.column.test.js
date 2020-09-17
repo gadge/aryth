@@ -1,7 +1,7 @@
-import { delogger } from '@spare/deco'
-import { logger }   from '@spare/logger'
-import { LOOSE }    from '@typen/enum-check-levels'
-import { leap }     from '../src/bound'
+import { says }  from '@palett/says'
+import { deco }  from '@spare/deco'
+import { LOOSE } from '@typen/enum-check-levels'
+import { bound } from '../src/bound'
 
 const paramsList = {
   row: [[5, 7, 9, 10, 6]],
@@ -13,8 +13,6 @@ const paramsList = {
   empty2: [[]],
 }
 
-for
-  (const [key, mx] of Object.entries(paramsList)) {
-  key |> logger
-  leap.call({ level: LOOSE }, mx, 0) |> delogger
+for (const [key, mx] of Object.entries(paramsList)) {
+  bound.call({ level: LOOSE }, mx, 0) |> deco |> says[key]
 }

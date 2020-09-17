@@ -44,10 +44,11 @@ function boundOutput(max, min) {
   } = this;
   return dif ? {
     min,
-    dif: max - min
+    dif: max - min,
+    max
   } : {
-    max,
-    min
+    min,
+    max
   };
 }
 
@@ -66,8 +67,8 @@ const iniNumEntry = (ar, lo, hi, {
 
 function bound(vec) {
   /** @type {{dif: boolean, level: number}} */
-  const config = this || {
-    dif: false,
+  const config = this !== null && this !== void 0 ? this : {
+    dif: true,
     level: LOOSE
   };
   const toOutput = boundOutput.bind(config),

@@ -35,10 +35,11 @@ function boundOutput(max, min) {
   } = this;
   return dif ? {
     min,
-    dif: max - min
+    dif: max - min,
+    max
   } : {
-    max,
-    min
+    min,
+    max
   };
 }
 const BoundOutput = dif => boundOutput.bind({

@@ -17,8 +17,8 @@
   "dependencies": {
     "@aryth/bound-vector": "^0.2.14",
     "@aryth/util-bound": "^0.2.14",
-    "@typen/enum-check-levels": "^0.1.5",
-    "@vect/matrix-size": "^0.2.8"
+    "@typen/enum-check-levels": "^0.1.10",
+    "@vect/matrix-size": "^0.2.10"
   },
   "repository": {
     "type": "git",

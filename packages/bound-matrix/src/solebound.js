@@ -1,6 +1,5 @@
 import { stringValue } from '@spare/string-value'
 import { hasLiteral }  from '@typen/literal'
-import { isNumeric }   from '@typen/num-strict'
 import { iso }         from '@vect/matrix-init'
 import { iterate }     from '@vect/matrix-mapper'
 import { size }        from '@vect/matrix-size'
@@ -21,7 +20,7 @@ const parseNumeric = x => +x
  * @param {FilterAndMapper} [opt]
  * @return {?MatrixWithBound}
  */
-export const solebound = (wordx,opt,) => {
+export const solebound = (wordx, opt,) => {
   const [height, width] = size(wordx)
   /** @type {?MatrixWithBound} */ let mat = undefined
   if (!height || !width) return mat

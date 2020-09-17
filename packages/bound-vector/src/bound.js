@@ -7,7 +7,7 @@ import { iniNumEntry }        from '../utils/iniNumEntry'
  * @param {*[]} vec
  */
 export function bound (vec) {
-  /** @type {{dif: boolean, level: number}} */ const config = this || { dif: false, level: LOOSE }
+  /** @type {{dif: boolean, level: number}} */ const config = this ?? { dif: true, level: LOOSE }
   const toOutput = boundOutput.bind(config), toNum = ToNum(config.level)
   let l = vec?.length
   if (!l) return toOutput(NaN, NaN)
@@ -18,10 +18,4 @@ export function bound (vec) {
     else if (x > max) { max = x }
   return toOutput(max, min)
   // @returns {{min:number, max:number}|{min:number, dif:number}}
-}
-
-export function leap (vec) {
-  /** @type {{dif: boolean, level: number}} */ const config = this || { level: LOOSE }
-  config.dif = true
-  return bound.call(config, vec)
 }

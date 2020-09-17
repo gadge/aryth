@@ -1,6 +1,5 @@
 import { says }  from '@palett/says'
 import { deco }  from '@spare/deco'
-import { LOOSE } from '@typen/enum-check-levels'
 import { bound } from '../src/bound'
 
 const paramsList = {
@@ -15,5 +14,5 @@ const paramsList = {
 }
 
 for (const [key, arr] of Object.entries(paramsList)) {
-  bound.call({ dif: true, level: LOOSE }, arr) |> deco |> says[key]
+  bound(arr) |> deco |> says[key]
 }

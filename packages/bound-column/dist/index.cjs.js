@@ -16,7 +16,7 @@ const iniNumEntry = (mx, t, b, c, {
 
 function columnBound(mx) {
   /** @type {{dif: boolean, level: number}} */
-  const config = this || {
+  const config = this !== null && this !== void 0 ? this : {
     dif: false,
     level: enumCheckLevels.LOOSE
   };
@@ -53,7 +53,8 @@ const ColumnBound = (y, level = enumCheckLevels.LOOSE) => columnBound.bind({
 
 const bound = function (mx, y) {
   /** @type {{dif: boolean, level: number, y:number}} */
-  const config = this || {
+  const config = this !== null && this !== void 0 ? this : {
+    dif: true,
     level: enumCheckLevels.LOOSE
   };
   config.y = y;

@@ -1,16 +1,17 @@
+import { round }         from '@aryth/math'
 import { ARRAY, OBJECT } from '@typen/enum-object-types'
-import { round } from '@aryth/math'
 
 /**
  * Calculate and update values for tick spacing and nice
  * minimum and maximum data points on the axis.
  */
-export function niceScale ({ min: lo, max: hi }) {
-  const { ticks = 10, mode = ARRAY } = this || {}
-  const delta = niceNum(hi - lo, false)
-  const step = niceNum(delta / (ticks - 1), true)
-  const min = Math.floor(lo / step) * step
-  const max = Math.ceil(hi / step) * step
+export function niceScale({ min: lo, max: hi }) {
+  const { ticks = 10, mode = ARRAY } = this ?? {}
+  const
+    delta = niceNum(hi - lo, false),
+    step = niceNum(delta / (ticks - 1), true),
+    min = Math.floor(lo / step) * step,
+    max = Math.ceil(hi / step) * step
   if (mode === OBJECT) return { min, max, step }
   if (mode === ARRAY) return tickLabels(min, step, round((max - min) / step))
   return { min, max, step }
@@ -40,7 +41,7 @@ export const tickLabels = (lo, step, gaps) => {
  * @param {boolean} round - whether to round the result
  * @return {number} a "nice" number to be used for the data range
  */
-function niceNum (range, round = true) {
+function niceNum(range, round = true) {
   const expon = ~~(Math.log10(range)) // exponent of range
   const frac = range / (10 ** expon) // fractional part of range
   const niceFrac = round /** nice, rounded fraction */

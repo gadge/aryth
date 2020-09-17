@@ -28,8 +28,8 @@ const iniNumEntry = (mx, t, b, l, r, {
 
 function bound(mx) {
   /** @type {{dif: boolean, level: number}} */
-  const config = this || {
-    dif: false,
+  const config = this !== null && this !== void 0 ? this : {
+    dif: true,
     level: enumCheckLevels.LOOSE
   };
   const embedLevel = {
@@ -55,14 +55,6 @@ function bound(mx) {
   }
 
   return toOutput(max, min);
-}
-function leap(mx) {
-  /** @type {{dif: boolean, level: number}} */
-  const config = this || {
-    level: enumCheckLevels.LOOSE
-  };
-  config.dif = true;
-  return bound.call(config, mx);
 }
 
 const parseNumeric = x => +x;
@@ -184,5 +176,4 @@ const solebound = (wordx, opt) => {
 
 exports.bound = bound;
 exports.duobound = duobound;
-exports.leap = leap;
 exports.solebound = solebound;
