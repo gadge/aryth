@@ -13,7 +13,7 @@ const rand = l => ~~(random() * l);
  * @returns {number} int
  */
 
-const randInt = (lo, hi) => rand(hi - lo) + lo;
+const randIn = (lo, hi) => rand(hi - lo) + lo;
 /**
  * From [min, max] return a random integer.
  * Of [min, max], both min and max are inclusive.
@@ -22,7 +22,39 @@ const randInt = (lo, hi) => rand(hi - lo) + lo;
  * @returns {number} int
  */
 
+const randBetw = (lo, hi) => rand(++hi - lo) + lo;
+const randLong = digit => {
+  let t = '';
+
+  while (digit > 20) digit -= 20, t += random().toFixed(20).substring(2);
+
+  return t + random().toFixed(digit).substring(2);
+};
+/**
+ * From [min, max) return a random integer.
+ * Of [min, max), min is inclusive but max is exclusive.
+ * @param {number} lo(inclusive) - int
+ * @param {number} hi(exclusive) - int
+ * @deprecated use randIn instead
+ * @returns {number} int
+ */
+
+const randInt = (lo, hi) => rand(hi - lo) + lo;
+/**
+ * From [min, max] return a random integer.
+ * Of [min, max], both min and max are inclusive.
+ * @param {number} lo(inclusive) - int
+ * @param {number} hi(inclusive) - int
+ * @deprecated use randBetw instead
+ * @returns {number} int
+ */
+
 const randIntBetw = (lo, hi) => rand(++hi - lo) + lo;
+/**
+ * @deprecated use randLong instead
+ * @return {string}
+ */
+
 const randLongStr = digit => {
   let t = '';
 
@@ -78,4 +110,4 @@ const shuffle = function (ve, size) {
   return lo ? (ve.splice(0, lo), ve) : ve;
 };
 
-export { flop, flopEntry, flopGenerator, flopIndex, flopKey, flopValue, rand, randInt, randIntBetw, randLongStr, shuffle };
+export { flop, flopEntry, flopGenerator, flopIndex, flopKey, flopValue, rand, randBetw, randIn, randInt, randIntBetw, randLong, randLongStr, shuffle };
