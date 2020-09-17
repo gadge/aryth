@@ -1,6 +1,6 @@
 {
   "name": "@aryth/calculator",
-  "version": "0.2.14",
+  "version": "0.3.0",
   "description": "A simple math calculator",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -16,13 +16,11 @@
   },
   "dependencies": {
     "@spare/enum-chars": "^0.9.8",
+    "@spare/ripper": "^0.9.8",
+    "@spare/string": "^0.9.8",
     "@typen/enum-data-types": "^0.1.10",
     "@typen/num-strict": "^0.1.10",
-    "@vect/vector-merge": "^0.2.10",
-    "@spare/ripper": "^0.9.8",
-    "@spare/string": "^0.9.8"
-  },
-  "devDependencies": {
+    "@vect/vector-merge": "^0.2.10"
   },
   "repository": {
     "type": "git",
