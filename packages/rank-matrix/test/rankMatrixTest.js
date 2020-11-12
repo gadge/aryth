@@ -1,14 +1,14 @@
-import { SimpleMatrices } from '@foba/foo'
-import { logger } from 'xbrief'
-import { rank } from '../src/rank'
-import { NUM_DESC } from '@aryth/rank'
-import { delogger } from '@spare/deco'
+import { SimpleMatrixCollection } from '@foba/foo'
+import { logger }                 from 'xbrief'
+import { rank }                   from '../src/rank'
+import { NUM_DESC }               from '@aryth/rank'
+import { delogger }               from '@spare/deco'
 
-SimpleMatrices |> delogger
+SimpleMatrixCollection |> delogger
 
 export class RankMatrixTest {
-  static test () {
-    for (const [key, mx] of Object.entries(SimpleMatrices)) {
+  static test() {
+    for (const [key, mx] of Object.entries(SimpleMatrixCollection)) {
       key |> logger
       rank(mx, NUM_DESC)|> delogger
     }

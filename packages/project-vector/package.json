@@ -18,13 +18,13 @@
     "@aryth/comparer": "^0.3.0",
     "@typen/literal": "^0.1.10",
     "@typen/num-loose": "^0.1.10",
-    "@vect/vector-algebra": "^0.2.10",
-    "@vect/vector-mapper": "^0.2.10"
+    "@vect/vector-algebra": "^0.3.4",
+    "@vect/vector-mapper": "^0.3.4"
   },
   "devDependencies": {
-    "@spare/regex-phrasing": "^0.9.8",
-    "@spare/ripper": "^0.9.8",
-    "@spare/splitter": "^0.9.8"
+    "@spare/regex-phrasing": "^0.10.6",
+    "@spare/ripper": "^0.10.6",
+    "@spare/splitter": "^0.10.6"
   },
   "repository": {
     "type": "git",

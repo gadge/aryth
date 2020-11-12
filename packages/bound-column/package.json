@@ -18,7 +18,7 @@
     "@aryth/bound-vector": "^0.3.0",
     "@aryth/util-bound": "^0.3.0",
     "@typen/enum-check-levels": "^0.1.10",
-    "@vect/matrix-size": "^0.2.10"
+    "@vect/matrix-size": "^0.3.4"
   },
   "repository": {
     "type": "git",
