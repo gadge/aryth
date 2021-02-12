@@ -1,6 +1,6 @@
-import {swap} from '@vect/swap'
-import {rand} from './rand'
-import {flop} from './flop'
+import { swap } from '@vect/swap'
+import { flop } from './flop'
+import { rand } from './rand'
 
 export const flopGenerator = function* (ar, df) {
   let l = ar.length

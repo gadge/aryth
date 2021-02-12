@@ -1,8 +1,8 @@
-import { STR_ASC }             from '@aryth/comparer'
-import { rank }                from '@aryth/rank-vector'
+import { STR_ASC }              from '@aryth/comparer'
+import { rank }                 from '@aryth/rank-vector'
 import { hasLiteral, isString } from '@typen/literal'
-import { isNumeric }           from '@typen/num-loose'
-import { mapper }              from '@vect/vector-mapper'
+import { isNumeric }            from '@typen/num-loose'
+import { mapper }               from '@vect/vector-mapper'
 
 export const rankLiteralDev = (
   words,

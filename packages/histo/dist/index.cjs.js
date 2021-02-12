@@ -2,15 +2,15 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var enumDataTypes = require('@typen/enum-data-types');
-var lange = require('@spare/lange');
-var padString = require('@spare/pad-string');
-var vectorMapper = require('@vect/vector-mapper');
-var objectInit = require('@vect/object-init');
-var entriesInit = require('@vect/entries-init');
-var entriesIndicator = require('@vect/entries-indicator');
 var boundVector = require('@aryth/bound-vector');
 var niceScale = require('@aryth/nice-scale');
+var lange = require('@spare/lange');
+var padString = require('@spare/pad-string');
+var enumDataTypes = require('@typen/enum-data-types');
+var entriesIndicator = require('@vect/entries-indicator');
+var entriesInit = require('@vect/entries-init');
+var objectInit = require('@vect/object-init');
+var vectorMapper = require('@vect/vector-mapper');
 var math = require('@aryth/math');
 
 function _defineProperty(obj, key, value) {

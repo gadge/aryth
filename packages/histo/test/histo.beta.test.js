@@ -1,6 +1,6 @@
 import { delogger, logger, Xr } from '@spare/logger'
-import { Histo } from '../src/Histo'
-import { NUM, STR } from '@typen/enum-data-types'
+import { NUM }                  from '@typen/enum-data-types'
+import { Histo }                from '../src/Histo'
 
 const histo = Histo.buildByMean(50, 10, 10)
 histo.intervals() |> delogger

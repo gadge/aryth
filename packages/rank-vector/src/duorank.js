@@ -1,5 +1,5 @@
 import { NUM_ASC, STR_ASC } from '@aryth/comparer'
-import { hasLiteral }        from '@typen/literal'
+import { hasLiteral }       from '@typen/literal'
 import { isNumeric }        from '@typen/num-loose'
 import { iterate, mapper }  from '@vect/vector-mapper'
 

@@ -1,5 +1,5 @@
 import { objectCounter } from '@aryth/util-distinct'
-import { iterate } from '@vect/vector-mapper'
+import { iterate }       from '@vect/vector-mapper'
 
 /**
  *

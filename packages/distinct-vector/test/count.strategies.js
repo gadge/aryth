@@ -1,11 +1,11 @@
-import { Chrono } from 'elprimero'
+import { makeEmbedded }              from '@foba/util'
+import { deco }                      from '@spare/deco'
 import { decoCrostab, logger, says } from '@spare/logger'
-import { deco } from '@spare/deco'
-import { candidates } from './candidates'
-import { makeEmbedded } from '@foba/util'
-import { countByEntries } from '../src/functions/countByEntries'
-import { countByObject } from '../src/functions/countByObject'
-import { distinctCount } from '../src'
+import { Chrono }                    from 'elprimero'
+import { distinctCount }             from '../src'
+import { countByEntries }            from '../src/functions/countByEntries'
+import { countByObject }             from '../src/functions/countByObject'
+import { candidates }                from './candidates'
 
 export class CountStrategies {
   static testCount () {

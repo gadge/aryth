@@ -1,5 +1,5 @@
 import { STR_ASC }          from '@aryth/comparer'
-import { hasLiteral }        from '@typen/literal'
+import { hasLiteral }       from '@typen/literal'
 import { isNumeric }        from '@typen/num-loose'
 import { mapper }           from '@vect/vector-mapper'
 import { stringValueGamma } from '../../stringValue/stringValueGamma'

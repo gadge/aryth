@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var columnMapper = require('@vect/column-mapper');
 var utilDistinct = require('@aryth/util-distinct');
+var columnMapper = require('@vect/column-mapper');
 
 /**
  *

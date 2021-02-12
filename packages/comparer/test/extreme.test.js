@@ -1,7 +1,7 @@
-import { max } from '../src/extreme'
-import { strategies } from '@valjoux/strategies'
+import { abs }                       from '@aryth/math'
 import { decoCrostab, logger, says } from '@spare/logger'
-import { abs } from '@aryth/math'
+import { strategies }                from '@valjoux/strategies'
+import { max }                       from '../src/extreme'
 
 const { lapse, result } = strategies({
   repeat: 1E+7,

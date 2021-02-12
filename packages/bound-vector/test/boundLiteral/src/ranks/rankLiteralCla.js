@@ -1,8 +1,8 @@
-import { STR_ASC }   from '@aryth/comparer'
-import { Projector } from '@aryth/projector'
+import { STR_ASC }    from '@aryth/comparer'
+import { Projector }  from '@aryth/projector'
 import { hasLiteral } from '@typen/literal'
-import { isNumeric } from '@typen/num-loose'
-import { mapper }    from '@vect/vector-mapper'
+import { isNumeric }  from '@typen/num-loose'
+import { mapper }     from '@vect/vector-mapper'
 
 export const rankLiteralCla = (
   words,

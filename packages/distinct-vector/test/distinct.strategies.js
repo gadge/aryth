@@ -1,11 +1,11 @@
-import { Chrono } from 'elprimero'
+import { makeEmbedded }              from '@foba/util'
+import { deco }                      from '@spare/deco'
 import { decoCrostab, logger, says } from '@spare/logger'
-import { deco } from '@spare/deco'
-import { makeEmbedded } from '@foba/util'
-import { candidates } from './candidates'
-import { distinctByArray } from '../src/functions/distinctByArray'
-import { distinctByObject } from '../src/functions/distinctByObject'
-import { distinct } from '../src'
+import { Chrono }                    from 'elprimero'
+import { distinct }                  from '../src'
+import { distinctByArray }           from '../src/functions/distinctByArray'
+import { distinctByObject }          from '../src/functions/distinctByObject'
+import { candidates }                from './candidates'
 
 export class DistinctStrategies {
   static testDistinct () {

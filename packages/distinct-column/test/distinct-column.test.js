@@ -1,7 +1,7 @@
-import { Foba } from '@foba/vector-number'
+import { Foba }                          from '@foba/vector-number'
+import { deco }                          from '@spare/deco'
 import { decoEntries, decoMatrix, says } from '@spare/logger'
-import { Distinct, DistinctCount } from '../src'
-import { deco } from '@spare/deco'
+import { Distinct, DistinctCount }       from '../src'
 
 const matrix = [
   Foba.range(8),

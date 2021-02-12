@@ -1,6 +1,6 @@
-import { logger } from '@spare/logger'
 import { deco, delogger } from '@spare/deco'
-import { niceScale } from '../src/niceScale'
+import { logger }         from '@spare/logger'
+import { niceScale }      from '../src/niceScale'
 
 const candidates = [
   { min: 0, max: 1 },

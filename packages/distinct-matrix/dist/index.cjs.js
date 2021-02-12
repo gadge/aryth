@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var matrixMapper = require('@vect/matrix-mapper');
 var utilDistinct = require('@aryth/util-distinct');
+var matrixMapper = require('@vect/matrix-mapper');
 
 /**
  *

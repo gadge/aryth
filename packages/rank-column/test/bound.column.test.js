@@ -1,9 +1,9 @@
-import { says }        from '@palett/says'
-import { decoMatrix, } from '@spare/logger'
-import { deco, }       from '@spare/deco'
 import { NUM_DESC }    from '@aryth/comparer'
-import { ColumnRank }  from '../src/ColumnRank'
+import { says }        from '@palett/says'
+import { deco, }       from '@spare/deco'
+import { decoMatrix, } from '@spare/logger'
 import { mapper }      from '@vect/matrix-mapper'
+import { ColumnRank }  from '../src/ColumnRank'
 
 const paramsList = {
   row: [[5, 7, 9, 10, 6]],

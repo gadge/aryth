@@ -1,5 +1,5 @@
 import { vectorDistinctor } from '@aryth/util-distinct'
-import { iterate } from '@vect/vector-mapper'
+import { iterate }          from '@vect/vector-mapper'
 
 export const distinctByArray = (vec, l) => {
   const dist = []

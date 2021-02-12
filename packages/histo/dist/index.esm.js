@@ -1,12 +1,12 @@
-import { STR, NUM } from '@typen/enum-data-types';
-import { lange } from '@spare/lange';
-import { LPad } from '@spare/pad-string';
-import { mutate } from '@vect/vector-mapper';
-import { wind } from '@vect/object-init';
-import { wind as wind$1 } from '@vect/entries-init';
-import { maxBy } from '@vect/entries-indicator';
 import { bound } from '@aryth/bound-vector';
 import { NiceScale } from '@aryth/nice-scale';
+import { lange } from '@spare/lange';
+import { LPad } from '@spare/pad-string';
+import { STR, NUM } from '@typen/enum-data-types';
+import { maxBy } from '@vect/entries-indicator';
+import { wind as wind$1 } from '@vect/entries-init';
+import { wind } from '@vect/object-init';
+import { mutate } from '@vect/vector-mapper';
 import { round } from '@aryth/math';
 
 function _defineProperty(obj, key, value) {

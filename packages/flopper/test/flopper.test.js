@@ -1,7 +1,7 @@
-import { finiteFlopper } from '../src/flopper'
 import { Foba }          from '@foba/vector-number'
-import { deco } from '@spare/deco'
-import { logger } from '@spare/logger'
+import { deco }          from '@spare/deco'
+import { logger }        from '@spare/logger'
+import { finiteFlopper } from '../src/flopper'
 
 const arr = Foba.range(5)
 const fg = finiteFlopper(arr, -1)

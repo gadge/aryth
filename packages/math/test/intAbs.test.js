@@ -1,5 +1,5 @@
+import { Chrono }   from 'elprimero'
 import { CrosTabX } from 'xbrief'
-import { Chrono } from 'elprimero'
 
 const { lapse, result } = Chrono.strategies({
   repeat: 5E+6,

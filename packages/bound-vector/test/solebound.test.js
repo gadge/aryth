@@ -1,6 +1,5 @@
 import { says }      from '@palett/says'
 import { deco }      from '@spare/deco'
-import { duobound }  from '../src/duobound'
 import { solebound } from '../src/solebound'
 
 const paramsList = {

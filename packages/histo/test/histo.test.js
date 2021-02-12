@@ -1,7 +1,7 @@
-import { Ziggurat } from 'roulett'
+import { deco }           from '@spare/deco'
 import { delogger, says } from '@spare/logger'
-import { Histo } from '../src/Histo'
-import { deco } from '@spare/deco'
+import { Ziggurat }       from 'roulett'
+import { Histo }          from '../src/Histo'
 
 const zigg = new Ziggurat(36000, 12000)
 const histo = Histo.buildByMean(36000, 12000, 7)

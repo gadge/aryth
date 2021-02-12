@@ -1,5 +1,5 @@
+import { max }  from '@aryth/comparer'
 import { swap } from '@vect/swap'
-import { max } from '@aryth/comparer'
 import { rand } from '../src/rand'
 
 /**

@@ -1,4 +1,4 @@
-import { hasLiteral }    from '@typen/literal'
+import { hasLiteral }   from '@typen/literal'
 import { isNumeric }    from '@typen/num-strict'
 import { iterate }      from '@vect/vector-mapper'
 import { parseNumeric } from '../../../../utils/parseNumeric'

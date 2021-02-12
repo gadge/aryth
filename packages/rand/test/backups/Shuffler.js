@@ -1,4 +1,4 @@
-import { min } from '@aryth/comparer'
+import { min }  from '@aryth/comparer'
 import { rand } from '../../src/rand'
 
 export function indexShuffler (ar) {
