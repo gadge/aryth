@@ -13,7 +13,7 @@ const STRICT = 2;
  *
  * @type {Function|function(*):string}
  */
-const protoType = Function.prototype.call.bind(Object.prototype.toString);
+Function.prototype.call.bind(Object.prototype.toString);
 
 const isNumeric = x => !isNaN(x - parseFloat(x));
 /**

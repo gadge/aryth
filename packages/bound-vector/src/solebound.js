@@ -1,6 +1,6 @@
-import { stringValue } from '@spare/string-value'
-import { hasLiteral }  from '@typen/literal'
-import { iterate }     from '@vect/vector-mapper'
+import { isNumeric }    from '@typen/num-strict'
+import { iterate }      from '@vect/vector-mapper'
+import { parseNumeric } from '../utils/parseNumeric'
 
 /**
  *
@@ -20,7 +20,7 @@ export const solebound = function (words, opt) {
   const l = words?.length
   /** @type {?VectorWithBound} */ let vec = undefined
   if (!l) return vec
-  const filter = opt?.filter ?? hasLiteral, mapper = opt?.mapper ?? stringValue
+  const filter = opt?.filter ?? isNumeric, mapper = opt?.mapper ?? parseNumeric
   iterate(words, (v, i) => {
       if (filter(v) && (vec ?? (vec = Array(l)))) {
         v = mapper(v)

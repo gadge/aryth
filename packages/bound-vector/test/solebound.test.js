@@ -17,11 +17,9 @@ const paramsList = {
 }
 
 for (const [key, arr] of Object.entries(paramsList)) {
-  const vec = duobound(arr)
+  const vec = solebound(arr)
   vec |> deco |> says[key].br('vec')
   let max, min;
-  ({ max, min } = vec[0] ?? {});
-  ({ max, min }) |> deco |> says[key].br('x');
-  ({ max, min } = vec[1] ?? {});
-  ({ max, min }) |> deco |> says[key].br('y')
+  ({ max, min } = vec ?? {});
+  ({ max, min }) |> deco |> says[key].br('x')
 }

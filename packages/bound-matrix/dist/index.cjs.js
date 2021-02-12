@@ -126,6 +126,7 @@ const duobound = (wordx, [optX, optY] = []) => {
   return [maX, maY];
 };
 
+const parseNumeric$1 = x => +x;
 /**
  *
  * @typedef {*[][]} MatrixWithBound
@@ -150,8 +151,8 @@ const solebound = (wordx, opt) => {
 
   let mat = undefined;
   if (!height || !width) return mat;
-  const filterX = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : literal.hasLiteral,
-        mapX = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : stringValue.stringValue;
+  const filterX = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : numStrict.isNumeric,
+        mapX = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : parseNumeric$1;
   matrixMapper.iterate(wordx, (v, i, j) => {
     var _mat;
 

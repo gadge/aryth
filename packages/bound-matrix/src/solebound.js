@@ -1,8 +1,7 @@
-import { stringValue } from '@spare/string-value'
-import { hasLiteral }  from '@typen/literal'
-import { iso }         from '@vect/matrix-init'
-import { iterate }     from '@vect/matrix-mapper'
-import { size }        from '@vect/matrix-size'
+import { isNumeric } from '@typen/num-strict'
+import { iso }       from '@vect/matrix-init'
+import { iterate }   from '@vect/matrix-mapper'
+import { size }      from '@vect/matrix-size'
 
 const parseNumeric = x => +x
 
@@ -24,7 +23,7 @@ export const solebound = (wordx, opt,) => {
   const [height, width] = size(wordx)
   /** @type {?MatrixWithBound} */ let mat = undefined
   if (!height || !width) return mat
-  const filterX = opt?.filter ?? hasLiteral, mapX = opt?.mapper ?? stringValue
+  const filterX = opt?.filter ?? isNumeric, mapX = opt?.mapper ?? parseNumeric
   iterate(
     wordx,
     (v, i, j) => {
