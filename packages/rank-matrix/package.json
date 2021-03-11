@@ -15,7 +15,7 @@
     "test": "node -r @babel/register test/rank-matrix.test.js"
   },
   "dependencies": {
-    "@vect/matrix-mapper": "^0.3.5"
+    "@vect/matrix-mapper": "^0.3.6"
   },
   "repository": {
     "type": "git",

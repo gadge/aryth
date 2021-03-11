@@ -29,12 +29,28 @@ function _defineProperty(obj, key, value) {
 }
 
 function _classPrivateFieldGet(receiver, privateMap) {
-  var descriptor = privateMap.get(receiver);
+  var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get");
 
-  if (!descriptor) {
-    throw new TypeError("attempted to get private field on non-instance");
+  return _classApplyDescriptorGet(receiver, descriptor);
+}
+
+function _classPrivateFieldSet(receiver, privateMap, value) {
+  var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
+
+  _classApplyDescriptorSet(receiver, descriptor, value);
+
+  return value;
+}
+
+function _classExtractFieldDescriptor(receiver, privateMap, action) {
+  if (!privateMap.has(receiver)) {
+    throw new TypeError("attempted to " + action + " private field on non-instance");
   }
 
+  return privateMap.get(receiver);
+}
+
+function _classApplyDescriptorGet(receiver, descriptor) {
   if (descriptor.get) {
     return descriptor.get.call(receiver);
   }
@@ -42,13 +58,7 @@ function _classPrivateFieldGet(receiver, privateMap) {
   return descriptor.value;
 }
 
-function _classPrivateFieldSet(receiver, privateMap, value) {
-  var descriptor = privateMap.get(receiver);
-
-  if (!descriptor) {
-    throw new TypeError("attempted to set private field on non-instance");
-  }
-
+function _classApplyDescriptorSet(receiver, descriptor, value) {
   if (descriptor.set) {
     descriptor.set.call(receiver, value);
   } else {
@@ -58,8 +68,6 @@ function _classPrivateFieldSet(receiver, privateMap, value) {
 
     descriptor.value = value;
   }
-
-  return value;
 }
 
 const isEven = n => !(n % 2);
