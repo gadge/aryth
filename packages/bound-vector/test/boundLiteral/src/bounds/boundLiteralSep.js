@@ -1,6 +1,6 @@
 import { stringValue }  from '@spare/string-value'
 import { hasLiteral }   from '@typen/literal'
-import { isNumeric }    from '@typen/num-strict'
+import { isNumeric }    from '@typen/numeral'
 import { parseNumeric } from '../../../../utils/parseNumeric'
 
 export const PRESETS = [

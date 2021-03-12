@@ -1,6 +1,6 @@
 import { stringValue } from '@spare/string-value'
-import { hasLiteral }  from '@typen/literal'
-import { isNumeric }   from '@typen/num-strict'
+import { hasAlpHan }   from '@typen/literal'
+import { isNumeric }   from '@typen/numeral'
 import { iso }         from '@vect/matrix-init'
 import { iterate }     from '@vect/matrix-mapper'
 import { size }        from '@vect/matrix-size'
@@ -28,7 +28,7 @@ export const duobound = (wordx, [optX, optY] = [],) => {
   /** @type {?MatrixWithBound} */ let maY = undefined
   if (!height || !width) return [maX, maY]
   const filterX = optX?.filter ?? isNumeric, mapX = optX?.mapper ?? parseNumeric
-  const filterY = optY?.filter ?? hasLiteral, mapY = optY?.mapper ?? stringValue
+  const filterY = optY?.filter ?? hasAlpHan, mapY = optY?.mapper ?? stringValue
   iterate(
     wordx,
     (v, i, j) => {

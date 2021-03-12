@@ -3,8 +3,8 @@ import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
 import { size } from '@vect/matrix-size';
 import { stringValue } from '@spare/string-value';
-import { hasLiteral } from '@typen/literal';
-import { isNumeric } from '@typen/num-strict';
+import { hasAlpHan } from '@typen/literal';
+import { isNumeric } from '@typen/numeral';
 import { iso } from '@vect/matrix-init';
 import { iterate } from '@vect/matrix-mapper';
 
@@ -84,7 +84,7 @@ const duobound = (wordx, [optX, optY] = []) => {
   if (!height || !width) return [maX, maY];
   const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : isNumeric,
         mapX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : parseNumeric$1;
-  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : hasLiteral,
+  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : hasAlpHan,
         mapY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : stringValue;
   iterate(wordx, (v, i, j) => {
     var _maX, _maY;

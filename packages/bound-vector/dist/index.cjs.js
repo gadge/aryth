@@ -6,7 +6,7 @@ var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
 var stringValue = require('@spare/string-value');
 var literal = require('@typen/literal');
-var numStrict = require('@typen/num-strict');
+var numeral = require('@typen/numeral');
 
 const iniNumEntry = (ar, lo, hi, {
   level = 0
@@ -83,9 +83,9 @@ const duobound = function (words, [optX, optY] = []) {
 
   let veY = undefined;
   if (!l) return [veX, veY];
-  const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numStrict.isNumeric,
+  const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numeral.isNumeric,
         mapX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : parseNumeric;
-  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasLiteral,
+  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasAlpHan,
         mapY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : stringValue.stringValue;
   iterate(words, (v, i) => {
     var _veX, _veY;
@@ -146,7 +146,7 @@ const solebound = function (words, opt) {
 
   let vec = undefined;
   if (!l) return vec;
-  const filter = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : numStrict.isNumeric,
+  const filter = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : numeral.isNumeric,
         mapper = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : parseNumeric;
   iterate(words, (v, i) => {
     var _vec;

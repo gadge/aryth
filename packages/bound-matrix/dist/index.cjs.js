@@ -8,7 +8,7 @@ var enumCheckLevels = require('@typen/enum-check-levels');
 var matrixSize = require('@vect/matrix-size');
 var stringValue = require('@spare/string-value');
 var literal = require('@typen/literal');
-var numStrict = require('@typen/num-strict');
+var numeral = require('@typen/numeral');
 var matrixInit = require('@vect/matrix-init');
 var matrixMapper = require('@vect/matrix-mapper');
 
@@ -86,9 +86,9 @@ const duobound = (wordx, [optX, optY] = []) => {
 
   let maY = undefined;
   if (!height || !width) return [maX, maY];
-  const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numStrict.isNumeric,
+  const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numeral.isNumeric,
         mapX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : parseNumeric$1;
-  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasLiteral,
+  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasAlpHan,
         mapY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : stringValue.stringValue;
   matrixMapper.iterate(wordx, (v, i, j) => {
     var _maX, _maY;
@@ -151,7 +151,7 @@ const solebound = (wordx, opt) => {
 
   let mat = undefined;
   if (!height || !width) return mat;
-  const filterX = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : numStrict.isNumeric,
+  const filterX = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : numeral.isNumeric,
         mapX = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : parseNumeric;
   matrixMapper.iterate(wordx, (v, i, j) => {
     var _mat;

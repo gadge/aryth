@@ -1,6 +1,6 @@
 import { stringValue }  from '@spare/string-value'
-import { hasLiteral }   from '@typen/literal'
-import { isNumeric }    from '@typen/num-strict'
+import { hasAlpHan } from '@typen/literal'
+import { isNumeric }    from '@typen/numeral'
 import { iterate }      from '@vect/vector-mapper'
 import { parseNumeric } from '../utils/parseNumeric'
 
@@ -25,7 +25,7 @@ export const duobound = function (words, [optX, optY] = []) {
   /** @type {?VectorWithBound} */ let veY = undefined
   if (!l) return [veX, veY]
   const filterX = optX?.filter ?? isNumeric, mapX = optX?.mapper ?? parseNumeric
-  const filterY = optY?.filter ?? hasLiteral, mapY = optY?.mapper ?? stringValue
+  const filterY = optY?.filter ?? hasAlpHan, mapY = optY?.mapper ?? stringValue
   iterate(words, (v, i) => {
       if (filterX(v) && (veX ?? (veX = Array(l)))) {
         v = mapX(v)
