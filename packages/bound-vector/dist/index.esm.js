@@ -50,8 +50,6 @@ const iterate = function (vec, fn, l) {
   for (let i = 0; i < l; i++) fn.call(this, vec[i], i);
 };
 
-const parseNumeric = x => +x;
-
 /**
  *
  * @typedef {Array} BoundedVector
@@ -68,15 +66,19 @@ const parseNumeric = x => +x;
  * @return {[?BoundedVector, ?BoundedVector]}
  */
 
-const duobound = function (words, [configX = {}, configY = {}] = []) {
+const duobound = function (words, [configX, configY] = []) {
   const l = words === null || words === void 0 ? void 0 : words.length;
   let vecX = undefined,
       vecY = undefined;
   if (!l) return [vecX, vecY];
-  const filterX = configX.filter,
-        mapperX = configX.mapper;
-  const filterY = configY.filter,
-        mapperY = configY.mapper;
+  const {
+    filter: filterX,
+    mapper: mapperX
+  } = configX,
+        {
+    filter: filterY,
+    mapper: mapperY
+  } = configY;
   iterate(words, (v, i) => {
     var _vecX, _vecY;
 
@@ -124,20 +126,18 @@ const duobound = function (words, [configX = {}, configY = {}] = []) {
  * @typedef {Function} Config.mapper
  *
  * @param {*[]} words
- * @param {Config} [opt]
+ * @param {Config} [config]
  * @return {?BoundedVector}
  */
 
-const solebound = function (words, opt) {
-  var _opt$filter, _opt$mapper;
-
+const solebound = function (words, config) {
   const l = words === null || words === void 0 ? void 0 : words.length;
-  /** @type {?BoundedVector} */
-
   let vec = undefined;
   if (!l) return vec;
-  const filter = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : isNumeric,
-        mapper = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : parseNumeric;
+  const {
+    filter,
+    mapper
+  } = config;
   iterate(words, (v, i) => {
     var _vec;
 

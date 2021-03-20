@@ -21,14 +21,12 @@ import { parseNumeric }  from './parseNumeric'
  */
 export const duobound = function (
   words,
-  [
-    { filter: filterX, mapper: mapperX },
-    { filter: filterY, mapper: mapperY }
-  ] = []
+  [configX, configY] = []
 ) {
   const l = words?.length
   let vecX = undefined, vecY = undefined
   if (!l) return [vecX, vecY]
+  const { filter: filterX, mapper: mapperX } = configX, { filter: filterY, mapper: mapperY } = configY
   iterate(words, (v, i) => {
       if (filterX(v) && (vecX ?? (vecX = Array(l)))) {
         v = mapperX(v)

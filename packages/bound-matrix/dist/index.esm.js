@@ -70,56 +70,55 @@ function bound(mx) {
  */
 
 
-const duobound = (wordx, [configX = {}, configY = {}] = []) => {
+const duobound = (wordx, [configX, configY] = []) => {
   const [h, w] = size(wordx);
-  /** @type {?BoundedMatrix} */
-
-  let dtX = undefined;
-  /** @type {?BoundedMatrix} */
-
-  let dtY = undefined;
-  if (!h || !w) return [dtX, dtY];
-  const filterX = configX.filter,
-        mapperX = configX.mapper;
-  const filterY = configY.filter,
-        mapperY = configY.mapper;
+  let matX = undefined,
+      matY = undefined;
+  if (!h || !w) return [matX, matY];
+  const {
+    filter: filterX,
+    mapper: mapperX
+  } = configX,
+        {
+    filter: filterY,
+    mapper: mapperY
+  } = configY;
   iterate(wordx, (v, i, j) => {
-    var _dtX, _dtY;
+    var _matX, _matY;
 
-    if (filterX(v) && ((_dtX = dtX) !== null && _dtX !== void 0 ? _dtX : dtX = iso(h, w, undefined))) {
-      var _dtX$max;
+    if (filterX(v) && ((_matX = matX) !== null && _matX !== void 0 ? _matX : matX = iso(h, w, undefined))) {
+      var _matX$max;
 
       v = mapperX(v);
 
-      if (v > ((_dtX$max = dtX.max) !== null && _dtX$max !== void 0 ? _dtX$max : dtX.max = dtX.min = v)) {
-        dtX.max = v;
-      } else if (v < dtX.min) {
-        dtX.min = v;
+      if (v > ((_matX$max = matX.max) !== null && _matX$max !== void 0 ? _matX$max : matX.max = matX.min = v)) {
+        matX.max = v;
+      } else if (v < matX.min) {
+        matX.min = v;
       }
 
-      return dtX[i][j] = v;
+      return matX[i][j] = v;
     }
 
-    if (filterY(v) && ((_dtY = dtY) !== null && _dtY !== void 0 ? _dtY : dtY = iso(h, w, undefined))) {
-      var _dtY$max;
+    if (filterY(v) && ((_matY = matY) !== null && _matY !== void 0 ? _matY : matY = iso(h, w, undefined))) {
+      var _matY$max;
 
       v = mapperY(v);
 
-      if (v > ((_dtY$max = dtY.max) !== null && _dtY$max !== void 0 ? _dtY$max : dtY.max = dtY.min = v)) {
-        dtY.max = v;
-      } else if (v < dtY.min) {
-        dtY.min = v;
+      if (v > ((_matY$max = matY.max) !== null && _matY$max !== void 0 ? _matY$max : matY.max = matY.min = v)) {
+        matY.max = v;
+      } else if (v < matY.min) {
+        matY.min = v;
       }
 
-      return dtY[i][j] = v;
+      return matY[i][j] = v;
     }
 
     return NaN;
   }, h, w);
-  return [dtX, dtY];
+  return [matX, matY];
 };
 
-const parseNumeric = x => +x;
 /**
  *
  * @typedef {*[][]} BoundedMatrix
@@ -131,28 +130,28 @@ const parseNumeric = x => +x;
  * @typedef {Function} Config.mapper
  *
  * @param {*[][]} wordx
- * @param {Config} [opt]
+ * @param {Config} [config]
  * @return {?BoundedMatrix}
  */
 
 
-const solebound = (wordx, opt) => {
-  var _opt$filter, _opt$mapper;
-
+const solebound = (wordx, config) => {
   const [height, width] = size(wordx);
   /** @type {?BoundedMatrix} */
 
   let mx = undefined;
   if (!height || !width) return mx;
-  const filterX = (_opt$filter = opt === null || opt === void 0 ? void 0 : opt.filter) !== null && _opt$filter !== void 0 ? _opt$filter : isNumeric,
-        mapX = (_opt$mapper = opt === null || opt === void 0 ? void 0 : opt.mapper) !== null && _opt$mapper !== void 0 ? _opt$mapper : parseNumeric;
+  const {
+    filter,
+    mapper
+  } = config;
   iterate(wordx, (v, i, j) => {
     var _mx;
 
-    if (filterX(v) && ((_mx = mx) !== null && _mx !== void 0 ? _mx : mx = iso(height, width, undefined))) {
+    if (filter(v) && ((_mx = mx) !== null && _mx !== void 0 ? _mx : mx = iso(height, width, undefined))) {
       var _mx$max;
 
-      v = mapX(v);
+      v = mapper(v);
 
       if (v > ((_mx$max = mx.max) !== null && _mx$max !== void 0 ? _mx$max : mx.max = mx.min = v)) {
         mx.max = v;
@@ -238,18 +237,30 @@ const boundaries = function (wordx, configs = []) {
   if (count === 2) {
     var _x$filter, _x$mapper, _y$filter, _y$mapper;
 
-    const [x = {}, y = {}] = configs;
-    x.filter = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : isNumeric, x.mapper = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNum;
-    y.filter = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : hasLiteralAny, y.mapper = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue;
-    return duobound(wordx, [x, y]);
+    const [x, y] = configs;
+    const fX = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : isNumeric,
+          mX = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNum;
+    const fY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : hasLiteralAny,
+          mY = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue;
+    return duobound(wordx, [{
+      filter: fX,
+      mapper: mX
+    }, {
+      filter: fY,
+      mapper: mY
+    }]);
   }
 
   if (count === 1) {
     var _x$filter2, _x$mapper2;
 
-    const [x = {}] = configs;
-    x.filter = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : isNumeric, x.mapper = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : parseNum;
-    return [solebound(wordx, x)];
+    const [x] = configs;
+    const filter = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : isNumeric,
+          mapper = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : parseNum;
+    return [solebound(wordx, {
+      filter,
+      mapper
+    })];
   }
 
   return [];

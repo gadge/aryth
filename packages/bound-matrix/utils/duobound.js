@@ -24,14 +24,12 @@ const parseNumeric = x => +x
  */
 export const duobound = (
   wordx,
-  [
-    { filter: filterX, mapper: mapperX },
-    { filter: filterY, mapper: mapperY }
-  ] = []
+  [configX, configY] = []
 ) => {
   const [h, w] = size(wordx)
   let matX = undefined, matY = undefined
   if (!h || !w) return [matX, matY]
+  const { filter: filterX, mapper: mapperX } = configX, { filter: filterY, mapper: mapperY } = configY
   iterate(
     wordx,
     (v, i, j) => {
