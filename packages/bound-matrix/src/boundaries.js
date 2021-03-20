@@ -23,15 +23,15 @@ export const boundaries = function (wordx, configs = []) {
   const count = configs.length
   if (count > 2) return multibound(wordx, configs)
   if (count === 2) {
-    const [x = {}, y = {}] = configs
-    x.filter = x?.filter ?? isNumeric, x.mapper = x?.mapper ?? parseNum
-    y.filter = y?.filter ?? hasLiteralAny, y.mapper = y?.mapper ?? stringValue
-    return duobound(wordx, [x, y])
+    const [x, y] = configs
+    const fX = x?.filter ?? isNumeric, mX = x?.mapper ?? parseNum
+    const fY = y?.filter ?? hasLiteralAny, mY = y?.mapper ?? stringValue
+    return duobound(wordx, [{ filter: fX, mapper: mX }, { filter: fY, mapper: mY }])
   }
   if (count === 1) {
-    const [x = {}] = configs
-    x.filter = x?.filter ?? isNumeric, x.mapper = x?.mapper ?? parseNum
-    return [solebound(wordx, x)]
+    const [x] = configs
+    const filter = x?.filter ?? isNumeric, mapper = x?.mapper ?? parseNum
+    return [solebound(wordx, { filter, mapper })]
   }
   return []
 }
