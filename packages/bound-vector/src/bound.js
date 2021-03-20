@@ -6,7 +6,7 @@ import { iniNumEntry }        from '../utils/iniNumEntry'
  *
  * @param {*[]} vec
  */
-export function bound (vec) {
+export function bound(vec) {
   /** @type {{dif: boolean, level: number}} */ const config = this ?? { dif: true, level: LOOSE }
   const toOutput = boundOutput.bind(config), toNum = ToNum(config.level)
   let l = vec?.length
@@ -14,8 +14,7 @@ export function bound (vec) {
   let [i, x] = iniNumEntry(vec, 0, l, config)
   let min, max = min = toNum(x)
   for (++i; i < l; i++)
-    if ((x = vec[i] |> toNum) < min) { min = x }
-    else if (x > max) { max = x }
+    if ((x = vec[i] |> toNum) < min) { min = x } else if (x > max) { max = x }
   return toOutput(max, min)
   // @returns {{min:number, max:number}|{min:number, dif:number}}
 }

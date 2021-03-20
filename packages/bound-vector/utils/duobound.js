@@ -1,28 +1,27 @@
-import { stringValue }  from '@spare/string-value'
+import { stringValue }   from '@spare/string-value'
 import { hasLiteralAny } from '@typen/literal'
-import { isNumeric }    from '@typen/numeral'
+import { isNumeric }     from '@typen/numeral'
 import { iterate }      from '@vect/vector-mapper'
-import { parseNumeric } from '../utils/parseNumeric'
+import { parseNumeric } from './parseNumeric'
 
 /**
  *
- * @typedef {*[]} VectorWithBound
- * @typedef {number} VectorWithBound.max
- * @typedef {number} VectorWithBound.min
+ * @typedef {Array} BoundedVector
+ * @typedef {number} BoundedVector.max
+ * @typedef {number} BoundedVector.min
  *
- * @typedef {Object} FilterAndMapper
- * @typedef {Function} FilterAndMapper.filter
- * @typedef {Function} FilterAndMapper.mapper
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
  *
  * @param {*[]} words
- * @param {FilterAndMapper} [optX]
- * @param {FilterAndMapper} [optY]
- * @return {[?VectorWithBound, ?VectorWithBound]}
+ * @param {Config} [optX]
+ * @param {Config} [optY]
+ * @return {[?BoundedVector, ?BoundedVector]}
  */
 export const duobound = function (words, [optX, optY] = []) {
   const l = words?.length
-  /** @type {?VectorWithBound} */ let veX = undefined
-  /** @type {?VectorWithBound} */ let veY = undefined
+  let veX = undefined, veY = undefined
   if (!l) return [veX, veY]
   const filterX = optX?.filter ?? isNumeric, mapX = optX?.mapper ?? parseNumeric
   const filterY = optY?.filter ?? hasLiteralAny, mapY = optY?.mapper ?? stringValue
