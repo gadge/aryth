@@ -1,6 +1,6 @@
 {
   "name": "@aryth/flopper",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,8 +15,8 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/comparer": "^0.3.6",
-    "@aryth/rand": "^0.3.6",
+    "@aryth/comparer": "^0.3.7",
+    "@aryth/rand": "^0.3.7",
     "@vect/swap": "^0.3.6"
   },
   "repository": {
