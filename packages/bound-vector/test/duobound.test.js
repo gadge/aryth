@@ -1,6 +1,6 @@
-import { says }     from '@palett/says'
-import { deco }     from '@spare/deco'
-import { duobound } from '../utils/duobound'
+import { says }       from '@palett/says'
+import { deco }       from '@spare/deco'
+import { boundaries } from '../dist/index.esm'
 
 const paramsList = {
   empty: [],
@@ -16,7 +16,7 @@ const paramsList = {
 }
 
 for (const [key, arr] of Object.entries(paramsList)) {
-  const vec = duobound(arr)
+  const vec = boundaries(arr, [{}, {}])
   vec |> deco |> says[key].br('vec')
   let max, min;
   ({ max, min } = vec[0] ?? {});
