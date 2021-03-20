@@ -21,20 +21,20 @@ const parseNumeric = x => +x
  */
 export const solebound = (wordx, opt,) => {
   const [height, width] = size(wordx)
-  /** @type {?MatrixWithBound} */ let mat = undefined
-  if (!height || !width) return mat
+  /** @type {?MatrixWithBound} */ let mx = undefined
+  if (!height || !width) return mx
   const filterX = opt?.filter ?? isNumeric, mapX = opt?.mapper ?? parseNumeric
   iterate(
     wordx,
     (v, i, j) => {
-      if (filterX(v) && (mat ?? (mat = iso(height, width, undefined)))) {
+      if (filterX(v) && (mx ?? (mx = iso(height, width, undefined)))) {
         v = mapX(v)
-        if (v > (mat.max ?? (mat.max = mat.min = v))) { mat.max = v } else if (v < mat.min) { mat.min = v }
-        return mat[i][j] = v
+        if (v > (mx.max ?? (mx.max = mx.min = v))) { mx.max = v } else if (v < mx.min) { mx.min = v }
+        return mx[i][j] = v
       }
       return NaN
     },
     height, width
   )
-  return mat
+  return mx
 }

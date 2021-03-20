@@ -16,15 +16,15 @@
   },
   "dependencies": {
     "@aryth/comparer": "^0.3.6",
-    "@typen/literal": "^0.1.15",
-    "@typen/num-loose": "^0.1.15",
+    "@typen/literal": "^0.1.16",
+    "@typen/num-loose": "^0.1.16",
     "@vect/vector-algebra": "^0.3.6",
     "@vect/vector-mapper": "^0.3.6"
   },
   "devDependencies": {
-    "@spare/regex-phrasing": "^0.10.9",
-    "@spare/ripper": "^0.10.9",
-    "@spare/splitter": "^0.10.9"
+    "@spare/regex-phrasing": "^0.10.14",
+    "@spare/ripper": "^0.10.14",
+    "@spare/splitter": "^0.10.14"
   },
   "repository": {
     "type": "git",

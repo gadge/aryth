@@ -1,9 +1,9 @@
-import { stringValue } from '@spare/string-value'
-import { hasAlpHan }   from '@typen/literal'
-import { isNumeric }   from '@typen/numeral'
-import { iso }         from '@vect/matrix-init'
-import { iterate }     from '@vect/matrix-mapper'
-import { size }        from '@vect/matrix-size'
+import { stringValue }         from '@spare/string-value'
+import { hasLiteralAny }       from '@typen/literal'
+import { isNumeric, parseNum } from '@typen/numeral'
+import { iso }                 from '@vect/matrix-init'
+import { iterate }             from '@vect/matrix-mapper'
+import { size }                from '@vect/matrix-size'
 
 const parseNumeric = x => +x
 
@@ -23,28 +23,28 @@ const parseNumeric = x => +x
  * @return {[?MatrixWithBound, ?MatrixWithBound]}
  */
 export const duobound = (wordx, [optX, optY] = [],) => {
-  const [height, width] = size(wordx)
-  /** @type {?MatrixWithBound} */ let maX = undefined
-  /** @type {?MatrixWithBound} */ let maY = undefined
-  if (!height || !width) return [maX, maY]
-  const filterX = optX?.filter ?? isNumeric, mapX = optX?.mapper ?? parseNumeric
-  const filterY = optY?.filter ?? hasAlpHan, mapY = optY?.mapper ?? stringValue
+  const [h, w] = size(wordx)
+  /** @type {?MatrixWithBound} */ let dtX = undefined
+  /** @type {?MatrixWithBound} */ let dtY = undefined
+  if (!h || !w) return [dtX, dtY]
+  const filterX = optX?.filter ?? isNumeric, mapperX = optX?.mapper ?? parseNum
+  const filterY = optY?.filter ?? hasLiteralAny, mapperY = optY?.mapper ?? stringValue
   iterate(
     wordx,
     (v, i, j) => {
-      if (filterX(v) && (maX ?? (maX = iso(height, width, undefined)))) {
-        v = mapX(v)
-        if (v > (maX.max ?? (maX.max = maX.min = v))) { maX.max = v } else if (v < maX.min) { maX.min = v }
-        return maX[i][j] = v
+      if (filterX(v) && (dtX ?? (dtX = iso(h, w, undefined)))) {
+        v = mapperX(v)
+        if (v > (dtX.max ?? (dtX.max = dtX.min = v))) { dtX.max = v } else if (v < dtX.min) { dtX.min = v }
+        return dtX[i][j] = v
       }
-      if (filterY(v) && (maY ?? (maY = iso(height, width, undefined)))) {
-        v = mapY(v)
-        if (v > (maY.max ?? (maY.max = maY.min = v))) { maY.max = v } else if (v < maY.min) { maY.min = v }
-        return maY[i][j] = v
+      if (filterY(v) && (dtY ?? (dtY = iso(h, w, undefined)))) {
+        v = mapperY(v)
+        if (v > (dtY.max ?? (dtY.max = dtY.min = v))) { dtY.max = v } else if (v < dtY.min) { dtY.min = v }
+        return dtY[i][j] = v
       }
       return NaN
     },
-    height, width
+    h, w
   )
-  return [maX, maY]
+  return [dtX, dtY]
 }

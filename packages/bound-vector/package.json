@@ -17,10 +17,10 @@
   "dependencies": {
     "@aryth/util-bound": "^0.3.6",
     "@ject/oneself": "^0.0.6",
-    "@spare/string-value": "^0.10.9",
-    "@typen/enum-check-levels": "^0.1.15",
-    "@typen/literal": "^0.1.15",
-    "@typen/numeral": "^0.1.15"
+    "@spare/string-value": "^0.10.14",
+    "@typen/enum-check-levels": "^0.1.16",
+    "@typen/literal": "^0.1.16",
+    "@typen/numeral": "^0.1.16"
   },
   "repository": {
     "type": "git",
