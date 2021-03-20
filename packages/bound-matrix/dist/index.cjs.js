@@ -68,15 +68,13 @@ function bound(mx) {
  * @typedef {Function} Config.mapper
  *
  * @param {*[][]} wordx
- * @param {Config} optX
- * @param {Config} optY
+ * @param {Config} configX
+ * @param {Config} configY
  * @return {[?BoundedMatrix, ?BoundedMatrix]}
  */
 
 
-const duobound = (wordx, [optX, optY] = []) => {
-  var _optX$filter, _optX$mapper, _optY$filter, _optY$mapper;
-
+const duobound = (wordx, [configX = {}, configY = {}] = []) => {
   const [h, w] = matrixSize.size(wordx);
   /** @type {?BoundedMatrix} */
 
@@ -85,10 +83,10 @@ const duobound = (wordx, [optX, optY] = []) => {
 
   let dtY = undefined;
   if (!h || !w) return [dtX, dtY];
-  const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numeral.isNumeric,
-        mapperX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : numeral.parseNum;
-  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasLiteralAny,
-        mapperY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : stringValue.stringValue;
+  const filterX = configX.filter,
+        mapperX = configX.mapper;
+  const filterY = configY.filter,
+        mapperY = configY.mapper;
   matrixMapper.iterate(wordx, (v, i, j) => {
     var _dtX, _dtY;
 
@@ -174,6 +172,94 @@ const solebound = (wordx, opt) => {
   return mx;
 };
 
+/**
+ *
+ * @typedef {*[][]} BoundedMatrix
+ * @typedef {number} BoundedMatrix.max
+ * @typedef {number} BoundedMatrix.min
+ *
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
+ *
+ * @param {*[][]} wordx
+ * @param {Config[]} configs
+ * @return {?BoundedMatrix[]}
+ */
+
+
+const multibound = (wordx, configs) => {
+  const [h, w] = matrixSize.size(wordx);
+  const matrixCollection = configs.map(_ => undefined);
+  if (!h || !w) return matrixCollection;
+  matrixMapper.iterate(wordx, (v, i, j) => {
+    configs.some(({
+      filter,
+      mapper
+    }, k) => {
+      var _mx;
+
+      let mx = matrixCollection[k];
+
+      if (filter(v) && ((_mx = mx) !== null && _mx !== void 0 ? _mx : mx = matrixCollection[k] = matrixInit.iso(h, w, undefined))) {
+        var _mx$max;
+
+        v = mapper(v);
+
+        if (v > ((_mx$max = mx.max) !== null && _mx$max !== void 0 ? _mx$max : mx.max = mx.min = v)) {
+          mx.max = v;
+        } else if (v < mx.min) {
+          mx.min = v;
+        }
+
+        mx[i][j] = v;
+        return true;
+      }
+    });
+  }, h, w);
+  return matrixCollection;
+};
+
+/**
+ *
+ * @typedef {*[][]} BoundedMatrix
+ * @typedef {number} BoundedMatrix.max
+ * @typedef {number} BoundedMatrix.min
+ *
+ * @typedef {Object} Config
+ * @typedef {function(*):boolean} Config.filter
+ * @typedef {function(*):number} Config.mapper
+ *
+ * @param {*[][]} wordx
+ * @param {Config[]} configs
+ * @return {?BoundedMatrix[]}
+ */
+
+const boundaries = function (wordx, configs = []) {
+  const count = configs.length;
+  if (count > 2) return multibound(wordx, configs);
+
+  if (count === 2) {
+    var _x$filter, _x$mapper, _y$filter, _y$mapper;
+
+    const [x = {}, y = {}] = configs;
+    x.filter = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : numeral.isNumeric, x.mapper = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : numeral.parseNum;
+    y.filter = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : literal.hasLiteralAny, y.mapper = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue.stringValue;
+    return duobound(wordx, [x, y]);
+  }
+
+  if (count === 1) {
+    var _x$filter2, _x$mapper2;
+
+    const [x = {}] = configs;
+    x.filter = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : numeral.isNumeric, x.mapper = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : numeral.parseNum;
+    return [solebound(wordx, x)];
+  }
+
+  return [];
+};
+
 exports.bound = bound;
+exports.boundaries = boundaries;
 exports.duobound = duobound;
 exports.solebound = solebound;

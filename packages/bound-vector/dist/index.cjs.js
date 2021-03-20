@@ -67,56 +67,54 @@ const parseNumeric = x => +x;
  * @typedef {Function} Config.mapper
  *
  * @param {*[]} words
- * @param {Config} [optX]
- * @param {Config} [optY]
+ * @param {Config} [configX]
+ * @param {Config} [configY]
  * @return {[?BoundedVector, ?BoundedVector]}
  */
 
-const duobound = function (words, [optX, optY] = []) {
-  var _optX$filter, _optX$mapper, _optY$filter, _optY$mapper;
-
+const duobound = function (words, [configX = {}, configY = {}] = []) {
   const l = words === null || words === void 0 ? void 0 : words.length;
-  let veX = undefined,
-      veY = undefined;
-  if (!l) return [veX, veY];
-  const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numeral.isNumeric,
-        mapX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : parseNumeric;
-  const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasLiteralAny,
-        mapY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : stringValue.stringValue;
+  let vecX = undefined,
+      vecY = undefined;
+  if (!l) return [vecX, vecY];
+  const filterX = configX.filter,
+        mapperX = configX.mapper;
+  const filterY = configY.filter,
+        mapperY = configY.mapper;
   iterate(words, (v, i) => {
-    var _veX, _veY;
+    var _vecX, _vecY;
 
-    if (filterX(v) && ((_veX = veX) !== null && _veX !== void 0 ? _veX : veX = Array(l))) {
-      var _veX$max;
+    if (filterX(v) && ((_vecX = vecX) !== null && _vecX !== void 0 ? _vecX : vecX = Array(l))) {
+      var _vecX$max;
 
-      v = mapX(v);
+      v = mapperX(v);
 
-      if (v > ((_veX$max = veX.max) !== null && _veX$max !== void 0 ? _veX$max : veX.max = veX.min = v)) {
-        veX.max = v;
-      } else if (v < veX.min) {
-        veX.min = v;
+      if (v > ((_vecX$max = vecX.max) !== null && _vecX$max !== void 0 ? _vecX$max : vecX.max = vecX.min = v)) {
+        vecX.max = v;
+      } else if (v < vecX.min) {
+        vecX.min = v;
       }
 
-      return veX[i] = v;
+      return vecX[i] = v;
     }
 
-    if (filterY(v) && ((_veY = veY) !== null && _veY !== void 0 ? _veY : veY = Array(l))) {
-      var _veY$max;
+    if (filterY(v) && ((_vecY = vecY) !== null && _vecY !== void 0 ? _vecY : vecY = Array(l))) {
+      var _vecY$max;
 
-      v = mapY(v);
+      v = mapperY(v);
 
-      if (v > ((_veY$max = veY.max) !== null && _veY$max !== void 0 ? _veY$max : veY.max = veY.min = v)) {
-        veY.max = v;
-      } else if (v < veY.min) {
-        veY.min = v;
+      if (v > ((_vecY$max = vecY.max) !== null && _vecY$max !== void 0 ? _vecY$max : vecY.max = vecY.min = v)) {
+        vecY.max = v;
+      } else if (v < vecY.min) {
+        vecY.min = v;
       }
 
-      return veY[i] = v;
+      return vecY[i] = v;
     }
 
     return NaN;
   }, l);
-  return [veX, veY];
+  return [vecX, vecY];
 };
 
 /**
@@ -228,8 +226,24 @@ const multibound = function (words, configs) {
 const boundaries = function (words, configs) {
   const count = configs.length;
   if (count > 2) return multibound(words, configs);
-  if (count === 2) return duobound(words, configs);
-  if (count === 1) return [solebound(words, configs[0])];
+
+  if (count === 2) {
+    var _x$filter, _x$mapper, _y$filter, _y$mapper;
+
+    const [x = {}, y = {}] = configs;
+    x.filter = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : numeral.isNumeric, x.mapper = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : numeral.parseNum;
+    y.filter = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : literal.hasLiteralAny, y.mapper = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue.stringValue;
+    return duobound(words, configs);
+  }
+
+  if (count === 1) {
+    var _x$filter2, _x$mapper2;
+
+    const [x = {}] = configs;
+    x.filter = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : numeral.isNumeric, x.mapper = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : numeral.parseNum;
+    return [solebound(words, configs[0])];
+  }
+
   return [];
 };
 
