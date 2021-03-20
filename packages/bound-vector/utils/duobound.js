@@ -19,12 +19,16 @@ import { parseNumeric }  from './parseNumeric'
  * @param {Config} [configY]
  * @return {[?BoundedVector, ?BoundedVector]}
  */
-export const duobound = function (words, [configX = {}, configY = {}] = []) {
+export const duobound = function (
+  words,
+  [
+    { filter: filterX, mapper: mapperX },
+    { filter: filterY, mapper: mapperY }
+  ] = []
+) {
   const l = words?.length
   let vecX = undefined, vecY = undefined
   if (!l) return [vecX, vecY]
-  const filterX = configX.filter, mapperX = configX.mapper
-  const filterY = configY.filter, mapperY = configY.mapper
   iterate(words, (v, i) => {
       if (filterX(v) && (vecX ?? (vecX = Array(l)))) {
         v = mapperX(v)

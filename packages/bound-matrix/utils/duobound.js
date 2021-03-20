@@ -22,29 +22,32 @@ const parseNumeric = x => +x
  * @param {Config} configY
  * @return {[?BoundedMatrix, ?BoundedMatrix]}
  */
-export const duobound = (wordx, [configX = {}, configY = {}] = []) => {
+export const duobound = (
+  wordx,
+  [
+    { filter: filterX, mapper: mapperX },
+    { filter: filterY, mapper: mapperY }
+  ] = []
+) => {
   const [h, w] = size(wordx)
-  /** @type {?BoundedMatrix} */ let dtX = undefined
-  /** @type {?BoundedMatrix} */ let dtY = undefined
-  if (!h || !w) return [dtX, dtY]
-  const filterX = configX.filter, mapperX = configX.mapper
-  const filterY = configY.filter, mapperY = configY.mapper
+  let matX = undefined, matY = undefined
+  if (!h || !w) return [matX, matY]
   iterate(
     wordx,
     (v, i, j) => {
-      if (filterX(v) && (dtX ?? (dtX = iso(h, w, undefined)))) {
+      if (filterX(v) && (matX ?? (matX = iso(h, w, undefined)))) {
         v = mapperX(v)
-        if (v > (dtX.max ?? (dtX.max = dtX.min = v))) { dtX.max = v } else if (v < dtX.min) { dtX.min = v }
-        return dtX[i][j] = v
+        if (v > (matX.max ?? (matX.max = matX.min = v))) { matX.max = v } else if (v < matX.min) { matX.min = v }
+        return matX[i][j] = v
       }
-      if (filterY(v) && (dtY ?? (dtY = iso(h, w, undefined)))) {
+      if (filterY(v) && (matY ?? (matY = iso(h, w, undefined)))) {
         v = mapperY(v)
-        if (v > (dtY.max ?? (dtY.max = dtY.min = v))) { dtY.max = v } else if (v < dtY.min) { dtY.min = v }
-        return dtY[i][j] = v
+        if (v > (matY.max ?? (matY.max = matY.min = v))) { matY.max = v } else if (v < matY.min) { matY.min = v }
+        return matY[i][j] = v
       }
       return NaN
     },
     h, w
   )
-  return [dtX, dtY]
+  return [matX, matY]
 }

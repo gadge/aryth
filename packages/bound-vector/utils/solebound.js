@@ -13,14 +13,14 @@ import { parseNumeric } from './parseNumeric'
  * @typedef {Function} Config.mapper
  *
  * @param {*[]} words
- * @param {Config} [opt]
+ * @param {Config} [config]
  * @return {?BoundedVector}
  */
-export const solebound = function (words, opt) {
+export const solebound = function (words, config) {
   const l = words?.length
-  /** @type {?BoundedVector} */ let vec = undefined
+  let vec = undefined
   if (!l) return vec
-  const filter = opt?.filter ?? isNumeric, mapper = opt?.mapper ?? parseNumeric
+  const { filter, mapper } = config
   iterate(words, (v, i) => {
       if (filter(v) && (vec ?? (vec = Array(l)))) {
         v = mapper(v)
