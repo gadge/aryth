@@ -1,6 +1,6 @@
-import { says }     from '@palett/says'
-import { deco }     from '@spare/deco'
-import { duobound } from '../utils/duobound'
+import { says }       from '@palett/says'
+import { deco }       from '@spare/deco'
+import { boundaries } from '../src/boundaries'
 
 const paramsList = {
   row: [[5, 7, 9, 10, 6]],
@@ -14,7 +14,7 @@ const paramsList = {
 }
 
 for (const [key, mx] of Object.entries(paramsList)) {
-  const db = duobound(mx)
+  const db = boundaries(mx, [{}, {}])
   db|> deco |> says[key].br('vec')
   let max, min;
   ({ max, min } = db[0] ?? {});

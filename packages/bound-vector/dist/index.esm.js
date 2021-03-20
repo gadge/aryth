@@ -54,30 +54,26 @@ const parseNumeric = x => +x;
 
 /**
  *
- * @typedef {*[]} VectorWithBound
- * @typedef {number} VectorWithBound.max
- * @typedef {number} VectorWithBound.min
+ * @typedef {Array} BoundedVector
+ * @typedef {number} BoundedVector.max
+ * @typedef {number} BoundedVector.min
  *
- * @typedef {Object} FilterAndMapper
- * @typedef {Function} FilterAndMapper.filter
- * @typedef {Function} FilterAndMapper.mapper
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
  *
  * @param {*[]} words
- * @param {FilterAndMapper} [optX]
- * @param {FilterAndMapper} [optY]
- * @return {[?VectorWithBound, ?VectorWithBound]}
+ * @param {Config} [optX]
+ * @param {Config} [optY]
+ * @return {[?BoundedVector, ?BoundedVector]}
  */
 
 const duobound = function (words, [optX, optY] = []) {
   var _optX$filter, _optX$mapper, _optY$filter, _optY$mapper;
 
   const l = words === null || words === void 0 ? void 0 : words.length;
-  /** @type {?VectorWithBound} */
-
-  let veX = undefined;
-  /** @type {?VectorWithBound} */
-
-  let veY = undefined;
+  let veX = undefined,
+      veY = undefined;
   if (!l) return [veX, veY];
   const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : isNumeric,
         mapX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : parseNumeric;
@@ -121,24 +117,24 @@ const duobound = function (words, [optX, optY] = []) {
 
 /**
  *
- * @typedef {*[]} VectorWithBound
- * @typedef {number} VectorWithBound.max
- * @typedef {number} VectorWithBound.min
+ * @typedef {*[]} BoundedVector
+ * @typedef {number} BoundedVector.max
+ * @typedef {number} BoundedVector.min
  *
- * @typedef {Object} FilterAndMapper
- * @typedef {Function} FilterAndMapper.filter
- * @typedef {Function} FilterAndMapper.mapper
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
  *
  * @param {*[]} words
- * @param {FilterAndMapper} [opt]
- * @return {?VectorWithBound}
+ * @param {Config} [opt]
+ * @return {?BoundedVector}
  */
 
 const solebound = function (words, opt) {
   var _opt$filter, _opt$mapper;
 
   const l = words === null || words === void 0 ? void 0 : words.length;
-  /** @type {?VectorWithBound} */
+  /** @type {?BoundedVector} */
 
   let vec = undefined;
   if (!l) return vec;
@@ -166,4 +162,71 @@ const solebound = function (words, opt) {
   return vec;
 };
 
-export { bound, duobound, solebound };
+/**
+ *
+ * @typedef {Array} BoundedVector
+ * @typedef {number} BoundedVector.max
+ * @typedef {number} BoundedVector.min
+ *
+ * @typedef {Object} Config
+ * @typedef {function(*):boolean} Config.filter
+ * @typedef {function(*):number} Config.mapper
+ *
+ * @param {*[]} words
+ * @param {Config[]} configs
+ * @return {?BoundedVector[]}
+ */
+
+const multibound = function (words, configs) {
+  const l = words === null || words === void 0 ? void 0 : words.length;
+  const vectorCollection = configs.map(x => undefined);
+  if (!l) return vectorCollection;
+  iterate(words, (v, i) => configs.some(({
+    filter,
+    mapper
+  }, j) => {
+    var _vec;
+
+    let vec = vectorCollection[j];
+
+    if (filter(v) && ((_vec = vec) !== null && _vec !== void 0 ? _vec : vec = vectorCollection[j] = Array(l))) {
+      var _vec$max;
+
+      v = mapper(v);
+
+      if (v > ((_vec$max = vec.max) !== null && _vec$max !== void 0 ? _vec$max : vec.max = vec.min = v)) {
+        vec.max = v;
+      } else if (v < vec.min) {
+        vec.min = v;
+      }
+
+      return vec[i] = v, true;
+    }
+  }), l);
+  return vectorCollection;
+};
+
+/**
+ *
+ * @typedef {Array} BoundedVector
+ * @typedef {number} BoundedVector.max
+ * @typedef {number} BoundedVector.min
+ *
+ * @typedef {Object} Config
+ * @typedef {function(*):boolean} Config.filter
+ * @typedef {function(*):number} Config.mapper
+ *
+ * @param {*[]} words
+ * @param {Config[]} configs
+ * @return {?BoundedVector[]}
+ */
+
+const boundaries = function (words, configs) {
+  const count = configs.length;
+  if (count > 2) return multibound(words, configs);
+  if (count === 2) return duobound(words, configs);
+  if (count === 1) return [solebound(words, configs[0])];
+  return [];
+};
+
+export { bound, boundaries, duobound, solebound };

@@ -18,17 +18,17 @@ const parseNumeric = x => +x
  * @typedef {Function} Config.mapper
  *
  * @param {*[][]} wordx
- * @param {Config} optX
- * @param {Config} optY
+ * @param {Config} configX
+ * @param {Config} configY
  * @return {[?BoundedMatrix, ?BoundedMatrix]}
  */
-export const duobound = (wordx, [optX, optY] = [],) => {
+export const duobound = (wordx, [configX = {}, configY = {}] = []) => {
   const [h, w] = size(wordx)
   /** @type {?BoundedMatrix} */ let dtX = undefined
   /** @type {?BoundedMatrix} */ let dtY = undefined
   if (!h || !w) return [dtX, dtY]
-  const filterX = optX?.filter ?? isNumeric, mapperX = optX?.mapper ?? parseNum
-  const filterY = optY?.filter ?? hasLiteralAny, mapperY = optY?.mapper ?? stringValue
+  const filterX = configX.filter, mapperX = configX.mapper
+  const filterY = configY.filter, mapperY = configY.mapper
   iterate(
     wordx,
     (v, i, j) => {

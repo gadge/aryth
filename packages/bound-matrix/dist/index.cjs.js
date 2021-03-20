@@ -59,18 +59,18 @@ function bound(mx) {
 
 /**
  *
- * @typedef {*[][]} MatrixWithBound
- * @typedef {number} MatrixWithBound.max
- * @typedef {number} MatrixWithBound.min
+ * @typedef {*[][]} BoundedMatrix
+ * @typedef {number} BoundedMatrix.max
+ * @typedef {number} BoundedMatrix.min
  *
- * @typedef {Object} FilterAndMapper
- * @typedef {Function} FilterAndMapper.filter
- * @typedef {Function} FilterAndMapper.mapper
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
  *
  * @param {*[][]} wordx
- * @param {FilterAndMapper} optX
- * @param {FilterAndMapper} optY
- * @return {[?MatrixWithBound, ?MatrixWithBound]}
+ * @param {Config} optX
+ * @param {Config} optY
+ * @return {[?BoundedMatrix, ?BoundedMatrix]}
  */
 
 
@@ -78,67 +78,67 @@ const duobound = (wordx, [optX, optY] = []) => {
   var _optX$filter, _optX$mapper, _optY$filter, _optY$mapper;
 
   const [h, w] = matrixSize.size(wordx);
-  /** @type {?MatrixWithBound} */
+  /** @type {?BoundedMatrix} */
 
-  let x = undefined;
-  /** @type {?MatrixWithBound} */
+  let dtX = undefined;
+  /** @type {?BoundedMatrix} */
 
-  let y = undefined;
-  if (!h || !w) return [x, y];
+  let dtY = undefined;
+  if (!h || !w) return [dtX, dtY];
   const filterX = (_optX$filter = optX === null || optX === void 0 ? void 0 : optX.filter) !== null && _optX$filter !== void 0 ? _optX$filter : numeral.isNumeric,
-        mapX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : numeral.parseNum;
+        mapperX = (_optX$mapper = optX === null || optX === void 0 ? void 0 : optX.mapper) !== null && _optX$mapper !== void 0 ? _optX$mapper : numeral.parseNum;
   const filterY = (_optY$filter = optY === null || optY === void 0 ? void 0 : optY.filter) !== null && _optY$filter !== void 0 ? _optY$filter : literal.hasLiteralAny,
-        mapY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : stringValue.stringValue;
+        mapperY = (_optY$mapper = optY === null || optY === void 0 ? void 0 : optY.mapper) !== null && _optY$mapper !== void 0 ? _optY$mapper : stringValue.stringValue;
   matrixMapper.iterate(wordx, (v, i, j) => {
-    var _x, _y;
+    var _dtX, _dtY;
 
-    if (filterX(v) && ((_x = x) !== null && _x !== void 0 ? _x : x = matrixInit.iso(h, w, undefined))) {
-      var _x$max;
+    if (filterX(v) && ((_dtX = dtX) !== null && _dtX !== void 0 ? _dtX : dtX = matrixInit.iso(h, w, undefined))) {
+      var _dtX$max;
 
-      v = mapX(v);
+      v = mapperX(v);
 
-      if (v > ((_x$max = x.max) !== null && _x$max !== void 0 ? _x$max : x.max = x.min = v)) {
-        x.max = v;
-      } else if (v < x.min) {
-        x.min = v;
+      if (v > ((_dtX$max = dtX.max) !== null && _dtX$max !== void 0 ? _dtX$max : dtX.max = dtX.min = v)) {
+        dtX.max = v;
+      } else if (v < dtX.min) {
+        dtX.min = v;
       }
 
-      return x[i][j] = v;
+      return dtX[i][j] = v;
     }
 
-    if (filterY(v) && ((_y = y) !== null && _y !== void 0 ? _y : y = matrixInit.iso(h, w, undefined))) {
-      var _y$max;
+    if (filterY(v) && ((_dtY = dtY) !== null && _dtY !== void 0 ? _dtY : dtY = matrixInit.iso(h, w, undefined))) {
+      var _dtY$max;
 
-      v = mapY(v);
+      v = mapperY(v);
 
-      if (v > ((_y$max = y.max) !== null && _y$max !== void 0 ? _y$max : y.max = y.min = v)) {
-        y.max = v;
-      } else if (v < y.min) {
-        y.min = v;
+      if (v > ((_dtY$max = dtY.max) !== null && _dtY$max !== void 0 ? _dtY$max : dtY.max = dtY.min = v)) {
+        dtY.max = v;
+      } else if (v < dtY.min) {
+        dtY.min = v;
       }
 
-      return y[i][j] = v;
+      return dtY[i][j] = v;
     }
 
     return NaN;
   }, h, w);
-  return [x, y];
+  return [dtX, dtY];
 };
 
 const parseNumeric = x => +x;
 /**
  *
- * @typedef {*[][]} MatrixWithBound
- * @typedef {number} MatrixWithBound.max
- * @typedef {number} MatrixWithBound.min
+ * @typedef {*[][]} BoundedMatrix
+ * @typedef {number} BoundedMatrix.max
+ * @typedef {number} BoundedMatrix.min
  *
- * @typedef {Object} FilterAndMapper
- * @typedef {Function} FilterAndMapper.filter
- * @typedef {Function} FilterAndMapper.mapper
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
  *
  * @param {*[][]} wordx
- * @param {FilterAndMapper} [opt]
- * @return {?MatrixWithBound}
+ * @param {Config} [opt]
+ * @return {?BoundedMatrix}
  */
 
 
@@ -146,7 +146,7 @@ const solebound = (wordx, opt) => {
   var _opt$filter, _opt$mapper;
 
   const [height, width] = matrixSize.size(wordx);
-  /** @type {?MatrixWithBound} */
+  /** @type {?BoundedMatrix} */
 
   let mx = undefined;
   if (!height || !width) return mx;
