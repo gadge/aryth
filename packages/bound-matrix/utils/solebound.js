@@ -7,21 +7,21 @@ const parseNumeric = x => +x
 
 /**
  *
- * @typedef {*[][]} MatrixWithBound
- * @typedef {number} MatrixWithBound.max
- * @typedef {number} MatrixWithBound.min
+ * @typedef {*[][]} BoundedMatrix
+ * @typedef {number} BoundedMatrix.max
+ * @typedef {number} BoundedMatrix.min
  *
- * @typedef {Object} FilterAndMapper
- * @typedef {Function} FilterAndMapper.filter
- * @typedef {Function} FilterAndMapper.mapper
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
  *
  * @param {*[][]} wordx
- * @param {FilterAndMapper} [opt]
- * @return {?MatrixWithBound}
+ * @param {Config} [opt]
+ * @return {?BoundedMatrix}
  */
 export const solebound = (wordx, opt,) => {
   const [height, width] = size(wordx)
-  /** @type {?MatrixWithBound} */ let mx = undefined
+  /** @type {?BoundedMatrix} */ let mx = undefined
   if (!height || !width) return mx
   const filterX = opt?.filter ?? isNumeric, mapX = opt?.mapper ?? parseNumeric
   iterate(

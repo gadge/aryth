@@ -9,23 +9,23 @@ const parseNumeric = x => +x
 
 /**
  *
- * @typedef {*[][]} MatrixWithBound
- * @typedef {number} MatrixWithBound.max
- * @typedef {number} MatrixWithBound.min
+ * @typedef {*[][]} BoundedMatrix
+ * @typedef {number} BoundedMatrix.max
+ * @typedef {number} BoundedMatrix.min
  *
- * @typedef {Object} FilterAndMapper
- * @typedef {Function} FilterAndMapper.filter
- * @typedef {Function} FilterAndMapper.mapper
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
  *
  * @param {*[][]} wordx
- * @param {FilterAndMapper} optX
- * @param {FilterAndMapper} optY
- * @return {[?MatrixWithBound, ?MatrixWithBound]}
+ * @param {Config} optX
+ * @param {Config} optY
+ * @return {[?BoundedMatrix, ?BoundedMatrix]}
  */
 export const duobound = (wordx, [optX, optY] = [],) => {
   const [h, w] = size(wordx)
-  /** @type {?MatrixWithBound} */ let dtX = undefined
-  /** @type {?MatrixWithBound} */ let dtY = undefined
+  /** @type {?BoundedMatrix} */ let dtX = undefined
+  /** @type {?BoundedMatrix} */ let dtY = undefined
   if (!h || !w) return [dtX, dtY]
   const filterX = optX?.filter ?? isNumeric, mapperX = optX?.mapper ?? parseNum
   const filterY = optY?.filter ?? hasLiteralAny, mapperY = optY?.mapper ?? stringValue

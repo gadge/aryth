@@ -1,6 +1,6 @@
 import { says }     from '@palett/says'
 import { deco }     from '@spare/deco'
-import { duobound } from '../src/duobound'
+import { duobound } from '../utils/duobound'
 
 const paramsList = {
   row: [[5, 7, 9, 10, 6]],

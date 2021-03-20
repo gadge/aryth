@@ -14,12 +14,12 @@ import { solebound }  from '../utils/solebound'
  *
  * @param {*[]} words
  * @param {Config[]} configs
- * @return {[?BoundedVector]}
+ * @return {?BoundedVector[]}
  */
 export const boundaries = function (words, configs) {
   const count = configs.length
   if (count > 2) return multibound(words, configs)
   if (count === 2) return duobound(words, configs)
-  if (count === 1) return solebound(words, configs[0])
+  if (count === 1) return [solebound(words, configs[0])]
   return []
 }

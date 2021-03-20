@@ -4,21 +4,21 @@ import { parseNumeric } from './parseNumeric'
 
 /**
  *
- * @typedef {*[]} VectorWithBound
- * @typedef {number} VectorWithBound.max
- * @typedef {number} VectorWithBound.min
+ * @typedef {*[]} BoundedVector
+ * @typedef {number} BoundedVector.max
+ * @typedef {number} BoundedVector.min
  *
- * @typedef {Object} FilterAndMapper
- * @typedef {Function} FilterAndMapper.filter
- * @typedef {Function} FilterAndMapper.mapper
+ * @typedef {Object} Config
+ * @typedef {Function} Config.filter
+ * @typedef {Function} Config.mapper
  *
  * @param {*[]} words
- * @param {FilterAndMapper} [opt]
- * @return {?VectorWithBound}
+ * @param {Config} [opt]
+ * @return {?BoundedVector}
  */
 export const solebound = function (words, opt) {
   const l = words?.length
-  /** @type {?VectorWithBound} */ let vec = undefined
+  /** @type {?BoundedVector} */ let vec = undefined
   if (!l) return vec
   const filter = opt?.filter ?? isNumeric, mapper = opt?.mapper ?? parseNumeric
   iterate(words, (v, i) => {

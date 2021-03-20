@@ -12,11 +12,11 @@ import { iterate } from '@vect/vector-mapper'
  *
  * @param {*[]} words
  * @param {Config[]} configs
- * @return {[?BoundedVector, ?BoundedVector]}
+ * @return {?BoundedVector[]}
  */
 export const multibound = function (words, configs) {
   const l = words?.length
-  let vectorCollection = configs.map(x => undefined)
+  const vectorCollection = configs.map(x => undefined)
   if (!l) return vectorCollection
   iterate(words,
     (v, i) => configs.some(
