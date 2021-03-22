@@ -1,4 +1,4 @@
-import { stringValue }  from '@spare/string-value'
+import { stringValue }  from '@texting/string-value'
 import { hasLiteral }   from '@typen/literal'
 import { isNumeric }    from '@typen/numeral'
 import { parseNumeric } from '../../../../utils/parseNumeric'

@@ -32,7 +32,7 @@ npm install @aryth/[app]
 |[**rank-column**](./packages/rank-column)        | Get rank of column                  |![v][rank-column-dm]    |
 |[**bound-vector**](./packages/bound-vector)      | Get min, max, dif of vector         |![v][bound-vector-dm]   |
 |[**bound-matrix**](./packages/bound-matrix)      | Get min, max, dif of matrix         |![v][bound-matrix-dm]   |
-|[**bound-column**](./packages/bound-column)      | Get min, max, dif of column         |![v][bound-column-dm]   |
+|[**bound-column**](unpublish/bound-column)      | Get min, max, dif of column         |![v][bound-column-dm]   |
 |[**distinct-vector**](./packages/distinct-vector)| Get distinct(w/wo count) of vector  |![v][distinct-vector-dm]|
 |[**distinct-matrix**](./packages/distinct-matrix)| Get distinct(w/wo count) of matrix  |![v][distinct-matrix-dm]|
 |[**distinct-column**](./packages/distinct-column)| Get distinct(w/wo count) of column  |![v][distinct-column-dm]|

@@ -2,8 +2,8 @@ import { bound as bound$1 } from '@aryth/bound-vector';
 import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
 import { size } from '@vect/matrix-size';
-import { stringValue } from '@spare/string-value';
-import { hasLiteralAny } from '@typen/literal';
+import { stringValue } from '@texting/string-value';
+import { hasLiteral } from '@typen/literal';
 import { isNumeric, parseNum } from '@typen/numeral';
 import { iso } from '@vect/matrix-init';
 import { iterate } from '@vect/matrix-mapper';
@@ -232,15 +232,27 @@ const multibound = (wordx, configs) => {
 
 const boundaries = function (wordx, configs = []) {
   const count = configs.length;
-  if (count > 2) return multibound(wordx, configs);
+  if (count === 0) return [];
+
+  if (count === 1) {
+    var _x$filter, _x$mapper;
+
+    const [x] = configs;
+    const filter = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : isNumeric,
+          mapper = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNum;
+    return [solebound(wordx, {
+      filter,
+      mapper
+    })];
+  }
 
   if (count === 2) {
-    var _x$filter, _x$mapper, _y$filter, _y$mapper;
+    var _x$filter2, _x$mapper2, _y$filter, _y$mapper;
 
     const [x, y] = configs;
-    const fX = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : isNumeric,
-          mX = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : parseNum;
-    const fY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : hasLiteralAny,
+    const fX = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : isNumeric,
+          mX = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : parseNum;
+    const fY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : hasLiteral,
           mY = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue;
     return duobound(wordx, [{
       filter: fX,
@@ -251,19 +263,7 @@ const boundaries = function (wordx, configs = []) {
     }]);
   }
 
-  if (count === 1) {
-    var _x$filter2, _x$mapper2;
-
-    const [x] = configs;
-    const filter = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : isNumeric,
-          mapper = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : parseNum;
-    return [solebound(wordx, {
-      filter,
-      mapper
-    })];
-  }
-
-  return [];
+  if (count >= 3) return multibound(wordx, configs);
 };
 
 export { bound, boundaries, duobound, solebound };

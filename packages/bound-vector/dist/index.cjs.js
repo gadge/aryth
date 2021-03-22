@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
-var stringValue = require('@spare/string-value');
+var stringValue = require('@texting/string-value');
 var literal = require('@typen/literal');
 var numeral = require('@typen/numeral');
 
@@ -225,26 +225,26 @@ const multibound = function (words, configs) {
 
 const boundaries = function (words, configs) {
   const count = configs.length;
-  if (count > 2) return multibound(words, configs);
-
-  if (count === 2) {
-    var _x$filter, _x$mapper, _y$filter, _y$mapper;
-
-    const [x = {}, y = {}] = configs;
-    x.filter = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : numeral.isNumeric, x.mapper = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : numeral.parseNum;
-    y.filter = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : literal.hasLiteralAny, y.mapper = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue.stringValue;
-    return duobound(words, configs);
-  }
+  if (count === 0) return [];
 
   if (count === 1) {
-    var _x$filter2, _x$mapper2;
+    var _x$filter, _x$mapper;
 
     const [x = {}] = configs;
-    x.filter = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : numeral.isNumeric, x.mapper = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : numeral.parseNum;
+    x.filter = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : numeral.isNumeric, x.mapper = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : numeral.parseNum;
     return [solebound(words, configs[0])];
   }
 
-  return [];
+  if (count === 2) {
+    var _x$filter2, _x$mapper2, _y$filter, _y$mapper;
+
+    const [x = {}, y = {}] = configs;
+    x.filter = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : numeral.isNumeric, x.mapper = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : numeral.parseNum;
+    y.filter = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : literal.hasLiteral, y.mapper = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue.stringValue;
+    return duobound(words, configs);
+  }
+
+  if (count >= 3) return multibound(words, configs);
 };
 
 exports.bound = bound;

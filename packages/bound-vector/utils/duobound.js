@@ -1,4 +1,4 @@
-import { stringValue }   from '@spare/string-value'
+import { stringValue }   from '@texting/string-value'
 import { hasLiteralAny } from '@typen/literal'
 import { isNumeric }     from '@typen/numeral'
 import { iterate }       from '@vect/vector-mapper'

@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "@spare/regex-phrasing": "^0.10.14",
-    "@spare/ripper": "^0.10.14",
-    "@spare/splitter": "^0.10.14"
+    "@spare/ripper": "^0.11.1",
+    "@spare/splitter": "^0.11.1"
   },
   "repository": {
     "type": "git",

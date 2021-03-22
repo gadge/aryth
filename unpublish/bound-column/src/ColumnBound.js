@@ -1,7 +1,7 @@
 import { boundOutput, ToNum } from '@aryth/util-bound'
 import { LOOSE }              from '@typen/enum-check-levels'
-import { size }               from '@vect/matrix-size'
-import { iniNumEntry }        from '../utils/iniNumEntry'
+import { size }        from '@vect/matrix-size'
+import { iniNumEntry } from '../utils/iniNumEntry'
 
 export function columnBound(mx) {
   /** @type {{dif: boolean, level: number}} */ const config = this ?? { dif: false, level: LOOSE }
