@@ -1,5 +1,6 @@
 import { says }       from '@palett/says'
 import { deco }       from '@spare/deco'
+import { logger }     from 'xbrief'
 import { boundaries } from '../src/boundaries'
 
 const paramsList = {
@@ -15,6 +16,7 @@ const paramsList = {
 
 for (const [key, mx] of Object.entries(paramsList)) {
   const db = boundaries(mx, [{}, {}])
+  // db |> logger
   db|> deco |> says[key].br('vec')
   let max, min;
   ({ max, min } = db[0] ?? {});

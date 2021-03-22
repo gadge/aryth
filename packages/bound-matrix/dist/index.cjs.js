@@ -6,11 +6,11 @@ var boundVector = require('@aryth/bound-vector');
 var utilBound = require('@aryth/util-bound');
 var enumCheckLevels = require('@typen/enum-check-levels');
 var matrixSize = require('@vect/matrix-size');
+var matrixInit = require('@vect/matrix-init');
+var matrixMapper = require('@vect/matrix-mapper');
 var stringValue = require('@texting/string-value');
 var literal = require('@typen/literal');
 var numeral = require('@typen/numeral');
-var matrixInit = require('@vect/matrix-init');
-var matrixMapper = require('@vect/matrix-mapper');
 
 const iniNumEntry = (mx, t, b, l, r, {
   level = 0

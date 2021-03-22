@@ -1,9 +1,6 @@
-import { stringValue }         from '@texting/string-value'
-import { hasLiteralAny }       from '@typen/literal'
-import { isNumeric, parseNum } from '@typen/numeral'
-import { iso }                 from '@vect/matrix-init'
-import { iterate }             from '@vect/matrix-mapper'
-import { size }                from '@vect/matrix-size'
+import { iso }     from '@vect/matrix-init'
+import { iterate } from '@vect/matrix-mapper'
+import { size }    from '@vect/matrix-size'
 
 const parseNumeric = x => +x
 

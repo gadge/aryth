@@ -1,7 +1,6 @@
-import { isNumeric } from '@typen/numeral'
-import { iso }       from '@vect/matrix-init'
-import { iterate }   from '@vect/matrix-mapper'
-import { size }      from '@vect/matrix-size'
+import { iso }     from '@vect/matrix-init'
+import { iterate } from '@vect/matrix-mapper'
+import { size }    from '@vect/matrix-size'
 
 const parseNumeric = x => +x
 

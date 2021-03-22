@@ -1,6 +1,4 @@
-import { isNumeric }    from '@typen/numeral'
-import { iterate }      from '@vect/vector-mapper'
-import { parseNumeric } from './parseNumeric'
+import { iterate } from '@vect/vector-mapper'
 
 /**
  *

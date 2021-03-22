@@ -2,11 +2,11 @@ import { bound as bound$1 } from '@aryth/bound-vector';
 import { IsNum, boundOutput, ToNum } from '@aryth/util-bound';
 import { LOOSE } from '@typen/enum-check-levels';
 import { size } from '@vect/matrix-size';
+import { iso } from '@vect/matrix-init';
+import { iterate } from '@vect/matrix-mapper';
 import { stringValue } from '@texting/string-value';
 import { hasLiteral } from '@typen/literal';
 import { isNumeric, parseNum } from '@typen/numeral';
-import { iso } from '@vect/matrix-init';
-import { iterate } from '@vect/matrix-mapper';
 
 const iniNumEntry = (mx, t, b, l, r, {
   level = 0
