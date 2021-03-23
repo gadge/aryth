@@ -1,6 +1,6 @@
 {
   "name": "@aryth/nice-scale",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "Nice scale algorithm",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@aryth/math": "^0.3.11",
+    "@aryth/math": "^0.3.12",
     "@typen/enum-object-types": "^0.1.16"
   },
   "repository": {
