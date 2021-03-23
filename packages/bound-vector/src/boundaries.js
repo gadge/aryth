@@ -28,10 +28,10 @@ export const boundaries = function (words, configs) {
     return [solebound(words, configs[0])]
   }
   if (count === 2) {
-    const [x = {}, y = {}] = configs
-    x.filter = x?.filter ?? isNumeric, x.mapper = x?.mapper ?? parseNum
-    y.filter = y?.filter ?? hasLiteral, y.mapper = y?.mapper ?? stringValue
-    return duobound(words, configs)
+    const [x, y] = configs
+    const fX = x?.filter ?? isNumeric, mX = x?.mapper ?? parseNum
+    const fY = y?.filter ?? hasLiteral, mY = y?.mapper ?? stringValue
+    return duobound(words, [{ filter: fX, mapper: mX }, { filter: fY, mapper: mY }])
   }
   if (count >= 3) return multibound(words, configs)
 }
