@@ -14,5 +14,5 @@ const paramsList = {
 }
 
 for (const [key, mx] of Object.entries(paramsList)) {
-  bound.call({ level: STRICT }, mx) |> deco|> says[key]
+  bound.call({ level: STRICT }, mx) |> deco |> says[key]
 }

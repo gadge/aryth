@@ -21,11 +21,11 @@
     "@spare/lange": "^0.11.1",
     "@spare/pad-string": "^0.9.9",
     "@typen/enum-data-types": "^0.1.16",
-    "@vect/entries-indicator": "^0.3.6",
-    "@vect/entries-init": "^0.3.6",
-    "@vect/entries-mapper": "^0.3.6",
-    "@vect/object-init": "^0.3.6",
-    "@vect/vector-mapper": "^0.3.6"
+    "@vect/entries-indicator": "^0.3.7",
+    "@vect/entries-init": "^0.3.7",
+    "@vect/entries-mapper": "^0.3.7",
+    "@vect/object-init": "^0.3.7",
+    "@vect/vector-mapper": "^0.3.7"
   },
   "repository": {
     "type": "git",
