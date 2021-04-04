@@ -19,6 +19,7 @@ export const solebound = function (words, config) {
   let vec = undefined
   if (!l) return vec
   const { filter, mapper } = config
+  if (!filter) return vec
   iterate(words, (v, i) => {
       if (filter(v) && (vec ?? (vec = Array(l)))) {
         v = mapper(v)

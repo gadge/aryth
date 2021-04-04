@@ -1,1 +1,1 @@
-export {infiniteFlopper, finiteFlopper, finiteFlopper as flopGenerator} from './src/flopper'
+export { infiniteFlopper, finiteFlopper, finiteFlopper as flopGenerator } from './src/flopper'

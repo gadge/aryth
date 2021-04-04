@@ -142,6 +142,7 @@ const solebound = function (words, config) {
     filter,
     mapper
   } = config;
+  if (!filter) return vec;
   iterate(words, (v, i) => {
     var _vec;
 
