@@ -13,61 +13,18 @@ var objectInit = require('@vect/object-init');
 var vectorMapper = require('@vect/vector-mapper');
 var math = require('@aryth/math');
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
+var id = 0;
+
+function _classPrivateFieldLooseKey(name) {
+  return "__private_" + id++ + "_" + name;
+}
+
+function _classPrivateFieldLooseBase(receiver, privateKey) {
+  if (!Object.prototype.hasOwnProperty.call(receiver, privateKey)) {
+    throw new TypeError("attempted to use private field on non-instance");
   }
 
-  return obj;
-}
-
-function _classPrivateFieldGet(receiver, privateMap) {
-  var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get");
-
-  return _classApplyDescriptorGet(receiver, descriptor);
-}
-
-function _classPrivateFieldSet(receiver, privateMap, value) {
-  var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
-
-  _classApplyDescriptorSet(receiver, descriptor, value);
-
-  return value;
-}
-
-function _classExtractFieldDescriptor(receiver, privateMap, action) {
-  if (!privateMap.has(receiver)) {
-    throw new TypeError("attempted to " + action + " private field on non-instance");
-  }
-
-  return privateMap.get(receiver);
-}
-
-function _classApplyDescriptorGet(receiver, descriptor) {
-  if (descriptor.get) {
-    return descriptor.get.call(receiver);
-  }
-
-  return descriptor.value;
-}
-
-function _classApplyDescriptorSet(receiver, descriptor, value) {
-  if (descriptor.set) {
-    descriptor.set.call(receiver, value);
-  } else {
-    if (!descriptor.writable) {
-      throw new TypeError("attempted to set read only private field");
-    }
-
-    descriptor.value = value;
-  }
+  return receiver;
 }
 
 const isEven = n => !(n % 2);
@@ -92,9 +49,9 @@ const lpad = padString.LPad({
   ansi: false
 });
 
-var _ticks = new WeakMap();
+var _ticks = _classPrivateFieldLooseKey("ticks");
 
-var _tickmap = new WeakMap();
+var _tickmap = _classPrivateFieldLooseKey("tickmap");
 
 class Histo {
   /** @type{Array<number>} */
@@ -103,18 +60,15 @@ class Histo {
 
   /** @type{number} */
   constructor(tickLabels) {
-    _ticks.set(this, {
+    Object.defineProperty(this, _ticks, {
       writable: true,
       value: void 0
     });
-
-    _tickmap.set(this, {
+    Object.defineProperty(this, _tickmap, {
       writable: true,
       value: void 0
     });
-
-    _defineProperty(this, "gaps", void 0);
-
+    this.gaps = void 0;
     this.ticks = tickLabels;
   }
 
@@ -143,11 +97,8 @@ class Histo {
   set ticks(tickLabels) {
     let map,
         i = -1;
-
-    _classPrivateFieldSet(this, _ticks, tickLabels);
-
-    _classPrivateFieldSet(this, _tickmap, map = new Map());
-
+    _classPrivateFieldLooseBase(this, _ticks)[_ticks] = tickLabels;
+    _classPrivateFieldLooseBase(this, _tickmap)[_tickmap] = map = new Map();
     const l = tickLabels.length;
 
     while (i <= l) map.set(i++, 0); // min-1 and max+1 are both added
@@ -157,7 +108,7 @@ class Histo {
   }
 
   get ticks() {
-    return _classPrivateFieldGet(this, _ticks);
+    return _classPrivateFieldLooseBase(this, _ticks)[_ticks];
   }
   /**
    * // Xr(step++).value(x).low(lo).mid(mid).p(ar[mid]).high(gaps) |> logger
@@ -169,7 +120,7 @@ class Histo {
 
 
   locate(x) {
-    const ve = _classPrivateFieldGet(this, _ticks);
+    const ve = _classPrivateFieldLooseBase(this, _ticks)[_ticks];
 
     let lo = 0,
         hi = this.gaps + 1,
@@ -183,7 +134,7 @@ class Histo {
   }
 
   collect(x) {
-    const mp = _classPrivateFieldGet(this, _tickmap),
+    const mp = _classPrivateFieldLooseBase(this, _tickmap)[_tickmap],
           i = this.locate(x);
 
     mp.set(i, mp.get(i) + 1);
@@ -192,8 +143,8 @@ class Histo {
 
   get bound() {
     return {
-      min: _classPrivateFieldGet(this, _ticks)[0],
-      max: _classPrivateFieldGet(this, _ticks)[this.gaps]
+      min: _classPrivateFieldLooseBase(this, _ticks)[_ticks][0],
+      max: _classPrivateFieldLooseBase(this, _ticks)[_ticks][this.gaps]
     };
   }
 
@@ -201,7 +152,7 @@ class Histo {
     if (type === enumDataTypes.STR) {
       const chips = Array(this.gaps + 1);
 
-      const max = _classPrivateFieldGet(this, _ticks).reduce((a, b, i) => (chips[i] = [String(a), b = String(b)], b), '-∞');
+      const max = _classPrivateFieldLooseBase(this, _ticks)[_ticks].reduce((a, b, i) => (chips[i] = [String(a), b = String(b)], b), '-∞');
 
       chips.push([max, '+∞']);
       return chips;
@@ -210,19 +161,19 @@ class Histo {
     if (type === enumDataTypes.NUM) {
       const chips = Array(this.gaps + 1);
 
-      const max = _classPrivateFieldGet(this, _ticks).reduce((a, b, i) => (chips[i] = [a, b], b), Number.NEGATIVE_INFINITY);
+      const max = _classPrivateFieldLooseBase(this, _ticks)[_ticks].reduce((a, b, i) => (chips[i] = [a, b], b), Number.NEGATIVE_INFINITY);
 
       chips.push([max, Number.POSITIVE_INFINITY]);
       return chips;
     }
 
-    return _classPrivateFieldGet(this, _ticks);
+    return _classPrivateFieldLooseBase(this, _ticks)[_ticks];
   }
 
   get count() {
     let sum = 0;
 
-    for (let v of _classPrivateFieldGet(this, _tickmap).values()) sum += v;
+    for (let v of _classPrivateFieldLooseBase(this, _tickmap)[_tickmap].values()) sum += v;
 
     return sum;
   }
@@ -238,7 +189,7 @@ class Histo {
       vectorMapper.mutate(intervals, ([k, v]) => `[${lpad(k, l)}, ${lpad(v, r)})`);
     }
 
-    return objectify ? objectInit.wind(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]) : entriesInit.wind(intervals, [..._classPrivateFieldGet(this, _tickmap).values()]);
+    return objectify ? objectInit.wind(intervals, [..._classPrivateFieldLooseBase(this, _tickmap)[_tickmap].values()]) : entriesInit.wind(intervals, [..._classPrivateFieldLooseBase(this, _tickmap)[_tickmap].values()]);
   }
 
 }
