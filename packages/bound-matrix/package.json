@@ -17,7 +17,7 @@
   "dependencies": {
     "@aryth/bound-vector": "^0.3.16",
     "@aryth/util-bound": "^0.3.16",
-    "@ject/oneself": "^0.0.10",
+    "@ject/oneself": "^0.0.11",
     "@texting/string-value": "^0.0.6",
     "@typen/enum-check-levels": "^0.1.16",
     "@typen/literal": "^0.1.16",

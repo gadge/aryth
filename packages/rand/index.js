@@ -2,3 +2,4 @@ export { rand, randIn, randBetw, randLong, randInt, randIntBetw, randLongStr } f
 export { flop, flopIndex, flopKey, flopValue, flopEntry }                      from './src/flop'
 export { flopGenerator }                                                       from './src/flopGenerator'
 export { shuffle }                                                             from './src/shuffle'
+export { Ziggurat }                                                            from './src/ziggurat'

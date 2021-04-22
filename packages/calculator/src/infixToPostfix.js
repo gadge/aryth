@@ -11,19 +11,15 @@ export const infixToPostfix = function (infix) {
   const
     functions = this?.functions ?? Math,
     constants = this?.constants ?? Constants,
-    stack = [],
-    postfix = []
+    stack     = [],
+    postfix   = []
   let a, b
   for (let x of elements)
-    if (isNumeric(x)) {
-      postfix.push(+x)
-    } else if (x in constants) {
-      postfix.push(constants[x])
-    } else if (x in functions) {
-      stack.push(functions[x])
-    } else if (x === CO) {
-      while (stack.peek() !== '(') postfix.push(stack.pop())
-    } else if (x in Operators) {
+    if (isNumeric(x)) { postfix.push(+x) }
+    else if (x in constants) { postfix.push(constants[x]) }
+    else if (x in functions) { stack.push(functions[x]) }
+    else if (x === CO) { while (stack.peek() !== '(') postfix.push(stack.pop()) }
+    else if (x in Operators) {
       a = x
       b = stack.peek()
       while ((b in Operators) && (
@@ -35,7 +31,9 @@ export const infixToPostfix = function (infix) {
         b = stack.peek()
       }
       stack.push(a)
-    } else if (x === '(') { stack.push(x) } else if (x === ')') {
+    }
+    else if (x === '(') { stack.push(x) }
+    else if (x === ')') {
       while (stack.peek() !== '(') postfix.push(stack.pop())
       stack.pop()
     }
