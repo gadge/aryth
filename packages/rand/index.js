@@ -3,3 +3,4 @@ export { flop, flopIndex, flopKey, flopValue, flopEntry }                      f
 export { flopGenerator }                                                       from './src/flopGenerator'
 export { shuffle }                                                             from './src/shuffle'
 export { Ziggurat }                                                            from './src/ziggurat'
+export { ziggurat }                                                            from './src/zigguratGenerator'

@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var swap = require('@vect/swap');
 var comparer = require('@aryth/comparer');
+var nullish = require('@typen/nullish');
 
 const {
   random: random$1
@@ -134,20 +135,20 @@ const M1 = 2147483648.0;
 const VN = 9.91256303526217e-3;
 class Ziggurat {
   constructor(mean = 0, stdev = 1) {
-    this.jsr = 123456789;
-    this.wn = Array(128);
-    this.fn = Array(128);
-    this.kn = Array(128);
-    this.mean = mean;
-    this.stdev = stdev;
-    this.preset();
+    this.bootstrap(mean, stdev);
   }
 
   static build(mean, stdev) {
     return new Ziggurat(mean, stdev);
   }
 
-  preset() {
+  bootstrap(mean, stdev) {
+    this.mean = mean;
+    this.stdev = stdev;
+    this.jsr = 123456789;
+    this.wn = Array(128);
+    this.fn = Array(128);
+    this.kn = Array(128);
     this.jsr ^= new Date().getTime(); // seed generator based on current time
 
     let m1 = M1,
@@ -230,6 +231,52 @@ class Ziggurat {
 
 }
 
+/**
+ *
+ * applicable for smaller number
+ * @param {number} x
+ * @returns {number}
+ */
+
+
+const round = x => x + (x > 0 ? 0.5 : -0.5) << 0;
+
+const E2 = 1E+2;
+
+const roundD1 = x => Math.round(x * 10) / 10;
+
+const roundD2 = x => Math.round(x * E2) / E2;
+
+/**
+ *
+ * @param {number} mean
+ * @param {number} stdev
+ * @param {number} [digits]
+ * @yields {number} next random norm dist. number simulated by the ziggurat algorithm.
+ */
+
+function* zigguratGenerator(mean, stdev, digits) {
+  this.bootstrap(mean, stdev);
+
+  if (nullish.nullish(digits)) {
+    while (true) yield this.randSample() * this.stdev + this.mean;
+  } else {
+    if (digits > 2) this.D = 10 ^ digits;
+    const rounder = digits === 0 ? round : digits === 1 ? roundD1 : digits === 2 ? roundD2 : x => Math.round(x * this.D) / this.D;
+
+    while (true) yield rounder(this.randSample() * this.stdev + this.mean);
+  }
+}
+/**
+ *
+ * @param {number} mean
+ * @param {number} stdev
+ * @param {number} [digits]
+ * @returns {Generator<*, void, *>}
+ */
+
+const ziggurat = (mean, stdev, digits) => zigguratGenerator.call(Ziggurat.prototype, mean, stdev, digits);
+
 exports.Ziggurat = Ziggurat;
 exports.flop = flop;
 exports.flopEntry = flopEntry;
@@ -245,3 +292,4 @@ exports.randIntBetw = randIntBetw;
 exports.randLong = randLong;
 exports.randLongStr = randLongStr;
 exports.shuffle = shuffle;
+exports.ziggurat = ziggurat;

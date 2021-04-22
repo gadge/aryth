@@ -9,16 +9,17 @@ const VN = 9.91256303526217e-3
 
 export class Ziggurat {
   constructor(mean = 0, stdev = 1) {
+    this.bootstrap(mean, stdev)
+  }
+  static build(mean, stdev) { return new Ziggurat(mean, stdev) }
+  bootstrap(mean, stdev) {
+    this.mean = mean
+    this.stdev = stdev
     this.jsr = 123456789
     this.wn = Array(128)
     this.fn = Array(128)
     this.kn = Array(128)
-    this.mean = mean
-    this.stdev = stdev
-    this.preset()
-  }
-  static build(mean, stdev) { return new Ziggurat(mean, stdev)}
-  preset() {
+
     this.jsr ^= new Date().getTime() // seed generator based on current time
     let m1 = M1,
         dn = R0,
