@@ -7,6 +7,7 @@ export const abs = n => n < 0 ? 0 - n : n
  * @returns {number}
  */
 export const round = x => (x + (x > 0 ? 0.5 : -0.5)) << 0
+export const constraint = (x, min, max) => x > max ? max : x < min ? min : x
 
 export const E2 = 1E+2
 export const E4 = 1E+4

@@ -7,6 +7,7 @@ const abs = n => n < 0 ? 0 - n : n;
  */
 
 const round = x => x + (x > 0 ? 0.5 : -0.5) << 0;
+const constraint = (x, min, max) => x > max ? max : x < min ? min : x;
 const E2 = 1E+2;
 const E4 = 1E+4;
 const MILLION = 1E+6;
@@ -34,4 +35,4 @@ const intExpon = x => ~~Math.log10(x);
 const almostEquals = (x, y, epsilon) => Math.abs(x - y) < epsilon;
 const almostInt = (x, epsilon) => Math.abs(x - round(x)) < epsilon;
 
-export { E2, E4, MILLION, abs, almostEquals, almostInt, intAbs, intExpon, round, roundD1, roundD2, roundD4 };
+export { E2, E4, MILLION, abs, almostEquals, almostInt, constraint, intAbs, intExpon, round, roundD1, roundD2, roundD4 };
