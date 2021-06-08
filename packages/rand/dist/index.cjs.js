@@ -87,13 +87,13 @@ const flopEntry = ob => {
 };
 
 const flopGenerator = function* (ar, df) {
-  var _df, _ar;
+  var _ar;
 
   let l = ar.length;
 
   while (--l >= 0) yield swap.swap.call(ar, rand(l), l);
 
-  df = (_df = df) !== null && _df !== void 0 ? _df : (_ar = ar, flop(_ar));
+  df = df ?? (_ar = ar, flop(_ar));
 
   while (true) yield df;
 };
@@ -108,7 +108,7 @@ const flopGenerator = function* (ar, df) {
 
 const shuffle = function (ve, size) {
   let l = ve.length;
-  const lo = comparer.max(0, l - (size !== null && size !== void 0 ? size : l));
+  const lo = comparer.max(0, l - (size ?? l));
 
   while (--l >= lo) swap.swap.call(ve, l, rand(l));
 
@@ -231,6 +231,7 @@ class Ziggurat {
 
 }
 
+const E2 = 100; // E2
 /**
  *
  * applicable for smaller number
@@ -240,8 +241,6 @@ class Ziggurat {
 
 
 const round = x => x + (x > 0 ? 0.5 : -0.5) << 0;
-
-const E2 = 1E+2;
 
 const roundD1 = x => Math.round(x * 10) / 10;
 

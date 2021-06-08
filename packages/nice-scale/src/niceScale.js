@@ -9,11 +9,11 @@ export function niceScale({ min: lo, max: hi }) {
   const { ticks = 10, mode = ARRAY } = this ?? {}
   const
     delta = niceNum(hi - lo, false),
-    step = niceNum(delta / (ticks - 1), true),
-    min = Math.floor(lo / step) * step,
-    max = Math.ceil(hi / step) * step
+    step  = niceNum(delta / ( ticks - 1 ), true),
+    min   = Math.floor(lo / step) * step,
+    max   = Math.ceil(hi / step) * step
   if (mode === OBJECT) return { min, max, step }
-  if (mode === ARRAY) return tickLabels(min, step, round((max - min) / step))
+  if (mode === ARRAY) return tickLabels(min, step, round(( max - min ) / step))
   return { min, max, step }
 }
 
@@ -42,24 +42,24 @@ export const tickLabels = (lo, step, gaps) => {
  * @return {number} a "nice" number to be used for the data range
  */
 function niceNum(range, round = true) {
-  const expon = ~~(Math.log10(range)) // exponent of range
-  const frac = range / (10 ** expon) // fractional part of range
-  const niceFrac = round /** nice, rounded fraction */
-    ? niceFractionRound(frac)
-    : niceFraction(frac)
-  return niceFrac * (10 ** expon)
+  const expon    = ~~( Math.log10(range) ), // exponent of range
+        frac     = range / ( 10 ** expon ), // fractional part of range
+        niceFrac = round /** nice, rounded fraction */
+          ? niceFractionRound(frac)
+          : niceFraction(frac)
+  return niceFrac * ( 10 ** expon )
 }
 
 const niceFractionRound = frac => {
   if (frac < 1.5) return 1
   if (frac < 3) return 2
   if (frac < 7) return 5
-  else return 10
+  return 10
 }
 
 const niceFraction = frac => {
   if (frac <= 1) return 1
   if (frac <= 2) return 2
   if (frac <= 5) return 5
-  else return 10
+  return 10
 }

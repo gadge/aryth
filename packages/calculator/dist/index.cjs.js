@@ -83,11 +83,9 @@ Array.prototype.peek = function () {
 };
 
 const infixToPostfix = function (infix) {
-  var _this$functions, _this$constants;
-
   const elements = expressionToVector(infix);
-  const functions = (_this$functions = this === null || this === void 0 ? void 0 : this.functions) !== null && _this$functions !== void 0 ? _this$functions : Math,
-        constants = (_this$constants = this === null || this === void 0 ? void 0 : this.constants) !== null && _this$constants !== void 0 ? _this$constants : Constants,
+  const functions = (this == null ? void 0 : this.functions) ?? Math,
+        constants = (this == null ? void 0 : this.constants) ?? Constants,
         stack = [],
         postfix = [];
   let a, b;

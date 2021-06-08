@@ -45,9 +45,9 @@ const lpad = LPad({
   ansi: false
 });
 
-var _ticks = _classPrivateFieldLooseKey("ticks");
+var _ticks = /*#__PURE__*/_classPrivateFieldLooseKey("ticks");
 
-var _tickmap = _classPrivateFieldLooseKey("tickmap");
+var _tickmap = /*#__PURE__*/_classPrivateFieldLooseKey("tickmap");
 
 class Histo {
   /** @type{Array<number>} */

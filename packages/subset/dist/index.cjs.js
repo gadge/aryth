@@ -9,7 +9,7 @@ var swap = require('@vect/swap');
 function* combinator(vec, count = vec.length) {
   var _vec;
 
-  if (!((_vec = vec) !== null && _vec !== void 0 && _vec.length)) vec = [];
+  if (!((_vec = vec) != null && _vec.length)) vec = [];
   if (!count) count = vec.length;
   const indexes = vectorInit.iso(count, -1),
         hi = vec.length;

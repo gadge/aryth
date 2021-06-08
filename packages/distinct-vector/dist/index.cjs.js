@@ -14,7 +14,7 @@ var vectorMapper = require('@vect/vector-mapper');
 
 const distinct = function (arr, l) {
   let o;
-  return (l = arr === null || arr === void 0 ? void 0 : arr.length) === (l & 0x7f) ? (o = [], vectorMapper.iterate(arr, utilDistinct.vectorDistinctor.bind(o), l), o) : (o = {}, vectorMapper.iterate(arr, utilDistinct.objectDistinctor.bind(o), l), Object.keys(o));
+  return (l = arr == null ? void 0 : arr.length) === (l & 0x7f) ? (o = [], vectorMapper.iterate(arr, utilDistinct.vectorDistinctor.bind(o), l), o) : (o = {}, vectorMapper.iterate(arr, utilDistinct.objectDistinctor.bind(o), l), Object.keys(o));
 };
 /**
  *
@@ -29,7 +29,7 @@ const distinctCount = function (arr, {
   l
 }) {
   let o;
-  const ents = (l = arr === null || arr === void 0 ? void 0 : arr.length) === (l & 0x7f) ? (o = [], vectorMapper.iterate(arr, utilDistinct.entriesCounter.bind(o), l), o) : (o = {}, vectorMapper.iterate(arr, utilDistinct.objectCounter.bind(o), l), Object.entries(o));
+  const ents = (l = arr == null ? void 0 : arr.length) === (l & 0x7f) ? (o = [], vectorMapper.iterate(arr, utilDistinct.entriesCounter.bind(o), l), o) : (o = {}, vectorMapper.iterate(arr, utilDistinct.objectCounter.bind(o), l), Object.entries(o));
   if (sort) utilDistinct.sortByValues(ents, sort);
   return ents;
 };

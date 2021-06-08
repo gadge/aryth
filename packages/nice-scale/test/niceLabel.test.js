@@ -3,6 +3,7 @@ import { logger }         from '@spare/logger'
 import { niceScale }      from '../src/niceScale'
 
 const candidates = [
+  { min: -0.05, max: +0.15 },
   { min: 0, max: 1 },
   { min: 0, max: 10 },
   { min: 3.14, max: 9.99 },

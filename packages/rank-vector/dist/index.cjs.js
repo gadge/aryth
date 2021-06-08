@@ -15,10 +15,8 @@ var vectorMapper = require('@vect/vector-mapper');
  * @return {number[]} Rank order array, where 0 denote the first.
  */
 const rank = function (vec, comparer, filter) {
-  var _this$comparer, _this$filter;
-
-  comparer = (_this$comparer = this === null || this === void 0 ? void 0 : this.comparer) !== null && _this$comparer !== void 0 ? _this$comparer : comparer;
-  filter = (_this$filter = this === null || this === void 0 ? void 0 : this.filter) !== null && _this$filter !== void 0 ? _this$filter : filter;
+  comparer = (this == null ? void 0 : this.comparer) ?? comparer;
+  filter = (this == null ? void 0 : this.filter) ?? filter;
   const sorted = (!filter ? vec.slice() : vec.filter(filter)).sort(comparer);
   return vec.map(x => (x = sorted.indexOf(x)) >= 0 ? x : NaN);
 };

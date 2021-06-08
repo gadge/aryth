@@ -17,7 +17,7 @@ function niceScale({
   const {
     ticks = 10,
     mode = enumObjectTypes.ARRAY
-  } = this !== null && this !== void 0 ? this : {};
+  } = this ?? {};
   const delta = niceNum(hi - lo, false),
         step = niceNum(delta / (ticks - 1), true),
         min = Math.floor(lo / step) * step,
@@ -63,11 +63,11 @@ const tickLabels = (lo, step, gaps) => {
  */
 
 function niceNum(range, round = true) {
-  const expon = ~~Math.log10(range); // exponent of range
-
-  const frac = range / 10 ** expon; // fractional part of range
-
-  const niceFrac = round
+  const expon = ~~Math.log10(range),
+        // exponent of range
+  frac = range / 10 ** expon,
+        // fractional part of range
+  niceFrac = round
   /** nice, rounded fraction */
   ? niceFractionRound(frac) : niceFraction(frac);
   return niceFrac * 10 ** expon;
@@ -76,13 +76,15 @@ function niceNum(range, round = true) {
 const niceFractionRound = frac => {
   if (frac < 1.5) return 1;
   if (frac < 3) return 2;
-  if (frac < 7) return 5;else return 10;
+  if (frac < 7) return 5;
+  return 10;
 };
 
 const niceFraction = frac => {
   if (frac <= 1) return 1;
   if (frac <= 2) return 2;
-  if (frac <= 5) return 5;else return 10;
+  if (frac <= 5) return 5;
+  return 10;
 };
 
 exports.NiceScale = NiceScale;

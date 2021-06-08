@@ -15,7 +15,7 @@ const piler = (cur, pre) => {
 const romanToDecimal = roman => {
   var _roman;
 
-  let l = (_roman = roman) === null || _roman === void 0 ? void 0 : _roman.length,
+  let l = (_roman = roman) == null ? void 0 : _roman.length,
       acc = 0,
       pre = 'O';
   if (!l) return acc;

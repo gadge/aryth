@@ -71,13 +71,13 @@ const iniNumEntry = (ar, lo, hi, {
 
 function bound(vec) {
   /** @type {{dif: boolean, level: number}} */
-  const config = this !== null && this !== void 0 ? this : {
+  const config = this ?? {
     dif: true,
     level: LOOSE
   };
   const toOutput = boundOutput.bind(config),
         toNum = ToNum(config.level);
-  let l = vec === null || vec === void 0 ? void 0 : vec.length;
+  let l = vec == null ? void 0 : vec.length;
   if (!l) return toOutput(NaN, NaN);
   let [i, x] = iniNumEntry(vec, 0, l, config);
   let min,
@@ -144,12 +144,10 @@ const project = function (vec, {
   max,
   min
 } = {}) {
-  var _max, _min;
-
   /** @type {{level:number,max:number,min:number}} */
-  const config = this !== null && this !== void 0 ? this : {};
-  max = (_max = max) !== null && _max !== void 0 ? _max : config.max;
-  min = (_min = min) !== null && _min !== void 0 ? _min : config.min;
+  const config = this ?? {};
+  max = max ?? config.max;
+  min = min ?? config.min;
   const projector = Projector(bound.call(config, vec), {
     max,
     min

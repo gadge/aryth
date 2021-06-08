@@ -10,7 +10,7 @@ import { iterate } from '@vect/vector-mapper';
 
 const distinct = function (arr, l) {
   let o;
-  return (l = arr === null || arr === void 0 ? void 0 : arr.length) === (l & 0x7f) ? (o = [], iterate(arr, vectorDistinctor.bind(o), l), o) : (o = {}, iterate(arr, objectDistinctor.bind(o), l), Object.keys(o));
+  return (l = arr == null ? void 0 : arr.length) === (l & 0x7f) ? (o = [], iterate(arr, vectorDistinctor.bind(o), l), o) : (o = {}, iterate(arr, objectDistinctor.bind(o), l), Object.keys(o));
 };
 /**
  *
@@ -25,7 +25,7 @@ const distinctCount = function (arr, {
   l
 }) {
   let o;
-  const ents = (l = arr === null || arr === void 0 ? void 0 : arr.length) === (l & 0x7f) ? (o = [], iterate(arr, entriesCounter.bind(o), l), o) : (o = {}, iterate(arr, objectCounter.bind(o), l), Object.entries(o));
+  const ents = (l = arr == null ? void 0 : arr.length) === (l & 0x7f) ? (o = [], iterate(arr, entriesCounter.bind(o), l), o) : (o = {}, iterate(arr, objectCounter.bind(o), l), Object.entries(o));
   if (sort) sortByValues(ents, sort);
   return ents;
 };

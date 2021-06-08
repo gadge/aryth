@@ -2,13 +2,13 @@ import { rand, flop } from '@aryth/rand';
 import { swap } from '@vect/swap';
 
 const infiniteFlopper = function* (ar, df) {
-  var _df, _ar;
+  var _ar;
 
   let l = ar.length;
 
   while (--l >= 0) yield swap.call(ar, rand(l), l);
 
-  df = (_df = df) !== null && _df !== void 0 ? _df : (_ar = ar, flop(_ar));
+  df = df ?? (_ar = ar, flop(_ar));
 
   while (true) yield df;
 };

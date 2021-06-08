@@ -13,7 +13,7 @@ const distinct = function (mx, h) {
     y
   } = this;
   let o;
-  return (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], iterate(mx, y, vectorDistinctor.bind(o), h), o) : (o = {}, iterate(mx, y, objectDistinctor.bind(o), h), Object.keys(o));
+  return (h = mx == null ? void 0 : mx.length) === (h & 0x7f) ? (o = [], iterate(mx, y, vectorDistinctor.bind(o), h), o) : (o = {}, iterate(mx, y, objectDistinctor.bind(o), h), Object.keys(o));
 };
 /**
  *
@@ -31,7 +31,7 @@ const distinctCount = function (mx, {
     y
   } = this;
   let o;
-  const ents = (h = mx === null || mx === void 0 ? void 0 : mx.length) === (h & 0x7f) ? (o = [], iterate(mx, y, entriesCounter.bind(o), h), o) : (o = {}, iterate(mx, y, objectCounter.bind(o), h), Object.entries(o));
+  const ents = (h = mx == null ? void 0 : mx.length) === (h & 0x7f) ? (o = [], iterate(mx, y, entriesCounter.bind(o), h), o) : (o = {}, iterate(mx, y, objectCounter.bind(o), h), Object.entries(o));
   if (sort) sortByValues(ents, sort);
   return ents;
 };

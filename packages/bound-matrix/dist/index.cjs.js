@@ -28,7 +28,7 @@ const iniNumEntry = (mx, t, b, l, r, {
 
 function bound(mx) {
   /** @type {{dif: boolean, level: number}} */
-  const config = this !== null && this !== void 0 ? this : {
+  const config = this ?? {
     dif: true,
     level: enumCheckLevels.LOOSE
   };
@@ -88,14 +88,10 @@ const duobound = (wordx, [configX, configY] = []) => {
     mapper: mapperY
   } = configY;
   matrixMapper.iterate(wordx, (v, i, j) => {
-    var _matX, _matY;
-
-    if (filterX(v) && ((_matX = matX) !== null && _matX !== void 0 ? _matX : matX = matrixInit.iso(h, w, undefined))) {
-      var _matX$max;
-
+    if (filterX(v) && (matX ?? (matX = matrixInit.iso(h, w, undefined)))) {
       v = mapperX(v);
 
-      if (v > ((_matX$max = matX.max) !== null && _matX$max !== void 0 ? _matX$max : matX.max = matX.min = v)) {
+      if (v > (matX.max ?? (matX.max = matX.min = v))) {
         matX.max = v;
       } else if (v < matX.min) {
         matX.min = v;
@@ -104,12 +100,10 @@ const duobound = (wordx, [configX, configY] = []) => {
       return matX[i][j] = v;
     }
 
-    if (filterY(v) && ((_matY = matY) !== null && _matY !== void 0 ? _matY : matY = matrixInit.iso(h, w, undefined))) {
-      var _matY$max;
-
+    if (filterY(v) && (matY ?? (matY = matrixInit.iso(h, w, undefined)))) {
       v = mapperY(v);
 
-      if (v > ((_matY$max = matY.max) !== null && _matY$max !== void 0 ? _matY$max : matY.max = matY.min = v)) {
+      if (v > (matY.max ?? (matY.max = matY.min = v))) {
         matY.max = v;
       } else if (v < matY.min) {
         matY.min = v;
@@ -150,14 +144,10 @@ const solebound = (wordx, config) => {
     mapper
   } = config;
   matrixMapper.iterate(wordx, (v, i, j) => {
-    var _mx;
-
-    if (filter(v) && ((_mx = mx) !== null && _mx !== void 0 ? _mx : mx = matrixInit.iso(height, width, undefined))) {
-      var _mx$max;
-
+    if (filter(v) && (mx ?? (mx = matrixInit.iso(height, width, undefined)))) {
       v = mapper(v);
 
-      if (v > ((_mx$max = mx.max) !== null && _mx$max !== void 0 ? _mx$max : mx.max = mx.min = v)) {
+      if (v > (mx.max ?? (mx.max = mx.min = v))) {
         mx.max = v;
       } else if (v < mx.min) {
         mx.min = v;
@@ -196,16 +186,12 @@ const multibound = (wordx, configs) => {
       filter,
       mapper
     }, k) => {
-      var _mx;
-
       let mx = matrixCollection[k];
 
-      if (filter(v) && ((_mx = mx) !== null && _mx !== void 0 ? _mx : mx = matrixCollection[k] = matrixInit.iso(h, w, undefined))) {
-        var _mx$max;
-
+      if (filter(v) && (mx ?? (mx = matrixCollection[k] = matrixInit.iso(h, w, undefined)))) {
         v = mapper(v);
 
-        if (v > ((_mx$max = mx.max) !== null && _mx$max !== void 0 ? _mx$max : mx.max = mx.min = v)) {
+        if (v > (mx.max ?? (mx.max = mx.min = v))) {
           mx.max = v;
         } else if (v < mx.min) {
           mx.min = v;
@@ -239,11 +225,9 @@ const boundaries = function (wordx, configs = []) {
   if (count === 0) return [];
 
   if (count === 1) {
-    var _x$filter, _x$mapper;
-
     const [x] = configs;
-    const filter = (_x$filter = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter !== void 0 ? _x$filter : numeral.isNumeric,
-          mapper = (_x$mapper = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper !== void 0 ? _x$mapper : numeral.parseNum;
+    const filter = (x == null ? void 0 : x.filter) ?? numeral.isNumeric,
+          mapper = (x == null ? void 0 : x.mapper) ?? numeral.parseNum;
     return [solebound(wordx, {
       filter,
       mapper
@@ -251,13 +235,11 @@ const boundaries = function (wordx, configs = []) {
   }
 
   if (count === 2) {
-    var _x$filter2, _x$mapper2, _y$filter, _y$mapper;
-
     const [x, y] = configs;
-    const fX = (_x$filter2 = x === null || x === void 0 ? void 0 : x.filter) !== null && _x$filter2 !== void 0 ? _x$filter2 : numeral.isNumeric,
-          mX = (_x$mapper2 = x === null || x === void 0 ? void 0 : x.mapper) !== null && _x$mapper2 !== void 0 ? _x$mapper2 : numeral.parseNum;
-    const fY = (_y$filter = y === null || y === void 0 ? void 0 : y.filter) !== null && _y$filter !== void 0 ? _y$filter : literal.hasLiteral,
-          mY = (_y$mapper = y === null || y === void 0 ? void 0 : y.mapper) !== null && _y$mapper !== void 0 ? _y$mapper : stringValue.stringValue;
+    const fX = (x == null ? void 0 : x.filter) ?? numeral.isNumeric,
+          mX = (x == null ? void 0 : x.mapper) ?? numeral.parseNum;
+    const fY = (y == null ? void 0 : y.filter) ?? literal.hasLiteral,
+          mY = (y == null ? void 0 : y.mapper) ?? stringValue.stringValue;
     return duobound(wordx, [{
       filter: fX,
       mapper: mX
