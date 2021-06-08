@@ -228,13 +228,13 @@ class Ziggurat {
 }
 
 const E2 = 100; // E2
+
 /**
  *
  * applicable for smaller number
  * @param {number} x
  * @returns {number}
  */
-
 
 const round = x => x + (x > 0 ? 0.5 : -0.5) << 0;
 

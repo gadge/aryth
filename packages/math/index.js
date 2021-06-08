@@ -5,6 +5,7 @@ export {
   E10, E11, E12,
   E13, E14, E15,
 }                                                    from './assets/large'
+export { abbr }                                      from './src/abbr'
 export { abs, intAbs }                               from './src/abs'
 export { almostEquals, almostInt }                   from './src/almost'
 export { constraint }                                from './src/constraint'

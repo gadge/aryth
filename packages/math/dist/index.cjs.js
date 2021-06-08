@@ -32,18 +32,6 @@ const E12 = 1_000_000_000_000; // E12
 
 const E15 = 1_000_000_000_000_000; // E15
 
-const abs = n => n < 0 ? 0 - n : n;
-/**
- * Get an integer absolute of a number
- * @param {number} n
- * @returns {number}
- */
-
-const intAbs = n => {
-  const mk = n >> 31;
-  return (mk ^ n) - mk;
-};
-
 /**
  *
  * applicable for smaller number
@@ -56,6 +44,31 @@ const roundD1 = x => Math.round(x * 10) / 10;
 const roundD2 = x => Math.round(x * E2) / E2;
 const roundD3 = x => Math.round(x * E3) / E3;
 const roundD4 = x => Math.round(x * E4) / E4;
+
+function abbr(num) {
+  if (!num) return 0;
+  if (-0.01 < num && num < 0.01) return num.toExponential(1);
+  if (-E3 < num && num < E3) return roundD2(num);
+  const sign = num > 0 ? '' : '-',
+        abs = Math.abs(num);
+  if (abs < E6) return sign + round(abs / E1) / 100 + "k";
+  if (abs < E9) return sign + round(abs / E4) / 100 + "m";
+  if (abs < E12) return sign + round(abs / E7) / 100 + "b";
+  if (abs < E15) return sign + round(abs / E10) / 100 + "t";
+  return sign + round(abs / E13) * 100 + "q";
+}
+
+const abs = n => n < 0 ? 0 - n : n;
+/**
+ * Get an integer absolute of a number
+ * @param {number} n
+ * @returns {number}
+ */
+
+const intAbs = n => {
+  const mk = n >> 31;
+  return (mk ^ n) - mk;
+};
 
 const almostEquals = (x, y, epsilon) => Math.abs(x - y) < epsilon;
 const almostInt = (x, epsilon) => Math.abs(x - round(x)) < epsilon;
@@ -84,6 +97,7 @@ exports.E6 = E6;
 exports.E7 = E7;
 exports.E8 = E8;
 exports.E9 = E9;
+exports.abbr = abbr;
 exports.abs = abs;
 exports.almostEquals = almostEquals;
 exports.almostInt = almostInt;
