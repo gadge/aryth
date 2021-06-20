@@ -1,6 +1,6 @@
 {
   "name": "@aryth/project-vector",
-  "version": "0.3.21",
+  "version": "0.3.22",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,16 +15,16 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/comparer": "^0.3.21",
+    "@aryth/comparer": "^0.3.22",
     "@typen/literal": "^0.1.16",
     "@typen/num-loose": "^0.1.16",
-    "@vect/vector-algebra": "^0.3.10",
-    "@vect/vector-mapper": "^0.3.10"
+    "@vect/vector-algebra": "^0.4.4",
+    "@vect/vector-mapper": "^0.4.4"
   },
   "devDependencies": {
-    "@spare/regex-phrasing": "^0.11.16",
-    "@spare/ripper": "^0.11.16",
-    "@spare/splitter": "^0.11.16"
+    "@spare/regex-phrasing": "^0.11.20",
+    "@spare/ripper": "^0.11.20",
+    "@spare/splitter": "^0.11.20"
   },
   "repository": {
     "type": "git",
