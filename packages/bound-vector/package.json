@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "@aryth/util-bound": "^0.3.22",
-    "@ject/oneself": "^0.0.12",
+    "@ject/oneself": "^0.0.16",
     "@texting/string-value": "^0.0.12",
-    "@typen/enum-check-levels": "^0.1.16",
-    "@typen/literal": "^0.1.16",
-    "@typen/numeral": "^0.1.16"
+    "@typen/enum-check-levels": "^0.1.17",
+    "@typen/literal": "^0.1.17",
+    "@typen/numeral": "^0.1.17"
   },
   "repository": {
     "type": "git",

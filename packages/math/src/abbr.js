@@ -3,7 +3,7 @@ import { round, roundD2 }                             from './round'
 
 
 export function abbr(num) {
-  if (!num) return 0
+  if (!num) return '0'
   if (-0.01 < num && num < 0.01) return num.toExponential(1)
   if (-E3 < num && num < E3) return roundD2(num)
   const sign = num > 0 ? '' : '-', abs = Math.abs(num)

@@ -1,6 +1,7 @@
 node_modules
 yarn.lock
 .idea
+dist
 lerna-debug.log
 .yarn/*
 #!.yarn/cache

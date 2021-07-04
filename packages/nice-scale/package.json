@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@aryth/math": "^0.3.22",
-    "@typen/enum-object-types": "^0.1.16"
+    "@typen/enum-object-types": "^0.1.17"
   },
   "repository": {
     "type": "git",

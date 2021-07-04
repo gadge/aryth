@@ -1,4 +1,4 @@
-# @aryth/bound-vector
+# @aryth/bound
 
 [![npm version][badge-npm-version]][url-npm]
 [![npm download monthly][badge-npm-download-monthly]][url-npm]
@@ -10,18 +10,18 @@
 [![github commit total][badge-github-commit-count]][url-github]
 
 [//]: <> (Shields)
-[badge-npm-version]: https://flat.badgen.net/npm/v/@aryth/bound-vector
-[badge-npm-download-monthly]: https://flat.badgen.net/npm/dm/@aryth/bound-vector
-[badge-npm-download-total]:https://flat.badgen.net/npm/dt/@aryth/bound-vector
-[badge-npm-dependents]: https://flat.badgen.net/npm/dependents/@aryth/bound-vector
-[badge-npm-license]: https://flat.badgen.net/npm/license/@aryth/bound-vector
-[badge-pp-install-size]: https://flat.badgen.net/packagephobia/install/@aryth/bound-vector
+[badge-npm-version]: https://flat.badgen.net/npm/v/@aryth/bound
+[badge-npm-download-monthly]: https://flat.badgen.net/npm/dm/@aryth/bound
+[badge-npm-download-total]:https://flat.badgen.net/npm/dt/@aryth/bound
+[badge-npm-dependents]: https://flat.badgen.net/npm/dependents/@aryth/bound
+[badge-npm-license]: https://flat.badgen.net/npm/license/@aryth/bound
+[badge-pp-install-size]: https://flat.badgen.net/packagephobia/install/@aryth/bound
 [badge-github-last-commit]: https://flat.badgen.net/github/last-commit/hoyeungw/aryth
 [badge-github-commit-count]: https://flat.badgen.net/github/commits/hoyeungw/aryth
 
 [//]: <> (Link)
-[url-npm]: https://npmjs.org/package/@aryth/bound-vector
-[url-pp]: https://packagephobia.now.sh/result?p=@aryth/bound-vector
+[url-npm]: https://npmjs.org/package/@aryth/bound
+[url-pp]: https://packagephobia.now.sh/result?p=@aryth/bound
 [url-github]: https://github.com/hoyeungw/aryth
 
 ##### Math util library
@@ -30,7 +30,7 @@
 
 #### Install
 ```console
-$ npm install @aryth/bound-vector
+$ npm install @aryth/bound
 ```
 
 #### Usage

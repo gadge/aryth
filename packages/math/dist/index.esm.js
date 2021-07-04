@@ -42,7 +42,7 @@ const roundD3 = x => Math.round(x * E3) / E3;
 const roundD4 = x => Math.round(x * E4) / E4;
 
 function abbr(num) {
-  if (!num) return 0;
+  if (!num) return '0';
   if (-0.01 < num && num < 0.01) return num.toExponential(1);
   if (-E3 < num && num < E3) return roundD2(num);
   const sign = num > 0 ? '' : '-',
