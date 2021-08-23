@@ -1,6 +1,6 @@
 {
   "name": "@aryth/rand",
-  "version": "0.3.25",
+  "version": "0.3.26",
   "description": "A math util library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/comparer": "^0.3.25",
+    "@aryth/comparer": "^0.3.26",
     "@typen/nullish": "^0.1.17",
     "@vect/swap": "^0.4.4"
   },
