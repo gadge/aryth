@@ -1,6 +1,6 @@
 {
   "name": "@aryth/histo",
-  "version": "0.3.23",
+  "version": "0.3.24",
   "description": "A statistic distribution tool.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,10 +15,10 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@aryth/bound-vector": "^0.3.23",
-    "@aryth/math": "^0.3.23",
-    "@aryth/nice-scale": "^0.3.23",
-    "@spare/lange": "^0.11.22",
+    "@aryth/bound-vector": "^0.3.24",
+    "@aryth/math": "^0.3.24",
+    "@aryth/nice-scale": "^0.3.24",
+    "@spare/lange": "^0.12.4",
     "@spare/pad-string": "^0.9.9",
     "@typen/enum-data-types": "^0.1.17",
     "@vect/entries-indicator": "^0.4.4",
