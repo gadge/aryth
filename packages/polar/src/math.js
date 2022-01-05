@@ -22,7 +22,7 @@ export const minus = (θa, θb) => {
 }
 
 export const near = (θa, θb, epsilon) => {
-  return distance(θa, θb) < epsilon
+  return distance(θa, θb) <= epsilon
 }
 
 export const contains = (interval, th) => {
