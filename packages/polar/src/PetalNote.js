@@ -2,28 +2,41 @@
 
 
 export class PetalNote {
-  marks // List<double>
-  counter // IDictionary<int, int>
+  marks // Array<double>
+  counter // Object<int, int>
   epsilon = 0 // double
   sum // int
+
+  /**
+   *
+   * @param {number} startAngle
+   * @param {number} count
+   * @return {PetalNote}
+   */
   static build(startAngle, count) {
-    return new PetalNote().initialize(startAngle, count)
+    return (new PetalNote()).initialize(startAngle, count)
   }
+
+  /**
+   *
+   * @param {number} startAngle
+   * @param {number} count
+   * @return {PetalNote}
+   */
   initialize(startAngle, count) {
     const unit = 360.0 / count
     this.epsilon = unit / 2
     this.marks = Array(count)
     this.counter = {}
     this.sum = 0
-    let angle = restrict(startAngle)
-    for (let i = 0; i < count;) {
-      this.marks.push(angle)
+    for (let angle = restrict(startAngle), i = 0; i < count;) {
+      this.marks[i] = angle
       this.counter[++i] = 0
       angle = restrict(angle + unit)
     }
     return this
   }
-  get count() { return this.marks.count } // int
+  get count() { return this.marks.length } // int
   clear() {
     this.sum = 0
     for (let key in this.counter) this.counter[key] = 0
@@ -31,14 +44,18 @@ export class PetalNote {
   }
   phase(θ) {
     θ = restrict(θ)
-    for (let i = 0, count = this.count; i < count; i++) {
-      if (near(this.marks[i], θ, this.epsilon)) return i + 1
+    let i = 0
+    for (let mark of this.marks) {
+      if (near(mark, θ, this.epsilon)) { return ++i }
+      else { ++i }
     }
-    return this.count
+    return void 0
   }
   note(θ) {
     const phase = this.phase(θ)
-    return { phase: phase, count: this.notePhase(phase) }
+    this.notePhase(phase)
+    return phase
+    // return { phase: phase, count: this.notePhase(phase) }
   }
   notePhase(phase) {
     this.sum++
