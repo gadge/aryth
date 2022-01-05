@@ -7,11 +7,11 @@ export const polarToCartesian = (polar) => {
   const radiant = degreeToRadian(θ)
   const x = Math.sin(radiant) * r
   const y = Math.cos(radiant) * r
-  return (x, y)
+  return new Coord(x, y)
 }
 export const cartesianToPolar = (coord) => {
   const r = Coord.prototype.radius.call(coord)
-  const θ = Coord.prototype.polarDegree.call(θ)
+  const θ = Coord.prototype.polarDegree.call(coord)
   return new Polar(r, θ)
 }
 export const polarDegree = ({ x, y }) => {

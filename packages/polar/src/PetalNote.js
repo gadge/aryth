@@ -1,4 +1,4 @@
-﻿import { near, restrict } from '../index'
+﻿import { near, restrict } from './math'
 
 
 export class PetalNote {
