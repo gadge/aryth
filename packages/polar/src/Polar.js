@@ -1,6 +1,7 @@
-import { restrict } from './math'
+import { Coord }                    from './Coord'
+import { degreeToRadian, restrict } from './math'
 
-const { PI, cos } = Math
+const { PI, sin, cos } = Math
 
 export class Polar {
   r
@@ -11,8 +12,13 @@ export class Polar {
   }
   static build(r, θ) { return new Polar(r, θ) }
   get th() { return this.θ }
-  set th(value) { return this.θ = value}
+  set th(value) { return this.θ = value }
   copy() { return new Polar(this.r, this.θ) }
+  selfRotate(degree) {
+    const th = this.θ + degree
+    this.th = restrict(th)
+    return this
+  }
   rotate(degree) {
     const th = this.θ + degree
     return new Polar(this.r, restrict(th))
@@ -32,7 +38,7 @@ export class Polar {
   analogous(delta, count) {
     const list = Array(count)
     let polar = this
-    for (let i = 0; i < count; i++) list.add(polar = polar.rotate(delta))
+    for (let i = 0; i < count; i++) list.push(polar = polar.rotate(delta))
     return list
   }
   foliateRadius(currAngle, petals = 3) {
@@ -40,5 +46,12 @@ export class Polar {
   }
   inFoliate(verge, petals = 3) {
     return this.r <= verge.foliateRadius(this.θ, petals)
+  }
+  toCartesian() {
+    let { r, θ } = this
+    const radiant = degreeToRadian(θ)
+    const x = sin(radiant) * r
+    const y = cos(radiant) * r
+    return new Coord(x, y)
   }
 }
