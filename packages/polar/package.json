@@ -2,8 +2,10 @@
   "name": "@aryth/polar",
   "version": "0.3.19",
   "description": "A math util library",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
   "files": [
     "dist"
   ],

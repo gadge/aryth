@@ -1,20 +1,21 @@
-import { Chrono }   from 'elprimero'
-import { CrosTabX } from 'xbrief'
+import { says }        from '@palett/says'
+import { decoCrostab } from '@spare/logger'
+import { strategies }  from '@valjoux/strategies'
 
-const { lapse, result } = Chrono.strategies({
+const { lapse, result } = strategies({
   repeat: 5E+6,
-  paramsList: {
-    neg_0xffff: [-65535],
-    neg_digit: [-100 / 6],
-    neg_pi: [-Math.PI],
-    neg_one: [-1],
-    zero: [0],
-    pos_one: [1],
-    pos_pi: [Math.PI],
-    pos_digit: [100 / 6],
-    pos_0xffff: [65535],
+  candidates: {
+    neg_0xffff: [ -65535 ],
+    neg_digit: [ -100 / 6 ],
+    neg_pi: [ -Math.PI ],
+    neg_one: [ -1 ],
+    zero: [ 0 ],
+    pos_one: [ 1 ],
+    pos_pi: [ Math.PI ],
+    pos_digit: [ 100 / 6 ],
+    pos_0xffff: [ 65535 ],
   },
-  funcList: {
+  methods: {
     bench: x => x,
     signBit: n => n >> 31,
     native: Math.abs,
@@ -38,8 +39,5 @@ const { lapse, result } = Chrono.strategies({
     arch: n => ((n >> 31) + n) ^ (n >> 31)
   }
 })
-'lapse' |> console.log
-lapse |> CrosTabX.brief |> console.log
-'' |> console.log
-'result' |> console.log
-result |> CrosTabX.brief |> console.log
+lapse |> decoCrostab |> says['lapse']
+result |> decoCrostab |> says['result']
