@@ -1,6 +1,6 @@
 {
   "name": "@aryth/flopper",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A math util library",
   "exports": {
     "import": "./dist/index.mjs",
@@ -17,8 +17,8 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/comparer": "^0.4.1",
-    "@aryth/rand": "^0.4.1",
+    "@aryth/comparer": "^0.4.2",
+    "@aryth/rand": "^0.4.2",
     "@vect/swap": "^0.4.10"
   },
   "repository": {

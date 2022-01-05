@@ -1,6 +1,6 @@
 {
   "name": "@aryth/util-bound",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A math util library",
   "exports": {
     "import": "./dist/index.mjs",

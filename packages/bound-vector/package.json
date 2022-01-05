@@ -1,6 +1,6 @@
 {
   "name": "@aryth/bound-vector",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A math util library",
   "exports": {
     "import": "./dist/index.mjs",
@@ -17,7 +17,7 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/util-bound": "^0.4.1",
+    "@aryth/util-bound": "^0.4.2",
     "@ject/oneself": "^0.0.16",
     "@texting/string-value": "^0.0.13",
     "@typen/enum-check-levels": "^0.1.17",
