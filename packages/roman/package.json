@@ -1,6 +1,6 @@
 {
   "name": "@aryth/roman",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Parse roman numerals to decimal numbers",
   "main": "./dist/index.cjs",
   "exports": {
@@ -18,7 +18,7 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/comparer": "^0.4.5",
+    "@aryth/comparer": "^0.4.6",
     "@vect/swap": "^0.4.10"
   },
   "repository": {
