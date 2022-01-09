@@ -1,6 +1,6 @@
 {
   "name": "@aryth/distinct-vector",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "A math util library",
   "main": "./dist/index.cjs",
   "exports": {
@@ -18,7 +18,7 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/util-distinct": "^0.4.4",
+    "@aryth/util-distinct": "^0.4.5",
     "@vect/vector-mapper": "^0.4.10"
   },
   "repository": {
@@ -36,5 +36,5 @@
     "url": "https://github.com/hoyeungw/aryth"
   },
   "homepage": "https://github.com/hoyeungw/aryth#readme",
-  "gitHead": "e9e8ed72cadd2c85cedce247924f811388ca1e44"
+  "gitHead": "cecf0376b7bffbf04bb1e139d6212b240faf84a6"
 }

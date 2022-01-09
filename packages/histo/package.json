@@ -1,6 +1,6 @@
 {
   "name": "@aryth/histo",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "A statistic distribution tool.",
   "main": "./dist/index.cjs",
   "exports": {
@@ -18,9 +18,9 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@aryth/bound-vector": "^0.4.4",
-    "@aryth/math": "^0.4.4",
-    "@aryth/nice-scale": "^0.4.4",
+    "@aryth/bound-vector": "^0.4.5",
+    "@aryth/math": "^0.4.5",
+    "@aryth/nice-scale": "^0.4.5",
     "@spare/lange": "^0.13.2",
     "@spare/pad-string": "^0.9.9",
     "@typen/enum-data-types": "^0.1.17",
@@ -48,5 +48,5 @@
     "url": "https://github.com/hoyeungw/aryth"
   },
   "homepage": "https://github.com/hoyeungw/aryth#readme",
-  "gitHead": "e9e8ed72cadd2c85cedce247924f811388ca1e44"
+  "gitHead": "cecf0376b7bffbf04bb1e139d6212b240faf84a6"
 }
