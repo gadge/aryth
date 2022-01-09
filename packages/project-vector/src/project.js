@@ -1,5 +1,5 @@
 import { bound }     from '@aryth/bound-vector'
-import { Projector } from '../../projector'
+import { Projector } from '@aryth/projector'
 
 /**
  *
