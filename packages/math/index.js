@@ -7,7 +7,7 @@ export {
 }                                                             from './assets/large'
 export { abbr }                                               from './src/abbr'
 export { abs, intAbs }                                        from './src/abs'
-export { almostEquals, almostInt }                            from './src/almost'
+export { almostEqual, almostEquals, almostInt }               from './src/almost'
 export { constraint }                                         from './src/constraint'
 export { intExpon }                                           from './src/expon'
 export { round, roundD1, roundD2, roundD3, roundD4 }          from './src/round'
