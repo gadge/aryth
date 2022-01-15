@@ -38,7 +38,7 @@ export class Polar {
   analogous(delta, count) {
     const list = Array(count)
     let polar = this
-    for (let i = 0; i < count; i++) list.push(polar = polar.rotate(delta))
+    for (let i = 0; i < count; i++) list[i] = (polar = polar.rotate(delta))
     return list
   }
   foliateRadius(currAngle, petals = 3) {

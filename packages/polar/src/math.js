@@ -1,4 +1,4 @@
-const { abs, min, max, PI } = Math
+const { abs, min, PI } = Math
 
 export const degreeToRadian = degree => degree * PI / 180
 export const radianToDegree = radian => radian * 180 / PI
