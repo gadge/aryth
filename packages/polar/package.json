@@ -10,6 +10,9 @@
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "@aryth/flopper": "^0.4.5"
+  },
   "publishConfig": {
     "access": "public"
   },
