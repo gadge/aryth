@@ -5,6 +5,7 @@ export class Bound {
     this.min = min
     this.max = max
   }
+  static build(min, max) { return new Bound(min, max) }
 
   has(num) { return this.min <= num && num <= this.max }
   hasLOpen(num) { return this.min < num && num <= this.max }
