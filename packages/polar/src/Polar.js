@@ -41,12 +41,15 @@ export class Polar {
     for (let i = 0; i < count; i++) list[i] = (polar = polar.rotate(delta))
     return list
   }
+
   foliateRadius(currAngle, petals = 3) {
     return this.r * cos(petals * (currAngle - this.θ) * PI / 180)
   }
+
   inFoliate(verge, petals = 3) {
     return this.r <= verge.foliateRadius(this.θ, petals)
   }
+
   toCartesian() {
     let { r, θ } = this
     const radiant = degreeToRadian(θ)

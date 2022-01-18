@@ -45,6 +45,7 @@
     "@typen/num-loose": "^0.1.17",
     "@valjoux/strategies": "^0.3.8",
     "@valjoux/timestamp-pretty": "^0.3.8",
+    "@vect/matrix": "^0.4.10",
     "@vect/merge-acquire": "^0.4.10",
     "@vect/object-mapper": "^0.4.10",
     "@vect/vector": "^0.4.10",
