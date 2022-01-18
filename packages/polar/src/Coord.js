@@ -1,4 +1,5 @@
 import { radianToDegree } from './math'
+import { Polar }          from './Polar'
 
 export class Coord {
   x
@@ -9,9 +10,14 @@ export class Coord {
   }
   radius() {
     const { x, y } = this
-    return Math.sqrt(x * x, y * y)
+    return Math.sqrt(x * x + y * y)
   }
   polarDegree() {
     return radianToDegree(Math.atan2(this.x, this.y))
+  }
+  toPolar() {
+    const r = this.radius()
+    const θ = this.polarDegree()
+    return new Polar(r, θ)
   }
 }
