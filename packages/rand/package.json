@@ -20,7 +20,7 @@
   "dependencies": {
     "@aryth/comparer": "^0.4.10",
     "@typen/nullish": "^0.1.17",
-    "@vect/swap": "^0.5.1"
+    "@vect/swap": "^0.5.3"
   },
   "repository": {
     "type": "git",

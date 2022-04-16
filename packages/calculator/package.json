@@ -18,12 +18,12 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@spare/enum-chars": "^0.13.2",
-    "@spare/ripper": "^0.13.2",
-    "@spare/string": "^0.13.2",
+    "@spare/enum-chars": "^0.13.4",
+    "@spare/ripper": "^0.13.4",
+    "@spare/string": "^0.13.4",
     "@typen/enum-data-types": "^0.1.17",
     "@typen/num-strict": "^0.1.17",
-    "@vect/vector-merge": "^0.5.1"
+    "@vect/vector-merge": "^0.5.3"
   },
   "repository": {
     "type": "git",

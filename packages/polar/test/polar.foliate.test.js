@@ -24,14 +24,16 @@ coordMatrix |> DecoMatrix({ read: decoPale }) |> logger
 
 const mark = Polar.build(100, 0)
 
+const FOLIATE_COUNT = 4
+
 for (let i = 0; i < 360; i += 15) {
-  const radius = mark.foliateRadius(i, 4) |> roundD2
+  const radius = mark.foliateRadius(i, FOLIATE_COUNT) |> roundD2
   i + ": " + (radius > 0 ? radius : 0)|> logger
 }
 
 const foliateMatrix = mapper(coordMatrix, (coord) => {
   const polar = coord.toPolar()
-  const inFoliate = polar.inFoliate(mark, 4)
+  const inFoliate = polar.inFoliate(mark, FOLIATE_COUNT)
   return inFoliate ? '+' : ' '
 })
 
