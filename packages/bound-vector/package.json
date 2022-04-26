@@ -20,7 +20,7 @@
   "dependencies": {
     "@aryth/util-bound": "^0.5.1",
     "@ject/oneself": "^0.0.17",
-    "@texting/string-value": "^0.1.0",
+    "@texting/string-value": "^0.1.1",
     "@typen/enum-check-levels": "^0.1.19",
     "@typen/literal": "^0.1.19",
     "@typen/numeral": "^0.1.19"
