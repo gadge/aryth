@@ -18,11 +18,11 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@spare/enum-chars": "^0.13.5",
-    "@spare/ripper": "^0.13.5",
-    "@spare/string": "^0.13.5",
-    "@typen/enum-data-types": "^0.1.17",
-    "@typen/num-strict": "^0.1.17",
+    "@spare/enum-chars": "^0.13.6",
+    "@spare/ripper": "^0.13.6",
+    "@spare/string": "^0.13.6",
+    "@typen/enum-data-types": "^0.1.19",
+    "@typen/num-strict": "^0.1.19",
     "@vect/vector-merge": "^0.5.8"
   },
   "repository": {

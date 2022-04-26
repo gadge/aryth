@@ -20,15 +20,15 @@
   "dependencies": {
     "@aryth/comparer": "^0.5.0",
     "@aryth/projector": "^0.5.0",
-    "@typen/literal": "^0.1.17",
-    "@typen/num-loose": "^0.1.17",
+    "@typen/literal": "^0.1.19",
+    "@typen/num-loose": "^0.1.19",
     "@vect/vector-algebra": "^0.5.8",
     "@vect/vector-mapper": "^0.5.8"
   },
   "devDependencies": {
-    "@spare/regex-phrasing": "^0.13.5",
-    "@spare/ripper": "^0.13.5",
-    "@spare/splitter": "^0.13.5"
+    "@spare/regex-phrasing": "^0.13.6",
+    "@spare/ripper": "^0.13.6",
+    "@spare/splitter": "^0.13.6"
   },
   "repository": {
     "type": "git",
