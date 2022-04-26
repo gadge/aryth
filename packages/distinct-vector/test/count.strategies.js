@@ -1,19 +1,19 @@
 import { makeEmbedded }              from '@foba/util'
 import { deco }                      from '@spare/deco'
 import { decoCrostab, logger, says } from '@spare/logger'
-import { Chrono }                    from 'elprimero'
+import { strategies }                from '@valjoux/strategies'
 import { distinctCount }             from '../src'
 import { countByEntries }            from '../src/functions/countByEntries'
 import { countByObject }             from '../src/functions/countByObject'
 import { candidates }                from './candidates'
 
 export class CountStrategies {
-  static testCount () {
-    const { lapse, result } = Chrono.strategies({
+  static testCount() {
+    const { lapse, result } = strategies({
       repeat: 1E+4,
-      paramsList: candidates |> makeEmbedded,
-      funcList: {
-        bench: ar => ar.map(x => [x, 1]),
+      candidates: candidates |> makeEmbedded,
+      methods: {
+        bench: ar => ar.map(x => [ x, 1 ]),
         official: distinctCount,
         entries: countByEntries,
         object: countByObject,
@@ -27,9 +27,9 @@ export class CountStrategies {
     })
     lapse |> decoCrostab |> says.lapse
     result |> decoCrostab |> says.result
-    result.queryCell('S016', 'edge') |> deco |> logger
-    result.queryCell('S016', 'entries') |> deco |> logger
-    result.queryCell('S016', 'map') |> deco |> logger
+    result.cell('S016', 'edge') |> deco |> logger
+    result.cell('S016', 'entries') |> deco |> logger
+    result.cell('S016', 'map') |> deco |> logger
   }
 }
 

@@ -1,6 +1,6 @@
 import { decoCrostab, says } from '@spare/logger'
 import { size }              from '@vect/matrix-size'
-import { Chrono }            from 'elprimero'
+import { Chrono }            from '@valjoux/strategies'
 
 const { lapse, result } = Chrono.strategies({
   repeat: 1E+7,

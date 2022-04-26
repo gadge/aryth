@@ -1,6 +1,6 @@
 import { says }       from '@palett/says'
 import { deco }       from '@spare/deco'
-import { logger }     from 'xbrief'
+
 import { boundaries } from '../src/boundaries'
 
 const paramsList = {

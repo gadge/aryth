@@ -2,7 +2,6 @@ import { makeEmbedded }     from '@foba/util'
 import { says }             from '@palett/says'
 import { decoCrostab }      from '@spare/logger'
 import { strategies }       from '@valjoux/strategies'
-import { bounds, PRESETS }  from '../../src/bounds'
 import { duobound }         from '../../utils/duobound'
 import { VectorCollection } from './candidates'
 import { boundLiteralArc }  from './src/bounds/boundLiteralArc'
@@ -17,7 +16,7 @@ const { lapse, result } = strategies({
     rea: boundLiteralRea,
     arc: boundLiteralArc,
     duobound: duobound,
-    bounds: x => bounds(x, PRESETS),
+    // bounds: x => bounds(x, PRESETS),
     sep: boundLiteralSep,
   }
 })

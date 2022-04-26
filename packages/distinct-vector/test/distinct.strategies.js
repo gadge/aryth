@@ -1,7 +1,7 @@
 import { makeEmbedded }              from '@foba/util'
 import { deco }                      from '@spare/deco'
 import { decoCrostab, logger, says } from '@spare/logger'
-import { Chrono }                    from 'elprimero'
+import { Chrono }                    from '@valjoux/strategies'
 import { distinct }                  from '../src'
 import { distinctByArray }           from '../src/functions/distinctByArray'
 import { distinctByObject }          from '../src/functions/distinctByObject'

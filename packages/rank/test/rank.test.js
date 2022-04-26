@@ -1,5 +1,5 @@
 import { SimpleVectors }    from '@foba/foo'
-import { delogger, logger } from 'xbrief'
+
 import { NUM_ASC, STR_ASC } from '../../../temp/temp/src'
 import { rank }             from '../src/rank'
 

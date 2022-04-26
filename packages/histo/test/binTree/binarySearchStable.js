@@ -1,5 +1,5 @@
 import { Chrono }             from 'elprimero/src/Chrono'
-import { CrosTabX, delogger } from 'xbrief'
+
 
 function recur (ar, x, lo, hi) {
   if (lo > hi) return -1
