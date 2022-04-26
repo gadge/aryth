@@ -1,6 +1,6 @@
 {
   "name": "@aryth/bound",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A library to calculate { max, min } of 1d or 2d array ",
   "main": "./dist/index.cjs",
   "exports": {
@@ -18,9 +18,9 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/bound-matrix": "^0.5.1",
-    "@aryth/bound-vector": "^0.5.1",
-    "@aryth/math": "^0.5.1"
+    "@aryth/bound-matrix": "^0.5.2",
+    "@aryth/bound-vector": "^0.5.2",
+    "@aryth/math": "^0.5.2"
   },
   "repository": {
     "type": "git",
