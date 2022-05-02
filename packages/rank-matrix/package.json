@@ -1,6 +1,6 @@
 {
   "name": "@aryth/rank-matrix",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Return ranks of each element in a 2-d array",
   "main": "./dist/index.cjs",
   "exports": {
@@ -35,5 +35,5 @@
     "url": "https://github.com/hoyeungw/aryth"
   },
   "homepage": "https://github.com/hoyeungw/aryth#readme",
-  "gitHead": "cecf0376b7bffbf04bb1e139d6212b240faf84a6"
+  "gitHead": "f6e2156ba2b4ebb37ba5eb933ff4b3e0bdd5ce96"
 }
