@@ -18,9 +18,9 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@vect/swap": "^0.5.11",
-    "@vect/vector-init": "^0.5.11",
-    "@vect/vector-select": "^0.5.10"
+    "@vect/swap": "^0.5.22",
+    "@vect/vector-init": "^0.5.22",
+    "@vect/vector-select": "^0.5.22"
   },
   "repository": {
     "type": "git",
