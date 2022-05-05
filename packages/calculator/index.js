@@ -1,6 +1,7 @@
 import { calcPostfix }    from './src/calcPostfix'
 import { infixToPostfix } from './src/infixToPostfix'
 
+
 /**
  *
  * Supported binary operators:
@@ -11,18 +12,19 @@ import { infixToPostfix } from './src/infixToPostfix'
  * functions with rest parameters
  *
  * @param expression
- * @param functions
- * @param constants
  * @return {*}
  */
-export const calculator = (expression, { functions, constants } = {}) => {
-  const postfix = infixToPostfix.call({ functions, constants }, expression)
+export function calculator(expression) {
+  const postfix = infixToPostfix.call(this, expression)
   return calcPostfix(postfix)
 }
 
-export const Calculator = ({ functions, constants }) => {
-  return expression => expression
-    |> infixToPostfix.bind({ functions, constants })
-    |> calcPostfix
+export function Calculator(cfg = {}) {
+  return calculator.bind(cfg)
+}
+
+export {
+  calcPostfix,
+  infixToPostfix,
 }
 

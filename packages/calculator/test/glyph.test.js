@@ -11,7 +11,8 @@ const candidates = [
   'H+O+8',
   'H*1.4',
   '-H',
-  '=H'
+  '=H',
+  '+A+A',
 ]
 
 const calculator = Calculator({ constants })

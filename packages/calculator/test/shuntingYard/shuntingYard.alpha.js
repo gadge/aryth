@@ -1,4 +1,6 @@
-Array.prototype.peek = function () { return this[this.length - 1] }
+import { last } from '@vect/vector-index'
+
+// Array.prototype.peek = function () { return this[this.length - 1] }
 
 const LEFT = -1, RIGHT = 1
 
@@ -7,7 +9,7 @@ const Precedence = { '^': 4, '*': 3, '/': 3, '+': 2, '-': 2 }
 const Operators = Precedence
 const Associativity = { '^': RIGHT, '*': LEFT, '/': LEFT, '+': LEFT, '-': LEFT }
 
-export function shuntingYard (infix) {
+export function shuntingYard(infix) {
   infix = infix.replace(/\s+/g, '') // remove spaces, so infix[i]!=" "
   const stack = []
   let token
@@ -20,7 +22,7 @@ export function shuntingYard (infix) {
     }
     else if (token in Operators) { // if token is an operator
       o1 = token
-      o2 = stack.peek()
+      o2 = (stack |> last)
       while (o2 in Operators && ( // while operator token, o2, on top of the stack
         // and o1 is left-associative and its precedence is less than or equal to that of o2
         (Associativity[o1] === LEFT && (Precedence[o1] <= Precedence[o2])) ||
@@ -30,7 +32,7 @@ export function shuntingYard (infix) {
       )) {
         postfix += o2 + ' ' // add o2 to output queue
         stack.pop() // pop o2 of the stack
-        o2 = stack.peek() // next round
+        o2 = (stack |> last) // next round
       }
       stack.push(o1) // push o1 onto the stack
     }
@@ -38,7 +40,7 @@ export function shuntingYard (infix) {
       stack.push(token) // then push it onto the stack
     }
     else if (token === ')') { // if token is right parenthesis
-      while (stack.peek() !== '(') { // until token at top is (
+      while ((stack |> last) !== '(') { // until token at top is (
         postfix += stack.pop() + ' '
       }
       stack.pop() // pop (, but not onto the output queue
