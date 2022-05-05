@@ -21,14 +21,14 @@
     "@aryth/bound-vector": "^0.5.6",
     "@aryth/math": "^0.5.6",
     "@aryth/nice-scale": "^0.5.6",
-    "@spare/lange": "^0.13.7",
+    "@spare/lange": "^0.13.16",
     "@spare/pad-string": "^0.9.9",
     "@typen/enum-data-types": "^0.1.19",
-    "@vect/entries-indicator": "^0.5.22",
-    "@vect/entries-init": "^0.5.22",
-    "@vect/entries-mapper": "^0.5.22",
-    "@vect/object-init": "^0.5.22",
-    "@vect/vector-mapper": "^0.5.22"
+    "@vect/entries-indicator": "^0.5.23",
+    "@vect/entries-init": "^0.5.23",
+    "@vect/entries-mapper": "^0.5.23",
+    "@vect/object-init": "^0.5.23",
+    "@vect/vector-mapper": "^0.5.23"
   },
   "repository": {
     "type": "git",
