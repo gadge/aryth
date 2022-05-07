@@ -1,7 +1,7 @@
 import { says, x }    from '@spare/xr'
-import { Calculator } from '../index'
+import { calculator } from '../index'
 
-const constants = {
+const nums = {
   H: 54,
   O: 12
 }
@@ -15,7 +15,7 @@ const candidates = [
   '+A+A',
 ]
 
-const calculator = Calculator({ constants })
+const calc = calculator.bind({ nums })
 for (let formula of candidates) {
-  x[formula](calculator(formula))  |> says['aryth']
+  x[formula](calc(formula))  |> says['aryth']
 }

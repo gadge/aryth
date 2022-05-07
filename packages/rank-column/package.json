@@ -18,7 +18,7 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@vect/column": "^0.5.23",
+    "@vect/column": "^0.6.0",
     "@vect/matrix-size": "^0.5.23"
   },
   "repository": {

@@ -1,7 +1,7 @@
 import { bound as boundVector } from '@aryth/bound-vector'
 import { boundOutput, ToNum }   from '@aryth/util-bound'
 import { LOOSE }                from '@typen/enum-check-levels'
-import { size }                 from '@vect/matrix-size'
+import { size }                 from '@vect/matrix-index'
 import { iniNumEntry }          from '../utils/iniNumEntry'
 
 /**

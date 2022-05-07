@@ -23,8 +23,8 @@
     "@spare/string": "^0.13.16",
     "@typen/enum-data-types": "^0.1.19",
     "@typen/num-strict": "^0.1.19",
-    "@vect/vector-index": "^0.5.23",
-    "@vect/vector-merge": "^0.5.23"
+    "@vect/vector-index": "^0.6.0",
+    "@vect/vector-merge": "^0.6.0"
   },
   "repository": {
     "type": "git",

@@ -21,8 +21,8 @@
     "@aryth/comparer": "^0.5.8",
     "@typen/literal": "^0.1.19",
     "@typen/num-loose": "^0.1.19",
-    "@vect/vector-algebra": "^0.5.23",
-    "@vect/vector-mapper": "^0.5.23"
+    "@vect/vector-algebra": "^0.6.0",
+    "@vect/vector-mapper": "^0.6.0"
   },
   "devDependencies": {
     "@spare/regex-phrasing": "^0.13.16",

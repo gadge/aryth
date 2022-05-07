@@ -1,5 +1,5 @@
 import { decoCrostab, says } from '@spare/logger'
-import { size }              from '@vect/matrix-size'
+import { size }              from '@vect/matrix-index'
 import { Chrono }            from '@valjoux/strategies'
 
 const { lapse, result } = Chrono.strategies({
