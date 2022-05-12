@@ -8,16 +8,14 @@ import { expressionToVector }                                           from './
 // Array.prototype.peek = function () { return this[this.length - 1] }
 
 export function infixToPostfix(infix) {
-  const
-    math = this?.math ?? Math,
-    nums = this?.nums ?? Constants,
-    stack = [],
-    postfix = []
+  const DICT = this ?? Constants
+  const MATH = this?.math ?? Math
+  const stack = [], postfix = []
   let a, b
   for (let x of expressionToVector(infix))
     if (isNumeric(x)) { postfix.push(+x) }
-    else if (x in nums) { postfix.push(nums[x]) }
-    else if (x in math) { stack.push(math[x]) }
+    else if (x in DICT) { postfix.push(DICT[x]) }
+    else if (x in MATH) { stack.push(MATH[x]) }
     else if (x === CO) { while ((stack |> last) !== '(') postfix.push(stack.pop()) }
     else if (x in Operators) {
       a = x

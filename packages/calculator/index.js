@@ -15,6 +15,7 @@ import { infixToPostfix } from './src/infixToPostfix'
  * @return {*}
  */
 export function calculator(expression) {
+  if (this?.nums) Object.assign(this, this.nums)
   const postfix = infixToPostfix.call(this, expression)
   return calcPostfix(postfix)
 }
