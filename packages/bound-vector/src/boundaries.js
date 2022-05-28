@@ -1,9 +1,9 @@
 import { stringValue }         from '@texting/string-value'
 import { hasLiteral }          from '@typen/literal'
 import { isNumeric, parseNum } from '@typen/numeral'
-import { duobound }            from '../utils/duobound'
-import { multibound }          from '../utils/multibound'
-import { solebound }           from '../utils/solebound'
+import { duobound }            from './duobound'
+import { multibound }          from './multibound'
+import { solebound }           from './solebound'
 
 /**
  *
@@ -12,8 +12,8 @@ import { solebound }           from '../utils/solebound'
  * @typedef {number} BoundedVector.min
  *
  * @typedef {Object} Config
- * @typedef {function(*):boolean} Config.filter
- * @typedef {function(*):number} Config.mapper
+ * @typedef {function(*):boolean} Config.by
+ * @typedef {function(*):number} Config.to
  *
  * @param {*[]} words
  * @param {Config[]} configs
@@ -24,14 +24,14 @@ export const boundaries = function (words, configs) {
   if (count === 0) return []
   if (count === 1) {
     const [x = {}] = configs
-    x.filter = x?.filter ?? isNumeric, x.mapper = x?.mapper ?? parseNum
+    x.by = x?.by ?? isNumeric, x.to = x?.to ?? parseNum
     return [solebound(words, configs[0])]
   }
   if (count === 2) {
     const [x, y] = configs
-    const fX = x?.filter ?? isNumeric, mX = x?.mapper ?? parseNum
-    const fY = y?.filter ?? hasLiteral, mY = y?.mapper ?? stringValue
-    return duobound(words, [{ filter: fX, mapper: mX }, { filter: fY, mapper: mY }])
+    const fX = x?.by ?? isNumeric, mX = x?.to ?? parseNum
+    const fY = y?.by ?? hasLiteral, mY = y?.to ?? stringValue
+    return duobound(words, [{ by: fX, to: mX }, { by: fY, to: mY }])
   }
   if (count >= 3) return multibound(words, configs)
 }

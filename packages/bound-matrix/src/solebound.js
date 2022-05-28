@@ -11,23 +11,22 @@ const parseNumeric = x => +x
  * @typedef {number} BoundedMatrix.min
  *
  * @typedef {Object} Config
- * @typedef {Function} Config.filter
- * @typedef {Function} Config.mapper
+ * @typedef {Function} Config.by
+ * @typedef {Function} Config.to
  *
  * @param {*[][]} wordx
  * @param {Config} [config]
  * @return {?BoundedMatrix}
  */
 export const solebound = (wordx, config) => {
-  const [height, width] = size(wordx)
-  /** @type {?BoundedMatrix} */ let mx = undefined
-  if (!height || !width) return mx
-  const { filter, mapper } = config
+  const [height, width] = size(wordx),{ by, to } = config
+  if (!height || !width) return null
+  /** @type {?BoundedMatrix} */ let mx = null
   iterate(
     wordx,
     (v, i, j) => {
-      if (filter(v) && (mx ?? (mx = iso(height, width, undefined)))) {
-        v = mapper(v)
+      if (by(v) && (mx ?? (mx = iso(height, width, null)))) {
+        v = to(v)
         if (v > (mx.max ?? (mx.max = mx.min = v))) { mx.max = v } else if (v < mx.min) { mx.min = v }
         return mx[i][j] = v
       }

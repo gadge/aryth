@@ -1,12 +1,12 @@
 import { column, ColumnMapper, ColumnMutate } from '@vect/column'
 
-export function sort (mx, y, comparer, filter) {
+export function sort (mx, y, comparer, by) {
   let col = column(mx, y)
-  if (filter) col = col.filter(filter)
+  if (by) col = col.filter(by)
   return col.sort(comparer)
 }
 
-export function columnRank (mx, comparer, filter) {
+export function columnRank (mx, comparer, by) {
   const { y } = this
   const sorted = sort(mx, y, comparer, filter)
   return ColumnMapper(y,false)(mx, x => (x = sorted.indexOf(x)) >= 0 ? x : NaN)

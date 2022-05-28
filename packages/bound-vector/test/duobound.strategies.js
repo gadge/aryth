@@ -4,16 +4,16 @@ import { decoCrostab }         from '@spare/logger'
 import { stringValue }         from '@texting/string-value'
 import { isLiteral }           from '@typen/literal'
 import { isNumeric, parseNum } from '@typen/numeral'
-import { strategies }          from '@valjoux/strategies'
-import { duobound }            from '../utils/duobound'
+import { strategies } from '@valjoux/strategies'
+import { duobound }   from '../src/duobound'
 
 const CONFIG_X = {
-  filter: isNumeric,
-  mapper: parseNum
+  by: isNumeric,
+  to: parseNum
 }
 const CONFIG_Y = {
-  filter: isLiteral,
-  mapper: stringValue
+  by: isLiteral,
+  to: stringValue
 }
 const CONFIG_COLLECTION = [CONFIG_X, CONFIG_Y]
 

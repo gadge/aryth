@@ -12,13 +12,13 @@ import { iterate, mapper }  from '@vect/vector-mapper'
  */
 export const duorank = (
   words,
-  x = { filter: isNumeric, comparer: NUM_ASC },
-  y = { filter: hasLiteral, comparer: STR_ASC }
+  x = { by: isNumeric, comparer: NUM_ASC },
+  y = { by: hasLiteral, comparer: STR_ASC }
 ) => {
   const primVec = [], restVec = []
   iterate(words, v => {
-    if (x.filter(v)) return void primVec.push(v)
-    if (y.filter(v)) return void restVec.push(v)
+    if (x.by(v)) return void primVec.push(v)
+    if (y.by(v)) return void restVec.push(v)
   })
   const
     primSorted = primVec.sort(x.comparer),

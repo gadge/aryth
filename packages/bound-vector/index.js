@@ -1,4 +1,4 @@
 export { bound }      from './src/bound'
-export { duobound }   from './utils/duobound'
-export { solebound }  from './utils/solebound'
+export { duobound }   from './src/duobound'
+export { solebound }  from './src/solebound'
 export { boundaries } from './src/boundaries'

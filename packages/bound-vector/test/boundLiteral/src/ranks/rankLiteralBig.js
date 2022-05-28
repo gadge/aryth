@@ -6,12 +6,12 @@ import { stringValue } from '../../stringValue'
 
 export const rankLiteralBig = (
   words,
-  confNum = { filter: isNumeric, max: 255, min: 0 },
-  confStr = { filter: hasLiteral, comparer: STR_ASC }
+  confNum = { by: isNumeric, max: 255, min: 0 },
+  confStr = { by: hasLiteral, comparer: STR_ASC }
 ) => {
   return mapper(words, v => {
-    if (confNum.filter(v)) { return v }
-    if (confStr.filter(v)) { return { value: stringValue(v) } }
+    if (confNum.by(v)) { return v }
+    if (confStr.by(v)) { return { value: stringValue(v) } }
     return NaN
   })
 }

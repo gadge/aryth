@@ -1,5 +1,5 @@
+import { Ziggurat }                   from '@aryth/rand'
 import { decoObject, delogger, says } from '@spare/logger'
-import { Ziggurat }                   from 'roulett'
 import { Histo }                      from '../src/Histo'
 
 const zigg = new Ziggurat(36000, 12000)

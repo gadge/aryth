@@ -7,7 +7,7 @@ import { iterate } from '@vect/vector-mapper'
  * @typedef {number} BoundedVector.min
  *
  * @typedef {Object} Config
- * @typedef {Function} Config.filter
+ * @typedef {Function} Config.by
  * @typedef {Function} Config.mapper
  *
  * @param {*[]} words
@@ -18,12 +18,11 @@ export const solebound = function (words, config) {
   const l = words?.length
   let vec = undefined
   if (!l) return vec
-  const { filter, mapper } = config
-  if (!filter) return vec
+  const { by, to } = config
+  if (!by) return vec
   iterate(words, (v, i) => {
-      if (filter(v) && (vec ?? (vec = Array(l)))) {
-        v = mapper(v)
-        if (v > (vec.max ?? (vec.max = vec.min = v))) { vec.max = v } else if (v < vec.min) { vec.min = v }
+      if (by(v) && (vec ?? (vec = Array(l)))) {
+        if ((v = to(v)) > (vec.max ?? (vec.max = vec.min = v))) { vec.max = v } else if (v < vec.min) { vec.min = v }
         return vec[i] = v
       }
       return NaN

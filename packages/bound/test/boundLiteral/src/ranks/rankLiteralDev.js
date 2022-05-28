@@ -6,18 +6,18 @@ import { mapper }               from '@vect/vector-mapper'
 
 export const rankLiteralDev = (
   words,
-  confNum = { filter: isNumeric, max: 255, min: 0 },
-  confStr = { filter: hasLiteral, comparer: STR_ASC }
+  confNum = { by: isNumeric, max: 255, min: 0 },
+  confStr = { by: hasLiteral, comparer: STR_ASC }
 ) => {
   let a, b
   const l = words.length
   let strings = undefined
   words = mapper(words, (v, i) => {
-    if (confNum.filter(v)) {
+    if (confNum.by(v)) {
       if (v >= (a ?? v)) { return a = v }
       else if (v <= (b ?? v)) { return b = v }
     }
-    if (confStr.filter(v)) {
+    if (confStr.by(v)) {
       if (!strings) strings = Array(l)
       strings[i] = v
       return undefined

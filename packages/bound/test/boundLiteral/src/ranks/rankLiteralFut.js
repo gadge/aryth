@@ -6,17 +6,17 @@ import { stringValue } from '../../stringValue'
 
 export const rankLiteralFut = (
   words,
-  confNum = { filter: isNumeric, max: 255, min: 0 },
-  confStr = { filter: hasLiteral, comparer: STR_ASC }
+  confNum = { by: isNumeric, max: 255, min: 0 },
+  confStr = { by: hasLiteral, comparer: STR_ASC }
 ) => {
   let xa, xb
   let ya, yb
   words = mapper(words, v => {
-    if (confNum.filter(v)) {
+    if (confNum.by(v)) {
       if (v >= (xa ?? v)) { xa = v } else if (v <= (xb ?? v)) { xb = v }
       return v
     }
-    if (confStr.filter(v)) {
+    if (confStr.by(v)) {
       if ((v = stringValue(v)) >= (ya ?? v)) { ya = v } else if (v <= (yb ?? v)) { yb = v }
       return v //String(v)
     }

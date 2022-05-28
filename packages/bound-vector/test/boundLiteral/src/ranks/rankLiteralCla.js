@@ -6,15 +6,15 @@ import { mapper }     from '@vect/vector-mapper'
 
 export const rankLiteralCla = (
   words,
-  confNum = { filter: isNumeric, max: 255, min: 0 },
-  confStr = { filter: hasLiteral, comparer: STR_ASC }
+  confNum = { by: isNumeric, max: 255, min: 0 },
+  confStr = { by: hasLiteral, comparer: STR_ASC }
 ) => {
   let a, b
   const strings = []
   words = mapper(words, v => {
-    if (confNum.filter(v)) if (v >= (a ?? v)) { return a = v }
+    if (confNum.by(v)) if (v >= (a ?? v)) { return a = v }
     else if (v <= (b ?? v)) { return b = v }
-    if (confStr.filter(v)) return strings.push(v), v
+    if (confStr.by(v)) return strings.push(v), v
     return NaN
   })
   // ({ confNum, confStr, words, strings }) |> delogger
