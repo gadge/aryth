@@ -1,6 +1,6 @@
 {
   "name": "@aryth/polar",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A math util library",
   "main": "./dist/index.cjs",
   "exports": {
@@ -11,7 +11,7 @@
     "dist"
   ],
   "dependencies": {
-    "@aryth/flopper": "^0.6.0"
+    "@aryth/flopper": "^0.6.1"
   },
   "publishConfig": {
     "access": "public"
