@@ -1,6 +1,6 @@
 {
   "name": "@aryth/calculator",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "A simple math calculator",
   "main": "./dist/index.cjs",
   "exports": {
@@ -41,5 +41,5 @@
     "url": "https://github.com/hoyeungw/aryth"
   },
   "homepage": "https://github.com/hoyeungw/aryth#readme",
-  "gitHead": "16ff94e2361623d2998615d268554c5a2b7b631b"
+  "gitHead": "2b35c933a0f21cc95d6093a9ee9a75c3007abafd"
 }
