@@ -2,11 +2,11 @@ import { makeEmbedded }     from '@foba/util'
 import { says }             from '@palett/says'
 import { decoCrostab }      from '@spare/logger'
 import { strategies }       from '@valjoux/strategies'
-import { duobound }         from '../../src/duobound'
 import { VectorCollection } from './candidates'
 import { boundLiteralArc }  from './src/bounds/boundLiteralArc'
 import { boundLiteralRea }  from './src/bounds/boundLiteralRea'
 import { boundLiteralSep }  from './src/bounds/boundLiteralSep'
+import { duobound }         from '../../src/boundaries'
 
 const { lapse, result } = strategies({
   repeat: 1E+5,

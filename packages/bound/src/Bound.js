@@ -1,28 +1,39 @@
 export class Bound {
-  min
-  max
-  constructor(min, max) {
-    this.min = min
-    this.max = max
+  lo
+  hi
+  constructor(lo, hi) {
+    this.lo = lo
+    this.hi = hi
   }
-  static build(min, max) { return new Bound(min, max) }
+  static build(lo, hi) { return new Bound(lo, hi) }
+  get dif() { return this.hi - this.lo }
 
-  get dif() { return this.max - this.min }
-  has(num) { return this.min <= num && num <= this.max }
-  hasLOpen(num) { return this.min < num && num <= this.max }
-  hasROpen(num) { return this.min <= num && num < this.max }
-  hasOpen(num) { return this.min < num && num < this.max }
-
-  limit(value) {
-    if (value < this.min) return this.min
-    if (value > this.max) return this.max
-    return value
+  collect(iter) {
+    for (let v of iter) { if (v > this.hi) { this.hi = v } else if (v < this.lo) { this.lo = v } }
+    return this
   }
 
-  restrict(value) {
-    const delta = this.max - this.min
-    while (value < this.min) value += delta
-    while (value > this.max) value -= delta
-    return value
+  has(num) { return this.lo <= num && num <= this.hi }
+  hasLORC(num) { return this.lo < num && num <= this.hi }
+  hasLCRO(num) { return this.lo <= num && num < this.hi }
+  hasOpen(num) { return this.lo < num && num < this.hi }
+
+  update(val) {
+    if (val < this.lo) return this.lo = val
+    if (val > this.hi) return this.hi = val
+    return val
+  }
+
+  limit(val) {
+    if (val < this.lo) return this.lo
+    if (val > this.hi) return this.hi
+    return val
+  }
+
+  restrict(val) {
+    const delta = this.hi - this.lo
+    while (val < this.lo) val += delta
+    while (val > this.hi) val -= delta
+    return val
   }
 }

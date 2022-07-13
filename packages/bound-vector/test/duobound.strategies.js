@@ -1,11 +1,11 @@
 import { makeEmbedded }        from '@foba/util'
-import { says }                from '@palett/says'
+import { says }                from '@spare/logger'
 import { decoCrostab }         from '@spare/logger'
 import { stringValue }         from '@texting/string-value'
 import { isLiteral }           from '@typen/literal'
 import { isNumeric, parseNum } from '@typen/numeral'
-import { strategies } from '@valjoux/strategies'
-import { duobound }   from '../src/duobound'
+import { strategies }          from '@valjoux/strategies'
+import { iterate }             from '@vect/vector-mapper'
 
 const CONFIG_X = {
   by: isNumeric,
@@ -33,7 +33,24 @@ const { lapse, result } = strategies({
   } |> makeEmbedded,
   methods: {
     bench: x => x,
-    cla: vec => duobound(vec, CONFIG_COLLECTION),
+    cla: (words, [x = CONFIG_X, y = CONFIG_Y] = []) => {
+      const hi = words?.length
+      let veX = null, veY = null
+      if (!hi) return [veX, veY]
+      iterate(words, (v, i) => {
+          if (x.by(v) && (veX ?? (veX = Array(hi)))) {
+            if ((v = x.to(v)) > (veX.max ?? (veX.max = veX.min = v))) { veX.max = v } else if (v < veX.min) { veX.min = v }
+            return veX[i] = v
+          }
+          if (y.by(v) && (veY ?? (veY = Array(hi)))) {
+            if ((v = y.to(v)) > (veY.max ?? (veY.max = veY.min = v))) { veY.max = v } else if (v < veY.min) { veY.min = v }
+            return veY[i] = v
+          }
+          return NaN
+        },
+        hi)
+      return [veX, veY]
+    }
     // rea: x => x,
     // arc: x => x,
     // dev: x => x,

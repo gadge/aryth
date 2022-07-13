@@ -1,6 +1,6 @@
 import { says }       from '@palett/says'
 import { deco }       from '@spare/deco'
-import { boundaries } from '../dist/index.esm'
+import { boundaries } from '@aryth/bound-vector'
 
 const paramsList = {
   empty: [],
