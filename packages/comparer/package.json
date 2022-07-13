@@ -1,6 +1,6 @@
 {
   "name": "@aryth/comparer",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Comparer collections for sort and rank",
   "main": "./dist/index.cjs",
   "exports": {
