@@ -1,6 +1,6 @@
 {
   "name": "@aryth/util-bound",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A math util library",
   "main": "./dist/index.cjs",
   "exports": {
@@ -22,6 +22,10 @@
     "@typen/num-loose": "^0.1.19",
     "@typen/num-strict": "^0.1.19",
     "typen": "^0.2.3"
+  },
+  "devDependencies": {
+    "@texting/charset-halfwidth": "^0.1.7",
+    "@typen/literal": "^0.1.19"
   },
   "repository": {
     "type": "git",
