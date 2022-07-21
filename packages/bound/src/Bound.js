@@ -7,9 +7,14 @@ export class Bound {
   }
   static build(lo, hi) { return new Bound(lo, hi) }
   get dif() { return this.hi - this.lo }
+  get max() { return this.hi }
+  get min() { return this.lo }
 
   collect(iter) {
-    for (let v of iter) { if (v > this.hi) { this.hi = v } else if (v < this.lo) { this.lo = v } }
+    for (let v of iter) {
+      if (v > this.hi) { this.hi = v }
+      else if (v < this.lo) { this.lo = v }
+    }
     return this
   }
 
@@ -19,8 +24,8 @@ export class Bound {
   hasOpen(num) { return this.lo < num && num < this.hi }
 
   update(val) {
-    if (val < this.lo) return this.lo = val
-    if (val > this.hi) return this.hi = val
+    if (val < this.lo) this.lo = val
+    if (val > this.hi) this.hi = val
     return val
   }
 
