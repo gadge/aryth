@@ -5,7 +5,7 @@ import { MAX, MIN } from './constants.js'
 export class SignedBound {
   pos
   neg
-  constructor(posLo = MAX, posHi = MIN, negLo = MAX, negHi = MIN) {
+  constructor(posLo = MAX, posHi = 0, negLo = 0, negHi = MIN) {
     this.pos = new Bound(posLo, posHi)
     this.neg = new Bound(negLo, negHi)
   }
