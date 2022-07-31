@@ -23,7 +23,7 @@
     "@aryth/math": "^0.6.5"
   },
   "devDependencies": {
-    "@palett/color-space": "^0.9.18"
+    "@palett/color-space": "^0.10.4"
   },
   "repository": {
     "type": "git",

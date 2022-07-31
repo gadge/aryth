@@ -1,7 +1,9 @@
+import { MAX, MIN } from './constants.js'
+
 export class Bound {
   lo
   hi
-  constructor(lo, hi) {
+  constructor(lo = MAX, hi = MIN) {
     this.lo = lo
     this.hi = hi
   }
@@ -11,34 +13,31 @@ export class Bound {
   get min() { return this.lo }
 
   collect(iter) {
-    for (let v of iter) {
-      if (v > this.hi) { this.hi = v }
-      else if (v < this.lo) { this.lo = v }
-    }
+    for (let v of iter) this.note(v)
     return this
   }
 
   has(num) { return this.lo <= num && num <= this.hi }
-  hasLORC(num) { return this.lo < num && num <= this.hi }
-  hasLCRO(num) { return this.lo <= num && num < this.hi }
-  hasOpen(num) { return this.lo < num && num < this.hi }
+  hasOC(num) { return this.lo < num && num <= this.hi }
+  hasCO(num) { return this.lo <= num && num < this.hi }
+  within(num) { return this.lo < num && num < this.hi }
 
-  update(val) {
+  note(val) {
     if (val < this.lo) this.lo = val
     if (val > this.hi) this.hi = val
     return val
   }
 
-  limit(val) {
+  lim(val) {
     if (val < this.lo) return this.lo
     if (val > this.hi) return this.hi
     return val
   }
 
-  restrict(val) {
-    const delta = this.hi - this.lo
-    while (val < this.lo) val += delta
-    while (val > this.hi) val -= delta
+  res(val) {
+    const dif = this.hi - this.lo
+    while (val < this.lo) val += dif
+    while (val > this.hi) val -= dif
     return val
   }
 }
