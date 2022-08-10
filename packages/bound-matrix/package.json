@@ -21,12 +21,12 @@
     "@aryth/bound-vector": "^0.6.7",
     "@aryth/util-bound": "^0.6.7",
     "@ject/oneself": "^0.0.17",
-    "@texting/string-value": "^0.1.7",
+    "@texting/string-value": "^0.1.11",
     "@typen/enum-check-levels": "^0.1.19",
     "@typen/literal": "^0.1.19",
     "@typen/numeral": "^0.1.19",
-    "@vect/matrix-index": "^0.7.15",
-    "@vect/matrix-init": "^0.7.15",
+    "@vect/matrix-index": "^0.7.16",
+    "@vect/matrix-init": "^0.7.16",
     "@vect/matrix-mapper": "^0.7.15"
   },
   "repository": {

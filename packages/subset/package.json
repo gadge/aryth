@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@vect/swap": "^0.6.13",
-    "@vect/vector-init": "^0.7.15",
+    "@vect/vector-init": "^0.7.16",
     "@vect/vector-select": "^0.7.15"
   },
   "repository": {

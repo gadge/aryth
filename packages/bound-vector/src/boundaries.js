@@ -1,7 +1,7 @@
 // import { isNumeric, parseNum } from '@texting/charset-halfwidth'
 // import { stringValue }         from '@texting/string-value'
 // import { isLiteral }           from '@typen/literal'
-import { iterate }             from '@vect/vector-mapper'
+import { iterate } from '@vect/vector-mapper'
 
 // export const NUM_BOUND_CONF_HALF = { by: isNumeric, to: parseNum }
 // export const STR_BOUND_CONF_HALF = { by: isLiteral, to: stringValue }
@@ -57,12 +57,12 @@ export function duobound(words, [ x, y ] = []) {
   let veX = null, veY = null
   if (!hi) return [ veX, veY ]
   iterate(words, (v, i) => {
-      if (x.by(v) && (veX ?? (veX = Array(hi)))) {
+      if (x.by && x.by(v) && (veX ?? (veX = Array(hi)))) {
         if ((v = x.to(v)) > (veX.max ?? (veX.max = veX.min = v))) { veX.max = v }
         else if (v < veX.min) { veX.min = v }
         return veX[i] = v
       }
-      if (y.by(v) && (veY ?? (veY = Array(hi)))) {
+      if (y.by && y.by(v) && (veY ?? (veY = Array(hi)))) {
         if ((v = y.to(v)) > (veY.max ?? (veY.max = veY.min = v))) { veY.max = v }
         else if (v < veY.min) { veY.min = v }
         return veY[i] = v
@@ -95,7 +95,7 @@ export const multibound = function (words, configs) {
     (v, i) => configs.some(
       ({ by, to }, j) => {
         let vec = vectors[j]
-        if (by(v) && (vec ?? (vec = (vectors[j] = Array(l))))) {
+        if (by && by(v) && (vec ?? (vec = (vectors[j] = Array(l))))) {
           if ((v = to(v)) > (vec.max ?? (vec.max = vec.min = v))) { vec.max = v }
           else if (v < vec.min) { vec.min = v }
           return vec[i] = v, true
