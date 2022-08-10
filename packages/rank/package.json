@@ -1,6 +1,6 @@
 {
   "name": "@aryth/rank",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "description": "A math util library",
   "main": "./dist/index.cjs",
   "exports": {
@@ -18,10 +18,10 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@aryth/comparer": "^0.6.7",
-    "@aryth/rank-column": "^0.6.7",
-    "@aryth/rank-matrix": "^0.6.7",
-    "@aryth/rank-vector": "^0.6.7"
+    "@aryth/comparer": "^0.6.8",
+    "@aryth/rank-column": "^0.6.8",
+    "@aryth/rank-matrix": "^0.6.8",
+    "@aryth/rank-vector": "^0.6.8"
   },
   "repository": {
     "type": "git",
