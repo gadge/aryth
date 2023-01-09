@@ -1,6 +1,6 @@
 {
   "name": "@aryth/calculator",
-  "version": "0.6.8",
+  "version": "0.6.9",
   "description": "A simple math calculator",
   "main": "./dist/index.cjs",
   "exports": {
