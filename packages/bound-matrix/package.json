@@ -21,13 +21,13 @@
     "@aryth/bound-vector": "^0.6.8",
     "@aryth/util-bound": "^0.6.8",
     "@ject/oneself": "^0.0.17",
-    "@texting/string-value": "^0.1.11",
+    "@texting/string-value": "^0.1.13",
     "@typen/enum-check-levels": "^0.1.19",
     "@typen/literal": "^0.1.19",
     "@typen/numeral": "^0.1.19",
-    "@vect/matrix-index": "^0.7.16",
-    "@vect/matrix-init": "^0.7.16",
-    "@vect/matrix-mapper": "^0.7.15"
+    "@vect/matrix-index": "^0.7.19",
+    "@vect/matrix-init": "^0.7.19",
+    "@vect/matrix-mapper": "^0.7.19"
   },
   "repository": {
     "type": "git",

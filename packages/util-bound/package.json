@@ -24,7 +24,7 @@
     "typen": "^0.2.3"
   },
   "devDependencies": {
-    "@texting/charset-halfwidth": "^0.1.11",
+    "@texting/charset-halfwidth": "^0.1.13",
     "@typen/literal": "^0.1.19"
   },
   "repository": {
