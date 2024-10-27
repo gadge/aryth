@@ -1,12 +1,9 @@
 {
   "name": "@aryth/rank-matrix",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "description": "Return ranks of each element in a 2-d array",
-  "main": "./dist/index.cjs",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
-  },
+  "type": "module",
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
@@ -18,7 +15,7 @@
     "test": "node -r @babel/register test/rank-matrix.test.js"
   },
   "dependencies": {
-    "@vect/matrix-mapper": "^0.7.19"
+    "@vect/matrix-mapper": "^0.8.0"
   },
   "repository": {
     "type": "git",

@@ -5,7 +5,7 @@ import { rand } from './rand'
 export const flopGenerator = function* (ar, df) {
   let l = ar.length
   while (--l >= 0) yield swap.call(ar, rand(l), l)
-  df = df ?? (ar|> flop)
+  df = df ?? (flop(ar))
   while (true) yield df
 }
 

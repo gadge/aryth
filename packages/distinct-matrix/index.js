@@ -1,4 +1,4 @@
-export { distinct, distinctCount } from './src'
+export { distinct, distinctCount } from './src/index.js'
 
 export function distinctByColumn(mx, y) {
   let [ h, w ] = size(mx)

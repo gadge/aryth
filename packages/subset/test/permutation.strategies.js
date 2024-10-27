@@ -19,10 +19,10 @@ export function permutatorDev(vec) {
 
 const { lapse, result } = strategies({
   repeat: 1E+5,
-  candidates: {
+  candidates: makeEmbedded({
     foo: [ 'a', 'b', 'c' ],
     bar: [ 'a', 'b', 'c', 'd' ]
-  } |> makeEmbedded,
+  }),
   methods: {
     bench: x => x,
     cla: x => {

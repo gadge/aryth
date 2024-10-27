@@ -1,5 +1,5 @@
 import { entriesCounter, objectCounter, objectDistinctor, sortByValues, vectorDistinctor } from '@aryth/util-distinct'
-import { iterate }                                                                         from '@vect/column-mapper'
+import { iterate } from '@vect/column-mapper'
 
 /**
  *

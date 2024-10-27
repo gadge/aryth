@@ -1,4 +1,4 @@
-import { abs, exp, log, pow, sqrt } from '../helper'
+import { abs, exp, log, pow, sqrt } from '../helper/index.js'
 
 const R0 = 3.442619855899
 const R1 = 1.0 / R0

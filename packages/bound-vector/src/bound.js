@@ -13,6 +13,6 @@ export function bound(vec) {
   if (!hi) return toOutput(NaN, NaN)
   let [ i, x ] = firstEntry(vec, 0, hi, cfg)
   let min, max = min = toNum(x)
-  for (++i; i < hi; i++) if ((x = vec[i] |> toNum) < min) { min = x } else if (x > max) { max = x }
+  for (++i; i < hi; i++) if ((x = toNum(vec[i])) < min) { min = x } else if (x > max) { max = x }
   return toOutput(max, min)
 }

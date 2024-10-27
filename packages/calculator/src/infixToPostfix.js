@@ -16,23 +16,23 @@ export function infixToPostfix(infix) {
     if (isNumeric(x)) { postfix.push(+x) }
     else if (x in DICT) { postfix.push(DICT[x]) }
     else if (x in MATH) { stack.push(MATH[x]) }
-    else if (x === CO) { while ((stack |> last) !== '(') postfix.push(stack.pop()) }
+    else if (x === CO) { while ((last(stack)) !== '(') postfix.push(stack.pop()) }
     else if (x in Operators) {
       a = x
-      b = (stack |> last)
+      b = (last(stack))
       while ((b in Operators) && (
         (Associativity[a] === LEFT && (Precedence[a] <= Precedence[b])) ||
         (Associativity[a] === RIGHT && (Precedence[a] < Precedence[b]))
       )) {
         postfix.push(b)
         stack.pop()
-        b = (stack |> last)
+        b = (last(stack))
       }
       stack.push(a)
     }
     else if (x === '(') { stack.push(x) }
     else if (x === ')') {
-      while ((stack |> last) !== '(') postfix.push(stack.pop())
+      while ((last(stack)) !== '(') postfix.push(stack.pop())
       stack.pop()
     }
   if (stack.length) acquire(postfix, stack.reverse())

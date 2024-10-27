@@ -1,1 +1,1 @@
-export { distinct, distinctCount } from './src'
+export { distinct, distinctCount } from './src/index.js'

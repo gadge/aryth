@@ -8,5 +8,5 @@ const candidates = [
 const notMinusOne = x => !!~x
 
 for (let n of candidates) {
-  Xr().number(n).notMinusOne(notMinusOne(n)) |> logger
+  logger(Xr().number(n).notMinusOne(notMinusOne(n)))
 }

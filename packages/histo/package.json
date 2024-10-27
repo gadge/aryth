@@ -1,12 +1,9 @@
 {
   "name": "@aryth/histo",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "description": "A statistic distribution tool.",
-  "main": "./dist/index.cjs",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
-  },
+  "type": "module",
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
@@ -18,17 +15,17 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@aryth/bound-vector": "^0.6.9",
-    "@aryth/math": "^0.6.9",
-    "@aryth/nice-scale": "^0.6.9",
+    "@aryth/bound-vector": "workspace:^",
+    "@aryth/math": "workspace:^",
+    "@aryth/nice-scale": "workspace:^",
     "@spare/lange": "^0.15.15",
     "@spare/pad-string": "^0.9.9",
     "@typen/enum-data-types": "^0.1.19",
     "@vect/entries-indicator": "^0.6.13",
-    "@vect/entries-init": "^0.7.19",
-    "@vect/entries-mapper": "^0.7.19",
-    "@vect/object-init": "^0.7.19",
-    "@vect/vector-mapper": "^0.7.19"
+    "@vect/entries-init": "^0.8.0",
+    "@vect/entries-mapper": "^0.8.0",
+    "@vect/object-init": "^0.8.0",
+    "@vect/vector-mapper": "^0.8.0"
   },
   "repository": {
     "type": "git",

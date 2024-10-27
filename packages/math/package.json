@@ -1,12 +1,9 @@
 {
   "name": "@aryth/math",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "description": "A math util library",
-  "main": "./dist/index.cjs",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
-  },
+  "type": "module",
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
