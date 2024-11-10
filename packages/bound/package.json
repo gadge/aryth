@@ -7,6 +7,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -20,7 +23,7 @@
     "@aryth/math": "workspace:^"
   },
   "devDependencies": {
-    "@palett/color-space": "^0.11.6"
+    "@palett/color-space": "^0.12.0"
   },
   "repository": {
     "type": "git",

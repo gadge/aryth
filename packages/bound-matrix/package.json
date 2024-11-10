@@ -7,6 +7,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -17,11 +20,11 @@
   "dependencies": {
     "@aryth/bound-vector": "workspace:^",
     "@aryth/util-bound": "workspace:^",
-    "@ject/oneself": "^0.0.17",
-    "@texting/string-value": "^0.1.13",
-    "@typen/enum-check-levels": "^0.1.19",
-    "@typen/literal": "^0.1.19",
-    "@typen/numeral": "^0.1.19",
+    "@ject/oneself": "^0.1.0",
+    "@texting/string-value": "^0.2.1",
+    "@typen/enum-check-levels": "^0.2.0",
+    "@typen/literal": "^0.2.0",
+    "@typen/numeral": "^0.2.0",
     "@vect/matrix-index": "^0.8.0",
     "@vect/matrix-init": "^0.8.0",
     "@vect/matrix-mapper": "^0.8.0"

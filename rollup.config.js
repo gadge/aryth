@@ -29,5 +29,3 @@ for await (const project of PROJECTS) {
 }
 
 export default Object.values(tasks)
-
-

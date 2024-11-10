@@ -7,6 +7,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -18,9 +21,9 @@
     "@aryth/bound-vector": "workspace:^",
     "@aryth/math": "workspace:^",
     "@aryth/nice-scale": "workspace:^",
-    "@spare/lange": "^0.15.15",
+    "@spare/lange": "^0.16.1",
     "@spare/pad-string": "^0.9.9",
-    "@typen/enum-data-types": "^0.1.19",
+    "@typen/enum-data-types": "^0.2.0",
     "@vect/entries-indicator": "^0.6.13",
     "@vect/entries-init": "^0.8.0",
     "@vect/entries-mapper": "^0.8.0",

@@ -7,6 +7,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -15,11 +18,11 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@spare/enum-chars": "^0.15.15",
-    "@spare/ripper": "^0.15.15",
-    "@spare/string": "^0.15.15",
-    "@typen/enum-data-types": "^0.1.19",
-    "@typen/num-strict": "^0.1.19",
+    "@spare/enum-chars": "^0.16.1",
+    "@spare/ripper": "^0.16.1",
+    "@spare/string": "^0.16.1",
+    "@typen/enum-data-types": "^0.2.0",
+    "@typen/num-strict": "^0.2.0",
     "@vect/vector-index": "^0.8.0",
     "@vect/vector-merge": "^0.6.13"
   },

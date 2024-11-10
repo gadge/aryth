@@ -7,6 +7,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -16,7 +19,7 @@
   },
   "dependencies": {
     "@aryth/comparer": "workspace:^",
-    "@typen/nullish": "^0.1.19",
+    "@typen/nullish": "^0.2.0",
     "@vect/swap": "^0.6.13"
   },
   "repository": {
