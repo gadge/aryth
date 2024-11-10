@@ -1,6 +1,6 @@
 {
   "name": "@aryth/distinct-matrix",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Return ranks of each element in a 2-d array",
   "type": "module",
   "exports": "./dist/index.js",

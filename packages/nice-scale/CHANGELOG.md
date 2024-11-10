@@ -1,5 +1,13 @@
 # @aryth/nice-scale
 
+## 0.7.1
+
+### Patch Changes
+
+- minor update
+- Updated dependencies
+  - @aryth/math@0.7.1
+
 ## 0.7.0
 
 ### Minor Changes

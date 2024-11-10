@@ -1,5 +1,13 @@
 # @aryth/distinct-vector
 
+## 0.7.1
+
+### Patch Changes
+
+- minor update
+- Updated dependencies
+  - @aryth/util-distinct@0.7.1
+
 ## 0.7.0
 
 ### Minor Changes

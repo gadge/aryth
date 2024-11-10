@@ -354,6 +354,9 @@ importers:
       '@aryth/comparer':
         specifier: workspace:^
         version: link:../comparer
+      '@aryth/math':
+        specifier: workspace:^
+        version: link:../math
       '@typen/nullish':
         specifier: ^0.2.0
         version: 0.2.0
