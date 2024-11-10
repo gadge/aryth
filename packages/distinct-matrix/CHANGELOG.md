@@ -1,5 +1,13 @@
 # @aryth/distinct-matrix
 
+## 0.7.2
+
+### Patch Changes
+
+- add unresolved dependencies
+- Updated dependencies
+  - @aryth/util-distinct@0.7.2
+
 ## 0.7.1
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @aryth/bound-matrix
 
+## 0.7.2
+
+### Patch Changes
+
+- add unresolved dependencies
+- Updated dependencies
+  - @aryth/bound-vector@0.7.2
+  - @aryth/util-bound@0.7.2
+
 ## 0.7.1
 
 ### Patch Changes

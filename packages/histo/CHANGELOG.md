@@ -1,5 +1,15 @@
 # @aryth/histo
 
+## 0.7.2
+
+### Patch Changes
+
+- add unresolved dependencies
+- Updated dependencies
+  - @aryth/bound-vector@0.7.2
+  - @aryth/math@0.7.2
+  - @aryth/nice-scale@0.7.2
+
 ## 0.7.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @aryth/rank-vector
 
+## 0.7.2
+
+### Patch Changes
+
+- add unresolved dependencies
+- Updated dependencies
+  - @aryth/comparer@0.7.2
+
 ## 0.7.1
 
 ### Patch Changes

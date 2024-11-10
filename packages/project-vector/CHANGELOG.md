@@ -1,5 +1,15 @@
 # @aryth/project-vector
 
+## 0.7.2
+
+### Patch Changes
+
+- add unresolved dependencies
+- Updated dependencies
+  - @aryth/bound-vector@0.7.2
+  - @aryth/comparer@0.7.2
+  - @aryth/projector@0.7.2
+
 ## 0.7.1
 
 ### Patch Changes

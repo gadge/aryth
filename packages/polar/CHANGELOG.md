@@ -1,5 +1,13 @@
 # @aryth/polar
 
+## 0.7.2
+
+### Patch Changes
+
+- add unresolved dependencies
+- Updated dependencies
+  - @aryth/flopper@0.7.2
+
 ## 0.7.1
 
 ### Patch Changes

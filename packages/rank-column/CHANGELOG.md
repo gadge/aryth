@@ -1,5 +1,11 @@
 # @aryth/rank-column
 
+## 0.7.2
+
+### Patch Changes
+
+- add unresolved dependencies
+
 ## 0.7.1
 
 ### Patch Changes
