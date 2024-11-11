@@ -1,5 +1,13 @@
 # @aryth/bound-vector
 
+## 0.7.3
+
+### Patch Changes
+
+- minor fix
+- Updated dependencies
+  - @aryth/util-bound@0.7.3
+
 ## 0.7.2
 
 ### Patch Changes

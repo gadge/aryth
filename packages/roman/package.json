@@ -1,6 +1,6 @@
 {
   "name": "@aryth/roman",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Parse roman numerals to decimal numbers",
   "type": "module",
   "exports": "./dist/index.js",

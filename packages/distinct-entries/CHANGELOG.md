@@ -1,5 +1,13 @@
 # @aryth/distinct-entries
 
+## 0.7.3
+
+### Patch Changes
+
+- minor fix
+- Updated dependencies
+  - @aryth/util-distinct@0.7.3
+
 ## 0.7.2
 
 ### Patch Changes

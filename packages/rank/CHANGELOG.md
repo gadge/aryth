@@ -1,5 +1,16 @@
 # @aryth/rank
 
+## 0.7.3
+
+### Patch Changes
+
+- minor fix
+- Updated dependencies
+  - @aryth/comparer@0.7.3
+  - @aryth/rank-column@0.7.3
+  - @aryth/rank-matrix@0.7.3
+  - @aryth/rank-vector@0.7.3
+
 ## 0.7.2
 
 ### Patch Changes

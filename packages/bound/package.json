@@ -1,6 +1,6 @@
 {
   "name": "@aryth/bound",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "A library to calculate { max, min } of 1d or 2d array ",
   "type": "module",
   "exports": "./dist/index.js",
