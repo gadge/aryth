@@ -1,11 +1,12 @@
-﻿import { near, restrict } from './math'
+﻿import { mutate }         from '@vect/vector-mapper'
+import { near, restrict } from './math.js'
 
 
 export class PetalNote {
-  marks // Array<double>
-  counter // Object<int, int>
-  epsilon = 0 // double
-  sum // int
+  /** @type {number}   */ epsilon = 0 // double
+  /** @type {number[]} */ angles     // marks
+  /** @type {number[]} */ bin        // counters
+  /** @type {number}   */ count       // sum
 
   /**
    *
@@ -20,34 +21,33 @@ export class PetalNote {
   /**
    *
    * @param {number} startAngle
-   * @param {number} count
+   * @param {number} petals
    * @return {PetalNote}
    */
-  initialize(startAngle, count) {
-    const unit = 360.0 / count
-    this.epsilon = unit / 2
-    this.marks = Array(count)
-    this.counter = {}
-    this.sum = 0
-    for (let angle = restrict(startAngle), i = 0; i < count;) {
-      this.marks[i] = angle
-      this.counter[++i] = 0
-      angle = restrict(angle + unit)
+  initialize(startAngle, petals) {
+    const delta = 360.0 / petals
+    this.epsilon = delta / 2
+    this.angles = Array(petals)
+    this.bin = Array(petals)
+    this.count = 0
+    for (let angle = restrict(startAngle), i = 0; i < petals; i++) {
+      this.angles[i] = angle
+      this.bin[i] = 0
+      angle = restrict(angle + delta)
     }
     return this
   }
-  get count() { return this.marks.length } // int
+  get petals() { return this.angles.length } // int
   clear() {
-    this.sum = 0
-    for (let key in this.counter) this.counter[key] = 0
+    this.count = 0
+    mutate(this.bin, () => 0)
     return this
   }
   phase(θ) {
     θ = restrict(θ)
-    let i = 0
-    for (let mark of this.marks) {
-      if (near(mark, θ, this.epsilon)) { return ++i }
-      else { ++i }
+    const { angles, epsilon, petals } = this
+    for (let i = 0; i < petals; i++) {
+      if (near(angles[i], θ, epsilon)) return i
     }
     return void 0
   }
@@ -55,10 +55,10 @@ export class PetalNote {
     const phase = this.phase(θ)
     this.notePhase(phase)
     return phase
-    // return { phase: phase, count: this.notePhase(phase) }
+    // return { phase: phase, petals: this.notePhase(phase) }
   }
   notePhase(phase) {
-    this.sum++
-    return this.counter[phase] += 1
+    this.count++
+    return this.bin[phase] += 1
   }
 }

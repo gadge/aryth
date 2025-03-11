@@ -1,5 +1,6 @@
 import { Deco, deco, says } from '@spare/logger'
-import { PetalNote }        from '../src/PetalNote'
+import { test }             from 'node:test'
+import { PetalNote }        from '../src/PetalNote.js'
 
 const candidates = [
   30, 40, 100, 120, 170, 180, 190, 250, 260, 320, 330, 360
@@ -7,12 +8,21 @@ const candidates = [
 
 const petalNote = PetalNote.build(-36, 5)
 
-petalNote.marks |> deco |> says['marks']
-petalNote.counter  |> Deco({ vert: 1 })  |> says['counter']
+test('petal note', () => {
 
-for (let angle of candidates) {
-  petalNote.note(angle) |> deco |> says['angle'].br(angle)
-}
+  says['marks'](deco(petalNote.angles))
+  says['counter'](Deco({ vert: 1 })(petalNote.bin))
 
-petalNote.counter |> Deco({ vert: 1 }) |> says['counter']
+  for (let angle of candidates) {
+    says['angle'].br(angle)(deco(petalNote.note(angle)))
+  }
+
+  says['counter'](Deco({ vert: 1 })(petalNote.bin))
+
+  says['counter'](deco(petalNote.angles))
+
+  petalNote.clear()
+
+  says['counter'](deco(petalNote.bin))
+})
 

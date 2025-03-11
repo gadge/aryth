@@ -24,15 +24,15 @@ export class Graph {
     for (const polar of finiteFlopper(list)) {
       if (rimMark.foliateRadius(polar.θ, petals) < polar.r) continue
       const phase = petalNote.phase(polar.θ)
-      console.log(`    >> [phase] ${phase} [counter] ${petalNote.counter[phase]}`)
-      if (thresholdPerPhrase <= petalNote.counter[phase]) {
+      console.log(`    >> [phase] ${phase} [counter] ${petalNote.bin[phase]}`)
+      if (thresholdPerPhrase <= petalNote.bin[phase]) {
         console.log("")
         continue
       }
       console.log(" ... keep recording")
       petalNote.notePhase(phase)
       target.add(polar)
-      if (maximum <= petalNote.sum) break
+      if (maximum <= petalNote.count) break
     }
     console.log("")
     return target
