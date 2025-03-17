@@ -1,4 +1,4 @@
-import { rand } from './rand'
+import { rand } from './rand.js'
 
 export const flopIndex = ar => rand(ar.length)
 

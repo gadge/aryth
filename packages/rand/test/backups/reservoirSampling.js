@@ -1,4 +1,4 @@
-import { rand } from '../../src/rand'
+import { rand } from '../../src/rand.js'
 
 /**
  * Reservoir sampling

@@ -1,5 +1,23 @@
 # @aryth/rand
 
+## 0.7.5
+
+### Patch Changes
+
+- minor fix
+- Updated dependencies
+  - @aryth/comparer@0.7.5
+  - @aryth/math@0.7.5
+
+## 0.7.4
+
+### Patch Changes
+
+- minor fix
+- Updated dependencies
+  - @aryth/comparer@0.7.4
+  - @aryth/math@0.7.4
+
 ## 0.7.3
 
 ### Patch Changes

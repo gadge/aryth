@@ -1,5 +1,5 @@
 import { min }  from '@aryth/comparer'
-import { rand } from '../../src/rand'
+import { rand } from '../../src/rand.js'
 
 export function indexShuffler (ar) {
   let length = this.length || ar.length

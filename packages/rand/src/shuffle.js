@@ -1,6 +1,6 @@
 import { max }  from '@aryth/comparer'
 import { swap } from '@vect/swap'
-import { rand } from '../src/rand'
+import { rand } from '../src/rand.js'
 
 /**
  * Fisher–Yates shuffle, a.k.a Knuth shuffle

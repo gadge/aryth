@@ -1,6 +1,8 @@
-export { rand, randIn, randBetw, randLong, randInt, randIntBetw, randLongStr } from './src/rand'
-export { flop, flopIndex, flopKey, flopValue, flopEntry }                      from './src/flop'
-export { flopGenerator }                                                       from './src/flopGenerator'
-export { shuffle }                                                             from './src/shuffle'
-export { Ziggurat }                                                            from './src/ziggurat'
-export { ziggurat }                                                            from './src/zigguratGenerator'
+export {
+  rand, randIn, betw, betw as randBetw, betw as bw, randLong, randInt, randIntBetw, randLongStr,
+}                                                         from './src/rand.js'
+export { flop, flopIndex, flopKey, flopValue, flopEntry } from './src/flop.js'
+export { flopGenerator }                                  from './src/flopGenerator.js'
+export { shuffle }                                        from './src/shuffle.js'
+export { Norm, Norm as Ziggurat }                         from './src/normDist/Norm.js'
+export { norm, norm as ziggurat }                         from './src/normDist/generator.js'

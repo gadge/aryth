@@ -1,7 +1,7 @@
 import { Mag }                           from '@cliche/mag'
 import { decoCrostab, logger, says, xr } from '@spare/logger'
 import { strategies }                    from '@valjoux/strategies'
-import { rand, random }                  from '../src/rand'
+import { rand, random }                  from '../src/rand.js'
 
 const digitsToShiftBits = digits => digits * 3 + (~~((digits - 1) / 3) + 1)
 export const randIntStr = digits => ~~(random() * (2 ** digitsToShiftBits(digits)))
