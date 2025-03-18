@@ -1,5 +1,0 @@
-export { vectorDistinctor } from './src/vectorDistinctor'
-export { objectDistinctor } from './src/objectDistinctor'
-export { entriesCounter } from './src/entriesCounter'
-export { objectCounter } from './src/objectCounter'
-export { sortByValues } from './src/sortByValues'

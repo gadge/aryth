@@ -1,0 +1,40 @@
+{
+  "name": "@aryth/rank-column",
+  "version": "0.7.6",
+  "description": "A math util library",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node -r @babel/register test/rank.test.js"
+  },
+  "dependencies": {
+    "@vect/column": "^0.8.0",
+    "@vect/matrix-size": "^0.5.23"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gadge/aryth.git"
+  },
+  "keywords": [
+    "math",
+    "numeric",
+    "analysis"
+  ],
+  "author": "Hoyeung Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/aryth"
+  },
+  "homepage": "https://github.com/hoyeungw/aryth#readme",
+  "gitHead": "2b35c933a0f21cc95d6093a9ee9a75c3007abafd"
+}

@@ -1,0 +1,5 @@
+export { vectorDistinctor } from './src/vectorDistinctor.js'
+export { objectDistinctor } from './src/objectDistinctor.js'
+export { entriesCounter }   from './src/entriesCounter.js'
+export { objectCounter }    from './src/objectCounter.js'
+export { sortByValues }     from './src/sortByValues.js'
