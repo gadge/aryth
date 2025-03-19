@@ -1,0 +1,5 @@
+export { bound as boundVector } from '@aryth/bound-vector'
+export { bound as boundMatrix } from '@aryth/bound-matrix'
+export { roundBound }           from  './roundBound.js'
+export { Bound }                from  './Bound.js'
+export { SignedBound }          from  './SignedBound.js'
