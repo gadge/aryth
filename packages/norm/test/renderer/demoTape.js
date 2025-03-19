@@ -28,7 +28,7 @@ function render(currBin, unitSize, maxCount) {
 }
 
 // Run the test with a given sample size
-export const distributionDemoTape = (numbers, unitSize) => {
+export const demoTape = (numbers, unitSize) => {
   // Tally the values into bins and compute sum and sum of squares
   const { sum, sumProd, stat } = createStat(numbers, unitSize)
 

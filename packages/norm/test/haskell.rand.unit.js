@@ -1,5 +1,5 @@
 const { random } = Math
-import { distributionDemoTape } from './renderer/distributionDemoTape.js'
+import { demoTape } from './renderer/demoTape.js'
 
 // Box-Muller transform to generate normally distributed random numbers
 function nextNorm() {
@@ -15,8 +15,8 @@ const main = () => {
 
   const unitSize = 0.2
   const genList = length => Array.from({ length }, nextNorm)  // Generate n normally distributed numbers
-  distributionDemoTape(genList(1000), unitSize)
-  distributionDemoTape(genList(200000), unitSize)
+  demoTape(genList(1000), unitSize)
+  demoTape(genList(200000), unitSize)
 }
 
 // Execute the main function

@@ -1,4 +1,4 @@
-# @aryth/rand-norm
+# @aryth/norm
 
 [![npm version][badge-npm-version]][url-npm]
 [![npm download monthly][badge-npm-download-monthly]][url-npm]
@@ -11,17 +11,17 @@
 
 [//]: <> (Shields)
 
-[badge-npm-version]: https://flat.badgen.net/npm/v/@aryth/rand-norm
+[badge-npm-version]: https://flat.badgen.net/npm/v/@aryth/norm
 
-[badge-npm-download-monthly]: https://flat.badgen.net/npm/dm/@aryth/rand-norm
+[badge-npm-download-monthly]: https://flat.badgen.net/npm/dm/@aryth/norm
 
-[badge-npm-download-total]:https://flat.badgen.net/npm/dt/@aryth/rand-norm
+[badge-npm-download-total]:https://flat.badgen.net/npm/dt/@aryth/norm
 
-[badge-npm-dependents]: https://flat.badgen.net/npm/dependents/@aryth/rand-norm
+[badge-npm-dependents]: https://flat.badgen.net/npm/dependents/@aryth/norm
 
-[badge-npm-license]: https://flat.badgen.net/npm/license/@aryth/rand-norm
+[badge-npm-license]: https://flat.badgen.net/npm/license/@aryth/norm
 
-[badge-pp-install-size]: https://flat.badgen.net/packagephobia/install/@aryth/rand-norm
+[badge-pp-install-size]: https://flat.badgen.net/packagephobia/install/@aryth/norm
 
 [badge-github-last-commit]: https://flat.badgen.net/github/last-commit/hoyeungw/aryth
 
@@ -29,9 +29,9 @@
 
 [//]: <> (Link)
 
-[url-npm]: https://npmjs.org/package/@aryth/rand-norm
+[url-npm]: https://npmjs.org/package/@aryth/norm
 
-[url-pp]: https://packagephobia.now.sh/result?p=@aryth/rand-norm
+[url-pp]: https://packagephobia.now.sh/result?p=@aryth/norm
 
 [url-github]: https://github.com/hoyeungw/aryth
 
@@ -42,7 +42,7 @@
 #### Install
 
 ```console
-$ npm install @aryth/rand-norm
+$ npm install @aryth/norm
 ```
 
 #### Usage
@@ -67,7 +67,7 @@ carefully chosen value that makes the algorithm efficient.
 M1 = 2147483648.0: This is 2^31, the maximum value that can be represented in a 32-bit signed integer. It's used as a
 scaling factor to convert between floating-point and integer representations.
 
-N2P32 = -0x100000000: This is -2^32, used in the uniform rand-normom number generator (rand-norm() method). It helps scale the
+N2P32 = -0x100000000: This is -2^32, used in the uniform normom number generator (norm() method). It helps scale the
 output of the xorshift() function to produce numbers in the [0,1] range.
 
 #### Meta

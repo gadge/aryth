@@ -1,5 +1,6 @@
 import { test }             from 'node:test'
 import { Norm as EPIC }     from '../index.js'
+import { n }                from '../src/index.js'
 import { Ziggurat as C37S } from './prototype/C37S.js'
 import { Ziggurat as DSR1 } from './prototype/DSR1.js'
 import { Ziggurat as DSV3 } from './prototype/DSV3.js'
@@ -10,7 +11,7 @@ const dsr1 = new DSR1()
 const dsv3 = new DSV3()
 const c37s = new C37S()
 const grk3 = new GRK3()
-const epic = new EPIC()
+// const epic = new EPIC()
 
 test('norm benchmark', () => {
   const TEST_DSR1 = 'dsr1'
@@ -24,7 +25,7 @@ test('norm benchmark', () => {
   console.log(TEST_DSV3, dsv3.next())
   console.log(TEST_C37S, c37s.next())
   console.log(TEST_GRK3, grk3.next())
-  console.log(TEST_EPIC, epic.next())
+  console.log(TEST_EPIC, n())
 
   console.time(TEST_DSR1)
   for (let i = 0; i < quant; i++) dsr1.next()
@@ -39,7 +40,7 @@ test('norm benchmark', () => {
   for (let i = 0; i < quant; i++) grk3.next()
   console.timeEnd(TEST_GRK3)
   console.time(TEST_EPIC)
-  for (let i = 0; i < quant; i++) epic.next()
+  for (let i = 0; i < quant; i++)  n()
   console.timeEnd(TEST_EPIC)
 
 })

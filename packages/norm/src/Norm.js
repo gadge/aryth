@@ -1,4 +1,5 @@
 import { randomBytes } from 'node:crypto'
+
 const { abs, exp, log, sqrt } = Math
 
 const TAIL_INI = 3.442619855899 // R0: 第一个区域的右边界, 取值确保第一个区域的面积等于 1/N, N通常为128
@@ -20,6 +21,7 @@ export class Norm {
   static build() { return new Norm() }
   // sets up the tables needed for the algorithm.
   init() {
+    if (this.seed !== undefined) return this
     // 使用 crypto 模块生成 4 字节随机种子
     const buffer = randomBytes(4)
     this.seed = buffer.readUInt32LE(0)
@@ -47,6 +49,7 @@ export class Norm {
       this.hts[i] = exp(-0.5 * curr * curr)
       this.wds[i] = curr / INT_MAX
     }
+    return this
   }
   next() {
     let
@@ -58,7 +61,7 @@ export class Norm {
   }
   // handles the tail of the normal distribution.
   retail(hz, iz) {
-    let r = TAIL_INI, x, y
+    let x, y
     while (true) {
       x = hz * this.wds[iz]
       if (iz === 0) {
@@ -66,7 +69,7 @@ export class Norm {
           x = -log(this.rand()) * TAIL_INV
           y = -log(this.rand())
         } while (y + y < x * x)
-        return hz > 0 ? r + x : -r - x
+        return hz > 0 ? TAIL_INI + x : -TAIL_INI - x
       }
       if (this.hts[iz] + this.rand() * (this.hts[iz - 1] - this.hts[iz]) < exp(-0.5 * x * x)) return x
       hz = this.xorshift()

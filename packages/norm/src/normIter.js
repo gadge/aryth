@@ -1,7 +1,6 @@
 import { nullish } from '@typen/nullish'
 import { Norm }    from './Norm.js'
 
-
 /**
  *
  * @param {number} [mean]

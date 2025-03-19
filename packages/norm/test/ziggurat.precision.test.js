@@ -1,5 +1,5 @@
 import { test } from 'node:test'
-import { Norm } from '../src/normDist/Norm.js'
+import { Norm } from '../src/Norm.js'
 
 const ziggurat = Norm.build()
 const samples = Array.from({ length: 1e7 }, () => ziggurat.next())
