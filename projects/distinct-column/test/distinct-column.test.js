@@ -1,6 +1,7 @@
 import { Foba }                          from '@foba/vector-number'
 import { deco }                          from '@spare/deco'
 import { decoEntries, decoMatrix, says } from '@spare/logger'
+import { test }                          from 'node:test'
 import { Distinct, DistinctCount }       from '../src/index.js'
 
 const matrix = [
@@ -15,6 +16,9 @@ const matrix = [
   Foba.nonSquares(8),
 ]
 
-matrix |> decoMatrix |> says['original']
-Distinct(6)(matrix) |> deco |> says['distincted']
-DistinctCount(6)(matrix) |> decoEntries |> says['counted']
+test('distinct column', () => {
+  says['original'](decoMatrix(matrix))
+  says['distincted'](deco(Distinct(6)(matrix)))
+  says['counted'](decoEntries(DistinctCount(6)(matrix)))
+})
+

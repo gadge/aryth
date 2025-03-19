@@ -1,5 +1,5 @@
 import { deco, says } from '@spare/logger'
-import { Polar }      from '../src/Polar'
+import { Polar }      from '../src/Polar.js'
 
 const polar = Polar.build(100, 120)
 

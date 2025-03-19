@@ -1,5 +1,5 @@
 import { says, x }    from '@spare/xr'
-import { calculator } from '../index'
+import { calculator } from '../index.js'
 
 const nums = {
   H: 54,

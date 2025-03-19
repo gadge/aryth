@@ -2,12 +2,12 @@ import { makeEmbedded }     from '@foba/util'
 import { says }             from '@palett/says'
 import { decoCrostab }      from '@spare/logger'
 import { strategies }       from '@valjoux/strategies'
-import { bounds, PRESETS }  from '../../src/bounds'
-import { duobound }         from '../../utils/duobound'
-import { VectorCollection } from './candidates'
-import { boundLiteralArc }  from './src/bounds/boundLiteralArc'
-import { boundLiteralRea }  from './src/bounds/boundLiteralRea'
-import { boundLiteralSep }  from './src/bounds/boundLiteralSep'
+import { bounds, PRESETS }  from '../../src/bounds.js'
+import { duobound }         from '../../utils/duobound.js'
+import { VectorCollection } from './candidates.js'
+import { boundLiteralArc }  from './src/bounds/boundLiteralArc.js'
+import { boundLiteralRea }  from './src/bounds/boundLiteralRea.js'
+import { boundLiteralSep }  from './src/bounds/boundLiteralSep.js'
 
 const { lapse, result } = strategies({
   repeat: 1E+5,

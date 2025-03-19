@@ -1,17 +1,18 @@
 {
   "name": "@aryth/polar",
-  "version": "0.7.3",
+  "version": "0.7.6",
   "description": "A math util library",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": "./index.js",
   "files": [
-    "dist"
+    "index.js"
   ],
   "engines": {
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "@aryth/flopper": "workspace:^"
+    "@aryth/flopper": "workspace:^",
+    "@vect/vector-mapper": "^0.8.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,7 +1,7 @@
 import { VectorCollection } from '@foba/vector-number'
 import { deco }             from '@spare/deco'
 import { logger }           from '@spare/logger'
-import { finiteFlopper }    from '../src/flopper'
+import { finiteFlopper }    from '../src/flopper.js'
 
 console.log('alpha')
 {

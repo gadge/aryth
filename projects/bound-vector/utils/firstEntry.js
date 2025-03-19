@@ -1,4 +1,4 @@
-import { IsNum } from 'projects/util-bound'
+import { IsNum } from '@aryth/util-bound'
 
 export const firstEntry = (vec, lo, hi, {level = 0} = {}) => {
   for (let v, by = IsNum(level); lo < hi; lo++)

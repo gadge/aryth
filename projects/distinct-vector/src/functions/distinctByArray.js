@@ -1,4 +1,4 @@
-import { vectorDistinctor } from 'projects/util-distinct'
+import { vectorDistinctor } from '@aryth/util-distinct'
 import { iterate }          from '@vect/vector-mapper'
 
 export const distinctByArray = (vec, l) => {

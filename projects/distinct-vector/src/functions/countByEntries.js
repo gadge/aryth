@@ -1,4 +1,4 @@
-import { entriesCounter } from 'projects/util-distinct'
+import { entriesCounter } from '@aryth/util-distinct'
 import { iterate }        from '@vect/vector-mapper'
 
 /**

@@ -1,4 +1,4 @@
-import { boundOutput, ToNum } from 'projects/util-bound'
+import { boundOutput, ToNum } from '@aryth/util-bound'
 import { LOOSE }              from '@typen/enum-check-levels'
 import { firstEntry }         from '../utils/firstEntry.js'
 

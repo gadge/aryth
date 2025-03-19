@@ -1,5 +1,5 @@
 ﻿import { finiteFlopper } from '@aryth/flopper'
-import { PetalNote }     from './PetalNote'
+import { PetalNote }     from './PetalNote.js'
 
 const { PI, pow, round } = Math
 

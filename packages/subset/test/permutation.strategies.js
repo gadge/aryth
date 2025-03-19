@@ -3,7 +3,7 @@ import { says }         from '@palett/says'
 import { decoCrostab }  from '@spare/logger'
 import { strategies }   from '@valjoux/strategies'
 import { swap }         from '@vect/swap'
-import { permutator }   from '../src/permutator'
+import { permutator }   from '../src/permutator.js'
 
 export function permutatorDev(vec) {
   function* _permutator(vec, lo = 0, hi = vec.length) {

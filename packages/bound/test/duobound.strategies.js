@@ -5,7 +5,7 @@ import { stringValue }         from '@texting/string-value'
 import { isLiteral }           from '@typen/literal'
 import { isNumeric, parseNum } from '@typen/numeral'
 import { strategies }          from '@valjoux/strategies'
-import { duobound }            from '../utils/duobound'
+import { duobound }            from '../utils/duobound.js'
 
 const CONFIG_X = {
   by: isNumeric,

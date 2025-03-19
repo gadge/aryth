@@ -2,7 +2,7 @@ import { deco }     from '@spare/deco'
 import { says }     from '@spare/logger'
 import { init }     from '@vect/vector-init'
 import { Ziggurat } from 'roulett'
-import { Histo }    from '../src/Histo'
+import { Histo }    from '../src/Histo.js'
 
 const zigg = new Ziggurat(75, 12)
 const samples = init(1024, zigg.next.bind(zigg))

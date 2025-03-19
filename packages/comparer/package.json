@@ -1,11 +1,11 @@
 {
   "name": "@aryth/comparer",
-  "version": "0.7.3",
+  "version": "0.7.6",
   "description": "Comparer collections for sort and rank",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": "./index.js",
   "files": [
-    "dist"
+    "index.js"
   ],
   "engines": {
     "node": ">=22.0.0"

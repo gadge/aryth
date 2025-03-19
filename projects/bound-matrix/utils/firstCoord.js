@@ -1,4 +1,4 @@
-import { IsNum } from 'projects/util-bound'
+import { IsNum } from '@aryth/util-bound'
 
 export const firstCoord = (mx, t, b, l, r, {level = 0} = {}) => {
   for (let i = t, by = IsNum(level); i < b; i++)

@@ -1,5 +1,5 @@
-import { Coord }                    from './Coord'
-import { degreeToRadian, restrict } from './math'
+import { Coord }                    from './Coord.js'
+import { degreeToRadian, restrict } from './math.js'
 
 const { PI, sin, cos } = Math
 

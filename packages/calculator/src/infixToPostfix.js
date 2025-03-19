@@ -2,8 +2,8 @@ import { CO }                                                           from '@s
 import { isNumeric }                                                    from '@typen/num-strict'
 import { last }                                                         from '@vect/vector-index'
 import { acquire }                                                      from '@vect/vector-merge'
-import { Associativity, Constants, LEFT, Operators, Precedence, RIGHT } from '../resources/constants'
-import { expressionToVector }                                           from './expressionToVector'
+import { Associativity, Constants, LEFT, Operators, Precedence, RIGHT } from '../resources/constants.js'
+import { expressionToVector }                                           from './expressionToVector.js'
 
 // Array.prototype.peek = function () { return this[this.length - 1] }
 

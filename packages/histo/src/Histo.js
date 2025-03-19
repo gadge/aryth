@@ -1,5 +1,5 @@
-import { bound }                   from '@aryth/bound-vector'
-import { NiceScale }               from '@aryth/nice-scale'
+import { bound }     from '@aryth/bound-vector'
+import { NiceScale } from '@aryth/nice-scale'
 import { lange }                   from '@spare/lange'
 import { LPad }                    from '@spare/pad-string'
 import { NUM, STR }                from '@typen/enum-data-types'
@@ -7,7 +7,7 @@ import { maxBy as entriesMaxBy }   from '@vect/entries-indicator'
 import { wind as windEntries }     from '@vect/entries-init'
 import { wind as windObject }      from '@vect/object-init'
 import { mutate }                  from '@vect/vector-mapper'
-import { tickLabels, ticksByMean } from './utils/ticksByMean'
+import { tickLabels, ticksByMean } from './utils/ticksByMean.js'
 
 const lpad = LPad({ ansi: false })
 

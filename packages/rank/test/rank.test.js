@@ -1,7 +1,7 @@
 import { SimpleVectors }    from '@foba/foo'
 
-import { NUM_ASC, STR_ASC } from '../../../temp/temp/src'
-import { rank }             from '../src/rank'
+import { NUM_ASC, STR_ASC } from '../../../temp/temp/src.js'
+import { rank }             from '../src/rank.js'
 
 export class RankTest {
   static test () {

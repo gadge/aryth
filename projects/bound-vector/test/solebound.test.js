@@ -2,7 +2,7 @@ import { says }        from '@palett/says'
 import { deco }        from '@spare/deco'
 import { stringValue } from '@texting/string-value'
 import { isLiteral }   from '@typen/literal'
-import { solebound }   from '../src/solebound'
+import { solebound }   from '../src/solebound.js'
 
 const paramsList = {
   empty: [],

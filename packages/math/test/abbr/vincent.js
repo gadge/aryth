@@ -1,5 +1,5 @@
-import { E1, E10, E12, E13, E15, E3, E4, E6, E7, E9 } from '../../assets/large'
-import { round, roundD2 }                             from '../../index'
+import { E1, E10, E12, E13, E15, E3, E4, E6, E7, E9 } from '../../assets/large.js'
+import { round, roundD2 }                             from '../../index.js'
 
 export function abbrVinc(num) {
   if (!num) return 0

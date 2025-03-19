@@ -2,9 +2,9 @@ import { deco }            from '@spare/deco'
 import { decoPhrase }      from '@spare/deco-string'
 import { says, xr }        from '@spare/logger'
 import { mapper }          from '@vect/object-mapper'
-import { calcPostfix }     from '../src/calcPostfix'
-import { infixToPostfix }  from '../src/infixToPostfix'
-import { InfixCollection } from './resources/infixCollection'
+import { calcPostfix }     from '../src/calcPostfix.js'
+import { infixToPostfix }  from '../src/infixToPostfix.js'
+import { InfixCollection } from './resources/infixCollection.js'
 
 const testInfixToPostfix = () => {
   for (const [ name, infix ] of Object.entries(InfixCollection)) {

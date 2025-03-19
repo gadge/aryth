@@ -2,11 +2,11 @@ import { makeEmbedded }              from '@foba/util'
 import { decoCrostab, logger, says } from '@spare/logger'
 import { strategies }                from '@valjoux/strategies'
 import { dateTime }                  from '@valjoux/timestamp-pretty'
-import { samples }                   from './samples'
-import { romanArc }                  from './src/romanArc'
-import { romanDev }                  from './src/romanDev'
-import { romanRec }                  from './src/romanRec'
-import { romanRev }                  from './src/romanRev'
+import { samples }                   from './samples.js'
+import { romanArc }                  from './src/romanArc.js'
+import { romanDev }                  from './src/romanDev.js'
+import { romanRec }                  from './src/romanRec.js'
+import { romanRev }                  from './src/romanRev.js'
 
 const test = () => {
   const { lapse, result } = strategies({

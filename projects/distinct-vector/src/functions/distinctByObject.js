@@ -1,4 +1,4 @@
-import { objectDistinctor } from 'projects/util-distinct'
+import { objectDistinctor } from '@aryth/util-distinct'
 import { iterate }          from '@vect/vector-mapper'
 
 export const distinctByObject = (vec, l) => {

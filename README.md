@@ -35,16 +35,16 @@ npm install @aryth/[app]
 | [**histo**](./packages/histo)                     | A histogram tool                    | ![v][histo-dm]           |
 | [**rand**](./packages/rand)                       | Randomly select number or array     | ![v][rand-dm]            |
 | [**calculator**](./packages/calculator)           | Parse math expression and calculate | ![v][calculator-dm]      |
-| [**nice-scale**](./packages/nice-scale)           | Auto-generate tick labels for array | ![v][nice-scale-dm]      |
-| [**rank-vector**](./packages/rank-vector)         | Get rank of vector                  | ![v][rank-vector-dm]     |
-| [**rank-matrix**](./packages/rank-matrix)         | Get rank of matrix                  | ![v][rank-matrix-dm]     |
-| [**rank-column**](./packages/rank-column)         | Get rank of column                  | ![v][rank-column-dm]     |
-| [**bound-vector**](./packages/bound-vector)       | Get min, max, dif of vector         | ![v][bound-vector-dm]    |
-| [**bound-matrix**](./packages/bound-matrix)       | Get min, max, dif of matrix         | ![v][bound-matrix-dm]    |
+| [**nice-scale**](./packages/nice-scale)           | Auto-next tick labels for array | ![v][nice-scale-dm]      |
+| [**rank-vector**](projects/rank-vector)         | Get rank of vector                  | ![v][rank-vector-dm]     |
+| [**rank-matrix**](projects/rank-matrix)         | Get rank of matrix                  | ![v][rank-matrix-dm]     |
+| [**rank-column**](projects/rank-column)         | Get rank of column                  | ![v][rank-column-dm]     |
+| [**bound-vector**](projects/bound-vector)       | Get min, max, dif of vector         | ![v][bound-vector-dm]    |
+| [**bound-matrix**](projects/bound-matrix)       | Get min, max, dif of matrix         | ![v][bound-matrix-dm]    |
 | [**bound-column**](unpublish/bound-column)        | Get min, max, dif of column         | ![v][bound-column-dm]    |
-| [**distinct-vector**](./packages/distinct-vector) | Get distinct(w/wo count) of vector  | ![v][distinct-vector-dm] |
-| [**distinct-matrix**](./packages/distinct-matrix) | Get distinct(w/wo count) of matrix  | ![v][distinct-matrix-dm] |
-| [**distinct-column**](./packages/distinct-column) | Get distinct(w/wo count) of column  | ![v][distinct-column-dm] |
+| [**distinct-vector**](projects/distinct-vector) | Get distinct(w/wo count) of vector  | ![v][distinct-vector-dm] |
+| [**distinct-matrix**](projects/distinct-matrix) | Get distinct(w/wo count) of matrix  | ![v][distinct-matrix-dm] |
+| [**distinct-column**](projects/distinct-column) | Get distinct(w/wo count) of column  | ![v][distinct-column-dm] |
 |                                                   |                                     |                          |
 
 [//]: <> (Local routes)

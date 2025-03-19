@@ -1,5 +1,5 @@
-import { radianToDegree } from './math'
-import { Polar }          from './Polar'
+import { radianToDegree } from './math.js'
+import { Polar }          from './Polar.js'
 
 export class Coord {
   x

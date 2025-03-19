@@ -15,8 +15,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1
       '@changesets/cli':
-        specifier: ^2.27.9
-        version: 2.27.9
+        specifier: ^2.28.1
+        version: 2.28.1
       '@cliche/mag':
         specifier: ^0.0.5
         version: 0.0.5
@@ -33,29 +33,29 @@ importers:
         specifier: ^0.6.1
         version: 0.6.1
       '@palett/presets':
-        specifier: ^0.12.0
-        version: 0.12.0
+        specifier: ^0.12.24
+        version: 0.12.24
       '@palett/says':
         specifier: ^0.9.10
         version: 0.9.10
       '@rollup/plugin-json':
         specifier: ^6.1.0
-        version: 6.1.0(rollup@4.25.0)
+        version: 6.1.0(rollup@4.36.0)
       '@spare/deco':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.22
+        version: 0.16.22
       '@spare/deco-pale':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.22
+        version: 0.16.22
       '@spare/deco-string':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.22
+        version: 0.16.22
       '@spare/logger':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.22
+        version: 0.16.22
       '@spare/xr':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.22
+        version: 0.16.22
       '@typen/enum-data-types':
         specifier: ^0.2.0
         version: 0.2.0
@@ -63,11 +63,11 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0
       '@valjoux/strategies':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.1
+        version: 0.4.1
       '@valjoux/timestamp-pretty':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.1
+        version: 0.4.1
       '@vect/matrix':
         specifier: ^0.8.0
         version: 0.8.0
@@ -81,8 +81,8 @@ importers:
         specifier: ^0.8.0
         version: 0.8.0
       rollup:
-        specifier: ^4.25.0
-        version: 4.25.0
+        specifier: ^4.36.0
+        version: 4.36.0
       rollup-plugin-fileinfo:
         specifier: ^0.3.8
         version: 0.3.8
@@ -91,86 +91,29 @@ importers:
     dependencies:
       '@aryth/bound-matrix':
         specifier: workspace:^
-        version: link:../bound-matrix
+        version: link:../../projects/bound-matrix
       '@aryth/bound-vector':
         specifier: workspace:^
-        version: link:../bound-vector
+        version: link:../../projects/bound-vector
       '@aryth/math':
         specifier: workspace:^
         version: link:../math
     devDependencies:
       '@palett/color-space':
-        specifier: ^0.12.0
-        version: 0.12.0
-
-  packages/bound-matrix:
-    dependencies:
-      '@aryth/bound-vector':
-        specifier: workspace:^
-        version: link:../bound-vector
-      '@aryth/util-bound':
-        specifier: workspace:^
-        version: link:../util-bound
-      '@ject/oneself':
-        specifier: ^0.1.0
-        version: 0.1.0
-      '@texting/string-value':
-        specifier: ^0.2.1
-        version: 0.2.1
-      '@typen/enum-check-levels':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@typen/literal':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@typen/numeral':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@vect/matrix-index':
-        specifier: ^0.8.0
-        version: 0.8.0
-      '@vect/matrix-init':
-        specifier: ^0.8.0
-        version: 0.8.0
-      '@vect/matrix-mapper':
-        specifier: ^0.8.0
-        version: 0.8.0
-
-  packages/bound-vector:
-    dependencies:
-      '@aryth/util-bound':
-        specifier: workspace:^
-        version: link:../util-bound
-      '@ject/oneself':
-        specifier: ^0.1.0
-        version: 0.1.0
-      '@texting/string-value':
-        specifier: ^0.2.1
-        version: 0.2.1
-      '@typen/enum-check-levels':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@typen/literal':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@typen/numeral':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@vect/vector-mapper':
-        specifier: ^0.8.0
-        version: 0.8.0
+        specifier: ^0.12.24
+        version: 0.12.24
 
   packages/calculator:
     dependencies:
       '@spare/enum-chars':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.16
+        version: 0.16.16
       '@spare/ripper':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.16
+        version: 0.16.16
       '@spare/string':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.16
+        version: 0.16.16
       '@typen/enum-data-types':
         specifier: ^0.2.0
         version: 0.2.0
@@ -185,42 +128,6 @@ importers:
         version: 0.6.13
 
   packages/comparer: {}
-
-  packages/distinct-column:
-    dependencies:
-      '@aryth/util-distinct':
-        specifier: workspace:^
-        version: link:../util-distinct
-      '@vect/column-mapper':
-        specifier: ^0.8.0
-        version: 0.8.0
-
-  packages/distinct-entries:
-    dependencies:
-      '@aryth/util-distinct':
-        specifier: workspace:^
-        version: link:../util-distinct
-      '@vect/column-mapper':
-        specifier: ^0.8.0
-        version: 0.8.0
-
-  packages/distinct-matrix:
-    dependencies:
-      '@aryth/util-distinct':
-        specifier: workspace:^
-        version: link:../util-distinct
-      '@vect/matrix-mapper':
-        specifier: ^0.8.0
-        version: 0.8.0
-
-  packages/distinct-vector:
-    dependencies:
-      '@aryth/util-distinct':
-        specifier: workspace:^
-        version: link:../util-distinct
-      '@vect/vector-mapper':
-        specifier: ^0.8.0
-        version: 0.8.0
 
   packages/flopper:
     dependencies:
@@ -238,7 +145,7 @@ importers:
     dependencies:
       '@aryth/bound-vector':
         specifier: workspace:^
-        version: link:../bound-vector
+        version: link:../../projects/bound-vector
       '@aryth/math':
         specifier: workspace:^
         version: link:../math
@@ -246,8 +153,8 @@ importers:
         specifier: workspace:^
         version: link:../nice-scale
       '@spare/lange':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.16
+        version: 0.16.16
       '@spare/pad-string':
         specifier: ^0.9.9
         version: 0.9.9
@@ -281,45 +188,33 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0
 
+  packages/norm:
+    dependencies:
+      '@aryth/comparer':
+        specifier: workspace:^
+        version: link:../comparer
+      '@aryth/math':
+        specifier: workspace:^
+        version: link:../math
+      '@typen/nullish':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@vect/swap':
+        specifier: ^0.6.13
+        version: 0.6.13
+    devDependencies:
+      '@aryth/histo':
+        specifier: workspace:^
+        version: link:../histo
+
   packages/polar:
     dependencies:
       '@aryth/flopper':
         specifier: workspace:^
         version: link:../flopper
-
-  packages/project-vector:
-    dependencies:
-      '@aryth/bound-vector':
-        specifier: workspace:^
-        version: link:../bound-vector
-      '@aryth/comparer':
-        specifier: workspace:^
-        version: link:../comparer
-      '@aryth/projector':
-        specifier: workspace:^
-        version: link:../projector
-      '@typen/literal':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@typen/num-loose':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@vect/vector-algebra':
-        specifier: ^0.8.0
-        version: 0.8.0
       '@vect/vector-mapper':
         specifier: ^0.8.0
         version: 0.8.0
-    devDependencies:
-      '@spare/regex-phrasing':
-        specifier: ^0.16.1
-        version: 0.16.1
-      '@spare/ripper':
-        specifier: ^0.16.1
-        version: 0.16.1
-      '@spare/splitter':
-        specifier: ^0.16.1
-        version: 0.16.1
 
   packages/projector:
     dependencies:
@@ -340,14 +235,14 @@ importers:
         version: 0.8.0
     devDependencies:
       '@spare/regex-phrasing':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.16
+        version: 0.16.16
       '@spare/ripper':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.16
+        version: 0.16.16
       '@spare/splitter':
-        specifier: ^0.16.1
-        version: 0.16.1
+        specifier: ^0.16.16
+        version: 0.16.16
 
   packages/rand:
     dependencies:
@@ -357,12 +252,19 @@ importers:
       '@aryth/math':
         specifier: workspace:^
         version: link:../math
+      '@aryth/norm':
+        specifier: workspace:^
+        version: link:../norm
       '@typen/nullish':
         specifier: ^0.2.0
         version: 0.2.0
       '@vect/swap':
         specifier: ^0.6.13
         version: 0.6.13
+    devDependencies:
+      '@aryth/histo':
+        specifier: workspace:^
+        version: link:../histo
 
   packages/rank:
     dependencies:
@@ -371,56 +273,13 @@ importers:
         version: link:../comparer
       '@aryth/rank-column':
         specifier: workspace:^
-        version: link:../rank-column
+        version: link:../../projects/rank-column
       '@aryth/rank-matrix':
         specifier: workspace:^
-        version: link:../rank-matrix
+        version: link:../../projects/rank-matrix
       '@aryth/rank-vector':
         specifier: workspace:^
-        version: link:../rank-vector
-
-  packages/rank-column:
-    dependencies:
-      '@vect/column':
-        specifier: ^0.8.0
-        version: 0.8.0
-      '@vect/matrix-size':
-        specifier: ^0.5.23
-        version: 0.5.23
-
-  packages/rank-matrix:
-    dependencies:
-      '@vect/matrix-mapper':
-        specifier: ^0.8.0
-        version: 0.8.0
-
-  packages/rank-vector:
-    dependencies:
-      '@aryth/comparer':
-        specifier: workspace:^
-        version: link:../comparer
-      '@typen/literal':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@typen/num-loose':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@vect/vector-algebra':
-        specifier: ^0.8.0
-        version: 0.8.0
-      '@vect/vector-mapper':
-        specifier: ^0.8.0
-        version: 0.8.0
-    devDependencies:
-      '@spare/regex-phrasing':
-        specifier: ^0.16.1
-        version: 0.16.1
-      '@spare/ripper':
-        specifier: ^0.16.1
-        version: 0.16.1
-      '@spare/splitter':
-        specifier: ^0.16.1
-        version: 0.16.1
+        version: link:../../projects/rank-vector
 
   packages/roman:
     dependencies:
@@ -443,7 +302,177 @@ importers:
         specifier: ^0.8.0
         version: 0.8.0
 
-  packages/util-bound:
+  projects/bound-matrix:
+    dependencies:
+      '@aryth/bound-vector':
+        specifier: workspace:^
+        version: link:../bound-vector
+      '@aryth/util-bound':
+        specifier: workspace:^
+        version: link:../util-bound
+      '@ject/oneself':
+        specifier: ^0.1.2
+        version: 0.1.2
+      '@texting/string-value':
+        specifier: ^0.2.3
+        version: 0.2.3
+      '@typen/enum-check-levels':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@typen/literal':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@typen/numeral':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@vect/matrix-index':
+        specifier: ^0.8.0
+        version: 0.8.0
+      '@vect/matrix-init':
+        specifier: ^0.8.0
+        version: 0.8.0
+      '@vect/matrix-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+
+  projects/bound-vector:
+    dependencies:
+      '@aryth/util-bound':
+        specifier: workspace:^
+        version: link:../util-bound
+      '@ject/oneself':
+        specifier: ^0.1.2
+        version: 0.1.2
+      '@texting/string-value':
+        specifier: ^0.2.3
+        version: 0.2.3
+      '@typen/enum-check-levels':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@typen/literal':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@typen/numeral':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@vect/vector-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+
+  projects/distinct-column:
+    dependencies:
+      '@aryth/util-distinct':
+        specifier: workspace:^
+        version: link:../util-distinct
+      '@vect/column-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+
+  projects/distinct-entries:
+    dependencies:
+      '@aryth/util-distinct':
+        specifier: workspace:^
+        version: link:../util-distinct
+      '@vect/column-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+
+  projects/distinct-matrix:
+    dependencies:
+      '@aryth/util-distinct':
+        specifier: workspace:^
+        version: link:../util-distinct
+      '@vect/matrix-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+
+  projects/distinct-vector:
+    dependencies:
+      '@aryth/util-distinct':
+        specifier: workspace:^
+        version: link:../util-distinct
+      '@vect/vector-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+
+  projects/project-vector:
+    dependencies:
+      '@aryth/bound-vector':
+        specifier: workspace:^
+        version: link:../bound-vector
+      '@aryth/comparer':
+        specifier: workspace:^
+        version: link:../../packages/comparer
+      '@aryth/projector':
+        specifier: workspace:^
+        version: link:../../packages/projector
+      '@typen/literal':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@typen/num-loose':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@vect/vector-algebra':
+        specifier: ^0.8.0
+        version: 0.8.0
+      '@vect/vector-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+    devDependencies:
+      '@spare/regex-phrasing':
+        specifier: ^0.16.16
+        version: 0.16.16
+      '@spare/ripper':
+        specifier: ^0.16.16
+        version: 0.16.16
+      '@spare/splitter':
+        specifier: ^0.16.16
+        version: 0.16.16
+
+  projects/rank-column:
+    dependencies:
+      '@vect/column':
+        specifier: ^0.8.0
+        version: 0.8.0
+      '@vect/matrix-size':
+        specifier: ^0.5.23
+        version: 0.5.23
+
+  projects/rank-matrix:
+    dependencies:
+      '@vect/matrix-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+
+  projects/rank-vector:
+    dependencies:
+      '@aryth/comparer':
+        specifier: workspace:^
+        version: link:../../packages/comparer
+      '@typen/literal':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@typen/num-loose':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@vect/vector-algebra':
+        specifier: ^0.8.0
+        version: 0.8.0
+      '@vect/vector-mapper':
+        specifier: ^0.8.0
+        version: 0.8.0
+    devDependencies:
+      '@spare/regex-phrasing':
+        specifier: ^0.16.16
+        version: 0.16.16
+      '@spare/ripper':
+        specifier: ^0.16.16
+        version: 0.16.16
+      '@spare/splitter':
+        specifier: ^0.16.16
+        version: 0.16.16
+
+  projects/util-bound:
     dependencies:
       '@typen/enum-check-levels':
         specifier: ^0.2.0
@@ -459,13 +488,13 @@ importers:
         version: 0.2.3
     devDependencies:
       '@texting/charset-halfwidth':
-        specifier: ^0.2.1
-        version: 0.2.1
+        specifier: ^0.2.3
+        version: 0.2.3
       '@typen/literal':
         specifier: ^0.2.0
         version: 0.2.0
 
-  packages/util-distinct:
+  projects/util-distinct:
     dependencies:
       typen:
         specifier: ^0.2.3
@@ -483,26 +512,30 @@ packages:
   '@analys/convert@0.6.14':
     resolution: {integrity: sha512-WCkMzRLd2O4FNmVojF1zXaOX4QH2DTJ3YOgnBmKTm4neSDakbWHD4WTi8pxK6q+LMogDJfKG7aAzwTN+e9Ig8g==}
 
-  '@analys/convert@0.7.2':
-    resolution: {integrity: sha512-EjkraClIRD39wO0XDDbNBjh7szHP9Bx1C3z4xg6DeFI5+72wlRfNYwARpnhen5Vh9HeiKPPhn7Vg5C7tx7PDog==}
+  '@analys/convert@0.7.3':
+    resolution: {integrity: sha512-U7R4iVL0ZbUxUqk6fl8Wl49rDMv1BCEB38fPA+63MKXw2NQXE+so2e0Ak5mALP2S2qXSH4EfFwlZx+ck+QTU1Q==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/crostab-init@0.6.14':
     resolution: {integrity: sha512-TNYWVZafPKnV6eBSi8bCdMFfPbZNIuTiHKPhF91QC+leUDOzNF+mTjIEeuenmvuvyIMXImem9L6VtCiq8q3THg==}
 
-  '@analys/crostab-init@0.7.2':
-    resolution: {integrity: sha512-abaoD8MD/RJWevUDsuf6HTsIahCT9jAzGJ5lEAsD4bqnFlbUMalrDFUaRg+XaEFtdwxYBlfMHEuFgtzVhSE3UQ==}
+  '@analys/crostab-init@0.7.3':
+    resolution: {integrity: sha512-LUrmL0WObVclUgRlnRR4VWK26WLW6+d1/M2B/jjLauX4TDJ+wUXzTZ1DkaeSnZZK0SA7X43HkbamUALvhNHmNQ==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/crostab-lookup@0.6.14':
     resolution: {integrity: sha512-+CtLRVOHKt6lqK8Jyk9VOb83dDouxT5FPHel2AEA1+BLVpue2blANu9kRlzHlfQeZfMGkark4aa9Rluo6d2i/w==}
 
-  '@analys/crostab-lookup@0.7.2':
-    resolution: {integrity: sha512-q7NP1pgrSLg27lZEXyPFta7L93eveyDPO7wFe54J0xoVWFDQ1LhtR0Pat/0grUHJB0i3s2KvO7pIrYDsSBW1Yg==}
+  '@analys/crostab-lookup@0.7.3':
+    resolution: {integrity: sha512-G5A1aVBNa1MiwR1t2rTn3iQ3N/44GShlvT07Kwyk1/2QDG0yUPEG0JYNjExkN8GsUD8q9jeChTYn0EQGpa3B8g==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/crostab-mapper@0.6.14':
     resolution: {integrity: sha512-4+2QQI4hpx5FQnxSu+aVONx1jzQ+cey+qm1AZBcwclZyQ6UPHIpB12zrm9QqZ+LZ2leYErDOHPBEFE61ex/Frg==}
 
-  '@analys/crostab-mapper@0.7.2':
-    resolution: {integrity: sha512-tnENeYm+vOG8zMzc5CIx6TaVMbBJqcCq8eiBzYcvjFZ/V2w3c4RNh9gf8p6xArsPq5N+LC4e6jy9hvgRMuDuoA==}
+  '@analys/crostab-mapper@0.7.3':
+    resolution: {integrity: sha512-NjZSv3yes0439wLT79u+9KWcGNZkF0Mj1eLnyD6Ot+l6ZkLTCR6zeFrpstjNYHMr2IfHvEmPz7Q+vLRXuQYOaQ==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/crostab-select@0.6.14':
     resolution: {integrity: sha512-olYKMIFt1hTVSobd5uFAa6R5Y0AUs70nxTA/nw6aMgYKsQkcGDE7BFZOa3dF0VGX8DsxFbX160H/sv/3OWrKzA==}
@@ -510,8 +543,9 @@ packages:
   '@analys/crostab@0.6.14':
     resolution: {integrity: sha512-Kf44qgC7dCwOz4DEFiyunmNO673INFx1u67Sug2QTMXr8hd/Aw8A1NuUmC0uZEg+SU68vQb0SrUS/zgG7E6uiw==}
 
-  '@analys/crostab@0.7.2':
-    resolution: {integrity: sha512-PUID9ZWOCcas0oqFCKa6wK/SksbUVlfwKhr/GyPQbu6SN46a29TvSb/r40O7Kw7sMetUUWT+R56bfb6TvVYoCg==}
+  '@analys/crostab@0.7.3':
+    resolution: {integrity: sha512-14e8Md6X4pyadcSm2A5lwvbHenuANvPfjCS2SBlA3XuzdC0N+AY7sdsiI6u2i3anyfMEL2EZ8uMUhMG785nreQ==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/cubic@0.6.8':
     resolution: {integrity: sha512-TIBpWZl8/MmXBKJ1dXB1i5D3++oWKL67nE37ER0EM+ABDOo6WLZKlydMjAOVyyY4GIOliniNDtRdE0uoqLpM8g==}
@@ -519,17 +553,23 @@ packages:
   '@analys/data-gram@0.6.14':
     resolution: {integrity: sha512-3CyldKJd3NFbLHrIsDLmx+QLgThhf7G6DyWIU0tuPbZUX89tuqc2F1zjqhKVj44YfuFnnU1g5xLuWZSqRGD/zQ==}
 
-  '@analys/data-gram@0.7.2':
-    resolution: {integrity: sha512-pgSLdnwVY8jKTa6KZmaE0tYTLrE1fKc1umdESK3Me1ml1/DNlNuuDOJAZZkj6EbNkn1a8dYfyFMDjoAOCCA7Pg==}
+  '@analys/data-gram@0.7.3':
+    resolution: {integrity: sha512-tIfVr5PkoyrrmiJVa204OZ/PGo1+pl8CCh4bvCEJ6/b5jWmTBswN3N9WrBMd/TbOvsGU4cFnnKU0U3QAwEBijQ==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/enum-join-modes@0.6.14':
     resolution: {integrity: sha512-zT71C5Pefumz+B476cOUANFXSpqys/VS+82R/WvAodM2gcNuuam1xYsSqGMt88L4LhqiAqN9xH42Ogdv/oCC3Q==}
 
+  '@analys/enum-join-modes@0.7.3':
+    resolution: {integrity: sha512-rXyCfFeYacOFVp8aCIsP3sFFRY6Ylka4gvV9BwRgWc6v7q0n0oS6GZJDXVgq77cNzuen+Ds5lsJm6bhlQHrtvA==}
+    engines: {node: '>=22.0.0'}
+
   '@analys/enum-lookups@0.6.14':
     resolution: {integrity: sha512-3cLtI/pWvbBytfz0I4QoTrfjX+clL4w78Wkrk7DUyoqBwPKEraVsqeIwhFFxCwgsY5eFeCqgbNBBG7qJSpWBPA==}
 
-  '@analys/enum-lookups@0.7.2':
-    resolution: {integrity: sha512-iZIVjMzl5oj/I1yXbsRlUNKYSO2Vq+022zJ57E5UMWLfaelSlidTc8IZ7gPICRimLNgtVQh6YP+9RVld9Z9sZw==}
+  '@analys/enum-lookups@0.7.3':
+    resolution: {integrity: sha512-UeTA+LYzmRXreRZ16f99rpCxkbRssb4XQgtqe8LSYgvYV8GVPfRae6Bg4PD55xMH/9e28a2WUNTjKAqU9kiQ6Q==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/enum-mutabilities@0.6.14':
     resolution: {integrity: sha512-AHWlJt/twDJ6TKxEBG9rip/TRZtY9xQN4ll/m32dCvx+B0P9SQr353LeFVJ0/y7CjUNwkeE7BrecggCn73SC8g==}
@@ -537,38 +577,48 @@ packages:
   '@analys/enum-pivot-mode@0.6.14':
     resolution: {integrity: sha512-nWh4diFjtuTgL9gnKaO5iOC4gcbqZNfVhwl6V6VomDinvihanKVm5WmCsw8hdDEXadDXLG067zBvjP5KMcdf3Q==}
 
-  '@analys/enum-pivot-mode@0.7.2':
-    resolution: {integrity: sha512-CVSj3Ywncfyd9tC0VqywY9VZEQsePwMljohQApatAxoztJj3rmBtGMks6hN4O/RsTQyKWLymJvtFMHU3ZUgMBw==}
+  '@analys/enum-pivot-mode@0.7.3':
+    resolution: {integrity: sha512-xueHusYaXgEmYQy849yHaVn8PJPdgNZdT07WMjsdpLk5XNpw/psIoG7JaLdzLmnaRmqi9k3Us/Ae/QWQ/Iq3Bw==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/formula@0.6.14':
     resolution: {integrity: sha512-jzFz2o2eTxcBTqanxgrFhLkeyr8OMkKKRzGtofJXD88Uu+MezLgvIx/5FGenT9UxPT0gx/NNfYpEspkLMPqNfg==}
 
-  '@analys/formula@0.7.2':
-    resolution: {integrity: sha512-rkFLnqCPrnlqxbvHaWk8sZ3v96ear3rAAIPkaWi9h55ImCiTaXSGku76wGrmkCx0x10oC7WGvLYy6UANWw9KNQ==}
+  '@analys/formula@0.7.3':
+    resolution: {integrity: sha512-p9q4JBa9Vxg4ayetdMqIQnYb2XdwGa92GwYCr9rIOMOku2YnrZNVjHhEkh+MN9Yji46b1mPUYz2aQlH8M2tbzg==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/group@0.6.14':
     resolution: {integrity: sha512-jwYnXT4i3/DdrBoEQ5n+am9gEQaUAi/XR1t9ddCb3hAJ7CNgi9p6VZ//YKU3Xbs8+pJ2lZdUKHpUo98FIbcKwQ==}
 
-  '@analys/group@0.7.2':
-    resolution: {integrity: sha512-WA/nxjwdbcIe+Ee1ASeLQiUSJVQjvs2j0j6WXIHjOnb7izlG1pa9t3erUbnzRL+oQi3kvNhJ1DI7bi4hTJjykQ==}
+  '@analys/group@0.7.3':
+    resolution: {integrity: sha512-OOD1H38q9rj8jJKP641/n3KhrD60E0F9NF4cfrEGxAQp0fNFCXuOqiPLg4Q/QnrjVlvEmAjiMku+UYTNh1cawg==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/keyed-rows@0.6.14':
     resolution: {integrity: sha512-MQTid4sAokxwEnscwQNbABvEgDe2mE7TUtF9KKJGbohDlPK0nf9kwApmdiKl1ddz32AhM03K8sZyIDKiK8vIKQ==}
 
-  '@analys/keyed-rows@0.7.2':
-    resolution: {integrity: sha512-qZhfC7XTLm94eRsbVnB3JRFPF7Nq6BfgETaz0MQEwQfnalbOesme0OA86IpEnQkRpIyPjkSER4uAm9fgBwoW7w==}
+  '@analys/keyed-rows@0.7.3':
+    resolution: {integrity: sha512-PnSKXnLodMAPGTNR6zJI0B9tyap0PGSNfOShB4dOuJN+5iTUyIB5x3QMDlbQ3+SRhzCm9H6XpknoKpxPjNAdNw==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/nest-gram@0.6.14':
     resolution: {integrity: sha512-lfwhdGKgrQc/gJdEg3PXQl/1i7wQlmnT1da2hJvMxKvV3y3igJk+ynvegnXWg5EJQnwUxOAq4rQe2rBZGbwwrw==}
 
-  '@analys/samples-select@0.7.2':
-    resolution: {integrity: sha512-UBoDLFOoGyUAou7CQE3GYL4FC5fLzCelRKnoA3ow2Q1LHdADht7KPHBjtTiwfxtaWNq77YEhu5oSZuDHuptDqw==}
+  '@analys/samples-select@0.7.3':
+    resolution: {integrity: sha512-9SmN8+f5fbUs5MrSjftUZUSUtEgoYsEXrvKvBmhpFHCQphjzr3fGhmOPqNjFuVYrwby1u9cgf0qdwCYYugbFmw==}
+    engines: {node: '>=22.0.0'}
+
+  '@analys/table-algebra@0.7.3':
+    resolution: {integrity: sha512-hRUtoS/wjzmDOCQpkneba2PN4nrgk6gfj9ro3elYUKpVHAKLeqR5aoC1VYMaPyj0lT+fX04ri6EfYM3NrooUmQ==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-chips@0.6.14':
     resolution: {integrity: sha512-oOVOOE/mquG1LrmUGOIxrOalEUmM77Xy2yrDMdTLt4THqqlaFuc7dR34VZg95CntT/jRmOcas3acGAlmXbse/A==}
 
-  '@analys/table-chips@0.7.2':
-    resolution: {integrity: sha512-SuF9WhLTNUOkVEkdIZuTwvtIHLrGegNOivBWO7cnv14lQs6ughDoj84TxnvNO3yh+Ox4PnSsLrKNp92zkwe6+g==}
+  '@analys/table-chips@0.7.3':
+    resolution: {integrity: sha512-XX2cp7vgOKHOhoF0QcsZeHjMNNVRw47Wro8ox7J8GdgrbN+UD7bxiDaeXaCu2ie7AzjvwpySGuCTUzxKM3Ja2w==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-divide@0.6.8':
     resolution: {integrity: sha512-mRrbU3wJZcWbfV0srU9fdcugQWoJVjjo7MbAnm6rAZ36mv4aUWFEvfD1oxbbbUU2Q1dufaphxPlSHVeLGRyMWg==}
@@ -579,32 +629,37 @@ packages:
   '@analys/table-find@0.6.14':
     resolution: {integrity: sha512-YIvKLwK4YWh4O41PNgwQevPeLRxrAdFZSI1S0nyn/Kkx9IhcPaSYOK2/g9PywFaeByVHM8st4WZjYX6JugByLw==}
 
-  '@analys/table-find@0.7.2':
-    resolution: {integrity: sha512-AVr105oAL6EQYlkYbvH7hXI/ZRiXHadOYFTDWdLXSIigtM7if1+IQG3fkaJ60WF/fF6eutRQA0kH77+w8khq8w==}
+  '@analys/table-find@0.7.3':
+    resolution: {integrity: sha512-lNg6KfF9g/mEtLZorvEbfw9ymT16ZFAUCyulEY7tO+9kmFauR2zSvYBfeBbxBxgCD6a/XMV8U9Vcv6vF1/8nNg==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-formula@0.6.14':
     resolution: {integrity: sha512-2S7rHbnNCDSYPWYhMBODcZN8RLhZH179MRPXWyiqlOWYr+lw/Dn6wkpeRLwZbnx6/31d9blHoPec7hwr8DhAyg==}
 
-  '@analys/table-formula@0.7.2':
-    resolution: {integrity: sha512-3ndjy+SI4ogSQ3tk3utAYZUMB14aW8eV+8dUPlJcy7adKqOD4xcVdex5XJH9sli62HK3QbiiYaCsUQ9g7IY0Jw==}
+  '@analys/table-formula@0.7.3':
+    resolution: {integrity: sha512-oL8H0dSCcW4QFCsy0t0cZdAKUSAMQ/PbzfT2cwMIjQ77nfB9x5iNXb9F3UiEnVFpGhMg7fVnnNfT/a+gHS36lQ==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-group@0.6.14':
     resolution: {integrity: sha512-zWvLSOgK/uVRfBuJ9GZzg59PpXxbaQIOlBw+5/76vnn2py3ebYk6kwcPFA0Fg1nneAWSF9gmvn2ykYIzqC5WCA==}
 
-  '@analys/table-group@0.7.2':
-    resolution: {integrity: sha512-VDCuonPN6xA7HFalkH4h9a01yUPEet83yjnBwO2Yo8AbiveqILajaurrhKFGiuzuLDuBil1UjWyoQZNbIYEG8w==}
+  '@analys/table-group@0.7.3':
+    resolution: {integrity: sha512-bcG6gHeY1TfYqPEdU5IhRheQ64pa8gEFGuYVo6T6c9lrQ8aq/xxVdoTPOuLiVVbRyJejWx6HBpXiyt36sLJYXQ==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-index@0.6.14':
     resolution: {integrity: sha512-9dTVCdmEwrtqj/uBB5lh7Q8yjOI6l4/UXhsOjS2H40sOiLDhOcrLCCgKcNe/QA/WAxky+uRPJKRD2RbJn814MA==}
 
-  '@analys/table-index@0.7.2':
-    resolution: {integrity: sha512-7NUBuxlntaQtF7ESailmRVVXRh2oIgiQJWD7TanFHqE6wHVGYJ/9fytiog0f/HIwjXQO1uhGEycT1Z+4mEMcJA==}
+  '@analys/table-index@0.7.3':
+    resolution: {integrity: sha512-yeaM8aPr7e/SaoCcLi4xSLjnoHlyL1R/Brw1C8FrUkU5e2DlQcGZixO4MXHArNSVs4tm90M+oQ8pDRntzME9dw==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-init@0.6.14':
     resolution: {integrity: sha512-X7+JY3K7M3C6yyXL2dXXsQ+l6bjHCu2gZ3hx2+yqB5kNQ4aeYpjZlzmFLbpvLHQFPB9OqdwXivEziIJBDJz/Xw==}
 
-  '@analys/table-init@0.7.2':
-    resolution: {integrity: sha512-QJpnHHTBv8I0m0EuJk7PBfQt7vsCV+KRlAc50F77Cw63tAeCZjFd2/BQELD3bCOxsULUtfam4s+TTwIGlmHjlw==}
+  '@analys/table-init@0.7.3':
+    resolution: {integrity: sha512-4cLH2gAGLaCoSlTTxkQRPYz3X2sBworZCvl6VSHPO61q2+kU6rQeyfIDS/b2E4OkFP3M7nnHTmsdLT+sTMMbDA==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-join@0.6.8':
     resolution: {integrity: sha512-9/rsarpcQOREjCwmsZFoYQG5qjHgPMhxqyVTMGdRE680xXi/+za6On16pBWM7qpqu6fMp+ht1xnxjpqf8lZPXg==}
@@ -612,8 +667,9 @@ packages:
   '@analys/table-lookup@0.6.14':
     resolution: {integrity: sha512-Q6jeQxczknZBxceAPLX6rXSz4r7Ea5jcIxhZ+EQgRLYwP0qkqys8RHDQ1gAqth7yjzfrwwTiHO2nvAALg+dumg==}
 
-  '@analys/table-lookup@0.7.2':
-    resolution: {integrity: sha512-ypM3G9N2sF0H1h8MFTEdYkUznh2aV6Hee0lQtHkazRVAFeo0Ryb9ncLIlYl3+n2mcqyqk+/T96r89cUy+lyMdA==}
+  '@analys/table-lookup@0.7.3':
+    resolution: {integrity: sha512-6X24F8D47zDnA1NrIncVzy0J5+1eaIDDlmEsuJ5kG+Jm/qKmCwUEVeaxD7/W3MZIFeMBk9vzUPqCEnwecA16KQ==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-merge@0.6.8':
     resolution: {integrity: sha512-OqxkkqlHQv6ZtmqHA9GFV464czkL1e7xh4VXNFCCA0bnJ5BVpCFmA0r2MB/RRZosew8/il97mZTVr2zow22LuA==}
@@ -621,44 +677,51 @@ packages:
   '@analys/table-pivot@0.6.14':
     resolution: {integrity: sha512-rPqQzYdZgmndlo1qRT2EUiU/Z/nuKY+dWoxI7s+Uvu2KsAiluIS76sMnJPvGADmv9Q4RpRW5/IG8eSBe3dVuZA==}
 
-  '@analys/table-pivot@0.7.2':
-    resolution: {integrity: sha512-2jfxecceKCEefPXNKGMzHNs4NbEfJ5l6JT4vyH/M9EckwS7dvHF9MYnRSmePdPI/ElPiZ0zhFeqb1LkP1ZNwuA==}
+  '@analys/table-pivot@0.7.3':
+    resolution: {integrity: sha512-KBo02XL409zhbSU8lUP5iFgIjQaXz+VP2LVqe2KGO6yVoPA2GqHbtFjA3FrOrI09bmLdB7eHHtdSYBc/+4grIg==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-select@0.6.14':
     resolution: {integrity: sha512-1EqFUtE8DwKSk2tx6mUh1O+a8anmDuS4tJlWcfyIlQEo6Qydo3R8Zj2/BB31OIUtjqrQwV1GSUs1Hrt4Xj5XdQ==}
 
-  '@analys/table-select@0.7.2':
-    resolution: {integrity: sha512-tF0BUYrzoVHDJOPW0skdbcplWSs5e/S4suoAnobTKHdwDEqUr/XTt9kN9FmF2t7/2blKuTSs3qB8PNZBBRgm+g==}
+  '@analys/table-select@0.7.3':
+    resolution: {integrity: sha512-lQI5VaXEqTD48Z0MO4ky/BqkZpYJEdVz3AY8MWTN4oF4H87CzYY77szqh2RqNhfhih9R1RZmIr6gg4WLrZnbbA==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table-types@0.6.14':
     resolution: {integrity: sha512-F5Ejw7W/nPtLMCclTC+whbN1Z9qt7anQPpQXYFEtrr2HN/RGX8NXVIhRfCkKfwnJYumIXkv9H2+mGuxJe/VeXA==}
 
-  '@analys/table-types@0.7.2':
-    resolution: {integrity: sha512-C9M0eeZ6oG6jzlq4067thPnmq/0AnjYAZbIxKH/I556FuzyFQMX6UL6tGl5pyJ94CzkSURI1Sd2KPfav8ARIUg==}
+  '@analys/table-types@0.7.3':
+    resolution: {integrity: sha512-e5L3xhf85tODHukf7ktqUQQQIhT0UDLG1T1wSIN45VuPOfH/7MM3XGpeGgQ6p7Whzqridqjzqxb6g52DKtlCuA==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/table@0.6.14':
     resolution: {integrity: sha512-FNvCxI5+lg2Ft9fMEI6ietrEiMEWmyCtZ5S3DhWgKuXlT65AknPdYvuHWeS6/B8EP5Dhh9dUX2ul/RFuT14NyA==}
 
-  '@analys/table@0.7.2':
-    resolution: {integrity: sha512-c+/eTz1N8k4yL405yi+7WQyC1hm7ziJIhPikZRoznDS2ARg0PK6rbPhhXo8BGFKXwRWBj97MPciEBVOgrTQYYQ==}
+  '@analys/table@0.7.3':
+    resolution: {integrity: sha512-Cl9n2t04FrP9Ri0GdSAP7vULXDMqVJoLPFovXWB8WoaI71s35pptash5FgZlK3cvaIYSkOx588qv+4ccLDGYVA==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/tablespec@0.6.14':
     resolution: {integrity: sha512-p2fD9n3f67OB/ap8XmD6FfPy8zAOyG9y4fNPRfCcuLBT3FXF0kwDKnTOKSqst9aL0IZ5TOvL2LioXxBjDXfoqQ==}
 
-  '@analys/tablespec@0.7.2':
-    resolution: {integrity: sha512-OnloNhNb/NsZbl0MmkR6BtAABk9Xp1tFjU4sY1GIiEofKuPUBNFKSgCqmlGe8zOKSuhbZYf8mg2KZVIaHSl3kg==}
+  '@analys/tablespec@0.7.3':
+    resolution: {integrity: sha512-wvaeANIoapooG4FrWj1fgp98U+x68F134FctJIzLUElmTzze1rry631sRqOfuWGEKYkjnqUAwf9IzwzckEU8OA==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/tabular@0.6.14':
     resolution: {integrity: sha512-7ZjbMXNLmhluA85A9amjjccAeLUGElq++nBRcXLD7FWDP8bDSrzt02kwOKC4owDu4su4U00p1foXsnT8x4+wig==}
 
-  '@analys/tabular@0.7.2':
-    resolution: {integrity: sha512-CkQE2ctDKVZec39+LWg7vavqq1YUFO4yBHCYYAuA5LQ1QHIjbL6Ge3nQbfVWeeidlwLGhkgj1U8wd9Oz2XCkAg==}
+  '@analys/tabular@0.7.3':
+    resolution: {integrity: sha512-Q8NovR0JDhez1us3u2teN2RrNdZvvdhWtsSq4m59MaebCilR6JFotE7GRh1gbvu0kuaXSo6dvElUlxfHbCgiQw==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/util-keyed-vectors@0.6.14':
     resolution: {integrity: sha512-m6hhQlQA7j4CDrOR26JBrS9zepi5aJZ6FGX0XyipJnGVhCtlIjotjGdfK5GwDcEnYJ9NAukhwR9zCdqRVyLGug==}
 
-  '@analys/util-keyed-vectors@0.7.2':
-    resolution: {integrity: sha512-isEJbnZob/1ydebcRHnftVz08ZE/T5iAiCiOz+SpdT5Sl2Mgihjv42lNL3aRh63auRtprsibEPS5x3/Emaxofg==}
+  '@analys/util-keyed-vectors@0.7.3':
+    resolution: {integrity: sha512-JSEBw4uwwmktiZjujQAG//dcya1HO5IDxdwl0iATaRSNwLeuZm2UvHkU9KDG5riieLCJZuHt2QuzQHm7rr9xKw==}
+    engines: {node: '>=22.0.0'}
 
   '@analys/util-pivot@0.6.8':
     resolution: {integrity: sha512-c6sAhuT5sh7/sb3QocAxpV6JLj4YcyUQvfHHw4o3R+DlnWKx7gF6OkVye/fXDek8lNfgp1r6Zyec+T31OtuZyw==}
@@ -687,22 +750,22 @@ packages:
   '@aryth/bound-matrix@0.6.9':
     resolution: {integrity: sha512-PxSNjNabBQRv/Le4VHFtJykwXukrJxdmXJAuIuMicAj04em3dzXPjGew+E0GHeYdfNqg5WCrXAhwgK1N3u9rUw==}
 
-  '@aryth/bound-matrix@0.7.2':
-    resolution: {integrity: sha512-3G4QbIY3RYncWLEW5sb1eHMMTG0NT7iL0A+35oWdX+l86Qyzyywy7nmE2XQvKWRxGteaiSm6of8hFstPZ+12rg==}
+  '@aryth/bound-matrix@0.7.6':
+    resolution: {integrity: sha512-dkARlsLaKdxXUMTclM2c3OfBwvosueeNMmTonvRwa85yIkB2OBDJMLzIEczvfPwNhWRNVGkYRr8vepC4ytuMjQ==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/bound-vector@0.6.9':
     resolution: {integrity: sha512-jJVFLfj5Lx2PBv5WtCDwjAmgem1ENGYdFcK7L9x6FWXO980bNjws5BO+loTE+PHE+UIWAWQuO3X3G28rfis2Mg==}
 
-  '@aryth/bound-vector@0.7.2':
-    resolution: {integrity: sha512-4zCRUaMjr2nu96SDAwfZ1jldTHfHSolOyCdQo5GuxThfE+f/NFoyNtMrpc5sdu8ACL+/GdcQ9FUgU3ESdHSrfg==}
+  '@aryth/bound-vector@0.7.6':
+    resolution: {integrity: sha512-IzrgptCUBVTJYYAE4s/515mxO+vU9DcQ7v/whoRSCk4a3VzR2ztv52DL4g/AG35SMuX3KbMicRbGz3yzhfTBYw==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/bound@0.6.9':
     resolution: {integrity: sha512-Z74Nt2efP6Exs0/g7b2dLGUQy+FUCqcKlKc+b8JEr04lLfNu/o6R0IEFH9fFzENORc/ypfboUq0bMcbczJHLgw==}
 
-  '@aryth/bound@0.7.2':
-    resolution: {integrity: sha512-ux6sGXMzZLcGKxHKcbFOOrw8dIotmgBtQm3ikBxkucCcpoRsMgNLWyxBR3rGWWtzigaT5bjhjCOd4v48R6fCKA==}
+  '@aryth/bound@0.7.6':
+    resolution: {integrity: sha512-A2msLJ/9uZWRIst8oHE7NFMryiPmneDQ3Dc0GbLnm58yos8df5PNQEQEMk3EF9eYEvICBmpca0xdb9csKxqOrQ==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/comparer@0.5.10':
@@ -711,29 +774,33 @@ packages:
   '@aryth/comparer@0.6.9':
     resolution: {integrity: sha512-qhw3fUv2l4ViZc/RPNEcz5xMsr1Ds7toUAaXxqAO947NOAMJBWe5RB9qX1bDR7nrdxBMIaMvpAd2gGh/g/LTpg==}
 
-  '@aryth/comparer@0.7.2':
-    resolution: {integrity: sha512-eP7wZsFroAE8etr5Nu1O4ZOmMP/lg2A+mEArz6lLNp5R0QudunrePlbpMxz43IyzNsh6Ye4JG2Uv4bS/YknSlg==}
+  '@aryth/comparer@0.7.5':
+    resolution: {integrity: sha512-wEM2Gl7+U5khBtsOO8+ZQt21FwGJG4/NRxoA8BVzUm3dQHRR4ruuhpdtNpszAZSf8wb3G/ZYfBqblJlIXbp8CA==}
+    engines: {node: '>=22.0.0'}
+
+  '@aryth/comparer@0.7.6':
+    resolution: {integrity: sha512-gj6AEb5VXcmqs7Vj154wM1oDlmWYrgS3dEe5HIsFvykGZduQfyUEhKqXoy/4j6nheKAN2DMXgGKquZv/bsVwww==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/distinct-column@0.6.9':
     resolution: {integrity: sha512-zDYTsJYaaV0i564QIWhltVKsUPKQ4zKnFDCV9GSieWQZlNCEzWx7JzfKXH5dYZxNd2um9LgHysgqSuhjWJq0FQ==}
 
-  '@aryth/distinct-column@0.7.2':
-    resolution: {integrity: sha512-2z64E6xCmrZEZqGfCs9JhnxXMoD+QiCqD+9Q8AEDRkiz31E7iuM50XFI1rVWgkEjfK53eX2GkE1zmBXlHTIBUw==}
+  '@aryth/distinct-column@0.7.6':
+    resolution: {integrity: sha512-1heCr/473ggkNF6KrsxtNPMh+8WmKhgju01FOORDRm4L94uLJliPFUTHqxs9bnucBImiYzx3raGVvL3YXMtf7w==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/distinct-matrix@0.6.9':
     resolution: {integrity: sha512-HgX4XAUpP2uZoe84kwYoWv/Z5CtNk0IE+y0jKXaoMiwAGd6nM+vPHpZ2Lcg7YmXCA/Kmmum/2pw77/+h0kzoFw==}
 
-  '@aryth/distinct-matrix@0.7.2':
-    resolution: {integrity: sha512-bHzWg0vSBl7e7cNG4uoKZudk4+c8FlDBkfmS6IjQv/ajn8i2HkZaJACzOv1pMo8bpQ8/xXXHb0hf11gqpRJmzQ==}
+  '@aryth/distinct-matrix@0.7.6':
+    resolution: {integrity: sha512-m0BVn+SynwEFMv+1uYv2njSfcU9QKn904+cRyyH8xGaVcfqDX4nd/25nACgSqMyg+/6YDGb1Q72QLtf24mJf6w==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/flopper@0.6.9':
     resolution: {integrity: sha512-5jyNKNlQ+ytFtVPnrC632ZNf4Y+C9um2tTnkspcC4TciXnO1eEru3jFRGHkyxaq0uBvRMziSYTEBO9o7Q/s/+w==}
 
-  '@aryth/flopper@0.7.2':
-    resolution: {integrity: sha512-WnJCx+V3xQk+uhGJEopWi9+RQe4nCVUHljDzvPfhiAV5tQKo9LjlHZBEaGcxQmFsXtA8Htc2A+iJ5byF0M94yQ==}
+  '@aryth/flopper@0.7.6':
+    resolution: {integrity: sha512-uMlkdJ3mKdntC+N9alWzLwV/5/38Yy+gwqI+PSfBL4AIQXCwspDisZt0v6icpoGc+9Sm9NTRrttEjw4uYat4WQ==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/math@0.5.10':
@@ -746,11 +813,19 @@ packages:
     resolution: {integrity: sha512-NvvJ+rwfehxlj8g6Qbto/o3Wj4pe+1IRKCqudLG10H4NmMqMok7EXmLwhTdatx4xLWmGNuJPW/4/EJ4JggnQZg==}
     engines: {node: '>=22.0.0'}
 
+  '@aryth/math@0.7.5':
+    resolution: {integrity: sha512-GbsHdh3lHZKufKas8wQ7FuvyKhV2Mjds1YEBPRdxJdTJIE3mdUljmTA6FpigNyVVh1oeT5asptM111MXb2jang==}
+    engines: {node: '>=22.0.0'}
+
+  '@aryth/math@0.7.6':
+    resolution: {integrity: sha512-1N/jGDj52UKvzph2awyr2tpjYH7jWTu+rn1wy5uX/sbX64wo96afvLGGVAdypKMPT0oF3K8oRBA8Tp78rTK2Aw==}
+    engines: {node: '>=22.0.0'}
+
   '@aryth/polar@0.6.9':
     resolution: {integrity: sha512-fF6Y8e6rbkFLLCHO54f/4GhewD1113dQP6VkWx1cYn7CHOOWMeZe5ve8IuQtHShbMjGMzQs4TlGMhLGqxo/Oiw==}
 
-  '@aryth/polar@0.7.2':
-    resolution: {integrity: sha512-5rcp/IVFI0pFyd6HOKD8pKKXXQpTexkR4Vk5mFVGggZcJE8w+tgoqjNHtBfqhqIzUtlkcbIlgHfGZmwcrKiAVg==}
+  '@aryth/polar@0.7.6':
+    resolution: {integrity: sha512-vRNub7DEPsDpnQ6RupsQ+RIXxPBieWIG7UDjS31zMrFw9YZbwqn/VTjzbOyEGWH47pUYlvOoD94Vw4msxKOWkw==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/rand@0.5.10':
@@ -759,109 +834,94 @@ packages:
   '@aryth/rand@0.6.9':
     resolution: {integrity: sha512-Ef1TFt0FY+be3zTE4AGPCGhwnDiB8q0OOxERsqTjovvbDwjjUl/IZ7olzHPAuouVKMokEhXvLcWHqCZ7DBx/0w==}
 
-  '@aryth/rand@0.7.2':
-    resolution: {integrity: sha512-MQ5CKikPb53QRYj50t1AQYJ+2JGLQWeMTwokBAgUVRTQNOS9HH6jiOS/0ABT96UnJPSW3Losn8rBDd19JxZYkg==}
+  '@aryth/rand@0.7.6':
+    resolution: {integrity: sha512-zyi6vqs95baInXdlcRNO6r4Y1QtSqVnfgSlDHtEfWJ0kvoVeEDTzFo4D4mEDFmB7dE4RnxnRqskE2xjQvhEbpQ==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/rank-column@0.6.9':
     resolution: {integrity: sha512-1DDEHNdvtkg9JXSvQ1OhqExf9UiKXLFBJGdeXrYWwgzN+2ZxIK2jXiue4TS5UZWZbCTzU5u0YiS6ZFWGHHszpw==}
 
-  '@aryth/rank-column@0.7.2':
-    resolution: {integrity: sha512-DUq5dHNtiA0asadK5GLJtGOqslZoroXdJFLgW0fwlRGmTLNgOVl07hrPPX2WRhc29h6LUhFsoqivPS1N23mFqg==}
-    engines: {node: '>=22.0.0'}
-
   '@aryth/rank-matrix@0.6.9':
     resolution: {integrity: sha512-OREQ3nCFRQvkQ0zLBtPyjAw1snrE9U9foQOrqejtz0+rrjqg/AZIfhRb+SgyfKRb9+TRlqCKj+KoW+vD9tSdVg==}
-
-  '@aryth/rank-matrix@0.7.2':
-    resolution: {integrity: sha512-wVAvI9+a7pqV9TotPTMe1Q9WngaHGrCpfilT+zaaqxJYva5Jxs/1tWh+mmvkMTx8rsfOEyyvr+qSMcQPw6pPEg==}
-    engines: {node: '>=22.0.0'}
 
   '@aryth/rank-vector@0.6.9':
     resolution: {integrity: sha512-2KJdWDwJp4es6vJMySIAJ7GrUWMgXIS6KqMa51eX95rOQh+1ueQOrujnXtiFuqus71F6DXm6jNz2zHvH4zghJg==}
 
-  '@aryth/rank-vector@0.7.2':
-    resolution: {integrity: sha512-RChDKMH7koPu13AMooA9lJqqzZd24CYXP5ePlcj0xrihIwnqpzl5IVbmtUNEXeVsngGXFQ7Emszvk7Mynl266Q==}
-    engines: {node: '>=22.0.0'}
-
   '@aryth/rank@0.6.9':
     resolution: {integrity: sha512-b8AeR+b4cLhRDGYet2SpIY0vFpEbnQHM32/QLpoQFhp3Z1BV8N12vieRdfqXuUk5kbP0TvKJL180ZaxynBTNnQ==}
-
-  '@aryth/rank@0.7.0':
-    resolution: {integrity: sha512-35qLPCjzZm+sllQcAPHxn0NPgi7tZEnzY+FunT2+RBx9Lgsx6MJtFnLh9USg1eEzuqhMxB5H5w7Qe+tpOBsZDg==}
 
   '@aryth/util-bound@0.6.9':
     resolution: {integrity: sha512-+XlH18klGj3fN3Oi/QVWNEyrd65mq7lyrdLQ1BXQrTKutqQajII+lw1F6CAvVuMrDknlcg5wcjYLPl4LnuJx6w==}
 
-  '@aryth/util-bound@0.7.2':
-    resolution: {integrity: sha512-Bz4OPTJLSp5D5J9OADmr95lJm1VG1/NVPakz0fXao0quKZmD8zXZLCir5nZNy6UdHxZt57FVuKZ2byC1e+iVSw==}
+  '@aryth/util-bound@0.7.6':
+    resolution: {integrity: sha512-KGmhXezHzD98kUA5p9TCL5ryzklBn6Q6QmAZaqNDYxeEXmLvk4Vjn9a6XHL9YxKT+3cZfCOPpICNkOrUHtMzWA==}
     engines: {node: '>=22.0.0'}
 
   '@aryth/util-distinct@0.6.9':
     resolution: {integrity: sha512-4Aa9s558aHpKHclXicqppfeziHgYQHw7KhS6ZFXrrc12CnmTfjGdS6lCs61oOvrn6zE8qR+vG7GvYNzhhaFuxw==}
 
-  '@aryth/util-distinct@0.7.2':
-    resolution: {integrity: sha512-1UGwTcV/ruQugWr9AZHFYJclOJS3yvrJZBiL3/jIZvFWhjut+qVnRasgRo09LlBIlEiuobmP9lqj8/CExIJdUg==}
+  '@aryth/util-distinct@0.7.6':
+    resolution: {integrity: sha512-t9SBDPndu0OZV6Rw1F7JCxuPX1rREtoIzibn9AVmcDdAKbwSEZNpTzUXYwlSwfe67vtZDXiunM8Sk7rQpWYgvg==}
     engines: {node: '>=22.0.0'}
 
   '@babel/runtime@7.26.0':
     resolution: {integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==}
     engines: {node: '>=6.9.0'}
 
-  '@changesets/apply-release-plan@7.0.5':
-    resolution: {integrity: sha512-1cWCk+ZshEkSVEZrm2fSj1Gz8sYvxgUL4Q78+1ZZqeqfuevPTPk033/yUZ3df8BKMohkqqHfzj0HOOrG0KtXTw==}
+  '@changesets/apply-release-plan@7.0.10':
+    resolution: {integrity: sha512-wNyeIJ3yDsVspYvHnEz1xQDq18D9ifed3lI+wxRQRK4pArUcuHgCTrHv0QRnnwjhVCQACxZ+CBih3wgOct6UXw==}
 
-  '@changesets/assemble-release-plan@6.0.4':
-    resolution: {integrity: sha512-nqICnvmrwWj4w2x0fOhVj2QEGdlUuwVAwESrUo5HLzWMI1rE5SWfsr9ln+rDqWB6RQ2ZyaMZHUcU7/IRaUJS+Q==}
+  '@changesets/assemble-release-plan@6.0.6':
+    resolution: {integrity: sha512-Frkj8hWJ1FRZiY3kzVCKzS0N5mMwWKwmv9vpam7vt8rZjLL1JMthdh6pSDVSPumHPshTTkKZ0VtNbE0cJHZZUg==}
 
-  '@changesets/changelog-git@0.2.0':
-    resolution: {integrity: sha512-bHOx97iFI4OClIT35Lok3sJAwM31VbUM++gnMBV16fdbtBhgYu4dxsphBF/0AZZsyAHMrnM0yFcj5gZM1py6uQ==}
+  '@changesets/changelog-git@0.2.1':
+    resolution: {integrity: sha512-x/xEleCFLH28c3bQeQIyeZf8lFXyDFVn1SgcBiR2Tw/r4IAWlk1fzxCEZ6NxQAjF2Nwtczoen3OA2qR+UawQ8Q==}
 
-  '@changesets/cli@2.27.9':
-    resolution: {integrity: sha512-q42a/ZbDnxPpCb5Wkm6tMVIxgeI9C/bexntzTeCFBrQEdpisQqk8kCHllYZMDjYtEc1ZzumbMJAG8H0Z4rdvjg==}
+  '@changesets/cli@2.28.1':
+    resolution: {integrity: sha512-PiIyGRmSc6JddQJe/W1hRPjiN4VrMvb2VfQ6Uydy2punBioQrsxppyG5WafinKcW1mT0jOe/wU4k9Zy5ff21AA==}
     hasBin: true
 
-  '@changesets/config@3.0.3':
-    resolution: {integrity: sha512-vqgQZMyIcuIpw9nqFIpTSNyc/wgm/Lu1zKN5vECy74u95Qx/Wa9g27HdgO4NkVAaq+BGA8wUc/qvbvVNs93n6A==}
+  '@changesets/config@3.1.1':
+    resolution: {integrity: sha512-bd+3Ap2TKXxljCggI0mKPfzCQKeV/TU4yO2h2C6vAihIo8tzseAn2e7klSuiyYYXvgu53zMN1OeYMIQkaQoWnA==}
 
   '@changesets/errors@0.2.0':
     resolution: {integrity: sha512-6BLOQUscTpZeGljvyQXlWOItQyU71kCdGz7Pi8H8zdw6BI0g3m43iL4xKUVPWtG+qrrL9DTjpdn8eYuCQSRpow==}
 
-  '@changesets/get-dependents-graph@2.1.2':
-    resolution: {integrity: sha512-sgcHRkiBY9i4zWYBwlVyAjEM9sAzs4wYVwJUdnbDLnVG3QwAaia1Mk5P8M7kraTOZN+vBET7n8KyB0YXCbFRLQ==}
+  '@changesets/get-dependents-graph@2.1.3':
+    resolution: {integrity: sha512-gphr+v0mv2I3Oxt19VdWRRUxq3sseyUpX9DaHpTUmLj92Y10AGy+XOtV+kbM6L/fDcpx7/ISDFK6T8A/P3lOdQ==}
 
-  '@changesets/get-release-plan@4.0.4':
-    resolution: {integrity: sha512-SicG/S67JmPTrdcc9Vpu0wSQt7IiuN0dc8iR5VScnnTVPfIaLvKmEGRvIaF0kcn8u5ZqLbormZNTO77bCEvyWw==}
+  '@changesets/get-release-plan@4.0.8':
+    resolution: {integrity: sha512-MM4mq2+DQU1ZT7nqxnpveDMTkMBLnwNX44cX7NSxlXmr7f8hO6/S2MXNiXG54uf/0nYnefv0cfy4Czf/ZL/EKQ==}
 
   '@changesets/get-version-range-type@0.4.0':
     resolution: {integrity: sha512-hwawtob9DryoGTpixy1D3ZXbGgJu1Rhr+ySH2PvTLHvkZuQ7sRT4oQwMh0hbqZH1weAooedEjRsbrWcGLCeyVQ==}
 
-  '@changesets/git@3.0.1':
-    resolution: {integrity: sha512-pdgHcYBLCPcLd82aRcuO0kxCDbw/yISlOtkmwmE8Odo1L6hSiZrBOsRl84eYG7DRCab/iHnOkWqExqc4wxk2LQ==}
+  '@changesets/git@3.0.2':
+    resolution: {integrity: sha512-r1/Kju9Y8OxRRdvna+nxpQIsMsRQn9dhhAZt94FLDeu0Hij2hnOozW8iqnHBgvu+KdnJppCveQwK4odwfw/aWQ==}
 
   '@changesets/logger@0.1.1':
     resolution: {integrity: sha512-OQtR36ZlnuTxKqoW4Sv6x5YIhOmClRd5pWsjZsddYxpWs517R0HkyiefQPIytCVh4ZcC5x9XaG8KTdd5iRQUfg==}
 
-  '@changesets/parse@0.4.0':
-    resolution: {integrity: sha512-TS/9KG2CdGXS27S+QxbZXgr8uPsP4yNJYb4BC2/NeFUj80Rni3TeD2qwWmabymxmrLo7JEsytXH1FbpKTbvivw==}
+  '@changesets/parse@0.4.1':
+    resolution: {integrity: sha512-iwksMs5Bf/wUItfcg+OXrEpravm5rEd9Bf4oyIPL4kVTmJQ7PNDSd6MDYkpSJR1pn7tz/k8Zf2DhTCqX08Ou+Q==}
 
-  '@changesets/pre@2.0.1':
-    resolution: {integrity: sha512-vvBJ/If4jKM4tPz9JdY2kGOgWmCowUYOi5Ycv8dyLnEE8FgpYYUo1mgJZxcdtGGP3aG8rAQulGLyyXGSLkIMTQ==}
+  '@changesets/pre@2.0.2':
+    resolution: {integrity: sha512-HaL/gEyFVvkf9KFg6484wR9s0qjAXlZ8qWPDkTyKF6+zqjBe/I2mygg3MbpZ++hdi0ToqNUF8cjj7fBy0dg8Ug==}
 
-  '@changesets/read@0.6.1':
-    resolution: {integrity: sha512-jYMbyXQk3nwP25nRzQQGa1nKLY0KfoOV7VLgwucI0bUO8t8ZLCr6LZmgjXsiKuRDc+5A6doKPr9w2d+FEJ55zQ==}
+  '@changesets/read@0.6.3':
+    resolution: {integrity: sha512-9H4p/OuJ3jXEUTjaVGdQEhBdqoT2cO5Ts95JTFsQyawmKzpL8FnIeJSyhTDPW1MBRDnwZlHFEM9SpPwJDY5wIg==}
 
-  '@changesets/should-skip-package@0.1.1':
-    resolution: {integrity: sha512-H9LjLbF6mMHLtJIc/eHR9Na+MifJ3VxtgP/Y+XLn4BF7tDTEN1HNYtH6QMcjP1uxp9sjaFYmW8xqloaCi/ckTg==}
+  '@changesets/should-skip-package@0.1.2':
+    resolution: {integrity: sha512-qAK/WrqWLNCP22UDdBTMPH5f41elVDlsNyat180A33dWxuUDyNpg6fPi/FyTZwRriVjg0L8gnjJn2F9XAoF0qw==}
 
   '@changesets/types@4.1.0':
     resolution: {integrity: sha512-LDQvVDv5Kb50ny2s25Fhm3d9QSZimsoUGBsUioj6MC3qbMUCuC8GPIvk/M6IvXx3lYhAs0lwWUQLb+VIEUCECw==}
 
-  '@changesets/types@6.0.0':
-    resolution: {integrity: sha512-b1UkfNulgKoWfqyHtzKS5fOZYSJO+77adgL7DLRDr+/7jhChN+QcHnbjiQVOz/U+Ts3PGNySq7diAItzDgugfQ==}
+  '@changesets/types@6.1.0':
+    resolution: {integrity: sha512-rKQcJ+o1nKNgeoYRHKOS07tAMNd3YSN0uHaJOZYjBAgxfV7TUE7JE+z4BzZdQwb5hKaYbayKN5KrYV7ODb2rAA==}
 
-  '@changesets/write@0.3.2':
-    resolution: {integrity: sha512-kDxDrPNpUgsjDbWBvUo27PzKX4gqeKOlhibaOXDJA6kuBisGqNHv/HwGJrAu8U/dSf8ZEFIeHIPtvSlZI1kULw==}
+  '@changesets/write@0.4.0':
+    resolution: {integrity: sha512-CdTLvIOPiCNuH71pyDu3rA+Q0n65cmAbXnwWH84rKGiFumFzkmHNT8KHTMEchcxN+Kl8I54xGUhJ7l3E7X396Q==}
 
   '@cliche/mag@0.0.5':
     resolution: {integrity: sha512-4FBEgYPeSinJtzaVnW4UxWlAtF0VPq1kGAivFgarv2SJitNaTVGDNnX6zCx2YuJZaM8J3qgDnUwBQRuB0+aNtQ==}
@@ -896,17 +956,14 @@ packages:
   '@foba/vector@0.6.1':
     resolution: {integrity: sha512-X7F4gd7Q+ZgVdGFO4bwuHw22GGTE0YPq8S6+t9QP1sh+RHjYU+5li+1mVvqRWemkCZcYftbVy0t2iGK8E61I5g==}
 
-  '@ject/callable@0.0.17':
-    resolution: {integrity: sha512-b0m9ndrhq0R+/ygzYrKB1Pz8fJydJ14mBuBp3K+HkRYyC5WfngotXCkUtdiSYpRRev6rvTs5cw3LxMmDI3gLgA==}
-
   '@ject/mixin@0.0.17':
     resolution: {integrity: sha512-uTR4gGtCJOPLeOzNfx4EUnJMVZkTGe4d76FwSm7SwJuhHsbnNaNpdcMuq7np8O+CzOwFjUgpEWCwnJ9MLR0L1g==}
 
   '@ject/oneself@0.0.17':
     resolution: {integrity: sha512-piU+MSMvhyhdZzF/Mi+fS6EcuM9MsEuX0aR+uATbX7HXQN1hyrVekX4x2Vmy+jTnAsNjP9nr2/5kk4dNdvwyXg==}
 
-  '@ject/oneself@0.1.0':
-    resolution: {integrity: sha512-oN8oxyUMQ1Jgb0VtEueGHhgUOAG9zvRcw9VM7xEzp7tdM4YZyHW2YNG0AzR2nTSK+3NHNEtOD+QPNPd9dz/+DQ==}
+  '@ject/oneself@0.1.2':
+    resolution: {integrity: sha512-CPFxeK+rFpJwKqhfDEvQU4nIUA9PHHwA1tlu/0LbsHS8G4tOMelN79yK++brGC99xswLwMad+WK/OYgaQn8CQA==}
     engines: {node: '>=22.0.0'}
 
   '@ject/rename@0.0.17':
@@ -957,8 +1014,8 @@ packages:
   '@palett/cards@0.11.6':
     resolution: {integrity: sha512-TQsTYhqOTOBv1O0h5DyRX6sMOHAY55HxIRFK3jXa9UrSo12IcQ6odT0ZlBIJGYZRMoMoUKUQTANCJY19wiAbCA==}
 
-  '@palett/cards@0.12.0':
-    resolution: {integrity: sha512-p7n8iUD5IWldNwCJpgBt6a7DGaXFIPawmDm/HrZi2TGwbppqXoMm/TOL16hK96TE3xMKaR+f+SkB3rzU6ktPCg==}
+  '@palett/cards@0.12.24':
+    resolution: {integrity: sha512-aE0vZqnxW7O50jGvQiJFMDFdAnjJc2KhTsfT4wULY+ufMxUDXbJtdeny980b/0kC1sKWTkCEs3CmvnqzI0stIA==}
     engines: {node: '>=22.0.0'}
 
   '@palett/cards@0.9.19':
@@ -967,14 +1024,18 @@ packages:
   '@palett/color-algebra@0.10.6':
     resolution: {integrity: sha512-/llnfqQODaxsS7LyAnK/Uw3FwcvHtPp4YqPAbbdz/V9iynk6xWBXd3O4iyub8xQb4K+YTKAVkRvBvwsL7Izq9g==}
 
+  '@palett/color-algebra@0.12.24':
+    resolution: {integrity: sha512-UZIJUKRuicxyV1xRnmju3KO9UrAyb5nAFAO/ZhaTl9UCzIXuDyJLwheM0jd5KD5ThB5h3UqF4mATdfgpuBba4Q==}
+    engines: {node: '>=22.0.0'}
+
   '@palett/color-algebra@0.9.19':
     resolution: {integrity: sha512-bbLu9B1fgDJ4kewc3xxZWkRx7o/ENY513wFd4/D7TfOyV6o8Pg0aq6UzaQs0IV7pJaQMLVdqcrV0AJ6JpQwAbg==}
 
   '@palett/color-space@0.10.5':
     resolution: {integrity: sha512-B+Xz4ikbvefEN7X4b9Gj3rNJE15Z+ioeQjZxY480bUwJEHSM8W0aqKJV+OKU0GT1q2WEwICN0/MjqTPE5NYE/g==}
 
-  '@palett/color-space@0.12.0':
-    resolution: {integrity: sha512-ehXPJLlOiR5+YUkvy4/jeF1YUkdRRGIhT4g/6TuhaBnr4aVtaB9DHRbVW32byUwT+NuYUwehSHgsMTX4Oei17A==}
+  '@palett/color-space@0.12.24':
+    resolution: {integrity: sha512-ExFcHJFnAt8ys/E5ilqIa3FuTqsCXL/5KoSccmkupNqkN3MkyfxVlwnCxqJOEkfuC5EqOyNIY52YtDo1yXiMug==}
     engines: {node: '>=22.0.0'}
 
   '@palett/color-space@0.9.19':
@@ -986,8 +1047,8 @@ packages:
   '@palett/convert@0.11.6':
     resolution: {integrity: sha512-8elCwcLDwNcZhis+4ey4DR5pXb3QRszWFl/oE3xLY/SGwCaUGONektpmYjV2iWE8Bf/REvqqfG5AwCA/vEOeEw==}
 
-  '@palett/convert@0.12.0':
-    resolution: {integrity: sha512-G97G1pO1WoPq//EarZOrQGodhSbeX7poUgeCBNh5d8FleQNS8kgr7xKIZZ9nFGnDQDNVg1CJKhB4rGcrkD1esg==}
+  '@palett/convert@0.12.24':
+    resolution: {integrity: sha512-MN1pYf2KZbkJ9pvH9mA723sAKHAdSmXuXspsUSE+ZWPcqaO7AikkixCkpKmlokcAcPZj4qrRwyNE12Ok/VrG9g==}
     engines: {node: '>=22.0.0'}
 
   '@palett/convert@0.9.19':
@@ -999,8 +1060,16 @@ packages:
   '@palett/dye@0.11.6':
     resolution: {integrity: sha512-GZPob9Flg3iB7Gu3jp7bB7Z3ccg6ARIj9QfydPYlgUC1kMl+wmWSKXltEqGc8ffv75d2GCOkxFLEad+1CGTrNA==}
 
-  '@palett/dye@0.12.0':
-    resolution: {integrity: sha512-OjjbO0Pm8wcp76Z5dRXc9SdTyLLPFbX9lg6XSfPsgVkHx+47LJbkqrfwab8pujXHinLoR2X1J/aP0V1mx4RF6w==}
+  '@palett/dye@0.12.19':
+    resolution: {integrity: sha512-jA5T5/1Mq/zxhp/sDxguWeu6RCYMI0zk/aKpUBl7hv2FazUkKosZCoZ5vZmy3Zhi2Liz9aofSEcoCkpl+k1tNg==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/dye@0.12.20':
+    resolution: {integrity: sha512-rVearI73BcsD5c9KbuN0/FEawC50XJDefAVrszVoeWn6toVJ4e6+z1Z++RCKquSIZMVP0sAfNbSwyc7u14ArOQ==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/dye@0.12.24':
+    resolution: {integrity: sha512-/WxXH31Nlutz2SVfDHNCMvvpxmmhjfscJm0TNfjyfBYIjOKxpBAYtnFNZs5aX1oHOY3neru0nF4mV5Ar+HKFvg==}
     engines: {node: '>=22.0.0'}
 
   '@palett/dye@0.9.19':
@@ -1012,14 +1081,20 @@ packages:
   '@palett/enum-ansi-codes@0.11.6':
     resolution: {integrity: sha512-QcO9p6wu+DrD64EcTRL9+gBkW17Odp8wrXtRRAQyGlYvFuk5rrDzB0M2veyle9gssCcjT8akB0Ye3eZ044RZ5w==}
 
-  '@palett/enum-ansi-codes@0.12.0':
-    resolution: {integrity: sha512-q7CRktn0gYG5MPmSO1jbCZyg2tdQvK8s2X2EXbP1Z5xwRB4KJQyRe6LjEHQ0pRLrODzMF4b6shTR6yo+jQWplA==}
+  '@palett/enum-ansi-codes@0.12.19':
+    resolution: {integrity: sha512-DiBgi4k6rE1XY8ukQnsFoAH7jkVVMNDjkasyLC5R6/u9EtWTFo6PwXcR+6yXGha4R8/Mkfn5tBaZj8xJre97Vw==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/enum-ansi-codes@0.12.20':
+    resolution: {integrity: sha512-UQVhYDGuNAEEueep+iN1F6cmSIP6/6sVAaCMZIfprfte9lFwksPNms3tzPUNc+zFcMCumLXNPwccfKAXFOljow==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/enum-ansi-codes@0.12.24':
+    resolution: {integrity: sha512-UtGFnXFAdM4lZ5AVO5W3ABnjfeXQqgKuBRusioCdEhw9mLA4pTBkb941Ic2NHZJFWGC5sML2tOl4p4kTxjdtZw==}
+    engines: {node: '>=22.0.0'}
 
   '@palett/enum-ansi-codes@0.9.19':
     resolution: {integrity: sha512-AlsWzeScnOlvqDUPJnwSKG4VcKDgUurimX5QNa+rSb3nuIUv7QvkgvWPJ63rpkOG0/Mu+QuGpFXZrhsG3/zw+A==}
-
-  '@palett/enum-color-cards@0.12.0':
-    resolution: {integrity: sha512-GKPP1EZKlAbmrOpoSjlYRg6qzJWrAN1/XwCrc2x+5ZtbHD5fhAEsGOWTqAQQnE1EHfMysWBpbwctjY0KhNuplg==}
 
   '@palett/enum-color-cards@0.9.19':
     resolution: {integrity: sha512-6MaHk7EEN2y3U/xB69PnqF7G6RlC+yIeTfrOK9UTo86SaORB5vFpO6HieV+UpVb4fUX/QCoJdPK/l+UxAnOfiA==}
@@ -1030,8 +1105,13 @@ packages:
   '@palett/enum-color-space@0.11.6':
     resolution: {integrity: sha512-yUhmHLAn1g4gzCkG3hF1BX/wCi8GzGBtE1lDDpTbv1UmRCmSvhKKbMW2OcISKyzblzCntivMRFqmc686uCCXIw==}
 
-  '@palett/enum-color-space@0.12.0':
-    resolution: {integrity: sha512-1hYHVBj14SoNvAxzY9oLuYnhK8FgokFkYT3fyCtY483rEWqmpDIH68gwuW2klJEtCidLcqQLf/GWtTjShNO2RQ==}
+  '@palett/enum-color-space@0.12.19':
+    resolution: {integrity: sha512-UIoRyRVJx3Acs6wbKmOe4BlMaxPUozPVkYa/0Ak1/Jr4ac8UFaRVSw2b4pl0qphlaUe5r168+d8WMAGimJbWtw==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/enum-color-space@0.12.20':
+    resolution: {integrity: sha512-sMQe7gb71UwesuHI1YiLp5dZ8mR5IL3cCr01W585EJajNDQVjvH47MHIkTfwKdyZao8YWk1kUZLaaDUqpo3sAg==}
+    engines: {node: '>=22.0.0'}
 
   '@palett/enum-color-space@0.9.19':
     resolution: {integrity: sha512-BL8cYnWrXMdsS/E0cjBxPxbR5ywPxwxZyDAI5q5eBWKeNA3ET1LL86osB/5ONdEYkFdeRmjUwLxiMjF2qRc9wA==}
@@ -1042,31 +1122,29 @@ packages:
   '@palett/enum-colorant-modes@0.11.6':
     resolution: {integrity: sha512-Vjc6+BONR9Mgrhri1bEXG80ycPPIsgoNL04f+aXeaCb4uRLqfjMiPjQidRgagXd0TPnjZ9pK3JITcetNF8Wpjg==}
 
-  '@palett/enum-colorant-modes@0.12.0':
-    resolution: {integrity: sha512-PVpBwHDZU5hWqb62umyK8IpAbwHJyacyBJxKMCft9FkknWvLdAFjM46d9cVUVgOyjnjTKeywA9TPjnwjjhdQ4A==}
-
   '@palett/enum-font-effects@0.10.6':
     resolution: {integrity: sha512-gicFRy/qEE/73fqElqSTobh8H17Oe8qpYHmi5WKTvw98K7ib9Ma71j0EuJVPtz+hueF01SrLy3oYAbbYuzbriw==}
 
   '@palett/enum-font-effects@0.11.6':
     resolution: {integrity: sha512-CERi101LJfo99hIVFlaJSzGW8t9Y/BOQWHTPsYfrlRO7wNc6jiaCxNB1kySNTSoJcZUgUHxQcLU/9VpHF3zI9g==}
 
-  '@palett/enum-font-effects@0.12.0':
-    resolution: {integrity: sha512-UgZ2fN5jJnYMac90k3KwvmBvM4NsL5j1f6Xj0zAxtdSjnlAQn8POfRcHh2KcXbk+kg/DtJXvvUOjtRv8npJ/7w==}
+  '@palett/enum-font-effects@0.12.19':
+    resolution: {integrity: sha512-MqIyYpp2P6AwH846A4KwR6XwVFg+0E+1e+7JwXHINfStyl1wvv+RkqcjfjLZXxwLd7rhk+xzbqo8L/WW1+bP8g==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/enum-font-effects@0.12.20':
+    resolution: {integrity: sha512-wzG4bIB7bI3ESLfH47BmJpb1WmWKwWFlQwJyYeZF6dtHBGVzecAgJuIyKXeQwL0JN1mXnQ2Tykn00uby6snwGQ==}
+    engines: {node: '>=22.0.0'}
 
   '@palett/enum-font-effects@0.9.19':
     resolution: {integrity: sha512-WssEd7KHU+DlBOcYmQfwC6SgJ6GN+OPH26ztr5q9FofJlhAFU6cZB5oEqj9Egsm818qSbFlK0kGJ9bYHdwt4mg==}
 
-  '@palett/flopper@0.12.0':
-    resolution: {integrity: sha512-+vGfxVzgxXEzreGI3OdssS5s40fTiwMd0Ft1ddqVhRrHtS6VdtOz0xYF3xYnsK0eQ1MOwkZKZVNViu6zeK9dcg==}
+  '@palett/flopper@0.12.24':
+    resolution: {integrity: sha512-ch8UyyqUFA8dLF4HaxqzojWE726EHDOKDUJ1OthhvV2Ombf0fJ7H08iD8FBBEGCriKUmSZiT38wlWnb8Wivm6g==}
     engines: {node: '>=22.0.0'}
 
   '@palett/flopper@0.9.19':
     resolution: {integrity: sha512-BvvD7+NpO30teTHhN0OvgiL9wGX9YJtLs6n9iR+L3NyQ4NA5cb4ZLUwmZ4UUrPzgQhxjn+joYFlVFoAQHRfIxA==}
-
-  '@palett/fluo-matrix@0.12.0':
-    resolution: {integrity: sha512-VR+AsZZVkXqCXb0I1mYSGVNK2XWHzNRNPxt9/N1Sx7scAR4Uh62WCJTO+6VMBrUbo+p+clTNpQUr/h55QnlpbA==}
-    engines: {node: '>=22.0.0'}
 
   '@palett/fluo-vector@0.10.4':
     resolution: {integrity: sha512-z3L6HmMsL3aKuQAImXPf77ZFSoXSF/lHmNbgtsaDODv5gdLjStxS50E34ftTbFFuCmeuiDLunChE3SVIdukxCg==}
@@ -1074,8 +1152,8 @@ packages:
   '@palett/fluo-vector@0.11.6':
     resolution: {integrity: sha512-ztEKqEgA93HN5rdNelJAwULvBwiSbJELFBEYr2zBikRW9h32lu1RmOQ8nZ4tsv4rpzGLtLY4KZzJr5HtsZ5Fdw==}
 
-  '@palett/fluo-vector@0.12.0':
-    resolution: {integrity: sha512-7YBtqZhUagPVlDDc6NZD2XdaLc3211OAtICGU8O2FRQjhg619ahW60dYCOrq1sTEGkCzaNEZPlHlmS9EpceVCw==}
+  '@palett/fluo-vector@0.12.20':
+    resolution: {integrity: sha512-aJHkrSQWsFy8QVH5FlhfkIjZAXN2bnkE1EBoF5RlfyGEkaDDV0arYkdtyW2ydZlyt05DV7RqszggZKMekm+K1Q==}
     engines: {node: '>=22.0.0'}
 
   '@palett/fluo@0.10.5':
@@ -1084,12 +1162,16 @@ packages:
   '@palett/fluo@0.11.6':
     resolution: {integrity: sha512-x/tJPadhLLdnaCvvdjAEG+BkIus0YwWYhlVyujHYJnaqXtl/ooNyte7NtJieNqfWIn7Rg+wN77ZyX0OkboXYeQ==}
 
-  '@palett/fluo@0.12.0':
-    resolution: {integrity: sha512-INNARR0zY4Vvcgio3mcshljtIi5P40JaFeQCk/EvevBCE9Ma04AzBaVlgqJcBGb2FT+lQXW5VkDL39E0KZ27cg==}
+  '@palett/munsell@0.12.24':
+    resolution: {integrity: sha512-gZyxpJ0s6kiv6PwkUC+g95nWd+A8P6TbaGS0X3VJWtNL3pCczEpP0nRUbLo/z8JmymDIcM1ihKg+8LPtlhf+hA==}
     engines: {node: '>=22.0.0'}
 
-  '@palett/munsell@0.12.0':
-    resolution: {integrity: sha512-/6hp6cK7lVnpuQk3Ha3jtvCotOxD7Y1GPwBrIcNcQnbhCnqtS4nRFbq/qh+Hg9Gwpu/sPQ6/aEmo4GVhHp4axw==}
+  '@palett/nuance-midtone@0.12.24':
+    resolution: {integrity: sha512-j0gLa1aq0cF0WAbGzrFQn+aa38E+MoGC9rfpgGdqDf4D9PtWMN2OdGSmydZIxmoq1wmuApF+IMDS2SY80OjnmA==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/pres@0.12.24':
+    resolution: {integrity: sha512-5u0Gv8KLsnug5Q+a/t2lE3TiSq2lV6Ak6rP2hHB+D96c2qMKM4LuynkF3K4xGZ3RszgSgY3InGfP25F/lxuatQ==}
     engines: {node: '>=22.0.0'}
 
   '@palett/presets@0.10.5':
@@ -1098,8 +1180,8 @@ packages:
   '@palett/presets@0.11.6':
     resolution: {integrity: sha512-1ZpbNwD8ivmFVsNu6bcQCbiIaemfaG5e+ESzeYs5mGNtDjmoKNsBcSpnwaAQ9NDXk1pWf0BOkRibHtatA376SA==}
 
-  '@palett/presets@0.12.0':
-    resolution: {integrity: sha512-UOkFHKgtz3axCIhSBi/RSifK3C96GRNdWPKva8pULkxMQLpxTpae25hytjySKrT7DIcNxW5DOWyv5Gc/ZVbRRg==}
+  '@palett/presets@0.12.24':
+    resolution: {integrity: sha512-gVrR7N3Sw7Z/RP8Q7fYsz8v0oBwcy1qF9QcY56NGVjM0CJrkYcMT1mY8CZcgBhfFcMRGh/g67bzXAVNzVBf8gg==}
     engines: {node: '>=22.0.0'}
 
   '@palett/presets@0.9.19':
@@ -1111,8 +1193,8 @@ packages:
   '@palett/projector@0.11.6':
     resolution: {integrity: sha512-H3VITGjyaF2tyYotNhWj+Gs9qVqVJ2cBOXazqLGfA4OgWGzvJcCrU+trPG2sHDTOzYGv/wnAgsapIcLLn6q9zA==}
 
-  '@palett/projector@0.12.0':
-    resolution: {integrity: sha512-xzbqgN2n4Rvi/iewah8Fur/fPYPbiaZWdRm+mBmZ+BJz01PGBLpvvFUw2cc+8XwYQMeHieyefX/0vgc02M1Tcg==}
+  '@palett/projector@0.12.20':
+    resolution: {integrity: sha512-oNfpbD0QRBjHTX2a2gD/OmiA9pucWHeCNC7r+snA8gdPTwn9lQ6ZL5fIsBBolmDzo/F/hYJXk7fB1sB6W63j0w==}
     engines: {node: '>=22.0.0'}
 
   '@palett/says@0.9.10':
@@ -1121,12 +1203,8 @@ packages:
   '@palett/stringify@0.11.6':
     resolution: {integrity: sha512-Aj54jfL8cPQKdsaHlss6qzIfAmBs3UFm1JqInJ95vGdja+387Oqak+hGM05Us21TfNgI8089wFpGqvrBmy+KQw==}
 
-  '@palett/stringify@0.12.0':
-    resolution: {integrity: sha512-ISKdG1fAkuU+mkZ3GbJN4PIruQNiNzebFEuLGD7ANEv4FZw6jCywYBGDXEoDC3akK4DcRBmosJ575I4Ni0soZw==}
-    engines: {node: '>=22.0.0'}
-
-  '@palett/table@0.12.0':
-    resolution: {integrity: sha512-/q1C2TKYCBivFa5mmSHbb1RbTxfkEix6WHPuDdE/ySBQsW6JSQkD6JfKv0/2Z6k2NoG7EDrp03GPpj+C6WKvqA==}
+  '@palett/stringify@0.12.24':
+    resolution: {integrity: sha512-gWeMJ2hN24YFq6XliRNWdOLXwMNZ+5xJCkVWzHmkOAah4w2tnVwergYNWL1d2TrbI6u1Xz+9IHtD45VNzFTDAA==}
     engines: {node: '>=22.0.0'}
 
   '@palett/table@0.9.19':
@@ -1138,8 +1216,16 @@ packages:
   '@palett/util-ansi@0.11.6':
     resolution: {integrity: sha512-ZSzxgDkRf0YjZ2IpxGEeiUVR8zZwKRryVt5877Js414SpBSNYPt+8I9+6Dc/I70wrPuxFmN3LYTcgRz+J7gorA==}
 
-  '@palett/util-ansi@0.12.0':
-    resolution: {integrity: sha512-OrBxHjVVFC7KYqd8oTRigp84umJzM8hQVaI+J52byxd52z3333wGxYzk8HcJ8OWW6A2RoPGwa2oqVlyDPMWnOw==}
+  '@palett/util-ansi@0.12.19':
+    resolution: {integrity: sha512-+jxH7dQRFhIuu653+AlYz2uH37IUeUUGx9yLwPOuDnaAGHYEgD+Lts7W8dg1IqevJA0BNlhIGCACffDt5D5+Zw==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/util-ansi@0.12.20':
+    resolution: {integrity: sha512-gRL+OXj5feDjF8DmpuQjKNsU+v9EcDawyI0rUoLxGOmRZMO2f5B/QxwGDEehlWg9vn8uSDHYWBzdmN9wdl6isA==}
+    engines: {node: '>=22.0.0'}
+
+  '@palett/util-ansi@0.12.24':
+    resolution: {integrity: sha512-rPdUwkR5BcRTkhsLPGiTXY61KaUXELZvMwVL6D7umysXsoESalTK18ytkZG93Uts+2vWcR8LcdgllJdwEwNhkw==}
     engines: {node: '>=22.0.0'}
 
   '@palett/util-ansi@0.9.19':
@@ -1163,93 +1249,98 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/rollup-android-arm-eabi@4.25.0':
-    resolution: {integrity: sha512-CC/ZqFZwlAIbU1wUPisHyV/XRc5RydFrNLtgl3dGYskdwPZdt4HERtKm50a/+DtTlKeCq9IXFEWR+P6blwjqBA==}
+  '@rollup/rollup-android-arm-eabi@4.36.0':
+    resolution: {integrity: sha512-jgrXjjcEwN6XpZXL0HUeOVGfjXhPyxAbbhD0BlXUB+abTOpbPiN5Wb3kOT7yb+uEtATNYF5x5gIfwutmuBA26w==}
     cpu: [arm]
     os: [android]
 
-  '@rollup/rollup-android-arm64@4.25.0':
-    resolution: {integrity: sha512-/Y76tmLGUJqVBXXCfVS8Q8FJqYGhgH4wl4qTA24E9v/IJM0XvJCGQVSW1QZ4J+VURO9h8YCa28sTFacZXwK7Rg==}
+  '@rollup/rollup-android-arm64@4.36.0':
+    resolution: {integrity: sha512-NyfuLvdPdNUfUNeYKUwPwKsE5SXa2J6bCt2LdB/N+AxShnkpiczi3tcLJrm5mA+eqpy0HmaIY9F6XCa32N5yzg==}
     cpu: [arm64]
     os: [android]
 
-  '@rollup/rollup-darwin-arm64@4.25.0':
-    resolution: {integrity: sha512-YVT6L3UrKTlC0FpCZd0MGA7NVdp7YNaEqkENbWQ7AOVOqd/7VzyHpgIpc1mIaxRAo1ZsJRH45fq8j4N63I/vvg==}
+  '@rollup/rollup-darwin-arm64@4.36.0':
+    resolution: {integrity: sha512-JQ1Jk5G4bGrD4pWJQzWsD8I1n1mgPXq33+/vP4sk8j/z/C2siRuxZtaUA7yMTf71TCZTZl/4e1bfzwUmFb3+rw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@rollup/rollup-darwin-x64@4.25.0':
-    resolution: {integrity: sha512-ZRL+gexs3+ZmmWmGKEU43Bdn67kWnMeWXLFhcVv5Un8FQcx38yulHBA7XR2+KQdYIOtD0yZDWBCudmfj6lQJoA==}
+  '@rollup/rollup-darwin-x64@4.36.0':
+    resolution: {integrity: sha512-6c6wMZa1lrtiRsbDziCmjE53YbTkxMYhhnWnSW8R/yqsM7a6mSJ3uAVT0t8Y/DGt7gxUWYuFM4bwWk9XCJrFKA==}
     cpu: [x64]
     os: [darwin]
 
-  '@rollup/rollup-freebsd-arm64@4.25.0':
-    resolution: {integrity: sha512-xpEIXhiP27EAylEpreCozozsxWQ2TJbOLSivGfXhU4G1TBVEYtUPi2pOZBnvGXHyOdLAUUhPnJzH3ah5cqF01g==}
+  '@rollup/rollup-freebsd-arm64@4.36.0':
+    resolution: {integrity: sha512-KXVsijKeJXOl8QzXTsA+sHVDsFOmMCdBRgFmBb+mfEb/7geR7+C8ypAml4fquUt14ZyVXaw2o1FWhqAfOvA4sg==}
     cpu: [arm64]
     os: [freebsd]
 
-  '@rollup/rollup-freebsd-x64@4.25.0':
-    resolution: {integrity: sha512-sC5FsmZGlJv5dOcURrsnIK7ngc3Kirnx3as2XU9uER+zjfyqIjdcMVgzy4cOawhsssqzoAX19qmxgJ8a14Qrqw==}
+  '@rollup/rollup-freebsd-x64@4.36.0':
+    resolution: {integrity: sha512-dVeWq1ebbvByI+ndz4IJcD4a09RJgRYmLccwlQ8bPd4olz3Y213uf1iwvc7ZaxNn2ab7bjc08PrtBgMu6nb4pQ==}
     cpu: [x64]
     os: [freebsd]
 
-  '@rollup/rollup-linux-arm-gnueabihf@4.25.0':
-    resolution: {integrity: sha512-uD/dbLSs1BEPzg564TpRAQ/YvTnCds2XxyOndAO8nJhaQcqQGFgv/DAVko/ZHap3boCvxnzYMa3mTkV/B/3SWA==}
+  '@rollup/rollup-linux-arm-gnueabihf@4.36.0':
+    resolution: {integrity: sha512-bvXVU42mOVcF4le6XSjscdXjqx8okv4n5vmwgzcmtvFdifQ5U4dXFYaCB87namDRKlUL9ybVtLQ9ztnawaSzvg==}
     cpu: [arm]
     os: [linux]
 
-  '@rollup/rollup-linux-arm-musleabihf@4.25.0':
-    resolution: {integrity: sha512-ZVt/XkrDlQWegDWrwyC3l0OfAF7yeJUF4fq5RMS07YM72BlSfn2fQQ6lPyBNjt+YbczMguPiJoCfaQC2dnflpQ==}
+  '@rollup/rollup-linux-arm-musleabihf@4.36.0':
+    resolution: {integrity: sha512-JFIQrDJYrxOnyDQGYkqnNBtjDwTgbasdbUiQvcU8JmGDfValfH1lNpng+4FWlhaVIR4KPkeddYjsVVbmJYvDcg==}
     cpu: [arm]
     os: [linux]
 
-  '@rollup/rollup-linux-arm64-gnu@4.25.0':
-    resolution: {integrity: sha512-qboZ+T0gHAW2kkSDPHxu7quaFaaBlynODXpBVnPxUgvWYaE84xgCKAPEYE+fSMd3Zv5PyFZR+L0tCdYCMAtG0A==}
+  '@rollup/rollup-linux-arm64-gnu@4.36.0':
+    resolution: {integrity: sha512-KqjYVh3oM1bj//5X7k79PSCZ6CvaVzb7Qs7VMWS+SlWB5M8p3FqufLP9VNp4CazJ0CsPDLwVD9r3vX7Ci4J56A==}
     cpu: [arm64]
     os: [linux]
 
-  '@rollup/rollup-linux-arm64-musl@4.25.0':
-    resolution: {integrity: sha512-ndWTSEmAaKr88dBuogGH2NZaxe7u2rDoArsejNslugHZ+r44NfWiwjzizVS1nUOHo+n1Z6qV3X60rqE/HlISgw==}
+  '@rollup/rollup-linux-arm64-musl@4.36.0':
+    resolution: {integrity: sha512-QiGnhScND+mAAtfHqeT+cB1S9yFnNQ/EwCg5yE3MzoaZZnIV0RV9O5alJAoJKX/sBONVKeZdMfO8QSaWEygMhw==}
     cpu: [arm64]
     os: [linux]
 
-  '@rollup/rollup-linux-powerpc64le-gnu@4.25.0':
-    resolution: {integrity: sha512-BVSQvVa2v5hKwJSy6X7W1fjDex6yZnNKy3Kx1JGimccHft6HV0THTwNtC2zawtNXKUu+S5CjXslilYdKBAadzA==}
+  '@rollup/rollup-linux-loongarch64-gnu@4.36.0':
+    resolution: {integrity: sha512-1ZPyEDWF8phd4FQtTzMh8FQwqzvIjLsl6/84gzUxnMNFBtExBtpL51H67mV9xipuxl1AEAerRBgBwFNpkw8+Lg==}
+    cpu: [loong64]
+    os: [linux]
+
+  '@rollup/rollup-linux-powerpc64le-gnu@4.36.0':
+    resolution: {integrity: sha512-VMPMEIUpPFKpPI9GZMhJrtu8rxnp6mJR3ZzQPykq4xc2GmdHj3Q4cA+7avMyegXy4n1v+Qynr9fR88BmyO74tg==}
     cpu: [ppc64]
     os: [linux]
 
-  '@rollup/rollup-linux-riscv64-gnu@4.25.0':
-    resolution: {integrity: sha512-G4hTREQrIdeV0PE2JruzI+vXdRnaK1pg64hemHq2v5fhv8C7WjVaeXc9P5i4Q5UC06d/L+zA0mszYIKl+wY8oA==}
+  '@rollup/rollup-linux-riscv64-gnu@4.36.0':
+    resolution: {integrity: sha512-ttE6ayb/kHwNRJGYLpuAvB7SMtOeQnVXEIpMtAvx3kepFQeowVED0n1K9nAdraHUPJ5hydEMxBpIR7o4nrm8uA==}
     cpu: [riscv64]
     os: [linux]
 
-  '@rollup/rollup-linux-s390x-gnu@4.25.0':
-    resolution: {integrity: sha512-9T/w0kQ+upxdkFL9zPVB6zy9vWW1deA3g8IauJxojN4bnz5FwSsUAD034KpXIVX5j5p/rn6XqumBMxfRkcHapQ==}
+  '@rollup/rollup-linux-s390x-gnu@4.36.0':
+    resolution: {integrity: sha512-4a5gf2jpS0AIe7uBjxDeUMNcFmaRTbNv7NxI5xOCs4lhzsVyGR/0qBXduPnoWf6dGC365saTiwag8hP1imTgag==}
     cpu: [s390x]
     os: [linux]
 
-  '@rollup/rollup-linux-x64-gnu@4.25.0':
-    resolution: {integrity: sha512-ThcnU0EcMDn+J4B9LD++OgBYxZusuA7iemIIiz5yzEcFg04VZFzdFjuwPdlURmYPZw+fgVrFzj4CA64jSTG4Ig==}
+  '@rollup/rollup-linux-x64-gnu@4.36.0':
+    resolution: {integrity: sha512-5KtoW8UWmwFKQ96aQL3LlRXX16IMwyzMq/jSSVIIyAANiE1doaQsx/KRyhAvpHlPjPiSU/AYX/8m+lQ9VToxFQ==}
     cpu: [x64]
     os: [linux]
 
-  '@rollup/rollup-linux-x64-musl@4.25.0':
-    resolution: {integrity: sha512-zx71aY2oQxGxAT1JShfhNG79PnjYhMC6voAjzpu/xmMjDnKNf6Nl/xv7YaB/9SIa9jDYf8RBPWEnjcdlhlv1rQ==}
+  '@rollup/rollup-linux-x64-musl@4.36.0':
+    resolution: {integrity: sha512-sycrYZPrv2ag4OCvaN5js+f01eoZ2U+RmT5as8vhxiFz+kxwlHrsxOwKPSA8WyS+Wc6Epid9QeI/IkQ9NkgYyQ==}
     cpu: [x64]
     os: [linux]
 
-  '@rollup/rollup-win32-arm64-msvc@4.25.0':
-    resolution: {integrity: sha512-JT8tcjNocMs4CylWY/CxVLnv8e1lE7ff1fi6kbGocWwxDq9pj30IJ28Peb+Y8yiPNSF28oad42ApJB8oUkwGww==}
+  '@rollup/rollup-win32-arm64-msvc@4.36.0':
+    resolution: {integrity: sha512-qbqt4N7tokFwwSVlWDsjfoHgviS3n/vZ8LK0h1uLG9TYIRuUTJC88E1xb3LM2iqZ/WTqNQjYrtmtGmrmmawB6A==}
     cpu: [arm64]
     os: [win32]
 
-  '@rollup/rollup-win32-ia32-msvc@4.25.0':
-    resolution: {integrity: sha512-dRLjLsO3dNOfSN6tjyVlG+Msm4IiZnGkuZ7G5NmpzwF9oOc582FZG05+UdfTbz5Jd4buK/wMb6UeHFhG18+OEg==}
+  '@rollup/rollup-win32-ia32-msvc@4.36.0':
+    resolution: {integrity: sha512-t+RY0JuRamIocMuQcfwYSOkmdX9dtkr1PbhKW42AMvaDQa+jOdpUYysroTF/nuPpAaQMWp7ye+ndlmmthieJrQ==}
     cpu: [ia32]
     os: [win32]
 
-  '@rollup/rollup-win32-x64-msvc@4.25.0':
-    resolution: {integrity: sha512-/RqrIFtLB926frMhZD0a5oDa4eFIbyNEwLLloMTEjmqfwZWXywwVVOVmwTsuyhC9HKkVEZcOOi+KV4U9wmOdlg==}
+  '@rollup/rollup-win32-x64-msvc@4.36.0':
+    resolution: {integrity: sha512-aRXd7tRZkWLqGbChgcMMDEHjOKudo1kChb1Jt1IfR8cY/KIpgNviLeJy5FUb9IpSuQj8dU2fAYNMPW/hLKOSTw==}
     cpu: [x64]
     os: [win32]
 
@@ -1259,25 +1350,21 @@ packages:
   '@spare/arc@0.15.16':
     resolution: {integrity: sha512-+/R3CBXt37MOXazPxc2TrtEFQcNhhtW0q+RQomDbJmV1dPFhFfEqeK1RlamK+AFJrpgUWB78E2GGvhnFBxHyVA==}
 
-  '@spare/arc@0.16.1':
-    resolution: {integrity: sha512-IuiWAbGICkM1Ug55Wq00Xg1QGTzc9OIehB+oGfnyRRWM5K2LzydAHE82KG6lqaA3L+vEgYfwNFmBBfAdOrWYCw==}
-    engines: {node: '>=22.0.0'}
-
   '@spare/bracket@0.14.29':
     resolution: {integrity: sha512-C9tJsfZgT0G8ajTsxQCs5NRC+lyi50TXG3MhhRuiv4kn98cCYPLE202+RM39pVLau9KzwO/zY3YSJgy6Q8GgKg==}
+
+  '@spare/charset@0.16.16':
+    resolution: {integrity: sha512-Ih5UFetvrhCaHWjiC//I/BNS8iuelZQB6BgJvsIOx3x5v6NF9V2ROnuvyBI2eo13/DRRCCvQ3uHBBsc+vBr0fw==}
+    engines: {node: '>=22.0.0'}
 
   '@spare/charset@0.9.9':
     resolution: {integrity: sha512-tsloAPArzGL1WC+3rnAje4x8rL+gqChg4/K2u4tVmKjLWq20uLCb9XiWjkVwHuFjXh8myPMFs/4kZdExF+sFig==}
 
-  '@spare/cite@0.16.1':
-    resolution: {integrity: sha512-H0npjTalyihILDQIutrHYdhnWBTP8kaGR9Z6iEwp5Ifyoy6u2RHlLdJti6THmGpRa6jDxFwudi+BBL3v47Wc7g==}
-    engines: {node: '>=22.0.0'}
-
   '@spare/deco-colors@0.15.16':
     resolution: {integrity: sha512-RgBQyXlosMNrTfxglFC0143cSjjQXQgU9QUd3P8d6NOH3LvnxXe5lMCPJFKeKwa1lHpDy4L8/MMUuDWVp1Y0/Q==}
 
-  '@spare/deco-colors@0.16.1':
-    resolution: {integrity: sha512-Q93WNPTqUITrxM06psx4Ltph5YjnWbQ1NrjrpI1rHoHkhQdOWsMf3qk18lcOPNxvuOx8BDDVvLBTSzKh0M+Wfg==}
+  '@spare/deco-colors@0.16.22':
+    resolution: {integrity: sha512-PqIchYspaCG7CjbpWoTcbW3oQrnGVAQQj+1OfRfiWiDFKNkkoErnoXOCnE0DkOkDnFOat/ajauqfAChIsPBotQ==}
     engines: {node: '>=22.0.0'}
 
   '@spare/deco-config@0.14.29':
@@ -1286,27 +1373,23 @@ packages:
   '@spare/deco-config@0.15.16':
     resolution: {integrity: sha512-k75wI+tkIbv2/UK79P0Bj9dggjEFdCV6uNbB+dEGIql/cVdadI7n6R18JSHhTan0TzndVWusOUeYBtLSZwOKMg==}
 
-  '@spare/deco-config@0.16.1':
-    resolution: {integrity: sha512-hRvntPzl9bX8GJmsgt0Lb5GU+gfiF6ufy9N0uJNkaVcwPQZ4P2v17aYmoZRCFd5kVm4HLG29GOjYfJLKMiV/pg==}
-    engines: {node: '>=22.0.0'}
-
-  '@spare/deco-crostab@0.16.1':
-    resolution: {integrity: sha512-kmjo5+OB6syXUJbSW21lNF5tXmF5vH1EwY1lkdjWD/APzO9Qkn9hxFoD2t4grm6HWW5xBozvAD3I4NUijDKzvg==}
+  '@spare/deco-crostab@0.16.22':
+    resolution: {integrity: sha512-7ixR4ojo/3e6BsVjvKCYCt6IBaxca/HuNPbwL/OIsfHnJawOOTS65/iGenTUOmmeSPVGPFeKzYmrRALgvW10jg==}
     engines: {node: '>=22.0.0'}
 
   '@spare/deco-date@0.15.16':
     resolution: {integrity: sha512-t8ix4Cit+BnXqu9Qni3EBpJ/pl8UX2KkJEotwDttaonFQzr9nODP1AykjetlkTRjgy5EnHj4gSX8+BPdGC9vSQ==}
 
-  '@spare/deco-date@0.16.1':
-    resolution: {integrity: sha512-smHkWArlF+5uVDcXkdXYupdxqcgVjQP5wtRbbZGy3JsuBag5px1iP+k1QIamzXIjLmcESthHw4+4Dekol4NiTg==}
+  '@spare/deco-date@0.16.22':
+    resolution: {integrity: sha512-OPhkcXXUkEhpTjVRKmQSYpzrD8Gu29lnwrdQbMnHZ64I6Js0kij1R+jMj7Vdo12ZSn/ZLZH+XDNKJ1vmhQxwMA==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/deco-entries@0.16.1':
-    resolution: {integrity: sha512-RMLyPAjb5lp6s/PP5qWKlDGJ8zHaiQ4juMbL6l+Ja/QfN/x/SctQbXrWDhtIXE+Jmy5l5wNzC8dX8ofEJ9BuSw==}
+  '@spare/deco-entries@0.16.22':
+    resolution: {integrity: sha512-RSfwe/LbVOryQlMs4Nzd5b2u/VnSn/5dRvMPVU7CpLvVQevVbXEmATvvq3Yn+tux6OSJgsbV/6Zvx7gCWkSPOg==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/deco-flat@0.16.1':
-    resolution: {integrity: sha512-RC4b1+HMvs3S7IiwJX56j0eCSpBG29Iej2+rRQ68qKro8R2gZis3vTENtLIgR5FFlYjajv3a/AqJq/MS2WpYgg==}
+  '@spare/deco-flat@0.16.22':
+    resolution: {integrity: sha512-MbF2pY0kwNKsrASYWpJHxMgH7g44F9bnTkopZs8nubDmvBSHkFguE/70EifYd4TyPoXNidafagPgpBGPw9RclA==}
     engines: {node: '>=22.0.0'}
 
   '@spare/deco-func@0.14.29':
@@ -1315,27 +1398,27 @@ packages:
   '@spare/deco-func@0.15.16':
     resolution: {integrity: sha512-VKRgrS2Yzj7edlzV8sAuPjLxDurruJNIQohsKYZMFBOXGTzUl8SnrC53fN5tBqcOwP92jTWQFnAzqPmhkWX9xw==}
 
-  '@spare/deco-func@0.16.1':
-    resolution: {integrity: sha512-3DuyFNVbNG0IZ9Qtv/oHgQRO20O5qWPj6oGmuKoBQKGnu6H8V7A6Gn92bOhSMQISYhynKPoDExoEiR3mdOD5ew==}
+  '@spare/deco-func@0.16.22':
+    resolution: {integrity: sha512-+SW35fdYjnlA4UulUp6ngVuCQbh3l0peaCEsrWnbTg/2lqIlb6SNfWdKCydz5halnModYiz2EcYiZUwl6tvlWQ==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/deco-matrix@0.16.1':
-    resolution: {integrity: sha512-VWvFIHv4N/T/WFklAt7XaDupIDs+aOh42MWF9axWK0LuP3ocg3FxSNo78osiV/Q3+ll+ScuNq16QVJELJ5dFww==}
+  '@spare/deco-matrix@0.16.22':
+    resolution: {integrity: sha512-Zr0ABpCz+1Pn1nQXNTdWh43QT31rLxC2eqIz4LV8l5vXWa+bh559R2Dh1RlxCrGNPt63QW9p3qjeplIlq8uNbg==}
     engines: {node: '>=22.0.0'}
 
   '@spare/deco-object@0.15.16':
     resolution: {integrity: sha512-OiDOqC0DA3MLItoNACpsz9/mwX64RKlEsFDxq5U0cC1wLC1P8j+BO9P5cr05t/aw5r9e93W64ntNc/5Ry/cpYA==}
 
-  '@spare/deco-object@0.16.1':
-    resolution: {integrity: sha512-YjhQF6GM8zkCCYHnoCRoeP1yGNjftd4HuDcV6SxpYpwGPrRarNSjAlIcc4fZddWP5bO9R81+Q13b79+cWm+rWg==}
+  '@spare/deco-object@0.16.22':
+    resolution: {integrity: sha512-Tx03S0uwUuWP0UUH3WAAKxJM/Jqu61LEJoSGUvCvbWxH4chobig821srO280w+qwB7fBE6KhNcAwKUA1+IJuFA==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/deco-pale@0.16.1':
-    resolution: {integrity: sha512-ZW9Jq3hOdrumMgC4OrEA/OvZmkbFK2NOB/PoUD+xoUrAs6/WDwr0SyBLAOv/x5NvSnsaVGR+u2q7tdEFTwTO3A==}
+  '@spare/deco-pale@0.16.22':
+    resolution: {integrity: sha512-WJfoW8jzHk4OFo9SRj69MpvzPQvXLGM0B9ewTw4URrYLMwe/LzHpsOVlHEbllM46xHNMT2w5sAeHn8uhZMQR/w==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/deco-samples@0.16.1':
-    resolution: {integrity: sha512-2HU5Ivc0Kcxk5VR3bOaWDY6+paqUqjLLyAvSLgvTiig7BG2Yrs6uCxdzIRb0kRiYrjoCtfDwAfNWaqMx+ibRcA==}
+  '@spare/deco-samples@0.16.22':
+    resolution: {integrity: sha512-4UBcxyO3irhgw+DgKGwp+88RZSds3bJe+KClgIVCvdjCmW2S2h4TPEuT/2SJPHyImk018przH3PIOJxqsnTh2g==}
     engines: {node: '>=22.0.0'}
 
   '@spare/deco-string@0.14.29':
@@ -1344,38 +1427,34 @@ packages:
   '@spare/deco-string@0.15.16':
     resolution: {integrity: sha512-IUB4xy4XbGL2zdkmbwVDvVdLkSqXvPrsCYav8ybmSJrGhF30eVjI1fKCLG9Xhy8/Ls0weGjhcoUPCI3YEPYzYQ==}
 
-  '@spare/deco-string@0.16.1':
-    resolution: {integrity: sha512-u6g6xva1mseK052xMFQq0fpwKpj3pFds/YAJFLnq0cNbYbm2e85FH0HRwSuZC4bB11BIwc4QVqodK6tRT1x7iA==}
+  '@spare/deco-string@0.16.22':
+    resolution: {integrity: sha512-KDQVY3aBRMDmmFAGapOIEgLYGXLfZ5pPJb7HRC6j0K06eeq2TAXoZT+gY3swY639vFaFBdueN1oyHwfHMNUhqQ==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/deco-table@0.16.1':
-    resolution: {integrity: sha512-ZkpYzEqMs5ktC4SwKLrjRyVHTSQmwIiPKifz7PkC6VUWsPKR8yZpzbnpIVc26gwKYJldZz0SPNkH5hjif0fORw==}
-    engines: {node: '>=22.0.0'}
-
-  '@spare/deco-util@0.16.1':
-    resolution: {integrity: sha512-8EmQWHtWtynq+3lZx0VEv9Q4JnIk0N+g9USjTt3PN0sjIbolZbvWikJ1hIYmyeYh0tbc+4YOkIY5cYLOly3mGA==}
+  '@spare/deco-table@0.16.22':
+    resolution: {integrity: sha512-o73dql+VItNGC7G6j0IgqCJN3gArxngMqGQnFd7v5nyxu/hxobMJMHxD2KAwaxSkE1fBSfjk8NjTBx90uUHLHg==}
     engines: {node: '>=22.0.0'}
 
   '@spare/deco-vector@0.15.16':
     resolution: {integrity: sha512-n/bV6TZTAQ5uMM9LE+z5uP50+0K5pT4lBVw4ubk1H/cL18a6uv9cRaTiHdu3lXUZpC3xL7zu5WUcUuLOD9UAbQ==}
 
-  '@spare/deco-vector@0.16.1':
-    resolution: {integrity: sha512-QRdx9C1bIVGck65ZXScNVCEWtyL+V2kmYEmzNR+dKwUb5cDQ96LcV16oQBvn7QFYpIY7TI89+stnjwAG2YUYfw==}
+  '@spare/deco-vector@0.16.17':
+    resolution: {integrity: sha512-ipbBPlyMVH0Y+7zeNXEMy2fKAZQxKCThaOPn37kE3DAhc3bn6slLr3s4LhPf7ht5MnDyH1KQASq0hobVZyseCg==}
+    engines: {node: '>=22.0.0'}
+
+  '@spare/deco-vector@0.16.22':
+    resolution: {integrity: sha512-PJkLkIxfcwqSoPoOtou3GrfU6HNz+TqQDJLoM3HAeiHK/bBwBmaD13/axjEE8hPAB6uHgve36+/rDFHToeFU8g==}
     engines: {node: '>=22.0.0'}
 
   '@spare/deco@0.15.16':
     resolution: {integrity: sha512-tSmbBCN+FW4JdhI8Qkn22tfAVxxtwWLae0qnRJ+inQcOO2Lx5tDGNHJ3C7XliG6WjRB76y2YnW096Q09HBm4Qw==}
 
-  '@spare/deco@0.16.1':
-    resolution: {integrity: sha512-pc/nKiUt38XIMiN+mwATeW6wuCEmpZGokZb3jbRk2IMyZ8AdWZjRlO8bB7szmGnG4dVVZPDitKHKGgGYhjgt8Q==}
+  '@spare/deco@0.16.22':
+    resolution: {integrity: sha512-9bSMEskGtDJ47rzXFZAj2qNWRtOgVBaxfLsudfcVaHtpjq+O/eGxOjL4Op8QhkhnrgGddXpUPOXFjjuYY8etoQ==}
     engines: {node: '>=22.0.0'}
 
   '@spare/enum-brackets@0.14.29':
     resolution: {integrity: sha512-mmmm5ZFTws1KwybHlz75/QGkZcxMPv8FGVQIg2iFfd8gV4WBtVCFl+rvABPcrqIiCKikDgENuReOweVbPMjEwg==}
-
-  '@spare/enum-brackets@0.16.1':
-    resolution: {integrity: sha512-+G9BpSkAX0xpFtJQNPNhUZt++MXvCTYLNp9m7kDR3UdUP0mbS9FgoxYodLLQx/NBC6H8Q5+2wqrx7/riDetm4g==}
-    engines: {node: '>=22.0.0'}
 
   '@spare/enum-chars@0.14.29':
     resolution: {integrity: sha512-WUg7dxzk1Nbo77iLPBku4clZ4BDzPPQhMh5UzkErSu4JudyK/pxWIPr/iEXvoYqdk7nPhpGmlIBW0gTkUdm5ag==}
@@ -1383,8 +1462,8 @@ packages:
   '@spare/enum-chars@0.15.16':
     resolution: {integrity: sha512-EEdLTfL3H0BwJ+5xPcP5CMS+ByTRXnmfytGStpRUWvQM+Y40kbx/Zx258iuZ3eajU8nRq81Jfu/ZolF4Q776Dw==}
 
-  '@spare/enum-chars@0.16.1':
-    resolution: {integrity: sha512-XHJBLPSaBRaMfI9UA6CWVYs947bhmIaDOnSyOnad+YB++c8vEVO9i9Ixx9jfvm95BCK7hZLqhUWuPnzRK4T5aQ==}
+  '@spare/enum-chars@0.16.16':
+    resolution: {integrity: sha512-YAqTFG2oQtvqfkEORVcN6AXOOfo3ujJJIlZTTB5cehHFOlUmyW7rs8m/XzZ+C/a5o7XC336lPzmB2C6/vBx+bA==}
     engines: {node: '>=22.0.0'}
 
   '@spare/enum-chars@0.9.9':
@@ -1396,44 +1475,44 @@ packages:
   '@spare/enum-full-angle-chars@0.15.16':
     resolution: {integrity: sha512-QxtIqMFz+s13yZ5kuj3EpkNyzysQf4fkpuo58YYgZxmjP0nUNwl/tVn9TqUAbgyAU6Ada3KoROFcVj1yZWmvdw==}
 
-  '@spare/enum-full-angle-chars@0.16.1':
-    resolution: {integrity: sha512-xe8r6jfZUt7aeDEVpIn04kmMwTk8zXRfoSMAmcxX3tnmKs5QKtI3HG+CQ7GSTFLMTEWQZQv8ObQXb5kyopF4/Q==}
+  '@spare/enum-full-angle-chars@0.16.16':
+    resolution: {integrity: sha512-S8IIKkmjxvNmOYPE1Iiioy6S/Jf7wGnLT7+L41rOh69KYtyeo33kTAF0vix8UjYeiYyrL0WC2o+AxGrcyxyRYQ==}
     engines: {node: '>=22.0.0'}
 
   '@spare/enum-full-angle-chars@0.9.9':
     resolution: {integrity: sha512-Um+QdwJfA7xCaWXKzN9jm39FhbBjuGgHMF3QLDCS0onIC1Ujj9akh7B2hRbqVDr+bo0283hhs8LTVuYiErqksA==}
 
-  '@spare/enum-quotes@0.16.1':
-    resolution: {integrity: sha512-1LtgulIJf3MeAuh1BFV7Xm79GAYXxSbOALDODtTQBthBgGOfNkZqFnwDBitVRBpPd8fChA6/7eQ33/rSMg9rRg==}
-    engines: {node: '>=22.0.0'}
-
   '@spare/fullwidth@0.9.9':
     resolution: {integrity: sha512-nNhmPBa6Do1VITuoSxZzQ3oTC147Yblw+p2yzjURSMjWj/m98VSHJR9nrtOy+M8gNSed/c/h3loaaSJKVYiFdw==}
 
-  '@spare/lange@0.16.1':
-    resolution: {integrity: sha512-mGL/5ssfH82XiuZjpM5usJ/B9zD/6AV8jjSn7dMJ/Avsw4q1T55o+Uhbnfz/fiDhiH8iO8I9ide9+pJN3CHNBw==}
+  '@spare/lange@0.16.16':
+    resolution: {integrity: sha512-gpS5Y4oRcnSdNqwzh9Tq/YbNXvuTpGrCtaEh+8OhZB2zJRouT937uml6z7g0WkH5ml6/WRPrhzsxd5YFJbOwHA==}
     engines: {node: '>=22.0.0'}
 
   '@spare/lange@0.9.9':
     resolution: {integrity: sha512-0u4gXeBukzU79T2oXZrG29DkE0FlfuXbZd9uVR8ZyFeGH/fFJYXdK0vBpGPCd9XiXzajyyRoVHW31Ob4O1vjcg==}
 
-  '@spare/logger@0.16.1':
-    resolution: {integrity: sha512-MZlM20GdD578A4EZ/bbMBRYcq9fJBz0reH6W/AGpkTm3IbR1+B5D4y8N/p0nCT8JFG+NZUgiLw+spyIRn1iytw==}
+  '@spare/logger@0.16.22':
+    resolution: {integrity: sha512-2+sXU9RfG27w1B500XkidwFHO4BSf+fjIMX2Dai72XeJyiNldk5kacmLkhM5fjEKGBTwH2zNo6EZjnKKkasJ2w==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/matrix-margin@0.16.1':
-    resolution: {integrity: sha512-uAGbz32AhjyjR7IdHs8UXG7q1OYB2ZuIfQ+lOnNa9hurLmsoFwYcOfPMJhonbhrz0A2DWpnhF3D9zrtNF/2aSA==}
+  '@spare/node@0.16.17':
+    resolution: {integrity: sha512-jVibW/ZAKrnwd4n4T8wjsa9bZVYPr1KbvO3N+QCVjl0SdlXWUa0whRBGLi+Fakg3aZt3mq1nmerOP80S8vp9lQ==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/matrix-padder@0.16.1':
-    resolution: {integrity: sha512-6oKeVI2tVH3sWbe1KCLD/F7OU9eXrPpc1TAtZS+w0ExTLJgiGwVWGSAYG2jj6A25VkDPEaRTCUaO1RPajyzarA==}
+  '@spare/node@0.16.22':
+    resolution: {integrity: sha512-UmCxH8Ad/+waV21dfoaeQLMWXRl6f9S2Q839eHDUhvW63AB97Vs6uV8V1iOiP3ET7nPuYr7ODqs4qDn9ZqOcDA==}
     engines: {node: '>=22.0.0'}
 
   '@spare/pad-string@0.9.9':
     resolution: {integrity: sha512-EJ0KlSvKpqFq2a8i5RqdmEo8UOrjuUdhNri7wlELxP/ecOg1244GQhEe6ZwLZeQ41J386Ben+3KkQvozJTy1+A==}
 
-  '@spare/phrasing@0.16.1':
-    resolution: {integrity: sha512-s4I/IhxyeUTls7IF9yo3T5jfM1auP+pMNcrZPlOBChuJ2aMS5tbdKlfPS4ofW+4d59sYRj0WADEndNEBkQUCkA==}
+  '@spare/phrasing@0.16.16':
+    resolution: {integrity: sha512-B51/s/koraTO+tKJmU4VEKzO9tx7hO4b6GX9y5VT439G62Huk/Fl9Gcrrwjxk8FrQXILH1UE7rb4PfRtBX86uw==}
+    engines: {node: '>=22.0.0'}
+
+  '@spare/plot@0.16.22':
+    resolution: {integrity: sha512-zchLkpaGQwBSG19SDlppI+dy2HI3aibjHcDtB2nCBDdP6WEeXRT87UuLterGwMm1oKnvo2FJL8ud9AfJbr1GSw==}
     engines: {node: '>=22.0.0'}
 
   '@spare/preset-deco@0.14.29':
@@ -1442,12 +1521,8 @@ packages:
   '@spare/preset-deco@0.15.16':
     resolution: {integrity: sha512-w8t6ZhYI4LfiJ8rNpsBflwYDwftH4tIS/8r4tNgv1nkJJt+X2QtZZbETwCEgO6mV8z6I2ekuizuERjxPe4X4zg==}
 
-  '@spare/preset-deco@0.16.1':
-    resolution: {integrity: sha512-AmhoaXX+7o7PpNVrFSRf5wIyiJ9uUt4dluAN/5wg0uj/eGrjQYRmb4ppb/x4JS2W6bihZWOQ19Q1nTeAtl71dA==}
-    engines: {node: '>=22.0.0'}
-
-  '@spare/quote@0.16.1':
-    resolution: {integrity: sha512-Mb00evSMX1YMElyCdHZeOSdvYaWcH31yVEUW/fab31mpMd1mB86yLy1NxcSnuycIekkVzIM446pX4OrTr08IFA==}
+  '@spare/preset-deco@0.16.16':
+    resolution: {integrity: sha512-291E8Gim/fr/mZWMHHjpWxowU4NhG8CMnwadq/Kcnnhp6exDZHkOo4xQmlHGDnTBgispKApoPUotLS7HLlDfkg==}
     engines: {node: '>=22.0.0'}
 
   '@spare/regex-charset@0.13.16':
@@ -1457,23 +1532,35 @@ packages:
     resolution: {integrity: sha512-vkyFLiRtfDMsMBR8E4429ClW2n1kZQTManT716bd9uvfOYxF/eegsl/BIvTbZ+qrYhaymZvvQqd7f69LmwDc+Q==}
     engines: {node: '>=22.0.0'}
 
+  '@spare/regex-charset@0.16.16':
+    resolution: {integrity: sha512-LO5qd7tRFdXq2yl9roGMk8vh3QfUf0OQpYiGFhyAhpm/HxuKNUDslDpDCAgzSLc5nOpkEFTxiwmCNh7EbcU2MA==}
+    engines: {node: '>=22.0.0'}
+
   '@spare/regex-charset@0.9.9':
     resolution: {integrity: sha512-erFGDfZTQs8TY2A0ir9fvWWEobcvUPasYuB+WEYZ/LAIysP20XoI95e7SGQDaIMxWbVtEXJZiHOa8a/gCFQcug==}
 
-  '@spare/regex-phrasing@0.16.1':
-    resolution: {integrity: sha512-1nSR9kjnMfTwln46eyQFJVchNnJIfW6Br9OoRGZKZ8USp7ZcqR4sES/6mZ26G6S9pkdObz8ql7H2fjVmtpgEhg==}
+  '@spare/regex-phrasing@0.16.16':
+    resolution: {integrity: sha512-vRZgSTM3l6UtzCLhqDEraU8+XQrunxK7u40ycrm/QXJwSdZ41najBa09d8xWynU+MEsP1mk+HB87uRQmpvHpOg==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/ripper@0.16.1':
-    resolution: {integrity: sha512-YTe3acBDBYIWWmDZdM/4HGRCGtZs2nLFyKb0kERsnEMleYxM8NInZ6Kb1DWLyqH3Ol334QskADKhUqwzHk2/5w==}
+  '@spare/ripper@0.16.16':
+    resolution: {integrity: sha512-7F0SQH6ZkYpdFisQNfizRWcvgMNq6T3K+ma34O4WsGTnFcyT0VIYnwC6zXAlBh3PfoGa04rIKHBZj++Eqv4ZRQ==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/says@0.16.1':
-    resolution: {integrity: sha512-nYbbaQ1rECW/HhcU117be1oY108E81y5E+gaqPioXrV88arhAhpZa/aqI0bORFO1rp0ubh/F0CVLnD2mxHp0JA==}
-    engines: {node: '>=22.0.0'}
+  '@spare/serial@0.16.17':
+    resolution: {integrity: sha512-61vbl+g1X2hoxiTRltrVufmLfeOsd2pM4UUHFFQxoDTQM/fuYPZEPGGVFUi2jPjNS0iv7tIvi42IKMNUJ7aO6g==}
+    engines: {serial: '>=22.0.0'}
 
-  '@spare/splitter@0.16.1':
-    resolution: {integrity: sha512-08UsrR2aJsHK9J2jtiCeUxLBXQWM+HkFM0+iVZDOEasEa6/x5eZl46LnwGyOFZEQAUjKxWTwAcQ5Uby26Q4KCw==}
+  '@spare/serial@0.16.19':
+    resolution: {integrity: sha512-M2AYRwEQS92JXqUQK5NYqwjaLfeA3AAVPP3cUge+qIKtC8NugScl4x0pdEF8vJvuyAwbCwGHLuHwCxwkMMy5Qw==}
+    engines: {serial: '>=22.0.0'}
+
+  '@spare/serial@0.16.22':
+    resolution: {integrity: sha512-pV7nWfQpKniaUwToQV5VPPM9TOZFZVP3EnAIFHSLr392S6AcjWDUbE8TQnQY1nsghc8VmNsmSY5DCk4ffIkSJA==}
+    engines: {serial: '>=22.0.0'}
+
+  '@spare/splitter@0.16.16':
+    resolution: {integrity: sha512-FuJiXpYOcgFvF1UyG7f/rPHX7VS+auTmOGNoHFS11tWERMdtNhzl81j83P2fcaH5L+QLERhPI2jjsMkw/aZ6SQ==}
     engines: {node: '>=22.0.0'}
 
   '@spare/string-value@0.14.29':
@@ -1482,19 +1569,11 @@ packages:
   '@spare/string-value@0.15.16':
     resolution: {integrity: sha512-cevyteqtV/HDC0jgAql0mjWiSHqKeLSzBbwD+z3QkO7BF0/dVwuXykyfplRxelrAhlVJufensFBcbpMnwpBcBA==}
 
-  '@spare/string-value@0.16.1':
-    resolution: {integrity: sha512-CtLkiZjvyqF/o4QwtI/kYCU4iEYz7fd54uXNQMQLatbbUetAY9nbl03rm90XleWI18PBq1fNtsxy0vWanb4v4g==}
-    engines: {node: '>=22.0.0'}
-
   '@spare/string@0.14.29':
     resolution: {integrity: sha512-yFkRVzZdIRCum1jlnOL1yXCjVvUkok9uSfUNazd2B+Yd3SZLmYBZJK8ibfGpsJZR3lb+NIg/DSehbXJEOe8ggg==}
 
-  '@spare/string@0.16.1':
-    resolution: {integrity: sha512-4LA7LGK/k4rKtE5JYb5WDDKOUNpcExA28xUtjhgDcrD/Yr8OpOIaQiN5mAEqnJr+w6nbIYtFNc/TA1AOFBqwjw==}
-    engines: {node: '>=22.0.0'}
-
-  '@spare/table-margin@0.16.1':
-    resolution: {integrity: sha512-xMhDyN5XMB/KsuNEMedqv2A+sQdyxxmqrzmErbPEJEDLrOi7fItSqCpwSzHpJekZ+BXElc3QDWx3IE3eewvORg==}
+  '@spare/string@0.16.16':
+    resolution: {integrity: sha512-0sj+3d5FBhARKWIljopyE2MRrk9lkkmMdpr1PmHkLjrRbD2x9WXhh0RGCDjHlHr6pU6gIxugud3xxY+uHzOgXg==}
     engines: {node: '>=22.0.0'}
 
   '@spare/translator@0.14.29':
@@ -1503,130 +1582,133 @@ packages:
   '@spare/translator@0.15.16':
     resolution: {integrity: sha512-QQEVQQAc2mEIQxLCm2aLwuPfPvtoxD2BrbegFs3o7F4s1/Dn00TaTvELwg23J6hznA8l4tNC2SPlkk/lY/X9RA==}
 
-  '@spare/translator@0.16.1':
-    resolution: {integrity: sha512-xn79iYwmxjODKeb3dLd9AsG/JWw7liSJI5Pmx5Pbvcpe8Ba7JDaeedxODTOrbdVWpLrvQkAxZsC3M9rJ1b78bA==}
-    engines: {node: '>=22.0.0'}
-
   '@spare/util@0.14.29':
     resolution: {integrity: sha512-jWO8ivCvNjliegkxi5We1oTV80YmrAW2hbvd8xmd0HeuJGeyCzWdQB9ybM4l2+PoQg6mbEuxb7MxBQFPb/uyNQ==}
 
   '@spare/util@0.15.16':
     resolution: {integrity: sha512-O0bNGCXiiEV+TRZ+qamU61pYWEn0VIyY5XVXArkkzkVCjB1M1D6FJpUDK5c9cVc9xKKZzPfRnZrAw+PySStSYw==}
 
-  '@spare/util@0.16.1':
-    resolution: {integrity: sha512-wtSImIcQY7gaKlcAomfhQi5Prnp3LyiLa0bi2VqVZ4mM7nMYJkntw3HLNpZjAcAVZOHkd5Dhy1zeF1gXHr7Skg==}
+  '@spare/util@0.16.16':
+    resolution: {integrity: sha512-IZOt6zBva0vGNHNBeVfnQ+UFjDGjHU44w9GqtAKqTTwfO16tFfhomTSx3BVJuagl4LHC5zc701/Ba7bYFY/+Yg==}
     engines: {node: '>=22.0.0'}
 
   '@spare/vector-margin@0.15.16':
     resolution: {integrity: sha512-z8R+8/uFx6vjl5NWWmAOYB1fTNtalmkmbMExnh39tInLCe8tnhPdF30ojGRqfZD8H4xRTqKqvvXnzYlULksJyQ==}
 
-  '@spare/vector-margin@0.16.1':
-    resolution: {integrity: sha512-aMJ85SiTp70vpBuL9WHbgoOORRnM2+XR75wXC3GwTK26ePYdSImu6S76KR13VpWVi3pXRh85EGeX+Y0miPjZHw==}
-    engines: {node: '>=22.0.0'}
-
-  '@spare/vector-padder@0.16.1':
-    resolution: {integrity: sha512-+R/oHw6aB0Le+zOEPpJnbcXI2ybn0BnH9myIIn2sRUop/3VxZ787IdslIxZHeBRNFjHTXvl1He3aeeGOX/balA==}
-    engines: {node: '>=22.0.0'}
-
-  '@spare/xr@0.16.1':
-    resolution: {integrity: sha512-U7c2nFcyzvFbXhvgLOBrTTos6cDtOtcJDw+f/GBCHsDWFhnv7TRnP9H3vyjJQx0SbMgdU31uKyjCk/4iLh+97Q==}
+  '@spare/xr@0.16.22':
+    resolution: {integrity: sha512-rkNRGUiZ5XPbkM7Qvy/DpAzRMdniphiOb60TyjVM8QF0fNQ+wlQl+GrlF9O7p/IT5y5Rd4aIP3URneiehjTPjA==}
     engines: {node: '>=22.0.0'}
 
   '@texting/bracket@0.1.13':
     resolution: {integrity: sha512-pvhP0J+MbpsWmAUtXppo7cC1Ot3DtypySoX3nRRjQVpfgGFwC1WAW5ljSknc9A9u50wAZ5n2Z3XOc91k5BRlAw==}
 
-  '@texting/bracket@0.2.1':
-    resolution: {integrity: sha512-pALeGlwe1MoXLdknL69ZiE1+lpjIIaZkYOCQLJ08cr/IJe5O3fLX3sjWo27Mfz3v+MmgZMZdtRbIoJJ9ynSaxA==}
+  '@texting/bracket@0.2.3':
+    resolution: {integrity: sha512-XSxZv88hk52YhdmebU6/Ln7ZLzLY2Um8PxbQ0kVTsHXSHi+nDZGTnq55jWZgOUYGFnPr7VWLLX2xFcpRDzPKPg==}
+    engines: {node: '>=22.0.0'}
 
   '@texting/charset-ansi@0.1.13':
     resolution: {integrity: sha512-1vJcEc3hlJ1MV5N+CpnyRRT4ykh+ydEDadjEvah6Bh6cR8jbBzVUQ3vtW+cEQP4RXoOS1csKIxJ40DJhdvRZQg==}
 
-  '@texting/charset-ansi@0.2.1':
-    resolution: {integrity: sha512-gwQTCbi+SD2KZvmXro6tWh01FVOaIjSLaQeE1hMV/9Tky5sYkeqQaR/zkrlnWkWM1IN6Pu9iwfqLPiFCu5dCCA==}
+  '@texting/charset-ansi@0.2.3':
+    resolution: {integrity: sha512-RR9mKASFFo0LIu8U/f+QGd6EcWAWjB+QFEC0wUPdeEnP7JHscjs1zkFvqgxMnbEjW5YEU4QUhskwrhngPN3HIg==}
+    engines: {node: '>=22.0.0'}
 
   '@texting/charset-fullwidth@0.1.13':
     resolution: {integrity: sha512-uJukYuFvZf4cHQweO6WpIXzP6n+NSXjt0ddHiAAZBXmwvFPu433SrbuwZp4GxPGzYkjezAAzK0VsIYUVoi05TQ==}
 
-  '@texting/charset-fullwidth@0.2.1':
-    resolution: {integrity: sha512-237bZ1nPvW82rIIP91LaagaPzJ4uFfv/rHjZfzfwldsk8B8QejPQohAqAyfF3CDTANrd3TJxsD3Ywn6p2UL7Qw==}
+  '@texting/charset-fullwidth@0.2.3':
+    resolution: {integrity: sha512-4i6FfZfVLjmKUh/jYs4Tbo/6IDDvjaQjWiSRnC3m7JOsp3B4HK9vJkEZgn53gFaZGFVg08D1pG8d5s432EG60g==}
+    engines: {node: '>=22.0.0'}
 
   '@texting/charset-halfwidth@0.1.13':
     resolution: {integrity: sha512-DkFg8RGvPd0FoNLI0fhFgYCceRlFJqgbx+tjOp5KjW8urgLMECSNOFoG3Oqj4jlvsu4NJnsEGj5nmrw1gOmlHg==}
 
-  '@texting/charset-halfwidth@0.2.1':
-    resolution: {integrity: sha512-9k6dTj9PB6wDd7f8AjcMcWS4l+T/fU4FPaqCAu4uEzI3nA2t77iqV9drIW7rIGg6gtXja/R53dvWUlfeNmdHFg==}
+  '@texting/charset-halfwidth@0.2.3':
+    resolution: {integrity: sha512-ZsQ86hymlb0qQFHJy/MHOkRxRVFt9vCyFAaxgJiVbDY6A/1U/mXXiepFALhq0dUzdmy86cjP6pqZ97CiCP586g==}
+    engines: {node: '>=22.0.0'}
+
+  '@texting/cite@0.2.3':
+    resolution: {integrity: sha512-qcdfHVxWSk27Es3mmHq/k2uBtIiuZz3Yjlwq6q19KFqrEPV7ov3FyQ2JsFA6zHKV3A5k9xG5E4YlO9Owp8LSRQ==}
+    engines: {node: '>=22.0.0'}
 
   '@texting/enum-brackets@0.1.13':
     resolution: {integrity: sha512-szkYthaKrRk/kOwQsmbHckov/I47NE/DFBcNPV+ISazriKap+dTu2jNQnk9y9cLRWG/CgGEW2I7uG/MSNIrlfQ==}
 
-  '@texting/enum-brackets@0.2.1':
-    resolution: {integrity: sha512-6PS40in/IgNvt1cGtOSLMaQt/BBkk5GsLVaFnR63JvU2JkByVoqxCNOtupARvWo6JisZabHYqhdkRE7ong6n+Q==}
+  '@texting/enum-brackets@0.2.3':
+    resolution: {integrity: sha512-WDedZP/oGH62iEcETmNHwlF5/t8ZqXIGpBviPvVwHDLgDm/UBpSi9/1k6yjFkSXf/vTd8Fdhymu9M9k3xPAXAg==}
 
   '@texting/enum-chars-fullwidth@0.1.13':
     resolution: {integrity: sha512-TUWjwek9iGrNERzatKy2S3LcCNUThwV8IpWSezGnxwQYMT+W+f7DYAxpspsv6gUuz3o71Tin6ONPUQQsGC87eQ==}
 
-  '@texting/enum-chars-fullwidth@0.2.1':
-    resolution: {integrity: sha512-Bhj9Me9/GT3mhx9WY+gKmxvhEJKsfQqQhSE3fRmwvq/8IhyoB09VFY+iDypdeYuoRr8W0nXPCQ7yM41RQmTtYQ==}
+  '@texting/enum-chars-fullwidth@0.2.3':
+    resolution: {integrity: sha512-dOJt8/ddlU2z8n1TIaqnXNqgsz90n/MLcYAUbyiPH5aTHym+KliAbZqRgerLSH0/xTk3vcvin2/NEtBMasywQg==}
 
   '@texting/enum-chars@0.1.13':
     resolution: {integrity: sha512-mxa72M27nkGPXOzuJgxYISMPSFVFxOq+esMNE+2WFHgGpxLmgCxKqnZ75zJVXPhmGzChmqPTvzWkKr0vXGfRBA==}
 
-  '@texting/enum-chars@0.2.1':
-    resolution: {integrity: sha512-70RSjx74WahBNp/4FC+IOdDceWRBu9vFHkSwXsYf9wABIz3wurV9voZJvAz/d+ezdB2fYsy1TezZkrf8c2VuNg==}
+  '@texting/enum-chars@0.2.3':
+    resolution: {integrity: sha512-uhPWbh6up7KmEPk03SvYmJ0fSU56Wrr+Ug6AlWfbVh8m1g2DwO+gNROWXRIwLIQK0107laYlMZnTPnjQY3hj9Q==}
+
+  '@texting/enum-quotes@0.2.3':
+    resolution: {integrity: sha512-pzZhppxbiAM5FFdIZv3QpBo/+Vx5xMU5FH9ZV0AqEf8c/moy+Mf4jiIsPvLx9wRRHVef55PzEYn/Rj8qoLHA5g==}
 
   '@texting/fold@0.1.13':
     resolution: {integrity: sha512-mtnZMjSWmAXy9sufv4wgAQSV4Xz14Rdstw0hiXr+ySUpziac90vp2CFrdGW5zwUcR4Jg9YZKn7VBOpfODE5Cyw==}
 
-  '@texting/fold@0.2.1':
-    resolution: {integrity: sha512-FFr70T6b89+fLgle0s+A18LcdBxiTcME+Wif7NvyMQNS7VP3ND3iwNcjs/jdh1WQwSPvmUI/9VNJGPrj0fWlhQ==}
-
   '@texting/lange@0.1.13':
     resolution: {integrity: sha512-Y/KwIld0f04TsEI4rVlIL25QTpHrScuUaVWLfjeSCcvRLNuO2y8QC8byy0kAh4y9M7RDPDmEX+lei2DBlLYcbg==}
 
-  '@texting/lange@0.2.1':
-    resolution: {integrity: sha512-xZ5NV9wiaV230G42HQIq789qwOOUrcz09rpmP1/sKWyprWsZihyxn0Fp0q+S/YJrFB7+jbB3w3kOt09RWF7WpA==}
-
-  '@texting/liner@0.2.1':
-    resolution: {integrity: sha512-cdSrXnPh29Oh+J2zWJPjaYRT3owMR00f+mo5JDzF4P6aQSAqthQOc7A5ilf9yJCv1BInoK8JgFR+Nbxqv8NSzw==}
+  '@texting/lange@0.2.3':
+    resolution: {integrity: sha512-IMFQPv0CZmkfw0N/EBx3zxmiOwHWGlC/OPsBiXjDzeI24XmSe9ECEIoHaEbheYGFQFJVU5BNSoCJvDJt4Gul3A==}
+    engines: {node: '>=22.0.0'}
 
   '@texting/padder@0.1.13':
     resolution: {integrity: sha512-v+B6T84MCm7cKjUnseF//H8266fT5SFBSU89RtsaXTsapbSbIFHSUwUhGIN2usgKk0SnIIcMYDoPPgrgArGn9w==}
 
-  '@texting/padder@0.2.1':
-    resolution: {integrity: sha512-LYe1QlmAJ2CT0DvwxxikDwLrIC5+6O99uzZN2z+CMVuU0CYrzrD0mdcsy9FNU920nm392GaMobTYm4XUXXSPgw==}
+  '@texting/padder@0.2.3':
+    resolution: {integrity: sha512-c8h3hoTZf3ImJw8II7fzwO3YJ4R3C7tb4ViqYV3u6Jcx4qFZALv4pO0rm/8qZK5kIpsLkxou84jAT/6oXUhdPg==}
+    engines: {node: '>=22.0.0'}
 
   '@texting/phrasing@0.1.13':
     resolution: {integrity: sha512-Gfhx8nasvyakBdzRLInLNOoV4OlBm4VImmZFKR7bzoVHYCWvxIHI4Dy32JiTzf4fzcwKAlL6wSjzPcYy/g7WjQ==}
 
-  '@texting/phrasing@0.2.1':
-    resolution: {integrity: sha512-eg8TnxtgLKdTpN850tery/QzfXt9ct1JpxSukw+8XHPDM3MhGtbaFsnMnqnuFL3XqsFHg/qjDVwMkDRjKT6DrA==}
+  '@texting/phrasing@0.2.3':
+    resolution: {integrity: sha512-bXe9HYqQ3vmGXJCN79E3YusGRdzDQTFLipymwWE8IppqLq0y3Lsyn6iIOc5Paba84vXbfqy3/ZjGVEtdnk7+hw==}
+    engines: {node: '>=22.0.0'}
+
+  '@texting/quote@0.2.3':
+    resolution: {integrity: sha512-Ghm1Y5WpPk7bFC6sPbG8/L6DMILgOo6TFI9s4sSRaTrPiPIyEhcqr/XYIuSndypnZ3tXHcWPp8D7yVcA9ujPLA==}
+    engines: {node: '>=22.0.0'}
 
   '@texting/regex-charset@0.1.13':
     resolution: {integrity: sha512-7ro9X6lV1j5DcZZzKeKJ8Houimwqtk0TlNQ8NmTrloURGsIKZlxYxw40HJdc0WsbI4tSnC60xxbfdfm7ZKJtHw==}
 
-  '@texting/regex-charset@0.2.1':
-    resolution: {integrity: sha512-sNDeP2lXJC8qpvt22spRLGCjivutOm1TbIvkdyO0yCQ2EFEHG2dRXxI7MKaafX1yZ+DqQgMBa8CLCyZlS71kJw==}
+  '@texting/regex-charset@0.2.3':
+    resolution: {integrity: sha512-NEvTxgwTLY22T6OR4s+rVtaXIGwlfsGuFXoNujCUfE3sD9gcanCVYCgfOgpFLxiM1XT2sKw4V9FYCAfpDrqSaQ==}
 
   '@texting/regex-phrasing@0.1.13':
     resolution: {integrity: sha512-AVhSJ2FyWyOCemu3dQ1Oe/uJNn0ygc0NiERMZ1uf/HaqebqeMVtCRoFY4YH1en+sweOhcWwxUJyPjCCB0t2C0Q==}
 
-  '@texting/regex-phrasing@0.2.1':
-    resolution: {integrity: sha512-UjuQKs4xvDABokAxHHXHMPbTEoaH611Bnn144uPrhRSyVeslLb2HgoWDhKtC87RmRiQQ2VF4aa2arzFR/54XVA==}
+  '@texting/regex-phrasing@0.2.3':
+    resolution: {integrity: sha512-82lYB6hh26mukzzzKoB/9J/Zdmcfx8zhgnUYqRmyR6zbxYWekO1HTHz8vWZkiTT/gTB21RT5J+WeOPCp2seOMQ==}
 
   '@texting/splitter@0.1.13':
     resolution: {integrity: sha512-XsyJCQsGybtXBrnXFmBOWuOOOcNidAOyG1T4I6crtF9juot+gnj3UBogLm82pFlFVJuym9Yw157W4ilOuH800Q==}
 
-  '@texting/splitter@0.2.1':
-    resolution: {integrity: sha512-m6oqri9VWXihR3V9l7N8HQ8tkZ9fojEAzpDzl4GqVqKsreabrWerb+fwO8zC9Ytzxhpm9P5ntBgtMAnvgmp4Kw==}
+  '@texting/splitter@0.2.3':
+    resolution: {integrity: sha512-OYdZb4Re19jCyg03gI0YPcLU4Sz2PvJCvmNzIBnHBeebo0YXBh1HhtUV1BTob7VBHvsACaj1tvKPkxfKoOfKbg==}
+    engines: {node: '>=22.0.0'}
 
   '@texting/string-value@0.1.13':
     resolution: {integrity: sha512-+FS9WtJXDhTe11ntjvEQH/mcYTW5gMcK6hfcZq6SBDDBJYOMM7c5PK9Pu0K2EYefHms4fm76uaZR1d+a6N8wLA==}
 
-  '@texting/string-value@0.2.1':
-    resolution: {integrity: sha512-SwNXg2X8r9cSwbSBEfEmuHzsaoJACmwgcRqWMsbRGcVMiaiTktIMOMe9wzp3kSmPM0m8jnOHBE4cQZkkm52BNg==}
+  '@texting/string-value@0.2.3':
+    resolution: {integrity: sha512-Pc7Lt8y7zVUt0k0au2bJ2JFFJqQ3iTSFax7ew+yMGGKFTPgfPwZz4eNutmgW1ENG++GwKHz3UyUKwVMw9ize2A==}
+    engines: {node: '>=22.0.0'}
 
-  '@texting/tap@0.2.1':
-    resolution: {integrity: sha512-JEeNsFIcJnFAmFwLLQDk4YeTHm0Hir7xoHGZQdC2sI6AKJF5YWCNOYe3kI4SBpOy9fgEzQPru9X+Rbkn1PWuwQ==}
+  '@texting/translator@0.2.3':
+    resolution: {integrity: sha512-F8HLylFQInBc49Zbt0gDrBPC1hydfT1KKkIImmXpgsTrLpAyCZw5w47gG1RGOsdNBq2vg+c/8gSDZ6aUJXxWPA==}
+    engines: {node: '>=22.0.0'}
 
   '@typen/enum-check-levels@0.1.19':
     resolution: {integrity: sha512-pkTnmNLH5J+fxxNaDyLtXph/56QI8aBBsQ0BuLOOYbpouyTcCnKfcPRYfi8hnqpNKai/DW1Jd3/fvqQSWkuOlw==}
@@ -1652,15 +1734,19 @@ packages:
   '@typen/enum-tabular-types@0.1.19':
     resolution: {integrity: sha512-7nfdeGJTciW7glNrEjigxmFE/8wmeBXFqq6LIm3KDUfN26F7svdnNqTS6Rm2jym9mMstgv7amoC6Bud2BhJUIw==}
 
+  '@typen/enum-tabular-types@0.2.0':
+    resolution: {integrity: sha512-r0uVRBURHfAQi1NNH3YtdeInWI6Me5/5R5ZlNxHjIgxrkOQq/AFYwJJvPIK7vcwyDRQOC6A5WKSOWdpXsL8OvQ==}
+    engines: {node: '>=22.0.0'}
+
   '@typen/enums@0.1.19':
     resolution: {integrity: sha512-eink/fd/zxQnCLcomXw55LOFJNHgNmKdVaPkn/C+luoIpSYdL7OIwQPtRb7O2emSdi+Dd88ngd+ApdwxhfnRmA==}
 
-  '@typen/enums@0.2.0':
-    resolution: {integrity: sha512-Wahb7rASQWzWg3x9oIWizw52GaBy3wj0JgXNxKhRULW/4mh3Szyb3YvYE6XmGdgcrCnMmr8DkkvPKGVyT18v2w==}
-    engines: {node: '>=22.0.0'}
-
   '@typen/infer-type@0.1.19':
     resolution: {integrity: sha512-igX3b/MBgMpfiutfFcAuSx/tyicnRuvBB+iR8GGjmGF9BL8ILgACwf1WFMcSgfA8TnW4FZxyaHdV4XWbLeDyHg==}
+
+  '@typen/infer-type@0.2.0':
+    resolution: {integrity: sha512-eEa0wXT3RuNrHf1EeZM4IdgJBy1n0EP0L4aVcFrv10+5ZOUah9RpJwD32eJ2LD4qlbv0d3SR8Pz3wM35MSxYUQ==}
+    engines: {node: '>=22.0.0'}
 
   '@typen/literal@0.1.19':
     resolution: {integrity: sha512-t8dQS0xVyD52onUc0u0aWFe0mUX2ELI4vwR+IGxtemIK2GIFCg7QDSik2zR2NV3vtUmZD7GDwNYAJLVIGn1QKQ==}
@@ -1710,6 +1796,10 @@ packages:
   '@typen/vector-type@0.1.19':
     resolution: {integrity: sha512-ZUEjGmpS3qoueUNdHr8V9qiBoOl6F4DYqargDSE99T5CWB4ytRJfBH3Hmh8UmmoRQY6uty9b4Ib1wYzVpENKTA==}
 
+  '@typen/vector-type@0.2.0':
+    resolution: {integrity: sha512-6Jtb8ZlKOkCjnkgdqm1T3to5Uz3EoAKumVsLrtcYTRzcKW51784CQwa2rHj2GfGL3U9wb2pd2VJpifhMcwI0DA==}
+    engines: {node: '>=22.0.0'}
+
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
@@ -1719,55 +1809,55 @@ packages:
   '@valjoux/convert@0.3.21':
     resolution: {integrity: sha512-sGY+7/+GxJgVArL8eH4QeEqzB8mxlZ05CZLTK6GDVQyB6XISXGRTY1hyqWFuacFCTml3lVJHPYNKsT4QJnbtjw==}
 
-  '@valjoux/convert@0.4.0':
-    resolution: {integrity: sha512-o06Zr1yRLqEPXlg0baWci3JmXGzV+vqY6OXuOSz2ZbGBr7K6DHKUSLdjI+fdI0cQ/tMgY4B30tLPjwUsCU41mw==}
+  '@valjoux/convert@0.4.1':
+    resolution: {integrity: sha512-MEgcrDJSrq7polZfvyP6CxCwkDAqpVJ/1t8Hy4UE8Wo2A1rPitKSVJd9gJPzLHvgXdVpXs487tjnszkBDi3WCg==}
     engines: {node: '>=22.0.0'}
 
-  '@valjoux/eta@0.4.0':
-    resolution: {integrity: sha512-UY9XateKth1bPNQHdPjvk6qWfNZhEd4Io7Kf82+JXBRPE/fD/AaajIjb4uf3wTOLHFIt4oUCfRMeNFOCafEupw==}
+  '@valjoux/eta@0.4.1':
+    resolution: {integrity: sha512-7OvLI1rfaIEg5Day+S249QN2NOjzGBxI12bm6LPeDV4VdFGFcRkhB4tMwdABEJLiqyfomZYrS9HYsIW5KJUFhQ==}
     engines: {node: '>=22.0.0'}
 
   '@valjoux/format-date-time@0.3.21':
     resolution: {integrity: sha512-JKUEEw/mPMe9QAoAEtehVaLTTySk8omdsBEfyKEv7XXg6kPm8sgV8sYvMwbmAk/wLOSwRiq6iSHZ0Z60aboqmA==}
 
-  '@valjoux/format-date-time@0.4.0':
-    resolution: {integrity: sha512-5fmhrgrllMOi8aEmCeAlftU3T3UkFnusQBeFKTvB6WgS68bnjFV1f/pXfTX9brELulYUubz0d3tV0PKxF8T7RQ==}
+  '@valjoux/format-date-time@0.4.1':
+    resolution: {integrity: sha512-JN9ty8kk6zM89RpIA/Lk8aq8/G7kD/pdZoR742cajoYouIlQQUn3qefASB9vB+0UtY23g3JYPqoQXaVR/0C/lQ==}
     engines: {node: '>=22.0.0'}
 
   '@valjoux/format-date@0.3.21':
     resolution: {integrity: sha512-CLLdbB3ndbaSPuiGmdFt3GFB9lIzeaLxbd9aYQqMWNTdCYZpCC9YDplZXqjgGqbninHE8ZtTnJn5K+ZyQxZLJA==}
 
-  '@valjoux/format-date@0.4.0':
-    resolution: {integrity: sha512-CFArZbT312IXOs67xYn8ON57+3f6hY1g7LzX+j7curk205NSL6ustcsGXTEcn+NVFKZYIAS6NkRdwMDasvX22g==}
+  '@valjoux/format-date@0.4.1':
+    resolution: {integrity: sha512-toTewU8gUX5gnnnfgCwuh25LgTf+3KZXJVG1l7ZEDlSB2T8h6n3g6mtrrXYF5vOvXqv1zwQ4ekLB364RfoEAUQ==}
     engines: {node: '>=22.0.0'}
 
   '@valjoux/format-time@0.3.21':
     resolution: {integrity: sha512-TSZSuFuXk5pnBwLQvXDtsPksV+nnttVhDoL7I/IvVxnnuXTlNDJFvWfLxlHiYVJU2zOb5KJJyhjGYxx4y9zpHQ==}
 
-  '@valjoux/format-time@0.4.0':
-    resolution: {integrity: sha512-orH7DeSHb2V4dW2peQML+PAJNQPIeaUEC/2dNfdunT773rHLyxFzzepzdIhaIx1r58kgF1ozY02UPKRDx4nXnQ==}
+  '@valjoux/format-time@0.4.1':
+    resolution: {integrity: sha512-fp9cGkIwh6WPfgkGBXbptXSZ4DCNfJfsPclM6PRpJMc3byGq8cFf44oyBlxyf9d/T0TZLiHjQrOKJ8DpKa+keA==}
     engines: {node: '>=22.0.0'}
 
-  '@valjoux/strategies@0.4.0':
-    resolution: {integrity: sha512-6z/j6Aw9mQGPfy0rW1B2mslP7Ori/faYZD3UA5hemnDWqD0ITGa1kbbcvbxi8FmoDZcXf0qzkEtGh8Sc9xAHnQ==}
+  '@valjoux/strategies@0.4.1':
+    resolution: {integrity: sha512-2wm1oFUn0XpNono3njIrVPStPd7TZ9rkmpjvQe0/rHeTmZUny8+cKst1LpoI93drZnrPeuSPXFO4daeOfm5goA==}
     engines: {node: '>=22.0.0'}
 
   '@valjoux/timestamp-pretty@0.3.21':
     resolution: {integrity: sha512-0dJrhiV2Z0Bnw2eZykvadfimF+pJn7wVt15YI6ieYOTrvU/1GAbXSb4Jx40Ax5zNS0UoMPY6Rjx7Te026knRlA==}
 
-  '@valjoux/timestamp-pretty@0.4.0':
-    resolution: {integrity: sha512-1kBhLav/6QolYN/SYmDTxmyuQpEgSaR9ve5Tvz08CXYbpvQ7mOHtMLZQ2yjQnRadqZwpPeXtFu/0WqL/0zGJzg==}
+  '@valjoux/timestamp-pretty@0.4.1':
+    resolution: {integrity: sha512-czcInKP2lGi9pAzDGIWny8jm1DvACGXBRUOpoy+IEddQE5XwNC+4kBCLMhuT5Im9+gKt8ofs8Ea90ve+zRkaLw==}
     engines: {node: '>=22.0.0'}
 
-  '@valjoux/timestamp@0.4.0':
-    resolution: {integrity: sha512-iChJcF8NEx7nIzp5UlgaNfbPwOp12/UHyDyyg4D64qPkLsTxP5TbtgYnXuu3dMfrPfKu5sWFEwsusUoLyUa9Vg==}
+  '@valjoux/timestamp@0.4.1':
+    resolution: {integrity: sha512-9Qmb8A4/ci/vnxluy3sE/6jKjmYUIngy5eMLb0rI6Lr1DU5Rc4TSDAIQasvO3LJpF+Reg0W5c61QtKYP7WDw6A==}
     engines: {node: '>=22.0.0'}
 
   '@valjoux/util-bitwise@0.3.21':
     resolution: {integrity: sha512-KzeNSr/tQwrXbj4nfIcQpWJi5JuRO4liyua1r89Ftg/kylUZeyAc5LZDVs8+Sxt3VyxmsfE5V3Nc3TkI2eGFgg==}
 
-  '@valjoux/util-bitwise@0.4.0':
-    resolution: {integrity: sha512-eaVutS4qvw6+S7EBT0pqeerZjAPcFrhu4tPGvy1+56Aj3dws0cxr3G8gE84Ty1FpIMw9FxUuotbzcUTqIzqOIQ==}
+  '@valjoux/util-bitwise@0.4.1':
+    resolution: {integrity: sha512-7EGimwn1PtYeWxVm6/SBQfc/4XlrCpHgvp5LQXzPXkq5kCMhqKRNZRoeUeK9Ktsqp+0lCBCEfwyn2Cc8oywtQA==}
     engines: {node: '>=22.0.0'}
 
   '@vect/clone@0.7.20':
@@ -1833,10 +1923,6 @@ packages:
     resolution: {integrity: sha512-0dStNL3TseyPtUN8j0wKCJBwb74U1oysWoiQaoGvlNpkTiuvGQkadtENK3G2+YTtnQ9NC4llo+w/r3wOh3boHQ==}
     engines: {node: '>=22.0.0'}
 
-  '@vect/columns-stat@0.8.0':
-    resolution: {integrity: sha512-aIPOqQUN/QeWdf0OGlxNBApXc0bsh8Zex/OjRsRlXvuDsRPAiNPKM7FTAzH0VPqVz+5KcEWZ6dXvU4EVlNoJPw==}
-    engines: {node: '>=22.0.0'}
-
   '@vect/columns-update@0.7.20':
     resolution: {integrity: sha512-J3F5GHvsmjmOzg3glX0wxKxGFJe2hyvcpeYz10Qtprd0i7vT7uGUm5TyYN4xIDLUAJO83LpADgfvuTG8tUTEjA==}
 
@@ -1873,16 +1959,8 @@ packages:
   '@vect/entries-zipper@0.7.20':
     resolution: {integrity: sha512-gKpNYY3dyma2kQVbJlU85E5splnjnghCziDybbAE5Mv24HTUBVVnkgrsWwXkY00UxFEX1n1WwNxpTP/4nouaOQ==}
 
-  '@vect/entries-zipper@0.8.0':
-    resolution: {integrity: sha512-Zshd9f/Y/uwHAgMdk3BE+JKR67mH549c/v5bcaF9Qthlhlf5DM/wVZ7r0yY8KURnrHk3FgnwRhJQK02HNkcYKg==}
-    engines: {node: '>=22.0.0'}
-
   '@vect/entries@0.7.20':
     resolution: {integrity: sha512-kLXBP6xy/4wcTUpvxPAtdOB2ltujNMXzAeNM8AE2TKJQRphbYRJNM0tMgj9BkVrfXuFSbUOdZke1+l4tvhRM2A==}
-
-  '@vect/entries@0.8.0':
-    resolution: {integrity: sha512-WH4YopH0aokO2Wc3J+oouR0EfQ+44/urVZx1RkxSCqy2nus5REE/xFVW5Syt3zU263jXGx1T2s5bmn/2GgIb4w==}
-    engines: {node: '>=22.0.0'}
 
   '@vect/enum-matrix-directions@0.6.13':
     resolution: {integrity: sha512-Ac5OkkGEfJzoHAqNqAdAz6aGYfluDYnrjD341PcwuTOCjZ4xKsJCkdLmdfuOUYKtkv65t12QVW+2EjDna3FV7A==}
@@ -2136,8 +2214,9 @@ packages:
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
 
-  cross-spawn@5.1.0:
-    resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
+    engines: {node: '>= 8'}
 
   detect-indent@6.1.0:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
@@ -2219,8 +2298,9 @@ packages:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  human-id@1.0.2:
-    resolution: {integrity: sha512-UNopramDEhHJD+VR+ehk8rOslwSfByxPIZyJRfV739NDhN5LF1fa1MqnzKm2lGTQRjNrjK19Q5fhkgIfjlVUKw==}
+  human-id@4.1.1:
+    resolution: {integrity: sha512-3gKm/gCSUipeLsRYZbbdA1BD83lBoWUkZ7G9VFrhWPAU76KwYo5KR8V28bpoPm/ygy0x5/GCbpRQdY7VLYCoIg==}
+    hasBin: true
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -2266,9 +2346,6 @@ packages:
 
   lodash.startcase@4.4.0:
     resolution: {integrity: sha512-+WKqsK294HMSc2jEbNgpHpd0JfIBhp7rEV4aqXWqFr6AlXov+SlcgB1Fv01y2kGe3Gc8nMW7VA0SrGuSkRfIEg==}
-
-  lru-cache@4.1.5:
-    resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -2322,6 +2399,10 @@ packages:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
     engines: {node: '>=8'}
 
+  path-key@3.1.1:
+    resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
+    engines: {node: '>=8'}
+
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
@@ -2346,9 +2427,6 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  pseudomap@1.0.2:
-    resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
-
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -2371,8 +2449,8 @@ packages:
     resolution: {integrity: sha512-Ut5Wq98iuN9Ekglzl16LKODizlFb98hj075wzVJojpAduWzbHFVGPWqe+Y/hN2hNBcpgAT4ucpZpCOISrAvIOg==}
     engines: {node: '>=16'}
 
-  rollup@4.25.0:
-    resolution: {integrity: sha512-uVbClXmR6wvx5R1M3Od4utyLUxrmOcEm3pAtMphn73Apq19PDtHpgZoEvqH2YnnaNUuvKmg2DgRd2Sqv+odyqg==}
+  rollup@4.36.0:
+    resolution: {integrity: sha512-zwATAXNQxUcd40zgtQG0ZafcRK4g004WtEl7kbuhTWPvf07PsfohXl39jVUvPF7jvNAIkKPQ2XrsDlWuxBd++Q==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
@@ -2390,16 +2468,17 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  shebang-command@1.2.0:
-    resolution: {integrity: sha512-EV3L1+UQWGor21OmnvojK36mhg+TyIKDh3iFBKBohr5xeXIhNBcx8oWdgkTEEQ+BEFFYdLRuqMfd5L84N1V5Vg==}
-    engines: {node: '>=0.10.0'}
+  shebang-command@2.0.0:
+    resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
+    engines: {node: '>=8'}
 
-  shebang-regex@1.0.0:
-    resolution: {integrity: sha512-wpoSFAxys6b2a2wHZ1XpDSgD7N9iVjg29Ph9uV/uaP9Ex/KXlkTZTeddxDPSYQpgvzKLGJke2UU0AzoGCjNIvQ==}
-    engines: {node: '>=0.10.0'}
+  shebang-regex@3.0.0:
+    resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
+    engines: {node: '>=8'}
 
-  signal-exit@3.0.7:
-    resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+  signal-exit@4.1.0:
+    resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
+    engines: {node: '>=14'}
 
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
@@ -2412,8 +2491,8 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  spawndamnit@2.0.0:
-    resolution: {integrity: sha512-j4JKEcncSjFlqIwU5L/rp2N5SIPsdxaRsIv678+TZxZ0SRDJTm8JrxJMjE/XuiEZNEir3S8l0Fa3Ke339WI4qA==}
+  spawndamnit@3.0.1:
+    resolution: {integrity: sha512-MmnduQUuHCoFckZoWnXsTg7JaiLBJrKFj9UI2MbRPGaJeVpsLcVBu6P/IGZovziM/YBsellCmsprgNA+w0CzVg==}
 
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
@@ -2450,12 +2529,10 @@ packages:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
 
-  which@1.3.1:
-    resolution: {integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==}
+  which@2.0.2:
+    resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
+    engines: {node: '>= 8'}
     hasBin: true
-
-  yallist@2.1.2:
-    resolution: {integrity: sha512-ncTzHV7NvsQZkYe1DW7cbDLm0YpzHmZF5r/iyP3ZnQtMiJ+pjzisCiMNI+Sj+xQF5pXhSHxSB3uDbsBTzY/c2A==}
 
 snapshots:
 
@@ -2492,16 +2569,16 @@ snapshots:
       '@vect/vector-mapper': 0.7.20
       '@vect/vector-select': 0.7.20
 
-  '@analys/convert@0.7.2':
+  '@analys/convert@0.7.3':
     dependencies:
-      '@analys/crostab': 0.7.2
-      '@analys/crostab-mapper': 0.7.2
-      '@analys/data-gram': 0.7.2
-      '@analys/table': 0.7.2
-      '@analys/table-index': 0.7.2
-      '@analys/table-init': 0.7.2
-      '@analys/tabular': 0.7.2
-      '@typen/nullish': 0.1.19
+      '@analys/crostab': 0.7.3
+      '@analys/crostab-mapper': 0.7.3
+      '@analys/data-gram': 0.7.3
+      '@analys/table': 0.7.3
+      '@analys/table-index': 0.7.3
+      '@analys/table-init': 0.7.3
+      '@analys/tabular': 0.7.3
+      '@typen/nullish': 0.2.0
       '@vect/column-getter': 0.6.13
       '@vect/entries-init': 0.8.0
       '@vect/entries-unwind': 0.6.13
@@ -2520,7 +2597,7 @@ snapshots:
     dependencies:
       '@vect/clone': 0.7.20
 
-  '@analys/crostab-init@0.7.2':
+  '@analys/crostab-init@0.7.3':
     dependencies:
       '@vect/clone': 0.8.0
 
@@ -2531,10 +2608,10 @@ snapshots:
       '@vect/entries-init': 0.7.20
       '@vect/object-init': 0.7.20
 
-  '@analys/crostab-lookup@0.7.2':
+  '@analys/crostab-lookup@0.7.3':
     dependencies:
-      '@analys/enum-lookups': 0.7.2
-      '@analys/table-lookup': 0.7.2
+      '@analys/enum-lookups': 0.7.3
+      '@analys/table-lookup': 0.7.3
       '@vect/entries-init': 0.8.0
       '@vect/object-init': 0.8.0
 
@@ -2542,7 +2619,7 @@ snapshots:
     dependencies:
       '@vect/columns-mapper': 0.7.20
 
-  '@analys/crostab-mapper@0.7.2':
+  '@analys/crostab-mapper@0.7.3':
     dependencies:
       '@vect/columns-mapper': 0.8.0
 
@@ -2573,13 +2650,13 @@ snapshots:
       '@vect/vector-mapper': 0.7.20
       '@vect/vector-zipper': 0.7.20
 
-  '@analys/crostab@0.7.2':
+  '@analys/crostab@0.7.3':
     dependencies:
-      '@analys/crostab-init': 0.7.2
-      '@analys/crostab-lookup': 0.7.2
-      '@analys/keyed-rows': 0.7.2
-      '@analys/tabular': 0.7.2
-      '@aryth/comparer': 0.7.2
+      '@analys/crostab-init': 0.7.3
+      '@analys/crostab-lookup': 0.7.3
+      '@analys/keyed-rows': 0.7.3
+      '@analys/tabular': 0.7.3
+      '@aryth/comparer': 0.7.6
       '@vect/column-getter': 0.6.13
       '@vect/column-mapper': 0.8.0
       '@vect/columns-update': 0.8.0
@@ -2609,25 +2686,27 @@ snapshots:
       '@vect/matrix-mapper': 0.7.20
       '@vect/vector-init': 0.7.20
 
-  '@analys/data-gram@0.7.2':
+  '@analys/data-gram@0.7.3':
     dependencies:
-      '@analys/enum-pivot-mode': 0.7.2
-      '@typen/enum-data-types': 0.1.19
-      '@typen/nullish': 0.1.19
+      '@analys/enum-pivot-mode': 0.7.3
+      '@typen/enum-data-types': 0.2.0
+      '@typen/nullish': 0.2.0
       '@vect/matrix-mapper': 0.8.0
       '@vect/vector-init': 0.8.0
 
   '@analys/enum-join-modes@0.6.14': {}
 
+  '@analys/enum-join-modes@0.7.3': {}
+
   '@analys/enum-lookups@0.6.14': {}
 
-  '@analys/enum-lookups@0.7.2': {}
+  '@analys/enum-lookups@0.7.3': {}
 
   '@analys/enum-mutabilities@0.6.14': {}
 
   '@analys/enum-pivot-mode@0.6.14': {}
 
-  '@analys/enum-pivot-mode@0.7.2': {}
+  '@analys/enum-pivot-mode@0.7.3': {}
 
   '@analys/formula@0.6.14':
     dependencies:
@@ -2635,7 +2714,7 @@ snapshots:
       '@vect/vector-mapper': 0.7.20
       '@vect/vector-select': 0.7.20
 
-  '@analys/formula@0.7.2':
+  '@analys/formula@0.7.3':
     dependencies:
       '@vect/object-init': 0.8.0
       '@vect/vector-mapper': 0.8.0
@@ -2650,9 +2729,9 @@ snapshots:
       '@vect/vector-mapper': 0.7.20
       '@vect/vector-zipper': 0.7.20
 
-  '@analys/group@0.7.2':
+  '@analys/group@0.7.3':
     dependencies:
-      '@analys/enum-pivot-mode': 0.7.2
+      '@analys/enum-pivot-mode': 0.7.3
       '@analys/util-pivot': 0.6.8
       '@vect/object-init': 0.8.0
       '@vect/vector-algebra': 0.8.0
@@ -2669,9 +2748,9 @@ snapshots:
       '@vect/vector-select': 0.7.20
       '@vect/vector-zipper': 0.7.20
 
-  '@analys/keyed-rows@0.7.2':
+  '@analys/keyed-rows@0.7.3':
     dependencies:
-      '@analys/util-keyed-vectors': 0.7.2
+      '@analys/util-keyed-vectors': 0.7.3
       '@vect/column-getter': 0.6.13
       '@vect/entries-unwind': 0.6.13
       '@vect/matrix-algebra': 0.8.0
@@ -2684,19 +2763,32 @@ snapshots:
       '@analys/data-gram': 0.6.14
       '@vect/vector-init': 0.7.20
 
-  '@analys/samples-select@0.7.2':
+  '@analys/samples-select@0.7.3':
     dependencies:
       '@vect/object-mapper': 0.8.0
       '@vect/vector-mapper': 0.8.0
+
+  '@analys/table-algebra@0.7.3':
+    dependencies:
+      '@analys/enum-join-modes': 0.7.3
+      '@analys/table-init': 0.7.3
+      '@aryth/comparer': 0.7.6
+      '@vect/columns-select': 0.8.0
+      '@vect/vector-algebra': 0.8.0
+      '@vect/vector-init': 0.8.0
+      '@vect/vector-mapper': 0.8.0
+      '@vect/vector-select': 0.8.0
+      '@vect/vector-update': 0.8.0
+      '@vect/vector-zipper': 0.8.0
 
   '@analys/table-chips@0.6.14':
     dependencies:
       '@analys/enum-pivot-mode': 0.6.14
       '@analys/util-pivot': 0.6.8
 
-  '@analys/table-chips@0.7.2':
+  '@analys/table-chips@0.7.3':
     dependencies:
-      '@analys/enum-pivot-mode': 0.7.2
+      '@analys/enum-pivot-mode': 0.7.3
       '@analys/util-pivot': 0.6.8
 
   '@analys/table-divide@0.6.8':
@@ -2711,7 +2803,7 @@ snapshots:
 
   '@analys/table-find@0.6.14': {}
 
-  '@analys/table-find@0.7.2': {}
+  '@analys/table-find@0.7.3': {}
 
   '@analys/table-formula@0.6.14':
     dependencies:
@@ -2721,13 +2813,13 @@ snapshots:
       '@analys/table-merge': 0.6.8
       '@spare/deco-func': 0.14.29
 
-  '@analys/table-formula@0.7.2':
+  '@analys/table-formula@0.7.3':
     dependencies:
-      '@analys/formula': 0.7.2
-      '@analys/table-find': 0.7.2
-      '@analys/table-init': 0.7.2
-      '@analys/table-merge': 0.6.8
-      '@spare/deco-func': 0.15.16
+      '@analys/formula': 0.7.3
+      '@analys/table-algebra': 0.7.3
+      '@analys/table-find': 0.7.3
+      '@analys/table-init': 0.7.3
+      '@spare/deco-func': 0.16.22
 
   '@analys/table-group@0.6.14':
     dependencies:
@@ -2739,25 +2831,25 @@ snapshots:
       '@vect/matrix': 0.7.20
       '@vect/vector-algebra': 0.7.20
 
-  '@analys/table-group@0.7.2':
+  '@analys/table-group@0.7.3':
     dependencies:
       '@analys/chips': 0.6.8
-      '@analys/group': 0.7.2
-      '@analys/table-find': 0.7.2
-      '@analys/table-init': 0.7.2
-      '@analys/tablespec': 0.7.2
+      '@analys/group': 0.7.3
+      '@analys/table-find': 0.7.3
+      '@analys/table-init': 0.7.3
+      '@analys/tablespec': 0.7.3
       '@vect/matrix': 0.8.0
       '@vect/vector-algebra': 0.8.0
 
   '@analys/table-index@0.6.14': {}
 
-  '@analys/table-index@0.7.2': {}
+  '@analys/table-index@0.7.3': {}
 
   '@analys/table-init@0.6.14':
     dependencies:
       '@vect/clone': 0.7.20
 
-  '@analys/table-init@0.7.2':
+  '@analys/table-init@0.7.3':
     dependencies:
       '@vect/clone': 0.8.0
 
@@ -2778,10 +2870,10 @@ snapshots:
       '@vect/entries-init': 0.7.20
       '@vect/object-init': 0.7.20
 
-  '@analys/table-lookup@0.7.2':
+  '@analys/table-lookup@0.7.3':
     dependencies:
-      '@analys/enum-lookups': 0.7.2
-      '@analys/table-index': 0.7.2
+      '@analys/enum-lookups': 0.7.3
+      '@analys/table-index': 0.7.3
       '@vect/column-getter': 0.6.13
       '@vect/entries-init': 0.8.0
       '@vect/object-init': 0.8.0
@@ -2797,9 +2889,9 @@ snapshots:
       '@analys/cubic': 0.6.8
       '@analys/tablespec': 0.6.14
 
-  '@analys/table-pivot@0.7.2':
+  '@analys/table-pivot@0.7.3':
     dependencies:
-      '@analys/crostab': 0.7.2
+      '@analys/crostab': 0.7.3
       '@analys/cubic': 0.6.8
       '@analys/tablespec': 0.6.14
 
@@ -2815,13 +2907,13 @@ snapshots:
       '@vect/object-init': 0.7.20
       '@vect/vector-select': 0.7.20
 
-  '@analys/table-select@0.7.2':
+  '@analys/table-select@0.7.3':
     dependencies:
-      '@analys/table-index': 0.7.2
-      '@analys/table-init': 0.7.2
-      '@analys/tabular': 0.7.2
-      '@aryth/rand': 0.7.2
-      '@typen/nullish': 0.1.19
+      '@analys/table-index': 0.7.3
+      '@analys/table-init': 0.7.3
+      '@analys/tabular': 0.7.3
+      '@aryth/rand': 0.7.6
+      '@typen/nullish': 0.2.0
       '@vect/column-getter': 0.6.13
       '@vect/entries-init': 0.8.0
       '@vect/object-init': 0.8.0
@@ -2832,9 +2924,9 @@ snapshots:
       '@typen/vector-type': 0.1.19
       '@vect/columns-mapper': 0.7.20
 
-  '@analys/table-types@0.7.2':
+  '@analys/table-types@0.7.3':
     dependencies:
-      '@typen/vector-type': 0.1.19
+      '@typen/vector-type': 0.2.0
       '@vect/columns-mapper': 0.8.0
 
   '@analys/table@0.6.14':
@@ -2867,26 +2959,23 @@ snapshots:
       '@vect/vector-mapper': 0.7.20
       '@vect/vector-update': 0.7.20
 
-  '@analys/table@0.7.2':
+  '@analys/table@0.7.3':
     dependencies:
-      '@analys/table-chips': 0.7.2
-      '@analys/table-divide': 0.6.8
-      '@analys/table-filter': 0.6.8
-      '@analys/table-find': 0.7.2
-      '@analys/table-formula': 0.7.2
-      '@analys/table-group': 0.7.2
-      '@analys/table-init': 0.7.2
-      '@analys/table-join': 0.6.8
-      '@analys/table-lookup': 0.7.2
-      '@analys/table-merge': 0.6.8
-      '@analys/table-pivot': 0.7.2
-      '@analys/table-select': 0.7.2
-      '@analys/table-types': 0.7.2
-      '@analys/tabular': 0.7.2
-      '@aryth/comparer': 0.7.2
-      '@aryth/distinct-column': 0.7.2
-      '@aryth/distinct-matrix': 0.7.2
-      '@typen/enum-data-types': 0.1.19
+      '@analys/table-algebra': 0.7.3
+      '@analys/table-chips': 0.7.3
+      '@analys/table-find': 0.7.3
+      '@analys/table-formula': 0.7.3
+      '@analys/table-group': 0.7.3
+      '@analys/table-init': 0.7.3
+      '@analys/table-lookup': 0.7.3
+      '@analys/table-pivot': 0.7.3
+      '@analys/table-select': 0.7.3
+      '@analys/table-types': 0.7.3
+      '@analys/tabular': 0.7.3
+      '@aryth/comparer': 0.7.6
+      '@aryth/distinct-column': 0.7.6
+      '@aryth/distinct-matrix': 0.7.6
+      '@typen/enum-data-types': 0.2.0
       '@vect/column-getter': 0.6.13
       '@vect/column-mapper': 0.8.0
       '@vect/columns-update': 0.8.0
@@ -2908,12 +2997,12 @@ snapshots:
       '@vect/vector-algebra': 0.7.20
       '@vect/vector-mapper': 0.7.20
 
-  '@analys/tablespec@0.7.2':
+  '@analys/tablespec@0.7.3':
     dependencies:
-      '@analys/enum-pivot-mode': 0.7.2
-      '@typen/enum-data-types': 0.1.19
-      '@typen/literal': 0.1.19
-      '@typen/nullish': 0.1.19
+      '@analys/enum-pivot-mode': 0.7.3
+      '@typen/enum-data-types': 0.2.0
+      '@typen/literal': 0.2.0
+      '@typen/nullish': 0.2.0
       '@vect/matrix': 0.8.0
       '@vect/vector-algebra': 0.8.0
       '@vect/vector-mapper': 0.8.0
@@ -2929,9 +3018,9 @@ snapshots:
       '@vect/vector-mapper': 0.7.20
       '@vect/vector-zipper': 0.7.20
 
-  '@analys/tabular@0.7.2':
+  '@analys/tabular@0.7.3':
     dependencies:
-      '@analys/util-keyed-vectors': 0.7.2
+      '@analys/util-keyed-vectors': 0.7.3
       '@vect/column-getter': 0.6.13
       '@vect/columns-select': 0.8.0
       '@vect/entries-unwind': 0.6.13
@@ -2947,9 +3036,9 @@ snapshots:
       '@vect/vector-mapper': 0.7.20
       '@vect/vector-zipper': 0.7.20
 
-  '@analys/util-keyed-vectors@0.7.2':
+  '@analys/util-keyed-vectors@0.7.3':
     dependencies:
-      '@analys/enum-pivot-mode': 0.7.2
+      '@analys/enum-pivot-mode': 0.7.3
       '@vect/vector-init': 0.8.0
       '@vect/vector-mapper': 0.8.0
       '@vect/vector-zipper': 0.8.0
@@ -3038,12 +3127,12 @@ snapshots:
       '@vect/matrix-init': 0.7.20
       '@vect/matrix-mapper': 0.7.20
 
-  '@aryth/bound-matrix@0.7.2':
+  '@aryth/bound-matrix@0.7.6':
     dependencies:
-      '@aryth/bound-vector': 0.7.2
-      '@aryth/util-bound': 0.7.2
-      '@ject/oneself': 0.1.0
-      '@texting/string-value': 0.2.1
+      '@aryth/bound-vector': 0.7.6
+      '@aryth/util-bound': 0.7.6
+      '@ject/oneself': 0.1.2
+      '@texting/string-value': 0.2.3
       '@typen/enum-check-levels': 0.2.0
       '@typen/literal': 0.2.0
       '@typen/numeral': 0.2.0
@@ -3060,11 +3149,11 @@ snapshots:
       '@typen/literal': 0.1.19
       '@typen/numeral': 0.1.19
 
-  '@aryth/bound-vector@0.7.2':
+  '@aryth/bound-vector@0.7.6':
     dependencies:
-      '@aryth/util-bound': 0.7.2
-      '@ject/oneself': 0.1.0
-      '@texting/string-value': 0.2.1
+      '@aryth/util-bound': 0.7.6
+      '@ject/oneself': 0.1.2
+      '@texting/string-value': 0.2.3
       '@typen/enum-check-levels': 0.2.0
       '@typen/literal': 0.2.0
       '@typen/numeral': 0.2.0
@@ -3076,26 +3165,28 @@ snapshots:
       '@aryth/bound-vector': 0.6.9
       '@aryth/math': 0.6.9
 
-  '@aryth/bound@0.7.2':
+  '@aryth/bound@0.7.6':
     dependencies:
-      '@aryth/bound-matrix': 0.7.2
-      '@aryth/bound-vector': 0.7.2
-      '@aryth/math': 0.7.2
+      '@aryth/bound-matrix': 0.7.6
+      '@aryth/bound-vector': 0.7.6
+      '@aryth/math': 0.7.6
 
   '@aryth/comparer@0.5.10': {}
 
   '@aryth/comparer@0.6.9': {}
 
-  '@aryth/comparer@0.7.2': {}
+  '@aryth/comparer@0.7.5': {}
+
+  '@aryth/comparer@0.7.6': {}
 
   '@aryth/distinct-column@0.6.9':
     dependencies:
       '@aryth/util-distinct': 0.6.9
       '@vect/column-mapper': 0.7.20
 
-  '@aryth/distinct-column@0.7.2':
+  '@aryth/distinct-column@0.7.6':
     dependencies:
-      '@aryth/util-distinct': 0.7.2
+      '@aryth/util-distinct': 0.7.6
       '@vect/column-mapper': 0.8.0
 
   '@aryth/distinct-matrix@0.6.9':
@@ -3103,9 +3194,9 @@ snapshots:
       '@aryth/util-distinct': 0.6.9
       '@vect/matrix-mapper': 0.7.20
 
-  '@aryth/distinct-matrix@0.7.2':
+  '@aryth/distinct-matrix@0.7.6':
     dependencies:
-      '@aryth/util-distinct': 0.7.2
+      '@aryth/util-distinct': 0.7.6
       '@vect/matrix-mapper': 0.8.0
 
   '@aryth/flopper@0.6.9':
@@ -3114,10 +3205,10 @@ snapshots:
       '@aryth/rand': 0.6.9
       '@vect/swap': 0.6.13
 
-  '@aryth/flopper@0.7.2':
+  '@aryth/flopper@0.7.6':
     dependencies:
-      '@aryth/comparer': 0.7.2
-      '@aryth/rand': 0.7.2
+      '@aryth/comparer': 0.7.6
+      '@aryth/rand': 0.7.6
       '@vect/swap': 0.6.13
 
   '@aryth/math@0.5.10': {}
@@ -3126,13 +3217,18 @@ snapshots:
 
   '@aryth/math@0.7.2': {}
 
+  '@aryth/math@0.7.5': {}
+
+  '@aryth/math@0.7.6': {}
+
   '@aryth/polar@0.6.9':
     dependencies:
       '@aryth/flopper': 0.6.9
 
-  '@aryth/polar@0.7.2':
+  '@aryth/polar@0.7.6':
     dependencies:
-      '@aryth/flopper': 0.7.2
+      '@aryth/flopper': 0.7.6
+      '@vect/vector-mapper': 0.8.0
 
   '@aryth/rand@0.5.10':
     dependencies:
@@ -3146,10 +3242,10 @@ snapshots:
       '@typen/nullish': 0.1.19
       '@vect/swap': 0.6.13
 
-  '@aryth/rand@0.7.2':
+  '@aryth/rand@0.7.6':
     dependencies:
-      '@aryth/comparer': 0.7.2
-      '@aryth/math': 0.7.2
+      '@aryth/comparer': 0.7.6
+      '@aryth/math': 0.7.6
       '@typen/nullish': 0.2.0
       '@vect/swap': 0.6.13
 
@@ -3158,18 +3254,9 @@ snapshots:
       '@vect/column': 0.7.20
       '@vect/matrix-size': 0.5.23
 
-  '@aryth/rank-column@0.7.2':
-    dependencies:
-      '@vect/column': 0.8.0
-      '@vect/matrix-size': 0.5.23
-
   '@aryth/rank-matrix@0.6.9':
     dependencies:
       '@vect/matrix-mapper': 0.7.20
-
-  '@aryth/rank-matrix@0.7.2':
-    dependencies:
-      '@vect/matrix-mapper': 0.8.0
 
   '@aryth/rank-vector@0.6.9':
     dependencies:
@@ -3179,27 +3266,12 @@ snapshots:
       '@vect/vector-algebra': 0.7.20
       '@vect/vector-mapper': 0.7.20
 
-  '@aryth/rank-vector@0.7.2':
-    dependencies:
-      '@aryth/comparer': link:packages/comparer
-      '@typen/literal': 0.2.0
-      '@typen/num-loose': 0.2.0
-      '@vect/vector-algebra': 0.8.0
-      '@vect/vector-mapper': 0.8.0
-
   '@aryth/rank@0.6.9':
     dependencies:
       '@aryth/comparer': 0.6.9
       '@aryth/rank-column': 0.6.9
       '@aryth/rank-matrix': 0.6.9
       '@aryth/rank-vector': 0.6.9
-
-  '@aryth/rank@0.7.0':
-    dependencies:
-      '@aryth/comparer': 0.7.2
-      '@aryth/rank-column': 0.7.2
-      '@aryth/rank-matrix': 0.7.2
-      '@aryth/rank-vector': 0.7.2
 
   '@aryth/util-bound@0.6.9':
     dependencies:
@@ -3208,7 +3280,7 @@ snapshots:
       '@typen/num-strict': 0.1.19
       typen: 0.2.3
 
-  '@aryth/util-bound@0.7.2':
+  '@aryth/util-bound@0.7.6':
     dependencies:
       '@typen/enum-check-levels': 0.2.0
       '@typen/num-loose': 0.2.0
@@ -3219,7 +3291,7 @@ snapshots:
     dependencies:
       typen: 0.2.3
 
-  '@aryth/util-distinct@0.7.2':
+  '@aryth/util-distinct@0.7.6':
     dependencies:
       typen: 0.2.3
 
@@ -3227,13 +3299,13 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  '@changesets/apply-release-plan@7.0.5':
+  '@changesets/apply-release-plan@7.0.10':
     dependencies:
-      '@changesets/config': 3.0.3
+      '@changesets/config': 3.1.1
       '@changesets/get-version-range-type': 0.4.0
-      '@changesets/git': 3.0.1
-      '@changesets/should-skip-package': 0.1.1
-      '@changesets/types': 6.0.0
+      '@changesets/git': 3.0.2
+      '@changesets/should-skip-package': 0.1.2
+      '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
       detect-indent: 6.1.0
       fs-extra: 7.0.1
@@ -3243,35 +3315,35 @@ snapshots:
       resolve-from: 5.0.0
       semver: 7.6.3
 
-  '@changesets/assemble-release-plan@6.0.4':
+  '@changesets/assemble-release-plan@6.0.6':
     dependencies:
       '@changesets/errors': 0.2.0
-      '@changesets/get-dependents-graph': 2.1.2
-      '@changesets/should-skip-package': 0.1.1
-      '@changesets/types': 6.0.0
+      '@changesets/get-dependents-graph': 2.1.3
+      '@changesets/should-skip-package': 0.1.2
+      '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
       semver: 7.6.3
 
-  '@changesets/changelog-git@0.2.0':
+  '@changesets/changelog-git@0.2.1':
     dependencies:
-      '@changesets/types': 6.0.0
+      '@changesets/types': 6.1.0
 
-  '@changesets/cli@2.27.9':
+  '@changesets/cli@2.28.1':
     dependencies:
-      '@changesets/apply-release-plan': 7.0.5
-      '@changesets/assemble-release-plan': 6.0.4
-      '@changesets/changelog-git': 0.2.0
-      '@changesets/config': 3.0.3
+      '@changesets/apply-release-plan': 7.0.10
+      '@changesets/assemble-release-plan': 6.0.6
+      '@changesets/changelog-git': 0.2.1
+      '@changesets/config': 3.1.1
       '@changesets/errors': 0.2.0
-      '@changesets/get-dependents-graph': 2.1.2
-      '@changesets/get-release-plan': 4.0.4
-      '@changesets/git': 3.0.1
+      '@changesets/get-dependents-graph': 2.1.3
+      '@changesets/get-release-plan': 4.0.8
+      '@changesets/git': 3.0.2
       '@changesets/logger': 0.1.1
-      '@changesets/pre': 2.0.1
-      '@changesets/read': 0.6.1
-      '@changesets/should-skip-package': 0.1.1
-      '@changesets/types': 6.0.0
-      '@changesets/write': 0.3.2
+      '@changesets/pre': 2.0.2
+      '@changesets/read': 0.6.3
+      '@changesets/should-skip-package': 0.1.2
+      '@changesets/types': 6.1.0
+      '@changesets/write': 0.4.0
       '@manypkg/get-packages': 1.1.3
       ansi-colors: 4.1.3
       ci-info: 3.9.0
@@ -3284,15 +3356,15 @@ snapshots:
       picocolors: 1.1.1
       resolve-from: 5.0.0
       semver: 7.6.3
-      spawndamnit: 2.0.0
+      spawndamnit: 3.0.1
       term-size: 2.2.1
 
-  '@changesets/config@3.0.3':
+  '@changesets/config@3.1.1':
     dependencies:
       '@changesets/errors': 0.2.0
-      '@changesets/get-dependents-graph': 2.1.2
+      '@changesets/get-dependents-graph': 2.1.3
       '@changesets/logger': 0.1.1
-      '@changesets/types': 6.0.0
+      '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
       fs-extra: 7.0.1
       micromatch: 4.0.8
@@ -3301,72 +3373,72 @@ snapshots:
     dependencies:
       extendable-error: 0.1.7
 
-  '@changesets/get-dependents-graph@2.1.2':
+  '@changesets/get-dependents-graph@2.1.3':
     dependencies:
-      '@changesets/types': 6.0.0
+      '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
       picocolors: 1.1.1
       semver: 7.6.3
 
-  '@changesets/get-release-plan@4.0.4':
+  '@changesets/get-release-plan@4.0.8':
     dependencies:
-      '@changesets/assemble-release-plan': 6.0.4
-      '@changesets/config': 3.0.3
-      '@changesets/pre': 2.0.1
-      '@changesets/read': 0.6.1
-      '@changesets/types': 6.0.0
+      '@changesets/assemble-release-plan': 6.0.6
+      '@changesets/config': 3.1.1
+      '@changesets/pre': 2.0.2
+      '@changesets/read': 0.6.3
+      '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
 
   '@changesets/get-version-range-type@0.4.0': {}
 
-  '@changesets/git@3.0.1':
+  '@changesets/git@3.0.2':
     dependencies:
       '@changesets/errors': 0.2.0
       '@manypkg/get-packages': 1.1.3
       is-subdir: 1.2.0
       micromatch: 4.0.8
-      spawndamnit: 2.0.0
+      spawndamnit: 3.0.1
 
   '@changesets/logger@0.1.1':
     dependencies:
       picocolors: 1.1.1
 
-  '@changesets/parse@0.4.0':
+  '@changesets/parse@0.4.1':
     dependencies:
-      '@changesets/types': 6.0.0
+      '@changesets/types': 6.1.0
       js-yaml: 3.14.1
 
-  '@changesets/pre@2.0.1':
+  '@changesets/pre@2.0.2':
     dependencies:
       '@changesets/errors': 0.2.0
-      '@changesets/types': 6.0.0
+      '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
       fs-extra: 7.0.1
 
-  '@changesets/read@0.6.1':
+  '@changesets/read@0.6.3':
     dependencies:
-      '@changesets/git': 3.0.1
+      '@changesets/git': 3.0.2
       '@changesets/logger': 0.1.1
-      '@changesets/parse': 0.4.0
-      '@changesets/types': 6.0.0
+      '@changesets/parse': 0.4.1
+      '@changesets/types': 6.1.0
       fs-extra: 7.0.1
       p-filter: 2.1.0
       picocolors: 1.1.1
 
-  '@changesets/should-skip-package@0.1.1':
+  '@changesets/should-skip-package@0.1.2':
     dependencies:
-      '@changesets/types': 6.0.0
+      '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
 
   '@changesets/types@4.1.0': {}
 
-  '@changesets/types@6.0.0': {}
+  '@changesets/types@6.1.0': {}
 
-  '@changesets/write@0.3.2':
+  '@changesets/write@0.4.0':
     dependencies:
-      '@changesets/types': 6.0.0
+      '@changesets/types': 6.1.0
       fs-extra: 7.0.1
-      human-id: 1.0.2
+      human-id: 4.1.1
       prettier: 2.8.8
 
   '@cliche/mag@0.0.5':
@@ -3462,8 +3534,6 @@ snapshots:
       '@foba/vector-number': 0.6.1
       '@foba/vector-string': 0.6.1
 
-  '@ject/callable@0.0.17': {}
-
   '@ject/mixin@0.0.17':
     dependencies:
       '@ject/rename': 0.0.17
@@ -3471,7 +3541,7 @@ snapshots:
 
   '@ject/oneself@0.0.17': {}
 
-  '@ject/oneself@0.1.0': {}
+  '@ject/oneself@0.1.2': {}
 
   '@ject/rename@0.0.17': {}
 
@@ -3533,7 +3603,7 @@ snapshots:
     dependencies:
       palett-presets: 0.1.1
 
-  '@palett/cards@0.12.0':
+  '@palett/cards@0.12.24':
     dependencies:
       palett-presets: 0.1.1
 
@@ -3544,6 +3614,11 @@ snapshots:
   '@palett/color-algebra@0.10.6':
     dependencies:
       '@aryth/math': 0.6.9
+
+  '@palett/color-algebra@0.12.24':
+    dependencies:
+      '@aryth/math': 0.7.6
+      '@palett/convert': 0.12.24
 
   '@palett/color-algebra@0.9.19':
     dependencies:
@@ -3563,15 +3638,15 @@ snapshots:
       '@vect/vector-init': 0.7.20
       '@vect/vector-mapper': 0.7.20
 
-  '@palett/color-space@0.12.0':
+  '@palett/color-space@0.12.24':
     dependencies:
       '@analyz/crostab': 0.1.1
-      '@aryth/bound': 0.7.2
-      '@aryth/distinct-column': 0.7.2
-      '@aryth/flopper': 0.7.2
-      '@aryth/math': 0.7.2
-      '@aryth/polar': 0.7.2
-      '@palett/convert': 0.12.0
+      '@aryth/bound': 0.7.6
+      '@aryth/distinct-column': 0.7.6
+      '@aryth/flopper': 0.7.6
+      '@aryth/math': 0.7.6
+      '@aryth/polar': 0.7.6
+      '@palett/convert': 0.12.24
       '@vect/columns-indicator': 0.6.13
       '@vect/matrix-init': 0.8.0
       '@vect/vector-init': 0.8.0
@@ -3601,10 +3676,9 @@ snapshots:
       '@aryth/math': 0.6.9
       '@ject/oneself': 0.0.17
 
-  '@palett/convert@0.12.0':
+  '@palett/convert@0.12.24':
     dependencies:
-      '@aryth/math': 0.7.2
-      '@ject/oneself': 0.0.17
+      '@aryth/polar': 0.7.6
 
   '@palett/convert@0.9.19':
     dependencies:
@@ -3627,14 +3701,32 @@ snapshots:
       '@palett/enum-font-effects': 0.11.6
       '@palett/util-ansi': 0.11.6
 
-  '@palett/dye@0.12.0':
+  '@palett/dye@0.12.19':
     dependencies:
-      '@ject/oneself': 0.0.17
-      '@palett/convert': 0.12.0
-      '@palett/enum-ansi-codes': 0.12.0
-      '@palett/enum-color-space': 0.12.0
-      '@palett/enum-font-effects': 0.12.0
-      '@palett/util-ansi': 0.12.0
+      '@ject/oneself': 0.1.2
+      '@palett/convert': 0.12.24
+      '@palett/enum-ansi-codes': 0.12.19
+      '@palett/enum-color-space': 0.12.19
+      '@palett/enum-font-effects': 0.12.19
+      '@palett/util-ansi': 0.12.19
+      '@typen/enum-data-types': 0.2.0
+
+  '@palett/dye@0.12.20':
+    dependencies:
+      '@ject/oneself': 0.1.2
+      '@palett/convert': 0.12.24
+      '@palett/enum-ansi-codes': 0.12.20
+      '@palett/enum-color-space': 0.12.20
+      '@palett/enum-font-effects': 0.12.20
+      '@palett/util-ansi': 0.12.20
+      '@typen/enum-data-types': 0.2.0
+
+  '@palett/dye@0.12.24':
+    dependencies:
+      '@palett/convert': 0.12.24
+      '@palett/enum-ansi-codes': 0.12.24
+      '@palett/util-ansi': 0.12.24
+      '@typen/enum-data-types': 0.2.0
 
   '@palett/dye@0.9.19':
     dependencies:
@@ -3648,11 +3740,13 @@ snapshots:
 
   '@palett/enum-ansi-codes@0.11.6': {}
 
-  '@palett/enum-ansi-codes@0.12.0': {}
+  '@palett/enum-ansi-codes@0.12.19': {}
+
+  '@palett/enum-ansi-codes@0.12.20': {}
+
+  '@palett/enum-ansi-codes@0.12.24': {}
 
   '@palett/enum-ansi-codes@0.9.19': {}
-
-  '@palett/enum-color-cards@0.12.0': {}
 
   '@palett/enum-color-cards@0.9.19': {}
 
@@ -3660,7 +3754,9 @@ snapshots:
 
   '@palett/enum-color-space@0.11.6': {}
 
-  '@palett/enum-color-space@0.12.0': {}
+  '@palett/enum-color-space@0.12.19': {}
+
+  '@palett/enum-color-space@0.12.20': {}
 
   '@palett/enum-color-space@0.9.19': {}
 
@@ -3672,35 +3768,28 @@ snapshots:
     dependencies:
       '@palett/enum-color-space': 0.11.6
 
-  '@palett/enum-colorant-modes@0.12.0':
-    dependencies:
-      '@palett/enum-color-space': 0.12.0
-
   '@palett/enum-font-effects@0.10.6': {}
 
   '@palett/enum-font-effects@0.11.6': {}
 
-  '@palett/enum-font-effects@0.12.0': {}
+  '@palett/enum-font-effects@0.12.19': {}
+
+  '@palett/enum-font-effects@0.12.20': {}
 
   '@palett/enum-font-effects@0.9.19': {}
 
-  '@palett/flopper@0.12.0':
+  '@palett/flopper@0.12.24':
     dependencies:
-      '@aryth/comparer': 0.7.2
-      '@aryth/flopper': 0.7.2
-      '@aryth/rand': 0.7.2
-      '@aryth/rank': 0.7.0
-      '@palett/cards': 0.12.0
-      '@palett/color-space': 0.12.0
-      '@palett/convert': 0.12.0
-      '@palett/enum-color-space': 0.12.0
-      '@palett/munsell': 0.12.0
-      '@palett/presets': 0.12.0
-      '@palett/table': 0.12.0
-      '@vect/object-select': 0.8.0
-      '@vect/swap': 0.6.13
-      '@vect/vector': 0.8.0
-      '@vect/vector-mapper': 0.8.0
+      '@aryth/flopper': 0.7.6
+      '@aryth/math': 0.7.6
+      '@aryth/polar': 0.7.6
+      '@aryth/rand': 0.7.6
+      '@palett/color-algebra': 0.12.24
+      '@palett/convert': 0.12.24
+      '@palett/munsell': 0.12.24
+      '@palett/pres': 0.12.24
+      '@typen/enum-data-types': 0.2.0
+      '@vect/vector-init': 0.8.0
 
   '@palett/flopper@0.9.19':
     dependencies:
@@ -3717,23 +3806,6 @@ snapshots:
       '@vect/swap': 0.6.13
       '@vect/vector-mapper': 0.7.20
 
-  '@palett/fluo-matrix@0.12.0':
-    dependencies:
-      '@aryth/bound-matrix': 0.7.2
-      '@ject/oneself': 0.0.17
-      '@palett/convert': 0.12.0
-      '@palett/enum-colorant-modes': 0.12.0
-      '@palett/fluo': 0.12.0
-      '@palett/fluo-vector': 0.12.0
-      '@palett/projector': 0.12.0
-      '@typen/nullish': 0.1.19
-      '@vect/columns-mapper': 0.8.0
-      '@vect/enum-matrix-directions': 0.6.13
-      '@vect/matrix-algebra': 0.8.0
-      '@vect/matrix-index': 0.8.0
-      '@vect/matrix-mapper': 0.8.0
-      '@vect/vector-mapper': 0.8.0
-
   '@palett/fluo-vector@0.10.4':
     dependencies:
       '@palett/fluo': 0.10.5
@@ -3742,9 +3814,9 @@ snapshots:
     dependencies:
       '@palett/fluo': 0.11.6
 
-  '@palett/fluo-vector@0.12.0':
+  '@palett/fluo-vector@0.12.20':
     dependencies:
-      '@palett/fluo': 0.12.0
+      '@spare/serial': 0.16.19
 
   '@palett/fluo@0.10.5':
     dependencies:
@@ -3793,47 +3865,23 @@ snapshots:
       '@vect/object-update': 0.7.20
       '@vect/vector': 0.7.20
 
-  '@palett/fluo@0.12.0':
+  '@palett/munsell@0.12.24':
     dependencies:
-      '@palett/dye': 0.12.0
-      '@palett/enum-ansi-codes': 0.12.0
-      '@palett/presets': 0.12.0
-      '@palett/projector': 0.12.0
-      '@palett/util-ansi': 0.12.0
-      '@spare/arc': 0.16.1
-      '@spare/deco': 0.16.1
-      '@spare/string-value': 0.16.1
-      '@texting/charset-fullwidth': 0.2.1
-      '@texting/charset-halfwidth': 0.2.1
-      '@texting/regex-phrasing': 0.2.1
-      '@texting/string-value': 0.2.1
-      '@typen/enum-data-types': 0.1.19
-      '@typen/literal': 0.1.19
-      '@typen/nullish': 0.1.19
-      '@typen/num-strict': 0.1.19
-      '@vect/entries': 0.8.0
-      '@vect/entries-init': 0.8.0
-      '@vect/enum-matrix-directions': 0.6.13
-      '@vect/matrix-algebra': 0.8.0
-      '@vect/matrix-index': 0.8.0
-      '@vect/matrix-init': 0.8.0
-      '@vect/object-update': 0.8.0
-      '@vect/vector': 0.8.0
+      '@aryth/math': 0.7.6
+      '@aryth/polar': 0.7.6
+      '@palett/convert': 0.12.24
 
-  '@palett/munsell@0.12.0':
+  '@palett/nuance-midtone@0.12.24': {}
+
+  '@palett/pres@0.12.24':
     dependencies:
-      '@analyz/crostab': 0.1.1
-      '@aryth/bound': 0.7.2
-      '@aryth/distinct-column': 0.7.2
-      '@aryth/flopper': 0.7.2
-      '@aryth/math': 0.7.2
-      '@aryth/polar': 0.7.2
-      '@palett/color-space': 0.12.0
-      '@palett/convert': 0.12.0
-      '@vect/columns-indicator': 0.6.13
-      '@vect/matrix-init': 0.8.0
+      '@aryth/polar': 0.7.6
+      '@aryth/rand': 0.7.6
+      '@palett/color-algebra': 0.12.24
+      '@palett/convert': 0.12.24
+      '@palett/stringify': 0.12.24
+      '@typen/enum-data-types': 0.2.0
       '@vect/vector-init': 0.8.0
-      '@vect/vector-mapper': 0.8.0
 
   '@palett/presets@0.10.5':
     dependencies:
@@ -3858,16 +3906,10 @@ snapshots:
       '@palett/util-ansi': 0.11.6
       '@vect/vector-init': 0.7.20
 
-  '@palett/presets@0.12.0':
+  '@palett/presets@0.12.24':
     dependencies:
-      '@aryth/math': 0.7.2
-      '@aryth/rand': 0.7.2
-      '@palett/cards': 0.12.0
-      '@palett/convert': 0.12.0
-      '@palett/enum-ansi-codes': 0.12.0
-      '@palett/stringify': 0.12.0
-      '@palett/util-ansi': 0.12.0
-      '@vect/vector-init': 0.8.0
+      '@palett/cards': 0.12.24
+      '@palett/pres': 0.12.24
 
   '@palett/presets@0.9.19':
     dependencies:
@@ -3895,10 +3937,12 @@ snapshots:
       '@palett/dye': 0.11.6
       '@palett/presets': 0.11.6
 
-  '@palett/projector@0.12.0':
+  '@palett/projector@0.12.20':
     dependencies:
-      '@palett/dye': 0.12.0
-      '@palett/presets': 0.12.0
+      '@palett/convert': 0.12.24
+      '@palett/dye': 0.12.20
+      '@palett/pres': 0.12.24
+      '@palett/presets': 0.12.24
 
   '@palett/says@0.9.10':
     dependencies:
@@ -3921,36 +3965,12 @@ snapshots:
       '@palett/enum-ansi-codes': 0.11.6
       '@palett/util-ansi': 0.11.6
 
-  '@palett/stringify@0.12.0':
+  '@palett/stringify@0.12.24':
     dependencies:
-      '@aryth/math': 0.7.2
-      '@palett/convert': 0.12.0
-      '@palett/enum-ansi-codes': 0.12.0
-      '@palett/util-ansi': 0.12.0
-
-  '@palett/table@0.12.0':
-    dependencies:
-      '@analys/convert': 0.7.2
-      '@analyz/crostab': 0.1.1
-      '@aryth/math': 0.7.2
-      '@ject/oneself': 0.0.17
-      '@palett/cards': 0.12.0
-      '@palett/convert': 0.12.0
-      '@palett/dye': 0.12.0
-      '@palett/enum-color-cards': 0.12.0
-      '@palett/enum-color-space': 0.12.0
-      '@palett/enum-font-effects': 0.12.0
-      '@spare/string': 0.16.1
-      '@spare/translator': 0.16.1
-      '@vect/columns-mapper': 0.8.0
-      '@vect/matrix-mapper': 0.8.0
-      '@vect/matrix-transpose': 0.6.13
-      '@vect/object-select': 0.8.0
-      '@vect/vector-indicator': 0.6.13
-      '@vect/vector-init': 0.8.0
-      '@vect/vector-mapper': 0.8.0
-      '@vect/vector-stat': 0.8.0
-      '@vect/vector-zipper': 0.8.0
+      '@aryth/math': 0.7.6
+      '@palett/convert': 0.12.24
+      '@palett/enum-ansi-codes': 0.12.24
+      '@palett/util-ansi': 0.12.24
 
   '@palett/table@0.9.19':
     dependencies:
@@ -3984,80 +4004,91 @@ snapshots:
     dependencies:
       '@palett/convert': 0.11.6
 
-  '@palett/util-ansi@0.12.0':
+  '@palett/util-ansi@0.12.19':
     dependencies:
-      '@palett/convert': 0.12.0
+      '@palett/convert': 0.12.24
+
+  '@palett/util-ansi@0.12.20':
+    dependencies:
+      '@palett/convert': 0.12.24
+
+  '@palett/util-ansi@0.12.24':
+    dependencies:
+      '@palett/convert': 0.12.24
 
   '@palett/util-ansi@0.9.19':
     dependencies:
       '@palett/convert': 0.9.19
 
-  '@rollup/plugin-json@6.1.0(rollup@4.25.0)':
+  '@rollup/plugin-json@6.1.0(rollup@4.36.0)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.25.0)
+      '@rollup/pluginutils': 5.1.3(rollup@4.36.0)
     optionalDependencies:
-      rollup: 4.25.0
+      rollup: 4.36.0
 
-  '@rollup/pluginutils@5.1.3(rollup@4.25.0)':
+  '@rollup/pluginutils@5.1.3(rollup@4.36.0)':
     dependencies:
       '@types/estree': 1.0.6
       estree-walker: 2.0.2
       picomatch: 4.0.2
     optionalDependencies:
-      rollup: 4.25.0
+      rollup: 4.36.0
 
-  '@rollup/rollup-android-arm-eabi@4.25.0':
+  '@rollup/rollup-android-arm-eabi@4.36.0':
     optional: true
 
-  '@rollup/rollup-android-arm64@4.25.0':
+  '@rollup/rollup-android-arm64@4.36.0':
     optional: true
 
-  '@rollup/rollup-darwin-arm64@4.25.0':
+  '@rollup/rollup-darwin-arm64@4.36.0':
     optional: true
 
-  '@rollup/rollup-darwin-x64@4.25.0':
+  '@rollup/rollup-darwin-x64@4.36.0':
     optional: true
 
-  '@rollup/rollup-freebsd-arm64@4.25.0':
+  '@rollup/rollup-freebsd-arm64@4.36.0':
     optional: true
 
-  '@rollup/rollup-freebsd-x64@4.25.0':
+  '@rollup/rollup-freebsd-x64@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-arm-gnueabihf@4.25.0':
+  '@rollup/rollup-linux-arm-gnueabihf@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-arm-musleabihf@4.25.0':
+  '@rollup/rollup-linux-arm-musleabihf@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-arm64-gnu@4.25.0':
+  '@rollup/rollup-linux-arm64-gnu@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-arm64-musl@4.25.0':
+  '@rollup/rollup-linux-arm64-musl@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-powerpc64le-gnu@4.25.0':
+  '@rollup/rollup-linux-loongarch64-gnu@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-riscv64-gnu@4.25.0':
+  '@rollup/rollup-linux-powerpc64le-gnu@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-s390x-gnu@4.25.0':
+  '@rollup/rollup-linux-riscv64-gnu@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-x64-gnu@4.25.0':
+  '@rollup/rollup-linux-s390x-gnu@4.36.0':
     optional: true
 
-  '@rollup/rollup-linux-x64-musl@4.25.0':
+  '@rollup/rollup-linux-x64-gnu@4.36.0':
     optional: true
 
-  '@rollup/rollup-win32-arm64-msvc@4.25.0':
+  '@rollup/rollup-linux-x64-musl@4.36.0':
     optional: true
 
-  '@rollup/rollup-win32-ia32-msvc@4.25.0':
+  '@rollup/rollup-win32-arm64-msvc@4.36.0':
     optional: true
 
-  '@rollup/rollup-win32-x64-msvc@4.25.0':
+  '@rollup/rollup-win32-ia32-msvc@4.36.0':
+    optional: true
+
+  '@rollup/rollup-win32-x64-msvc@4.36.0':
     optional: true
 
   '@spare/arc@0.14.29':
@@ -4088,32 +4119,17 @@ snapshots:
       '@vect/matrix-init': 0.7.20
       '@vect/vector-indicator': 0.6.13
 
-  '@spare/arc@0.16.1':
-    dependencies:
-      '@aryth/bound': 0.7.2
-      '@palett/projector': 0.12.0
-      '@texting/lange': 0.2.1
-      '@texting/padder': 0.2.1
-      '@texting/string-value': 0.2.1
-      '@typen/enum-data-types': 0.2.0
-      '@typen/literal': 0.2.0
-      '@typen/num-strict': 0.2.0
-      '@vect/matrix-index': 0.8.0
-      '@vect/matrix-init': 0.8.0
-      '@vect/vector-indicator': 0.6.13
-
   '@spare/bracket@0.14.29':
     dependencies:
       '@spare/enum-brackets': 0.14.29
 
+  '@spare/charset@0.16.16':
+    dependencies:
+      '@spare/regex-charset': 0.16.16
+
   '@spare/charset@0.9.9':
     dependencies:
       '@spare/regex-charset': 0.9.9
-
-  '@spare/cite@0.16.1':
-    dependencies:
-      '@spare/quote': 0.16.1
-      '@spare/translator': 0.16.1
 
   '@spare/deco-colors@0.15.16':
     dependencies:
@@ -4124,13 +4140,13 @@ snapshots:
       '@spare/preset-deco': 0.15.16
       '@vect/object-mapper': 0.7.20
 
-  '@spare/deco-colors@0.16.1':
+  '@spare/deco-colors@0.16.22':
     dependencies:
-      '@palett/cards': 0.12.0
-      '@palett/convert': 0.12.0
-      '@palett/dye': 0.12.0
-      '@palett/presets': 0.12.0
-      '@spare/preset-deco': 0.16.1
+      '@palett/cards': 0.12.24
+      '@palett/convert': 0.12.24
+      '@palett/dye': 0.12.24
+      '@palett/presets': 0.12.24
+      '@spare/preset-deco': 0.16.16
       '@vect/object-mapper': 0.8.0
 
   '@spare/deco-config@0.14.29':
@@ -4147,23 +4163,12 @@ snapshots:
       '@typen/nullish': 0.1.19
       '@vect/object-update': 0.7.20
 
-  '@spare/deco-config@0.16.1':
+  '@spare/deco-crostab@0.16.22':
     dependencies:
-      '@palett/fluo': 0.12.0
-      '@spare/preset-deco': 0.16.1
-      '@typen/nullish': 0.2.0
-      '@vect/object-update': 0.8.0
-
-  '@spare/deco-crostab@0.16.1':
-    dependencies:
-      '@palett/presets': 0.12.0
-      '@spare/deco': 0.16.1
-      '@spare/deco-table': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@texting/enum-chars': 0.2.1
-      '@vect/enum-matrix-directions': 0.6.13
-      '@vect/matrix-index': 0.8.0
-      '@vect/vector-init': 0.8.0
+      '@palett/presets': 0.12.24
+      '@spare/deco-table': 0.16.22
+      '@spare/node': 0.16.22
+      '@texting/enum-chars': 0.2.3
 
   '@spare/deco-date@0.15.16':
     dependencies:
@@ -4171,25 +4176,22 @@ snapshots:
       '@spare/preset-deco': 0.15.16
       '@valjoux/timestamp-pretty': 0.3.21
 
-  '@spare/deco-date@0.16.1':
+  '@spare/deco-date@0.16.22':
     dependencies:
-      '@spare/deco-config': 0.16.1
-      '@spare/preset-deco': 0.16.1
-      '@valjoux/timestamp-pretty': 0.4.0
+      '@valjoux/timestamp-pretty': 0.4.1
 
-  '@spare/deco-entries@0.16.1':
+  '@spare/deco-entries@0.16.22':
     dependencies:
-      '@palett/presets': 0.12.0
-      '@spare/deco': 0.16.1
-      '@texting/enum-chars': 0.2.1
+      '@palett/presets': 0.12.24
+      '@spare/node': 0.16.22
 
-  '@spare/deco-flat@0.16.1':
+  '@spare/deco-flat@0.16.22':
     dependencies:
-      '@palett/presets': 0.12.0
-      '@spare/deco': 0.16.1
-      '@spare/deco-colors': 0.16.1
-      '@spare/deco-date': 0.16.1
-      '@spare/deco-func': 0.16.1
+      '@palett/presets': 0.12.24
+      '@spare/deco-colors': 0.16.22
+      '@spare/deco-date': 0.16.22
+      '@spare/deco-func': 0.16.22
+      '@spare/node': 0.16.22
       '@typen/enum-data-types': 0.2.0
       '@typen/enum-object-types': 0.2.0
       '@typen/num-loose': 0.2.0
@@ -4220,77 +4222,57 @@ snapshots:
       '@texting/bracket': 0.1.13
       '@texting/lange': 0.1.13
 
-  '@spare/deco-func@0.16.1':
+  '@spare/deco-func@0.16.22':
     dependencies:
-      '@palett/cards': 0.12.0
-      '@palett/convert': 0.12.0
-      '@palett/dye': 0.12.0
-      '@spare/deco-config': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@spare/preset-deco': 0.16.1
-      '@spare/translator': 0.16.1
-      '@texting/bracket': 0.2.1
-      '@texting/lange': 0.2.1
+      '@palett/cards': 0.12.24
+      '@palett/dye': 0.12.24
+      '@texting/bracket': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/lange': 0.2.3
+      '@texting/translator': 0.2.3
 
-  '@spare/deco-matrix@0.16.1':
+  '@spare/deco-matrix@0.16.22':
     dependencies:
-      '@palett/presets': 0.12.0
-      '@spare/deco': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@vect/enum-matrix-directions': 0.6.13
+      '@palett/presets': 0.12.24
+      '@spare/node': 0.16.22
 
   '@spare/deco-object@0.15.16':
     dependencies:
       '@palett/presets': 0.11.6
       '@spare/deco': 0.15.16
 
-  '@spare/deco-object@0.16.1':
+  '@spare/deco-object@0.16.22':
     dependencies:
-      '@palett/presets': 0.12.0
-      '@spare/deco': 0.16.1
+      '@palett/presets': 0.12.24
+      '@spare/node': 0.16.22
 
-  '@spare/deco-pale@0.16.1':
+  '@spare/deco-pale@0.16.22':
     dependencies:
-      '@spare/cite': 0.16.1
-      '@spare/deco-config': 0.16.1
-      '@spare/deco-func': 0.16.1
-      '@spare/deco-object': 0.16.1
-      '@spare/deco-util': 0.16.1
-      '@spare/deco-vector': 0.16.1
-      '@spare/enum-brackets': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@spare/preset-deco': 0.16.1
-      '@spare/quote': 0.16.1
-      '@texting/bracket': 0.2.1
+      '@spare/deco-func': 0.16.22
+      '@texting/bracket': 0.2.3
+      '@texting/cite': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/quote': 0.2.3
       '@typen/enum-data-types': 0.2.0
       '@typen/enum-object-types': 0.2.0
       '@typen/num-strict': 0.2.0
       '@typen/typ': 0.2.0
-      '@valjoux/format-date': 0.4.0
-      '@valjoux/format-time': 0.4.0
+      '@valjoux/format-date': 0.4.1
+      '@valjoux/format-time': 0.4.1
       '@vect/entries-mapper': 0.8.0
 
-  '@spare/deco-samples@0.16.1':
+  '@spare/deco-samples@0.16.22':
     dependencies:
-      '@analys/convert': 0.7.2
-      '@analys/samples-select': 0.7.2
-      '@aryth/math': 0.7.2
-      '@palett/enum-colorant-modes': 0.12.0
-      '@palett/fluo-matrix': 0.12.0
-      '@palett/fluo-vector': 0.12.0
-      '@spare/deco-config': 0.16.1
-      '@spare/deco-flat': 0.16.1
-      '@spare/deco-vector': 0.16.1
-      '@spare/enum-brackets': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@spare/matrix-padder': 0.16.1
-      '@spare/preset-deco': 0.16.1
-      '@spare/table-margin': 0.16.1
-      '@spare/vector-padder': 0.16.1
-      '@texting/liner': 0.2.1
-      '@vect/entries-unwind': 0.6.13
+      '@analys/convert': 0.7.3
+      '@analys/samples-select': 0.7.3
+      '@palett/presets': 0.12.24
+      '@spare/node': 0.16.22
+      '@spare/serial': 0.16.22
+      '@texting/enum-brackets': 0.2.3
+      '@texting/enum-chars': 0.2.3
       '@vect/enum-matrix-directions': 0.6.13
-      '@vect/vector-zipper': 0.8.0
+      '@vect/matrix-index': 0.8.0
+      '@vect/object-init': 0.8.0
 
   '@spare/deco-string@0.14.29':
     dependencies:
@@ -4314,31 +4296,20 @@ snapshots:
       '@texting/fold': 0.1.13
       '@texting/splitter': 0.1.13
 
-  '@spare/deco-string@0.16.1':
+  '@spare/deco-string@0.16.22':
     dependencies:
-      '@palett/enum-colorant-modes': 0.12.0
-      '@palett/fluo-vector': 0.12.0
-      '@palett/presets': 0.12.0
-      '@spare/deco': 0.16.1
-      '@texting/charset-ansi': 0.2.1
-      '@texting/enum-chars': 0.2.1
-      '@texting/fold': 0.2.1
-      '@texting/splitter': 0.2.1
+      '@palett/presets': 0.12.24
+      '@spare/node': 0.16.22
 
-  '@spare/deco-table@0.16.1':
+  '@spare/deco-table@0.16.22':
     dependencies:
-      '@palett/presets': 0.12.0
-      '@spare/deco': 0.16.1
-      '@texting/enum-chars': 0.2.1
+      '@palett/presets': 0.12.24
+      '@spare/node': 0.16.22
+      '@spare/serial': 0.16.22
+      '@texting/enum-chars': 0.2.3
       '@vect/enum-matrix-directions': 0.6.13
       '@vect/matrix-index': 0.8.0
       '@vect/vector-init': 0.8.0
-
-  '@spare/deco-util@0.16.1':
-    dependencies:
-      '@aryth/bound': 0.7.2
-      '@spare/enum-chars': 0.16.1
-      '@spare/preset-deco': 0.16.1
 
   '@spare/deco-vector@0.15.16':
     dependencies:
@@ -4346,11 +4317,15 @@ snapshots:
       '@spare/deco': 0.15.16
       '@spare/vector-margin': 0.15.16
 
-  '@spare/deco-vector@0.16.1':
+  '@spare/deco-vector@0.16.17':
     dependencies:
-      '@palett/presets': 0.12.0
-      '@spare/deco': 0.16.1
-      '@spare/vector-margin': 0.16.1
+      '@palett/presets': 0.12.24
+      '@spare/node': 0.16.17
+
+  '@spare/deco-vector@0.16.22':
+    dependencies:
+      '@palett/presets': 0.12.24
+      '@spare/node': 0.16.22
 
   '@spare/deco@0.15.16':
     dependencies:
@@ -4382,46 +4357,28 @@ snapshots:
       '@vect/vector-index': 0.7.20
       '@vect/vector-init': 0.7.20
 
-  '@spare/deco@0.16.1':
+  '@spare/deco@0.16.22':
     dependencies:
-      '@aryth/comparer': 0.7.2
-      '@aryth/math': 0.7.2
-      '@palett/convert': 0.12.0
-      '@palett/enum-ansi-codes': 0.12.0
-      '@palett/presets': 0.12.0
-      '@palett/util-ansi': 0.12.0
-      '@spare/deco-colors': 0.16.1
-      '@spare/deco-date': 0.16.1
-      '@spare/deco-func': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@texting/charset-ansi': 0.2.1
-      '@texting/enum-brackets': 0.2.1
-      '@texting/enum-chars': 0.2.1
-      '@texting/lange': 0.2.1
-      '@texting/padder': 0.2.1
-      '@texting/splitter': 0.2.1
-      '@texting/string-value': 0.2.1
+      '@palett/presets': 0.12.24
+      '@spare/deco-colors': 0.16.22
+      '@spare/deco-date': 0.16.22
+      '@spare/deco-func': 0.16.22
+      '@spare/node': 0.16.22
       '@typen/enum-data-types': 0.2.0
       '@typen/enum-object-types': 0.2.0
-      '@typen/literal': 0.2.0
       '@typen/num-loose': 0.2.0
-      '@typen/num-strict': 0.2.0
       '@typen/typ': 0.2.0
       '@vect/enum-matrix-directions': 0.6.13
-      '@vect/matrix-index': 0.8.0
       '@vect/object-mapper': 0.8.0
       '@vect/vector-index': 0.8.0
-      '@vect/vector-init': 0.8.0
 
   '@spare/enum-brackets@0.14.29': {}
-
-  '@spare/enum-brackets@0.16.1': {}
 
   '@spare/enum-chars@0.14.29': {}
 
   '@spare/enum-chars@0.15.16': {}
 
-  '@spare/enum-chars@0.16.1': {}
+  '@spare/enum-chars@0.16.16': {}
 
   '@spare/enum-chars@0.9.9': {}
 
@@ -4429,11 +4386,9 @@ snapshots:
 
   '@spare/enum-full-angle-chars@0.15.16': {}
 
-  '@spare/enum-full-angle-chars@0.16.1': {}
+  '@spare/enum-full-angle-chars@0.16.16': {}
 
   '@spare/enum-full-angle-chars@0.9.9': {}
-
-  '@spare/enum-quotes@0.16.1': {}
 
   '@spare/fullwidth@0.9.9':
     dependencies:
@@ -4442,50 +4397,70 @@ snapshots:
       '@spare/enum-full-angle-chars': 0.9.9
       '@spare/lange': 0.9.9
 
-  '@spare/lange@0.16.1':
+  '@spare/lange@0.16.16':
     dependencies:
-      '@spare/regex-charset': 0.16.1
+      '@spare/charset': 0.16.16
+      '@spare/regex-charset': 0.16.16
 
   '@spare/lange@0.9.9':
     dependencies:
       '@spare/regex-charset': 0.9.9
 
-  '@spare/logger@0.16.1':
+  '@spare/logger@0.16.22':
     dependencies:
-      '@spare/deco': 0.16.1
-      '@spare/deco-crostab': 0.16.1
-      '@spare/deco-entries': 0.16.1
-      '@spare/deco-flat': 0.16.1
-      '@spare/deco-func': 0.16.1
-      '@spare/deco-matrix': 0.16.1
-      '@spare/deco-object': 0.16.1
-      '@spare/deco-pale': 0.16.1
-      '@spare/deco-samples': 0.16.1
-      '@spare/deco-string': 0.16.1
-      '@spare/deco-table': 0.16.1
-      '@spare/deco-vector': 0.16.1
-      '@spare/says': 0.16.1
-      '@spare/xr': 0.16.1
-      '@texting/enum-chars': 0.2.1
+      '@spare/deco': 0.16.22
+      '@spare/deco-crostab': 0.16.22
+      '@spare/deco-entries': 0.16.22
+      '@spare/deco-flat': 0.16.22
+      '@spare/deco-func': 0.16.22
+      '@spare/deco-matrix': 0.16.22
+      '@spare/deco-object': 0.16.22
+      '@spare/deco-pale': 0.16.22
+      '@spare/deco-samples': 0.16.22
+      '@spare/deco-string': 0.16.22
+      '@spare/deco-table': 0.16.22
+      '@spare/deco-vector': 0.16.22
+      '@spare/plot': 0.16.22
+      '@texting/enum-chars': 0.2.3
 
-  '@spare/matrix-margin@0.16.1':
+  '@spare/node@0.16.17':
     dependencies:
-      '@ject/oneself': 0.0.17
-      '@spare/util': 0.16.1
-      '@vect/matrix-margin': 0.6.13
-      '@vect/matrix-size': 0.5.23
-      '@vect/vector-margin': 0.6.13
+      '@aryth/comparer': 0.7.5
+      '@palett/convert': 0.12.24
+      '@palett/dye': 0.12.19
+      '@palett/enum-ansi-codes': 0.12.19
+      '@palett/pres': 0.12.24
+      '@palett/util-ansi': 0.12.19
+      '@spare/serial': 0.16.17
+      '@texting/charset-ansi': 0.2.3
+      '@texting/charset-fullwidth': 0.2.3
+      '@texting/enum-brackets': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/lange': 0.2.3
+      '@texting/padder': 0.2.3
+      '@texting/splitter': 0.2.3
+      '@texting/string-value': 0.2.3
+      '@typen/enum-data-types': 0.2.0
+      '@typen/literal': 0.2.0
+      '@typen/num-strict': 0.2.0
+      '@vect/enum-matrix-directions': 0.6.13
+      '@vect/matrix-index': 0.8.0
+      '@vect/vector-init': 0.8.0
 
-  '@spare/matrix-padder@0.16.1':
+  '@spare/node@0.16.22':
     dependencies:
-      '@aryth/comparer': 0.7.2
-      '@texting/charset-fullwidth': 0.2.1
-      '@texting/lange': 0.2.1
-      '@texting/padder': 0.2.1
-      '@vect/columns-mapper': 0.8.0
-      '@vect/columns-stat': 0.8.0
-      '@vect/matrix-mapper': 0.8.0
-      '@vect/matrix-zipper': 0.8.0
+      '@aryth/comparer': 0.7.6
+      '@palett/convert': 0.12.24
+      '@palett/enum-ansi-codes': 0.12.24
+      '@palett/pres': 0.12.24
+      '@palett/util-ansi': 0.12.24
+      '@spare/serial': 0.16.22
+      '@texting/enum-brackets': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/lange': 0.2.3
+      '@texting/splitter': 0.2.3
+      '@typen/enum-data-types': 0.2.0
+      '@vect/matrix-index': 0.8.0
 
   '@spare/pad-string@0.9.9':
     dependencies:
@@ -4494,12 +4469,25 @@ snapshots:
       '@spare/lange': 0.9.9
       '@typen/num-strict': 0.1.19
 
-  '@spare/phrasing@0.16.1':
+  '@spare/phrasing@0.16.16':
     dependencies:
-      '@spare/deco-vector': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@spare/regex-phrasing': 0.16.1
+      '@spare/deco-vector': 0.16.17
+      '@spare/enum-chars': 0.16.16
+      '@spare/regex-phrasing': 0.16.16
       '@vect/vector-mapper': 0.8.0
+
+  '@spare/plot@0.16.22':
+    dependencies:
+      '@aryth/comparer': 0.7.6
+      '@palett/flopper': 0.12.24
+      '@palett/munsell': 0.12.24
+      '@palett/nuance-midtone': 0.12.24
+      '@spare/deco-string': 0.16.22
+      '@texting/bracket': 0.2.3
+      '@texting/charset-ansi': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/phrasing': 0.2.3
+      '@typen/enum-data-types': 0.2.0
 
   '@spare/preset-deco@0.14.29':
     dependencies:
@@ -4509,51 +4497,96 @@ snapshots:
     dependencies:
       '@palett/presets': 0.11.6
 
-  '@spare/preset-deco@0.16.1':
+  '@spare/preset-deco@0.16.16':
     dependencies:
-      '@palett/presets': 0.12.0
-
-  '@spare/quote@0.16.1':
-    dependencies:
-      '@spare/enum-chars': 0.16.1
-      '@spare/enum-quotes': 0.16.1
-      '@typen/literal': 0.2.0
-      '@typen/nullish': 0.2.0
+      '@palett/presets': 0.12.24
 
   '@spare/regex-charset@0.13.16': {}
 
   '@spare/regex-charset@0.16.1': {}
 
+  '@spare/regex-charset@0.16.16': {}
+
   '@spare/regex-charset@0.9.9': {}
 
-  '@spare/regex-phrasing@0.16.1': {}
+  '@spare/regex-phrasing@0.16.16': {}
 
-  '@spare/ripper@0.16.1':
+  '@spare/ripper@0.16.16':
     dependencies:
-      '@spare/deco-vector': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@spare/phrasing': 0.16.1
+      '@spare/deco-vector': 0.16.17
+      '@spare/enum-chars': 0.16.16
+      '@spare/phrasing': 0.16.16
       '@typen/nullish': 0.2.0
 
-  '@spare/says@0.16.1':
+  '@spare/serial@0.16.17':
     dependencies:
-      '@ject/callable': 0.0.17
-      '@palett/convert': 0.12.0
-      '@palett/dye': 0.12.0
-      '@palett/enum-font-effects': 0.12.0
-      '@palett/flopper': 0.12.0
-      '@spare/deco-string': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@spare/util': 0.16.1
-      '@texting/bracket': 0.2.1
+      '@aryth/comparer': 0.7.5
+      '@palett/convert': 0.12.24
+      '@palett/dye': 0.12.19
+      '@palett/enum-ansi-codes': 0.12.19
+      '@palett/pres': 0.12.24
+      '@palett/util-ansi': 0.12.19
+      '@texting/charset-ansi': 0.2.3
+      '@texting/charset-fullwidth': 0.2.3
+      '@texting/enum-brackets': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/lange': 0.2.3
+      '@texting/padder': 0.2.3
+      '@texting/splitter': 0.2.3
+      '@texting/string-value': 0.2.3
       '@typen/enum-data-types': 0.2.0
-      '@typen/enums': 0.2.0
-      '@vect/object-mapper': 0.8.0
+      '@typen/literal': 0.2.0
+      '@typen/num-strict': 0.2.0
+      '@vect/enum-matrix-directions': 0.6.13
+      '@vect/matrix-index': 0.8.0
+      '@vect/vector-init': 0.8.0
 
-  '@spare/splitter@0.16.1':
+  '@spare/serial@0.16.19':
     dependencies:
-      '@spare/regex-phrasing': 0.16.1
-      '@spare/ripper': 0.16.1
+      '@aryth/comparer': 0.7.5
+      '@palett/convert': 0.12.24
+      '@palett/dye': 0.12.20
+      '@palett/enum-ansi-codes': 0.12.20
+      '@palett/pres': 0.12.24
+      '@palett/util-ansi': 0.12.20
+      '@texting/charset-ansi': 0.2.3
+      '@texting/charset-fullwidth': 0.2.3
+      '@texting/enum-brackets': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/lange': 0.2.3
+      '@texting/padder': 0.2.3
+      '@texting/splitter': 0.2.3
+      '@texting/string-value': 0.2.3
+      '@typen/enum-data-types': 0.2.0
+      '@typen/literal': 0.2.0
+      '@typen/num-strict': 0.2.0
+      '@vect/enum-matrix-directions': 0.6.13
+      '@vect/matrix-index': 0.8.0
+      '@vect/vector-init': 0.8.0
+
+  '@spare/serial@0.16.22':
+    dependencies:
+      '@palett/dye': 0.12.24
+      '@palett/pres': 0.12.24
+      '@palett/util-ansi': 0.12.24
+      '@texting/charset-ansi': 0.2.3
+      '@texting/charset-fullwidth': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/lange': 0.2.3
+      '@texting/padder': 0.2.3
+      '@texting/splitter': 0.2.3
+      '@texting/string-value': 0.2.3
+      '@typen/enum-data-types': 0.2.0
+      '@typen/literal': 0.2.0
+      '@typen/num-strict': 0.2.0
+      '@vect/enum-matrix-directions': 0.6.13
+      '@vect/matrix-index': 0.8.0
+      '@vect/vector-init': 0.8.0
+
+  '@spare/splitter@0.16.16':
+    dependencies:
+      '@spare/regex-phrasing': 0.16.16
+      '@spare/ripper': 0.16.16
 
   '@spare/string-value@0.14.29':
     dependencies:
@@ -4563,30 +4596,19 @@ snapshots:
     dependencies:
       '@typen/enum-data-types': 0.1.19
 
-  '@spare/string-value@0.16.1':
-    dependencies:
-      '@typen/enum-data-types': 0.2.0
-
   '@spare/string@0.14.29':
     dependencies:
       '@spare/enum-chars': 0.14.29
       '@spare/util': 0.14.29
 
-  '@spare/string@0.16.1':
+  '@spare/string@0.16.16':
     dependencies:
-      '@spare/enum-chars': 0.16.1
-      '@spare/util': 0.16.1
-
-  '@spare/table-margin@0.16.1':
-    dependencies:
-      '@spare/matrix-margin': 0.16.1
-      '@spare/vector-margin': 0.16.1
+      '@spare/enum-chars': 0.16.16
+      '@spare/util': 0.16.16
 
   '@spare/translator@0.14.29': {}
 
   '@spare/translator@0.15.16': {}
-
-  '@spare/translator@0.16.1': {}
 
   '@spare/util@0.14.29':
     dependencies:
@@ -4608,11 +4630,12 @@ snapshots:
       '@vect/matrix': 0.7.20
       '@vect/vector': 0.7.20
 
-  '@spare/util@0.16.1':
+  '@spare/util@0.16.16':
     dependencies:
-      '@spare/enum-chars': 0.16.1
-      '@spare/enum-full-angle-chars': 0.16.1
-      '@texting/lange': 0.2.1
+      '@spare/enum-chars': 0.16.16
+      '@spare/enum-full-angle-chars': 0.16.16
+      '@spare/regex-charset': 0.16.16
+      '@texting/lange': 0.2.3
       '@typen/enum-data-types': 0.2.0
       '@typen/num-strict': 0.2.0
       '@vect/matrix': 0.8.0
@@ -4624,51 +4647,33 @@ snapshots:
       '@spare/util': 0.15.16
       '@vect/vector-margin': 0.6.13
 
-  '@spare/vector-margin@0.16.1':
+  '@spare/xr@0.16.22':
     dependencies:
-      '@ject/oneself': 0.0.17
-      '@spare/util': 0.16.1
-      '@vect/vector-margin': 0.6.13
-
-  '@spare/vector-padder@0.16.1':
-    dependencies:
-      '@texting/lange': 0.2.1
-      '@texting/padder': 0.2.1
-      '@vect/vector-indicator': 0.6.13
-      '@vect/vector-mapper': 0.8.0
-      '@vect/vector-zipper': 0.8.0
-
-  '@spare/xr@0.16.1':
-    dependencies:
-      '@aryth/comparer': 0.7.2
-      '@palett/flopper': 0.12.0
-      '@spare/deco-string': 0.16.1
-      '@spare/enum-chars': 0.16.1
-      '@spare/phrasing': 0.16.1
-      '@spare/says': 0.16.1
-      '@texting/bracket': 0.2.1
-      '@texting/charset-ansi': 0.2.1
-      '@texting/enum-chars': 0.2.1
-      '@texting/phrasing': 0.2.1
-      '@texting/tap': 0.2.1
+      '@aryth/comparer': 0.7.6
+      '@palett/flopper': 0.12.24
+      '@palett/nuance-midtone': 0.12.24
+      '@spare/deco-string': 0.16.22
+      '@texting/bracket': 0.2.3
+      '@texting/charset-ansi': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/phrasing': 0.2.3
       '@typen/enum-data-types': 0.2.0
-      '@typen/nullish': 0.2.0
 
   '@texting/bracket@0.1.13':
     dependencies:
       '@texting/enum-brackets': 0.1.13
 
-  '@texting/bracket@0.2.1':
+  '@texting/bracket@0.2.3':
     dependencies:
-      '@texting/enum-brackets': 0.2.1
+      '@texting/enum-brackets': 0.2.3
 
   '@texting/charset-ansi@0.1.13':
     dependencies:
       '@texting/regex-charset': 0.1.13
 
-  '@texting/charset-ansi@0.2.1':
+  '@texting/charset-ansi@0.2.3':
     dependencies:
-      '@texting/regex-charset': 0.2.1
+      '@texting/regex-charset': 0.2.3
 
   '@texting/charset-fullwidth@0.1.13':
     dependencies:
@@ -4678,14 +4683,14 @@ snapshots:
       '@texting/lange': 0.1.13
       '@typen/num-strict': 0.1.19
 
-  '@texting/charset-fullwidth@0.2.1':
+  '@texting/charset-fullwidth@0.2.3':
     dependencies:
-      '@texting/charset-ansi': 0.2.1
-      '@texting/enum-chars': 0.2.1
-      '@texting/enum-chars-fullwidth': 0.2.1
-      '@texting/lange': 0.2.1
-      '@texting/regex-charset': 0.2.1
-      '@typen/num-strict': 0.1.19
+      '@texting/charset-ansi': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/enum-chars-fullwidth': 0.2.3
+      '@texting/lange': 0.2.3
+      '@texting/regex-charset': 0.2.3
+      '@typen/num-strict': 0.2.0
 
   '@texting/charset-halfwidth@0.1.13':
     dependencies:
@@ -4693,45 +4698,42 @@ snapshots:
       '@texting/enum-chars-fullwidth': 0.1.13
       '@texting/regex-charset': 0.1.13
 
-  '@texting/charset-halfwidth@0.2.1':
+  '@texting/charset-halfwidth@0.2.3':
     dependencies:
-      '@texting/charset-ansi': 0.2.1
-      '@texting/enum-chars-fullwidth': 0.2.1
-      '@texting/regex-charset': 0.2.1
+      '@texting/charset-ansi': 0.2.3
+      '@texting/enum-chars-fullwidth': 0.2.3
+      '@texting/regex-charset': 0.2.3
+
+  '@texting/cite@0.2.3':
+    dependencies:
+      '@texting/quote': 0.2.3
+      '@texting/translator': 0.2.3
 
   '@texting/enum-brackets@0.1.13': {}
 
-  '@texting/enum-brackets@0.2.1': {}
+  '@texting/enum-brackets@0.2.3': {}
 
   '@texting/enum-chars-fullwidth@0.1.13': {}
 
-  '@texting/enum-chars-fullwidth@0.2.1': {}
+  '@texting/enum-chars-fullwidth@0.2.3': {}
 
   '@texting/enum-chars@0.1.13': {}
 
-  '@texting/enum-chars@0.2.1': {}
+  '@texting/enum-chars@0.2.3': {}
+
+  '@texting/enum-quotes@0.2.3': {}
 
   '@texting/fold@0.1.13':
     dependencies:
       '@texting/enum-chars': 0.1.13
 
-  '@texting/fold@0.2.1':
-    dependencies:
-      '@texting/enum-chars': 0.2.1
-
   '@texting/lange@0.1.13':
     dependencies:
       '@texting/regex-charset': 0.1.13
 
-  '@texting/lange@0.2.1':
+  '@texting/lange@0.2.3':
     dependencies:
-      '@texting/regex-charset': 0.2.1
-
-  '@texting/liner@0.2.1':
-    dependencies:
-      '@texting/bracket': 0.2.1
-      '@texting/enum-brackets': 0.2.1
-      '@texting/enum-chars': 0.2.1
+      '@texting/regex-charset': 0.2.3
 
   '@texting/padder@0.1.13':
     dependencies:
@@ -4742,16 +4744,16 @@ snapshots:
       '@texting/lange': 0.1.13
       '@typen/num-strict': 0.1.19
 
-  '@texting/padder@0.2.1':
+  '@texting/padder@0.2.3':
     dependencies:
-      '@texting/charset-ansi': 0.2.1
-      '@texting/charset-fullwidth': 0.2.1
-      '@texting/charset-halfwidth': 0.2.1
-      '@texting/enum-chars': 0.1.13
-      '@texting/enum-chars-fullwidth': 0.2.1
-      '@texting/lange': 0.2.1
-      '@typen/nullish': 0.1.19
-      '@typen/num-strict': 0.1.19
+      '@texting/charset-ansi': 0.2.3
+      '@texting/charset-fullwidth': 0.2.3
+      '@texting/charset-halfwidth': 0.2.3
+      '@texting/enum-chars': 0.2.3
+      '@texting/enum-chars-fullwidth': 0.2.3
+      '@texting/lange': 0.2.3
+      '@typen/nullish': 0.2.0
+      '@typen/num-strict': 0.2.0
 
   '@texting/phrasing@0.1.13':
     dependencies:
@@ -4759,42 +4761,45 @@ snapshots:
       '@texting/regex-phrasing': 0.1.13
       '@vect/vector-mapper': 0.7.20
 
-  '@texting/phrasing@0.2.1':
+  '@texting/phrasing@0.2.3':
     dependencies:
-      '@texting/enum-chars': 0.2.1
-      '@texting/regex-phrasing': 0.2.1
+      '@texting/enum-chars': 0.2.3
+      '@texting/regex-phrasing': 0.2.3
       '@vect/vector-mapper': 0.8.0
+
+  '@texting/quote@0.2.3':
+    dependencies:
+      '@texting/enum-chars': 0.2.3
+      '@texting/enum-quotes': 0.2.3
+      '@typen/literal': 0.2.0
+      '@typen/nullish': 0.2.0
 
   '@texting/regex-charset@0.1.13': {}
 
-  '@texting/regex-charset@0.2.1': {}
+  '@texting/regex-charset@0.2.3': {}
 
   '@texting/regex-phrasing@0.1.13': {}
 
-  '@texting/regex-phrasing@0.2.1': {}
+  '@texting/regex-phrasing@0.2.3': {}
 
   '@texting/splitter@0.1.13':
     dependencies:
       '@texting/regex-phrasing': 0.1.13
 
-  '@texting/splitter@0.2.1':
+  '@texting/splitter@0.2.3':
     dependencies:
-      '@texting/regex-phrasing': 0.2.1
+      '@texting/regex-phrasing': 0.2.3
 
   '@texting/string-value@0.1.13':
     dependencies:
       '@typen/enum-data-types': 0.1.19
 
-  '@texting/string-value@0.2.1':
+  '@texting/string-value@0.2.3':
     dependencies:
-      '@typen/enum-data-types': 0.1.19
+      '@texting/enum-chars': 0.2.3
+      '@typen/enum-data-types': 0.2.0
 
-  '@texting/tap@0.2.1':
-    dependencies:
-      '@spare/deco-vector': 0.15.16
-      '@texting/enum-chars': 0.2.1
-      '@texting/phrasing': 0.2.1
-      '@typen/nullish': 0.1.19
+  '@texting/translator@0.2.3': {}
 
   '@typen/enum-check-levels@0.1.19': {}
 
@@ -4810,21 +4815,24 @@ snapshots:
 
   '@typen/enum-tabular-types@0.1.19': {}
 
+  '@typen/enum-tabular-types@0.2.0': {}
+
   '@typen/enums@0.1.19':
     dependencies:
       '@typen/enum-data-types': 0.1.19
       '@typen/enum-object-types': 0.1.19
-
-  '@typen/enums@0.2.0':
-    dependencies:
-      '@typen/enum-data-types': 0.2.0
-      '@typen/enum-object-types': 0.2.0
 
   '@typen/infer-type@0.1.19':
     dependencies:
       '@typen/enum-data-types': 0.1.19
       '@typen/num-strict': 0.1.19
       '@typen/typ': 0.1.19
+
+  '@typen/infer-type@0.2.0':
+    dependencies:
+      '@typen/enum-data-types': 0.2.0
+      '@typen/num-strict': 0.2.0
+      '@typen/typ': 0.2.0
 
   '@typen/literal@0.1.19':
     dependencies:
@@ -4887,6 +4895,15 @@ snapshots:
       '@typen/num-strict': 0.1.19
       '@vect/vector-mapper': 0.5.23
 
+  '@typen/vector-type@0.2.0':
+    dependencies:
+      '@typen/enum-data-types': 0.2.0
+      '@typen/enum-tabular-types': 0.2.0
+      '@typen/infer-type': 0.2.0
+      '@typen/nullish': 0.2.0
+      '@typen/num-strict': 0.2.0
+      '@vect/vector-mapper': 0.8.0
+
   '@types/estree@1.0.6': {}
 
   '@types/node@12.20.55': {}
@@ -4895,43 +4912,43 @@ snapshots:
     dependencies:
       '@valjoux/util-bitwise': 0.3.21
 
-  '@valjoux/convert@0.4.0':
+  '@valjoux/convert@0.4.1':
     dependencies:
-      '@valjoux/util-bitwise': 0.4.0
+      '@valjoux/util-bitwise': 0.4.1
 
-  '@valjoux/eta@0.4.0':
+  '@valjoux/eta@0.4.1':
     dependencies:
-      '@palett/presets': 0.12.0
-      '@valjoux/timestamp': 0.4.0
-      '@valjoux/timestamp-pretty': 0.4.0
+      '@palett/presets': 0.12.24
+      '@valjoux/timestamp': 0.4.1
+      '@valjoux/timestamp-pretty': 0.4.1
 
   '@valjoux/format-date-time@0.3.21':
     dependencies:
       '@valjoux/format-date': 0.3.21
       '@valjoux/format-time': 0.3.21
 
-  '@valjoux/format-date-time@0.4.0':
+  '@valjoux/format-date-time@0.4.1':
     dependencies:
-      '@valjoux/format-date': 0.4.0
-      '@valjoux/format-time': 0.4.0
+      '@valjoux/format-date': 0.4.1
+      '@valjoux/format-time': 0.4.1
 
   '@valjoux/format-date@0.3.21': {}
 
-  '@valjoux/format-date@0.4.0': {}
+  '@valjoux/format-date@0.4.1': {}
 
   '@valjoux/format-time@0.3.21': {}
 
-  '@valjoux/format-time@0.4.0': {}
+  '@valjoux/format-time@0.4.1': {}
 
-  '@valjoux/strategies@0.4.0':
+  '@valjoux/strategies@0.4.1':
     dependencies:
       '@analyz/crostab': 0.1.1
-      '@aryth/math': 0.7.2
-      '@palett/fluo-vector': 0.12.0
-      '@spare/enum-chars': 0.16.1
-      '@spare/xr': 0.16.1
-      '@valjoux/eta': 0.4.0
-      '@valjoux/timestamp': 0.4.0
+      '@aryth/math': 0.7.5
+      '@palett/fluo-vector': 0.12.20
+      '@spare/xr': 0.16.22
+      '@texting/enum-chars': 0.2.3
+      '@valjoux/eta': 0.4.1
+      '@valjoux/timestamp': 0.4.1
       '@vect/columns-mapper': 0.8.0
       '@vect/object-mapper': 0.8.0
       '@vect/vector-stat': 0.8.0
@@ -4945,24 +4962,21 @@ snapshots:
       '@valjoux/format-date-time': 0.3.21
       '@valjoux/format-time': 0.3.21
 
-  '@valjoux/timestamp-pretty@0.4.0':
+  '@valjoux/timestamp-pretty@0.4.1':
     dependencies:
-      '@palett/presets': 0.12.0
-      '@palett/projector': 0.12.0
-      '@spare/enum-chars': 0.16.1
-      '@valjoux/convert': 0.4.0
-      '@valjoux/format-date-time': 0.4.0
-      '@valjoux/format-time': 0.4.0
+      '@palett/presets': 0.12.24
+      '@palett/projector': 0.12.20
+      '@texting/enum-chars': 0.2.3
 
-  '@valjoux/timestamp@0.4.0':
+  '@valjoux/timestamp@0.4.1':
     dependencies:
-      '@valjoux/convert': 0.4.0
-      '@valjoux/format-date-time': 0.4.0
-      '@valjoux/format-time': 0.4.0
+      '@valjoux/convert': 0.4.1
+      '@valjoux/format-date-time': 0.4.1
+      '@valjoux/format-time': 0.4.1
 
   '@valjoux/util-bitwise@0.3.21': {}
 
-  '@valjoux/util-bitwise@0.4.0': {}
+  '@valjoux/util-bitwise@0.4.1': {}
 
   '@vect/clone@0.7.20':
     dependencies:
@@ -5060,12 +5074,6 @@ snapshots:
       '@vect/vector-mapper': 0.8.0
       '@vect/vector-select': 0.8.0
 
-  '@vect/columns-stat@0.8.0':
-    dependencies:
-      '@typen/enum-data-types': 0.1.19
-      '@vect/matrix-index': 0.8.0
-      '@vect/vector-init': 0.8.0
-
   '@vect/columns-update@0.7.20':
     dependencies:
       '@vect/vector-mapper': 0.7.20
@@ -5104,8 +5112,6 @@ snapshots:
 
   '@vect/entries-zipper@0.7.20': {}
 
-  '@vect/entries-zipper@0.8.0': {}
-
   '@vect/entries@0.7.20':
     dependencies:
       '@vect/entries-indicator': 0.6.13
@@ -5114,15 +5120,6 @@ snapshots:
       '@vect/entries-margin': 0.6.13
       '@vect/entries-unwind': 0.6.13
       '@vect/entries-zipper': 0.7.20
-
-  '@vect/entries@0.8.0':
-    dependencies:
-      '@vect/entries-indicator': 0.6.13
-      '@vect/entries-init': 0.8.0
-      '@vect/entries-mapper': 0.8.0
-      '@vect/entries-margin': 0.6.13
-      '@vect/entries-unwind': 0.6.13
-      '@vect/entries-zipper': 0.8.0
 
   '@vect/enum-matrix-directions@0.6.13': {}
 
@@ -5441,11 +5438,11 @@ snapshots:
 
   commander@2.20.3: {}
 
-  cross-spawn@5.1.0:
+  cross-spawn@7.0.6:
     dependencies:
-      lru-cache: 4.1.5
-      shebang-command: 1.2.0
-      which: 1.3.1
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
 
   detect-indent@6.1.0: {}
 
@@ -5531,7 +5528,7 @@ snapshots:
     dependencies:
       duplexer: 0.1.2
 
-  human-id@1.0.2: {}
+  human-id@4.1.1: {}
 
   iconv-lite@0.4.24:
     dependencies:
@@ -5569,11 +5566,6 @@ snapshots:
       p-locate: 4.1.0
 
   lodash.startcase@4.4.0: {}
-
-  lru-cache@4.1.5:
-    dependencies:
-      pseudomap: 1.0.2
-      yallist: 2.1.2
 
   merge2@1.4.1: {}
 
@@ -5614,6 +5606,8 @@ snapshots:
 
   path-exists@4.0.0: {}
 
+  path-key@3.1.1: {}
+
   path-type@4.0.0: {}
 
   picocolors@1.1.1: {}
@@ -5625,8 +5619,6 @@ snapshots:
   pify@4.0.1: {}
 
   prettier@2.8.8: {}
-
-  pseudomap@1.0.2: {}
 
   queue-microtask@1.2.3: {}
 
@@ -5660,28 +5652,29 @@ snapshots:
       gzip-size: 7.0.0
       terser: 5.36.0
 
-  rollup@4.25.0:
+  rollup@4.36.0:
     dependencies:
       '@types/estree': 1.0.6
     optionalDependencies:
-      '@rollup/rollup-android-arm-eabi': 4.25.0
-      '@rollup/rollup-android-arm64': 4.25.0
-      '@rollup/rollup-darwin-arm64': 4.25.0
-      '@rollup/rollup-darwin-x64': 4.25.0
-      '@rollup/rollup-freebsd-arm64': 4.25.0
-      '@rollup/rollup-freebsd-x64': 4.25.0
-      '@rollup/rollup-linux-arm-gnueabihf': 4.25.0
-      '@rollup/rollup-linux-arm-musleabihf': 4.25.0
-      '@rollup/rollup-linux-arm64-gnu': 4.25.0
-      '@rollup/rollup-linux-arm64-musl': 4.25.0
-      '@rollup/rollup-linux-powerpc64le-gnu': 4.25.0
-      '@rollup/rollup-linux-riscv64-gnu': 4.25.0
-      '@rollup/rollup-linux-s390x-gnu': 4.25.0
-      '@rollup/rollup-linux-x64-gnu': 4.25.0
-      '@rollup/rollup-linux-x64-musl': 4.25.0
-      '@rollup/rollup-win32-arm64-msvc': 4.25.0
-      '@rollup/rollup-win32-ia32-msvc': 4.25.0
-      '@rollup/rollup-win32-x64-msvc': 4.25.0
+      '@rollup/rollup-android-arm-eabi': 4.36.0
+      '@rollup/rollup-android-arm64': 4.36.0
+      '@rollup/rollup-darwin-arm64': 4.36.0
+      '@rollup/rollup-darwin-x64': 4.36.0
+      '@rollup/rollup-freebsd-arm64': 4.36.0
+      '@rollup/rollup-freebsd-x64': 4.36.0
+      '@rollup/rollup-linux-arm-gnueabihf': 4.36.0
+      '@rollup/rollup-linux-arm-musleabihf': 4.36.0
+      '@rollup/rollup-linux-arm64-gnu': 4.36.0
+      '@rollup/rollup-linux-arm64-musl': 4.36.0
+      '@rollup/rollup-linux-loongarch64-gnu': 4.36.0
+      '@rollup/rollup-linux-powerpc64le-gnu': 4.36.0
+      '@rollup/rollup-linux-riscv64-gnu': 4.36.0
+      '@rollup/rollup-linux-s390x-gnu': 4.36.0
+      '@rollup/rollup-linux-x64-gnu': 4.36.0
+      '@rollup/rollup-linux-x64-musl': 4.36.0
+      '@rollup/rollup-win32-arm64-msvc': 4.36.0
+      '@rollup/rollup-win32-ia32-msvc': 4.36.0
+      '@rollup/rollup-win32-x64-msvc': 4.36.0
       fsevents: 2.3.3
 
   roulett@0.1.3: {}
@@ -5694,13 +5687,13 @@ snapshots:
 
   semver@7.6.3: {}
 
-  shebang-command@1.2.0:
+  shebang-command@2.0.0:
     dependencies:
-      shebang-regex: 1.0.0
+      shebang-regex: 3.0.0
 
-  shebang-regex@1.0.0: {}
+  shebang-regex@3.0.0: {}
 
-  signal-exit@3.0.7: {}
+  signal-exit@4.1.0: {}
 
   slash@3.0.0: {}
 
@@ -5711,10 +5704,10 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  spawndamnit@2.0.0:
+  spawndamnit@3.0.1:
     dependencies:
-      cross-spawn: 5.1.0
-      signal-exit: 3.0.7
+      cross-spawn: 7.0.6
+      signal-exit: 4.1.0
 
   sprintf-js@1.0.3: {}
 
@@ -5745,8 +5738,6 @@ snapshots:
 
   universalify@0.1.2: {}
 
-  which@1.3.1:
+  which@2.0.2:
     dependencies:
       isexe: 2.0.0
-
-  yallist@2.1.2: {}

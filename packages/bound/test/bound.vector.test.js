@@ -1,6 +1,6 @@
-import { bound } from '@aryth/bound-vector'
 import { says }  from '@palett/says'
 import { deco }  from '@spare/deco'
+import { bound } from '@aryth/bound-vector'
 
 const paramsList = {
   one_zero: [0],

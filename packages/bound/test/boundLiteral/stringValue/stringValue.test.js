@@ -1,8 +1,8 @@
 import { VectorCollection } from '@foba/vector-string'
 import { says }             from '@palett/says'
 import { decoEntries }      from '@spare/logger'
-import { stringValue }      from '../stringValue'
-import { stringValueGamma } from './stringValueGamma'
+import { stringValue }      from '../stringValue.js'
+import { stringValueGamma } from './stringValueGamma.js'
 
 const vector = VectorCollection.flopShuffle({ size: 6, keyed: true })
 

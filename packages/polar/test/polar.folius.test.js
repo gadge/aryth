@@ -2,9 +2,9 @@ import { roundD2 }                        from '@aryth/math'
 import { LF, SP }                         from '@spare/enum-chars'
 import { deco, decoMatrix, logger, says } from '@spare/logger'
 import { init, mapper, size, transpose }  from '@vect/matrix'
-import { cartesianToPolar }               from '../src/converters'
-import { Coord }                          from '../src/Coord'
-import { Polar }                          from '../src/Polar'
+import { cartesianToPolar }               from '../src/converters.js'
+import { Coord }                          from '../src/Coord.js'
+import { Polar }                          from '../src/Polar.js'
 
 const polar = Polar.build(100, 120)
 

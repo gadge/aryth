@@ -1,7 +1,7 @@
 import { deco }       from '@spare/deco'
 import { logger }     from '@spare/logger'
-import { combinator } from '../src/combinator'
-import { permutator } from '../src/permutator'
+import { combinator } from '../src/combinator.js'
+import { permutator } from '../src/permutator.js'
 
 {
   const list = [ 'a', 'b', 'c' ]

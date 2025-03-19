@@ -1,5 +1,5 @@
-import { bound as boundVector } from 'projects/bound-vector'
-import { boundOutput, ToNum }   from 'projects/util-bound'
+import { bound as boundVector } from '@aryth/bound-vector'
+import { boundOutput, ToNum }   from '@aryth/util-bound'
 import { LOOSE }                from '@typen/enum-check-levels'
 import { size }                 from '@vect/matrix-index'
 import { firstCoord }           from '../utils/firstCoord.js'

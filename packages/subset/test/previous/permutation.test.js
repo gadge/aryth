@@ -1,6 +1,6 @@
 import { deco }                                from '@spare/deco'
 import { logger }                                           from '@spare/logger'
-import { permutationGenerator, permuteBefore, randPermute } from './permutationGeneratorAlpha'
+import { permutationGenerator, permuteBefore, randPermute } from './permutationGeneratorAlpha.js'
 
 // https://stackoverflow.com/questions/3543873/permutations-and-combinations
 

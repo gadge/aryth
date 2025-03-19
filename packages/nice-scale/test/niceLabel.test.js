@@ -1,7 +1,7 @@
 import { intExpon }   from '@aryth/math'
 import { deco }       from '@spare/deco'
 import { logger, xr } from '@spare/logger'
-import { niceScale }  from '../src/niceScale'
+import { niceScale }  from '../src/niceScale.js'
 
 const candidates = [
   { min: -0.05, max: +0.15 },

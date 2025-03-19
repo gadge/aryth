@@ -1,14 +1,12 @@
-import { round } from './round'
-
 /**
  * @deprecated use almostEqual instead
  * @param x
  * @param y
- * @param epsilon
+ * @param eps
  * @return {boolean}
  */
-export const almostEquals = (x, y, epsilon) => Math.abs(x - y) < epsilon
+export const almostEquals = (x, y, eps) => Math.abs(x - y) < eps
 
-export const almostEqual = (x, y, epsilon) => Math.abs(x - y) < epsilon
+export const almostEqual = (x, y, eps) => Math.abs(x - y) < eps
 
-export const almostInt = (x, epsilon) => Math.abs(x - round(x)) < epsilon
+export const almostInt = (x, eps) => Math.abs(x - Math.round(x)) < eps

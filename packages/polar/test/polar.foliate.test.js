@@ -1,8 +1,8 @@
 import { roundD2 }                                              from '@aryth/math'
 import { deco, DecoMatrix, decoMatrix, decoPale, logger, says } from '@spare/logger'
 import { init, mapper }                                         from '@vect/matrix'
-import { Coord }                                                from '../src/Coord'
-import { Polar }                                                from '../src/Polar'
+import { Coord }                                                from '../src/Coord.js'
+import { Polar }                                                from '../src/Polar.js'
 
 const polar = Polar.build(100, 120)
 

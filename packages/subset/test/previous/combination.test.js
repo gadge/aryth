@@ -1,6 +1,6 @@
 import { deco }                 from '@spare/deco'
 import { logger }               from '@spare/logger'
-import { combinationGenerator } from './combinationGenratatorAlpha'
+import { combinationGenerator } from './combinationGenratatorAlpha.js'
 
 
 function test() {

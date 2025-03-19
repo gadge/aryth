@@ -1,8 +1,8 @@
 import { roundD2 }              from '@aryth/math'
 import { PLANET }               from '@palett/presets'
 import { DecoString, says, Xr } from '@spare/logger'
-import { calculator }           from '../index'
-import { InfixCollection }      from './resources/infixCollection'
+import { calculator }           from '../index.js'
+import { InfixCollection }      from './resources/infixCollection.js'
 
 const decoString = DecoString({ presets: PLANET })
 

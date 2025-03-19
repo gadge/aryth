@@ -1,7 +1,7 @@
 import { says }                   from '@palett/says'
 import { deco }                   from '@spare/deco'
 import { DecoVector, logger, xr } from '@spare/logger'
-import { ticksByMean }            from '../src/utils/ticksByMean'
+import { ticksByMean }            from '../src/utils/ticksByMean.js'
 
 const alpha = () => {
   const ve = [1, 2, 3, 4, 8, 15, 16, 17]

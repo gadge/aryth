@@ -1,6 +1,6 @@
 import { Ziggurat }                   from '@aryth/rand'
 import { decoObject, delogger, says } from '@spare/logger'
-import { Histo }                      from '../src/Histo'
+import { Histo }                      from '../src/Histo.js'
 
 const zigg = new Ziggurat(36000, 12000)
 const histo = Histo.buildByMean(36000, 12000, 7)

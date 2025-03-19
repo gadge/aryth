@@ -1,6 +1,6 @@
 import { says }      from '@palett/says'
 import { deco }      from '@spare/deco'
-import { solebound } from '../utils/solebound'
+import { solebound } from '../utils/solebound.js'
 
 const paramsList = {
   empty: [],

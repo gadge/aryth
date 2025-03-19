@@ -1,11 +1,11 @@
 {
   "name": "@aryth/nice-scale",
-  "version": "0.7.3",
+  "version": "0.7.6",
   "description": "Nice scale algorithm",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": "./index.js",
   "files": [
-    "dist"
+    "index.js"
   ],
   "engines": {
     "node": ">=22.0.0"

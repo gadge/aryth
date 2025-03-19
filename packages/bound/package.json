@@ -1,11 +1,11 @@
 {
   "name": "@aryth/bound",
-  "version": "0.7.3",
+  "version": "0.7.6",
   "description": "A library to calculate { max, min } of 1d or 2d array ",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": "./index.js",
   "files": [
-    "dist"
+    "index.js"
   ],
   "engines": {
     "node": ">=22.0.0"
@@ -23,7 +23,7 @@
     "@aryth/math": "workspace:^"
   },
   "devDependencies": {
-    "@palett/color-space": "^0.12.0"
+    "@palett/color-space": "^0.12.24"
   },
   "repository": {
     "type": "git",

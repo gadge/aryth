@@ -1,6 +1,6 @@
-import { Coord }                          from './Coord'
-import { degreeToRadian, radianToDegree } from './math'
-import { Polar }                          from './Polar'
+import { Coord }                          from './Coord.js'
+import { degreeToRadian, radianToDegree } from './math.js'
+import { Polar }                          from './Polar.js'
 
 export const polarToCartesian = (polar) => {
   const { r, θ } = polar

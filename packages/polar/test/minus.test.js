@@ -1,4 +1,4 @@
-import { distance, minus } from '../src/math'
+import { distance, minus } from '../src/math.js'
 
 const entries = [
   [ 180, 90 ],

@@ -1,8 +1,8 @@
 import { hasLiteral }   from '@typen/literal'
 import { isNumeric }    from '@typen/numeral'
 import { iterate }      from '@vect/vector-mapper'
-import { parseNumeric } from '../../../../utils/parseNumeric'
-import { stringValue }  from '../../stringValue'
+import { parseNumeric } from '../../../../utils/parseNumeric.js'
+import { stringValue }  from '../../stringValue.js'
 
 export class BoundFactory {
   static build () { return { max: undefined, min: undefined, list: undefined } }

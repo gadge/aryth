@@ -1,11 +1,11 @@
 {
   "name": "@aryth/calculator",
-  "version": "0.7.3",
+  "version": "0.7.6",
   "description": "A simple math calculator",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": "./index.js",
   "files": [
-    "dist"
+    "index.js"
   ],
   "engines": {
     "node": ">=22.0.0"
@@ -18,9 +18,9 @@
     "test": "node -r @babel/register test/rank.test.js"
   },
   "dependencies": {
-    "@spare/enum-chars": "^0.16.1",
-    "@spare/ripper": "^0.16.1",
-    "@spare/string": "^0.16.1",
+    "@spare/enum-chars": "^0.16.16",
+    "@spare/ripper": "^0.16.16",
+    "@spare/string": "^0.16.16",
     "@typen/enum-data-types": "^0.2.0",
     "@typen/num-strict": "^0.2.0",
     "@vect/vector-index": "^0.8.0",

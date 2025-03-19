@@ -1,7 +1,7 @@
 import { stringValue }  from '@texting/string-value'
 import { hasLiteral }   from '@typen/literal'
 import { isNumeric }    from '@typen/numeral'
-import { parseNumeric } from '../../../../utils/parseNumeric'
+import { parseNumeric } from '../../../../utils/parseNumeric.js'
 
 export const PRESETS = [
   { by: isNumeric, to: parseNumeric },
