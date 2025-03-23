@@ -1,6 +1,3 @@
-// import { isNumeric, parseNum } from '@texting/charset-halfwidth'
-// import { stringValue }         from '@texting/string-value'
-// import { isLiteral }           from '@typen/literal'
 import { iterate } from '@vect/vector-mapper'
 
 // export const NUM_BOUND_CONF_HALF = { by: isNumeric, to: parseNum }

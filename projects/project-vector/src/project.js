@@ -1,4 +1,4 @@
-import { bound }     from '@aryth/bound-vector/dist/index.js'
+import { bound }     from '@aryth/bound-vector'
 import { Projector } from '@aryth/projector'
 
 /**

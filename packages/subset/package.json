@@ -1,6 +1,6 @@
 {
   "name": "@aryth/subset",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "A math util library",
   "type": "module",
   "exports": "./index.js",
@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@vect/swap": "^0.6.13",
-    "@vect/vector-init": "^0.8.0",
-    "@vect/vector-select": "^0.8.0"
+    "@vect/vector-init": "^0.8.5",
+    "@vect/vector-select": "^0.8.5"
   },
   "repository": {
     "type": "git",

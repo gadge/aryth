@@ -1,6 +1,6 @@
 {
   "name": "@aryth/rank-matrix",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "Return ranks of each element in a 2-d array",
   "type": "module",
   "exports": "./index.js",
@@ -18,7 +18,7 @@
     "test": "node -r @babel/register test/rank-matrix.test.js"
   },
   "dependencies": {
-    "@vect/matrix-mapper": "^0.8.0"
+    "@vect/matrix-mapper": "^0.8.5"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "@aryth/rank-vector",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "A math util library",
   "type": "module",
   "exports": "./index.js",
@@ -21,8 +21,7 @@
     "@aryth/comparer": "workspace:^",
     "@typen/literal": "^0.2.0",
     "@typen/num-loose": "^0.2.0",
-    "@vect/vector-algebra": "^0.8.0",
-    "@vect/vector-mapper": "^0.8.0"
+    "@vect/vector-mapper": "^0.8.5"
   },
   "devDependencies": {
     "@spare/regex-phrasing": "^0.16.16",

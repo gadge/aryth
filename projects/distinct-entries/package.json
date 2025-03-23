@@ -1,6 +1,6 @@
 {
   "name": "@aryth/distinct-entries",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "A math util library",
   "type": "module",
   "exports": "./index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@aryth/util-distinct": "workspace:^",
-    "@vect/column-mapper": "^0.8.0"
+    "@vect/column-mapper": "^0.8.5"
   },
   "repository": {
     "type": "git",

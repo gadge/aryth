@@ -1,6 +1,6 @@
 {
   "name": "@aryth/distinct-matrix",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "Return ranks of each element in a 2-d array",
   "type": "module",
   "exports": "./index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@aryth/util-distinct": "workspace:^",
-    "@vect/matrix-mapper": "^0.8.0"
+    "@vect/matrix-mapper": "^0.8.5"
   },
   "repository": {
     "type": "git",

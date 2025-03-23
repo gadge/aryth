@@ -1,6 +1,6 @@
 {
   "name": "@aryth/bound-matrix",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "A math util library",
   "type": "module",
   "exports": "./index.js",
@@ -20,14 +20,13 @@
   "dependencies": {
     "@aryth/bound-vector": "workspace:^",
     "@aryth/util-bound": "workspace:^",
-    "@ject/oneself": "^0.1.2",
     "@texting/string-value": "^0.2.3",
     "@typen/enum-check-levels": "^0.2.0",
     "@typen/literal": "^0.2.0",
     "@typen/numeral": "^0.2.0",
-    "@vect/matrix-index": "^0.8.0",
-    "@vect/matrix-init": "^0.8.0",
-    "@vect/matrix-mapper": "^0.8.0"
+    "@vect/matrix-index": "^0.8.5",
+    "@vect/matrix-init": "^0.8.5",
+    "@vect/matrix-mapper": "^0.8.5"
   },
   "repository": {
     "type": "git",

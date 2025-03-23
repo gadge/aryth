@@ -23,10 +23,6 @@ function bound(vec) {
   return toOutput(max, min)
 }
 
-// import { isNumeric, parseNum } from '@texting/charset-halfwidth'
-// import { stringValue }         from '@texting/string-value'
-// import { isLiteral }           from '@typen/literal'
-
 // export const NUM_BOUND_CONF_HALF = { by: isNumeric, to: parseNum }
 // export const STR_BOUND_CONF_HALF = { by: isLiteral, to: stringValue }
 // function wash(configs) {
